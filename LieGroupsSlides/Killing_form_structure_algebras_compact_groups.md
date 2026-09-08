@@ -1,48 +1,6 @@
----
-marp: true
-paginate: true
----
+## The Killing form
 
-### The Killing form
-
-$\newcommand{\fa}{\mathfrak{a}}
-\newcommand{\fb}{\mathfrak{b}}
-\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\fn}{\mathfrak{n}}
-\newcommand{\fz}{\mathfrak{z}}
-\newcommand{\radg}{\text{rad}(\fg)}
-\newcommand{\tr}{\text{trace}\,}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calB}{{\cal B}}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\derg}{\mbox{Der}(\fg)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\triv}{\{ 0 \}}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$The *Killing form* $\ \kappa: \fg \times \fg \to F,\ F = \R\ {}$ or $\ \C, \ {}$ is given by
+The *Killing form* $\ \kappa: \fg \times \fg \to F,\ F = \R\ {}$ or $\ \C, \ {}$ is given by
 $$
 \kappa(\xi, \eta) = \text{trace}(\ad_\xi \, \ad_\eta).
 $$
@@ -508,11 +466,3 @@ A choice of orthonormal basis for $\fg$ determines an isomorphism of $\ O(\fg)\ 
 $~$
 Since $\ \text{Aut}(\fg)\ {}$ is closed in $\ GL(\fg), \ {}$ and $\ \Ad(G) \, {}$ is a  connected component of $\, \text{Aut}(\fg),$ compactness of $\ \Ad(G)\ {}$ follows from that of $\ O(\fg) \ {}$. 
 
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$

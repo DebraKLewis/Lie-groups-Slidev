@@ -1,39 +1,6 @@
----
-marp: true
-paginate: true
----
-
 ## Lie's three theorems
 
-$\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\ev}{\mathbf{e}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\bzero}{\mathbf{0}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calD}{{\cal D}}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$Lie's "three theorems" establish fundamental relationships between Lie algebras and connected Lie groups. 
+Lie's "three theorems" establish fundamental relationships between Lie algebras and connected Lie groups. 
 $~$
  1. For any Lie group $G$, the map
 $$H → \fh := T_1 H$$
@@ -64,7 +31,7 @@ We won't prove that.
 
 ---
 
-### Distributions, integral submanifolds, and Frobenius' Theorem
+## Distributions, integral submanifolds, and Frobenius' Theorem
 
 A $k$-*dimensional distribution* ${\cal D} ⊂ TM$ on a smooth manifold $M$ is a smooth assignment of a $k$-dimensional subspace ${\cal D}_p$ of the tangent space $T_p M$ of $M$ at $p$.
 
@@ -85,7 +52,7 @@ is a Lie subalgebra of ${\cal X}(M)$.
 
 ***Examples of distributions.***
 
-- If we identify the tangent space $T_p \Rn$ with $\Rn$, then any $k$-dimensional subspace $S$ of $\Rn$ determines a $k$-dimensional distribution $\calD$ on $\Rn$ with $\calD_{\xv} = S, \ \ \forall \ \xv \in \Rn$. 
+- If we identify the tangent space $T_p \R^n$ with $\R^n$, then any $k$-dimensional subspace $S$ of $\R^n$ determines a $k$-dimensional distribution $\calD$ on $\R^n$ with $\calD_{\xv} = S, \ \ \forall \ \xv \in \R^n$. 
 Involutive.
 
 - $\calD$ on $\R^3$, with $\ \calD_{\xv} := \mbox{span}\{V, W \}$, where 
@@ -94,7 +61,7 @@ $$
 $$ 
 $\qquad{}$Not involutive.
 
-- $\calD$ on $\Rn\backslash \{\bzero\}$, with $\ \calD_\xv := \{ \vv \in \Rn : \langle \vv, \xv \rangle = 0 \}, \ {}$. 
+- $\calD$ on $\R^n\backslash \{\bzero\}$, with $\ \calD_\xv := \{ \vv \in \R^n : \langle \vv, \xv \rangle = 0 \}, \ {}$. 
 Involutive.
 
 - $\calD$ on $SO(3, \R)$, with $\ \calD_U := \mbox{span}\{U \widehat \ev_1, U \widehat \ev_2 \}$. 
@@ -118,17 +85,17 @@ If ${\cal D}$ is an involutive distribution on $M$, then for every $\  p ∈ M, 
 
 ---
 
-***Examples of integral manifolds.***
+### Examples of integral manifolds
 
-- Translations of subspaces in $\Rn$. 
-Given a $k$-dimensional subspace $S$ of $\Rn$, and point $\xv \in \Rn$, 
+- Translations of subspaces in $\R^n$. 
+Given a $k$-dimensional subspace $S$ of $\R^n$, and point $\xv \in \R^n$, 
 $$
 N = \{ \xv + \vv : \vv \in S \}
 $$
 $\qquad{}$is an integral submanifold of our first example of a distribution.
 
-- Nested spheres centered at the origin in $\Rn\backslash \{\bzero\}$ are integral submanifolds of 
-$$ \calD_\xv := \{ \vv \in \Rn : \langle \vv, \xv \rangle = 0 \}. $$
+- Nested spheres centered at the origin in $\R^n\backslash \{\bzero\}$ are integral submanifolds of 
+$$ \calD_\xv := \{ \vv \in \R^n : \langle \vv, \xv \rangle = 0 \}. $$
 $~$
 $~$
 $~$

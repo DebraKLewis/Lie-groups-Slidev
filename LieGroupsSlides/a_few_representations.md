@@ -1,37 +1,8 @@
----
-marp: true
----
+
 
 ### A few related families of irreducible representations 
 
-$\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calP}{{\cal P}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$Let $\calP_m^\C(2)$ denote the vector space with basis $\ \{p_0, \ldots, p_m \}, \ {}$ where
+Let $\calP_m^\C(2)$ denote the vector space with basis $\ \{p_0, \ldots, p_m \}, \ {}$ where
 $$ 
 p_k \lp \begin{bmatrix}z_1\\ z_2\end{bmatrix} \rp := z_1^k z_2^{m−k} \qquad \forall \ z_1, z_2 \in \C.
 $$

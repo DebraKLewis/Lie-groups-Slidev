@@ -1,43 +1,6 @@
----
-marp: true
-paginate: true
----
+## Ideals of Lie algebras
 
-### Ideals of Lie algebras
-
-$\newcommand{\fa}{\mathfrak{a}}
-\newcommand{\fb}{\mathfrak{b}}
-\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\fn}{\mathfrak{n}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\triv}{\{ 0 \}}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$A subalgebra $I$ of $\fg$ is an *ideal* if $\xi \in I \ \Longrightarrow \ \ad_\xi(\fg) \subseteq I$.
+A subalgebra $I$ of $\fg$ is an *ideal* if $\xi \in I \ \Longrightarrow \ \ad_\xi(\fg) \subseteq I$.
 
 If $I$ is an ideal of $\fg$, then $\fg/I$ is a Lie algebra. 
 
@@ -273,7 +236,7 @@ $$
 
 ---
 
-### Semisimple Lie algebras
+## Semisimple Lie algebras
 
 $S$ is a *maximal solvable ideal* if $S$ is a solvable ideal in $\fg$ and is not a proper subset of another solvable ideal in $\fg$. 
 
@@ -292,7 +255,7 @@ $\fg/\text{Rad} \, \fg\ {}$ is always semisimple.
 
 ---
 
-### Ideals of Lie algebras
+## Ideals of Lie algebras
 
 A subalgebra $I$ of $\fg$ is an *ideal* if $\xi \in I \ \Longrightarrow \ \ad_\xi(\fg) \subseteq I$.
 
@@ -492,7 +455,7 @@ $$
 \subseteq [\fg, Z(\fg)] = \triv.
 $$
 
-### Properties of solvable Lie algebras:
+### Properties of solvable Lie algebras
 
 (1) $\fg$ solvable $\quad \Longrightarrow \quad$ all subalgebras and homomorphic images of $\fg$ are solvable.
 

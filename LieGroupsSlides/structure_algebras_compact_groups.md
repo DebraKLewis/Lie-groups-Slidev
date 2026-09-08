@@ -1,46 +1,4 @@
----
-marp: true
----
-
-### Recap: Cartan criteria etc.
-
-$\newcommand{\fa}{\mathfrak{a}}
-\newcommand{\fb}{\mathfrak{b}}
-\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\fn}{\mathfrak{n}}
-\newcommand{\fz}{\mathfrak{z}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\triv}{\{ 0 \}}
-\newcommand{\ker}{\text{ker} \, }
-\newcommand{\tr}{\text{trace}}
-\newcommand{\derg}{\text{Der}(\fg)}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$
+## Recap: Cartan criteria etc.
 
 - If $\exists \ \fg$-module $\ (V, \rho) \ {}$ such that 
 $$
@@ -361,14 +319,3 @@ $$\eqa{|A|^2 &= \textstyle{\sum_{j, k = 1}^\ell } a_{jk}^2 \\
 $$
 where $|A|$ is the usual norm on $\ gl(n, \R) \approx \R^{n \times n}$, so $\ O(n, \R)\ {}$ is bounded, 
 $\Longrightarrow \ O(n, \R)\ {}$ is  compact. 
-
-
-
-
-
-
-
-
-
-
-

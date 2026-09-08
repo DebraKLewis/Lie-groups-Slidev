@@ -1,45 +1,12 @@
----
-marp: true
-paginate: true
----
+## The matrix exponential
 
-
-## The exponential map
-
-$\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\ddt}{\smallfrac {d \ }{dt}}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$The exponential map $\ \exp: \fg \to G\ {}$ generalizes the matrix exponential 
+The matrix exponential $\exp: F^{n \times n} \to GL(n, F), F = \R, \C,$ can be defined using the power series
 $$
-\begin{align}
-\exp: F^{n \times n} &\to GL(n, F)\\
-\exp(A) &:= \sum_{j = 0}^\infty \smallfrac 1 {j!} A^j.
-\end{align}
+\exp(B) := \sum_{j = 0}^\infty \smallfrac 1 {j!} B^j.
 $$
 
-The generalization doesn't build on the power series, but on the role of the matrix exponential in the flow maps of constant coefficient ODEs:
-$~$
+For our purposes, it will be most useful to regard $\exp(B)$ as the unit time solution of a pair of IVPs on $F^{n \times n}$ determined by $B$.
+
 Any matrices $B \in F^{n \times n}$ and $A_0 \in GL(n, F)$ determine a pair of IVPs
 $$
 \dot A = A B \sands \dot A = B A, \qquad \text{both with} \qquad A(0) = A_0,
@@ -51,6 +18,12 @@ $$
 
 ---
 
+## The exponential map
+
+The exponential map $\ \exp: \fg \to G\ {}$ generalizes the matrix exponential via
+the role of the matrix exponential in the flow maps of constant coefficient ODEs:
+$~$
+
 If we define the vector fields 
 $$
 X^L_B(A) := A B \sands X^R_B(A) := B A,
@@ -61,6 +34,8 @@ $$
 $$
 $~$
 This is what generalizes to arbitrary Lie groups!
+
+---
 
 ### Recap/lightning intro: flows determined by vector fields
 
@@ -114,7 +89,7 @@ $$
 is an abelian group, with group operation being composition of maps, and $\ t \to \calF_t$ 
 is a group homomorphism. 
 $~$
-If $\varphi \in \text{Diff}(M)$ satisfies $\ \varphi^* V = V$, then the flow $\calF_t$ at time $t$ of $V$ commutes with $\varphi$, i.e.
+If $\varphi \in \diffM$ satisfies $\ \varphi^* V = V$, then the flow $\calF_t$ at time $t$ of $V$ commutes with $\varphi$, i.e.
 $$
 \calF_t \circ \varphi = \varphi \circ \calF_t.
 $$
@@ -125,11 +100,11 @@ $$
 
 $\ \varphi^* V = V \qquad \Longrightarrow$
 $$
-\begin{align}
+\eqa{
 \ddt \varphi(\calF_t(p)) &= d_{\calF_t(p)} \varphi \lp \ddt \calF_t(p) \rp \\
 &= d_{\calF_t(p)} \varphi(V(\calF_t(p))) \\
 &= V(\varphi(\calF_t(p)).
-\end{align}
+}
 $$
 Hence $\varphi(\calF_t(p))$ also satisfies the IVP determined by $V$ with initial $\varphi(p)$.
 
@@ -138,9 +113,7 @@ $~$
 Letting $\varphi = \lozenge_g$, it follows that the  flows of left (resp. right) invariant vector fields commute with left (resp. right) multiplication.
 $~$
 
-
 ---
-
 
 Given $g_0 \in G$, if we define $g: I \to G$ by
 $$
@@ -168,7 +141,7 @@ Much of what's coming up is defined entirely analogously for both left and right
 
 ---
 
-### Left and right invariant vector fields 
+## Left and right invariant vector fields 
 
 Given $\xi \in \fg = T_1 G$, define the vector fields $X_\xi^\lozenge$ on $G$ by
 $$
@@ -219,13 +192,14 @@ $$
 
 ---
 
-*Special case: $G$ a subgroup of $GL(n, F)$*
+### Special case: $G$ a subgroup of $GL(n, F)$
 
 $$
 \gamma_\xi(t) = \exp(t \, \xi) = \sum_{j = 0}^\infty \smallfrac 1 {j!} (t \, \xi)^j,
 $$ 
 since for $\ \xi \in F^{n \times n}$
-$$\eqa{
+$$
+\eqa{
 \ddt {\textstyle \sum_{j = 0}^\infty} \smallfrac 1 {j!} (t \, \xi)^j 
 &= {\textstyle \sum_{j = 1}^\infty} \smallfrac {t^{j - 1}} {(j - 1)!} \xi^j \\
 &= \lp {\textstyle \sum_{j = 1}^\infty} \smallfrac {t^{j - 1}} {(j - 1)!} \xi^{j - 1} \rp \xi \\
@@ -241,7 +215,7 @@ $$
 
 ---
 
-*Verify for a real Lie group:* 
+### Verify for a real Lie group
 
 Given $g_0 \in G$, if we define $g: I \to G$ by
 $$
@@ -260,7 +234,8 @@ g'(t) &= d_{\gamma(t)} L_{g_0}(d_1L_{\gamma(t)}(\xi) )\\
 %&= d_1 \lozenge_{\lozenge_{g_0}(\gamma(t))} (\xi)\\
 %&= d_1 \lozenge_{g(t)} (\xi)\\
 %&= X_\xi^\lozenge(g(t)).
-}$$
+}
+$$
 
 The flow property $\ \calF_t \circ \calF_s = \calF_{s + t} = \calF_s \circ \calF_t\ {}$ implies 
 
@@ -291,6 +266,8 @@ $$
 Hence the domain of $\gamma$, and thus that of $g$, can be extended to all of $\R$.
 $~$
 ---
+
+## Definition of the exponential map
 
 The *exponential map* $\ \exp: \fg \to G \ {}$ is given by
 $$
@@ -372,10 +349,11 @@ so uniqueness of one parameter subgroups implies $\ h(t) = \exp(t \, d_1 f(\xi))
 
 ---
 
-***Very important special cases:***
+### Very important special cases
 
 Reminder:
-$$\eqa{
+$$
+\eqa{
 \Ad: G &\to GL(\fg) \\
 g &\mapsto \Ad_g := d_1 \lp L_g \circ R_{g^{-1}} \rp
 }
@@ -412,9 +390,3 @@ $$
 \ad_\xi = \dep{\Ad_{\gamma(\epsilon)}}.
 $$
 Hence the second claim follows analogously, taking $f = \Ad$.
-$~$
-$~$
-$~$
-$~$
-
-

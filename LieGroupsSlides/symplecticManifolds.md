@@ -1,53 +1,6 @@
----
-marp: true
-paginate: true
----
-
 ## Conservative systems
-$\newcommand{\fa}{\mathfrak{a}}
-\newcommand{\fb}{\mathfrak{b}}
-\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\fn}{\mathfrak{n}}
-\newcommand{\ft}{\mathfrak{t}}
-\newcommand{\fz}{\mathfrak{z}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\ed}{\text{d}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calB}{{\cal B}}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\cXM}{{\cal X}(M)}
-\newcommand{\dcXM}{{\cal X}^*(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\fd}[2]{{\smallfrac {\delta #1}{\delta #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\triv}{\{ 0 \}}
-\newcommand{\radg}{\text{rad}(\fg)}
-\newcommand{\ker}{\text{ker} \, }
-\newcommand{\tr}{\text{trace}}
-\newcommand{\derg}{\text{Der}(\fg)}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$Much of the "early" development of mathematical modeling was based on the belief/assertion that Nature optimizes. 
+
+Much of the "early" development of mathematical modeling was based on the belief/assertion that Nature optimizes. 
 
 If scientists could figure out what Nature was optimizing, they could explain why things work the way they do, and make accurate predictions. 
 
@@ -323,7 +276,7 @@ $~$
 
 ---
 
-### Hamiltonian vector fields on $G \times \fg^*$
+## Hamiltonian vector fields on $G \times \fg^*$
 
 Given $f \in C^\infty(G \times \fg^*), \ {}$ and a choice of $\lozenge, \ \exists!{}$ 
 $$
@@ -362,7 +315,7 @@ $$
 
 ---
 
-### The Poisson bracket on $C^\infty(G \times \fg^*)$
+## The Poisson bracket on $C^\infty(G \times \fg^*)$
 
 $$\eqa{
 \{f, h\}_\lozenge(g, \mu) &= \omega_\lozenge(X_f, X_h)(g, \mu) \phantom{int^{\int^\int}} \\
@@ -387,7 +340,7 @@ $~$
 
 ---
 
-### $G$-invariant functions on $T^*G$ and the Lie-Poisson bracket 
+###$G$-invariant functions on $T^*G$ and the Lie-Poisson bracket 
 
 $f \in C^\infty(\fg^*)\ {}$ determines a function $\tilde f$ on $\ G \times \fg^*\ {}$ with trivial $G$ dependence, 
 $$
@@ -464,7 +417,7 @@ $~$
 
 ---
 
-### Geodesics as Hamiltonian systems
+## Geodesics as Hamiltonian systems
 
 Minimization of length
 $$
@@ -479,6 +432,8 @@ over constant speed parametrized curves.
 The variational criticality condition on parametrized paths are equivalent (if appropriate technical conditions are satisfied) to the condition that critical paths be solutions of the *Euler-Lagrange equation*.
 
 ---
+
+### The Euler-Lagrange equation
 
 The *Euler-Lagrange equation* is a second order DE on $M$ that is equivalent to the first order DE on $TM$ determined by Hamilton's equations with respect to the pullback of the canonical symplectic structure on $T^*M$ to $TM$ by $\flat$.   
 $~$

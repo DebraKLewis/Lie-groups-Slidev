@@ -1,42 +1,6 @@
----
-marp: true
-paginate: true
----
+## Digression: Extending the proof of Schur's Lemma to isomorphic irreducible representations $V$ and $W$
 
-### Digression: Extending the proof of Schur's Lemma to isomorphic irreducible representations $V$ and $W$
-
-$\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\cv}{\mathbf{c}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\uv}{\mathbf{u}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\wv}{\mathbf{w}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$The proof of Schur's Lemma in Kirillov&mdash;used in class&mdash;only covers the cases $W = V$ and $W \not \approx V$.
+The proof of Schur's Lemma in Kirillov&mdash;used in class&mdash;only covers the cases $W = V$ and $W \not \approx V$.
 $~$
 The proof of Schur's lemma in Terry Tao's blog post [The Peter-Weyl theorem, and non-abelian Fourier analysis on compact groups](https://terrytao.wordpress.com/2011/01/23/the-peter-weyl-theorem-and-non-abelian-fourier-analysis-on-compact-groups/) covers isomorphic irreducible representations.
 $~$
@@ -68,7 +32,7 @@ $~$
 
 ---
 
-### Recap from Tuesday
+### Recap
 
 Given orthonormal bases ${\cal B} = \{ \vv_1, \ldots, \vv_n \} \ {}$ of $V$ and $\widetilde {\cal B}= \{ \wv_1, \ldots, \wv_k \} \ {}$ of $W$, fix indices $i$ and $j$, and set 
 $$
@@ -372,17 +336,6 @@ $$
 |\chi_V|^2_{L_2(G)} = \sum_k \left | V_k^{\oplus n_k} \right |^2_{L_2(G)} 
 = \sum_k n_k^2.
 $$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-
 
 ---
 
@@ -450,7 +403,7 @@ $~$
 
 ---
 
-### Interlude: Fourier and harmonic analysis lighting tour/review
+## Interlude: Fourier and harmonic analysis lighting tour/review
 
 The *heat equation* is a linear PDE of the form
 $$
@@ -694,7 +647,7 @@ For example,
 $$
 (x + i \, y)^2 = x^2 - y^2 + 2 x y \, i = \langle (2 i, 0, 0, 1, 0) , \av_2(\xv) \rangle.
 $$
-$~$
+
 ### Spherical harmonics
 
 The spherical harmonics can be defined as the restrictions of the harmonic homogeneous polynomials on $\R^3$ to $S^2$.

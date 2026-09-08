@@ -1,29 +1,7 @@
----
-marp: true
----
 
 ## Reminder: Immersed and embedded submanifolds
 
-$\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\half}{{\textstyle {1 \over 2}}}
-\newcommand{\dep}[1]{{\textstyle {d \ \over d \epsilon}} \left . #1 \right |_{\epsilon = 0}}
-f : M → N$ is an *immersion* $\quad \Longleftrightarrow \quad d_p f\ {}$ is injective for all $p \in M$.
+$f : M → N$ is an *immersion* $\quad \Longleftrightarrow \quad d_p f\ {}$ is injective for all $p \in M$.
 $~$
 An *immersed submanifold* in a manifold $N$ is a subset $M ⊂ N$ with a manifold structure such that the inclusion map $\iota: M → N$ is an immersion. 
 $~$
@@ -43,7 +21,10 @@ $~$
 ***Examples of injective immersions that aren't embeddings***
 
 Figure eight and related injective immersions of $\R$ into $\R^2$
-![blank space h:200](Images/blankSpace.png) ![blank space h:200](Images/blankSpace.png)![blank space h:200](Images/blankSpace.png)![figure eight h:200](Images/figureEight.png)
+<p align="center">
+  <img alt="figure eight" src="/Images/figureEight.png" width="250" >
+</p>
+
 $~$
 An irrational winding on the torus, e.g. the trace of a parametrized curve $\R \to T^2 = S^1 \times S^1$ 
 $$
@@ -71,25 +52,9 @@ Any closed subgroup of a Lie group is a closed real Lie subgroup.
 
 ---
 
-
 ## Classical matrix groups as subgroups of $GL(n, F)$
 
-$\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\half}{{\textstyle {1 \over 2}}}
-\newcommand{\dep}[1]{{\textstyle {d \ \over d \epsilon}} \left . #1 \right |_{\epsilon = 0}}
-$Many classical matrix groups are subgroups of $GL(n, \R)$ or $GL(n, \C)$ determined by constraints on the group action involving preservation of 
+Many classical matrix groups are subgroups of $GL(n, \R)$ or $GL(n, \C)$ determined by constraints on the group action involving preservation of 
 - a bilinear form on $\Rn$ or $\C^n$, and/or
 - area or volume.
 
@@ -148,17 +113,17 @@ $~$
 
 Let $\ \text{Sym}(n, \R) = \{ A \in \R^{n \times n} : A^T = A \}\ {}$ denote the vector space of symmetric real $n \times n$ matrices, and define 
 $$
-\begin{align}
+\beqa{
 \fv: \R^{n \times n} &\to \text{Sym}(n, \R) \\
 \fv(A) &:= A^T A.
-\end{align}
+}
 $$ 
 To apply the level set theorem, we need to show that $d_A \fv$ is surjective if $A \in O(n, \R)$.
 $$
-\begin{align}
+\beqa{
 \fv(A + \epsilon \, B) &= (A + \epsilon \, B)^T (A + \epsilon \, B) \\
 &= A^T A + \epsilon ( A^T B + B^T A) + \epsilon^2  B^T B 
-\end{align}
+}
 $$
 implies that
 $$
@@ -183,10 +148,10 @@ T_A O(n, \R) = \text{ker} (d_A \fv) = \{ AC  \in \R^{n \times n} : C + C^T  = 0 
 $$
 i.e. 
 $$
-\begin{align}
+\beqa{
 T_A O(n, \R) &= d_\idm L_A (\{\text{skew-symmetric $n \times n$ matrices}\}) \\
 &= d_\idm L_A(T_\idm O(n, \R)).
-\end{align}
+}
 $$
 $~$
 We can also describe the tangent space at $A$ using right multiplication:
@@ -230,13 +195,3 @@ since $b_{k j} = 0$ if $k > j$.
 To show that they are Lie groups, we can again use the level set theorem.
 $~$
 (*In-class 'activity'.*)
-
----
-
----
-
----
-
-
-
-

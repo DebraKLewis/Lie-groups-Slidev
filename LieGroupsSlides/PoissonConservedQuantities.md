@@ -1,37 +1,6 @@
----
-marp: true
-paginate: true
----
+## Recap: Poisson manifolds
 
-### Recap from Thursday: Poisson manifolds
-$\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\fd}[2]{\smallfrac {{\delta} #1 }{{\delta} #2}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$A *Poisson manifold* $(M, \{\ , \ \})$ is a smooth manifold $M$  such that
+A *Poisson manifold* $(M, \{\ , \ \})$ is a smooth manifold $M$  such that
 - $V = C^∞(M)$ is a Lie algebra, with Lie bracket $\{·, ·\}$, and
 - for every $f \in V$, $\{f, \cdot \}: V \to V$ is a derivation, i.e.
 $$
@@ -72,7 +41,7 @@ $$
 
 ---
 
-***Example. Lie-Poisson brackets***
+## Lie-Poisson brackets
 
 The Hamiltonian vector field $X_h$ determined by the Lie-Poisson bracket satisfies
 $$\eqa{
@@ -90,7 +59,7 @@ $$
 
 ---
 
-***Flows of Lie-Poisson Hamiltonian vector fields preserve coadjoint orbits***
+### Lie-Poisson flows preserve coadjoint orbits
 
 The *coadjoint action* of $G$ on $\fg^*$ is
 $$
@@ -99,7 +68,8 @@ $$
 $g^{-1}, \ {}$ rather than $g$ is needed for a left action, because of the dual map.
 $~$
 Identifying $T_\mu \fg^*$ with $\fg^*, \ {}$ the associated infinitesimal generators are determined by
-$$\eqa{
+$$
+\eqa{
 (\xi_{\fg^*}(\mu))(\eta) &= \dep{\Ad_{\exp(\epsilon \, \xi)^{-1}}^* \mu(\eta)} \\
 &= \dep{\mu\lp \Ad_{\exp(- \epsilon \, \xi)}\eta \rp} \\
 &= - \mu(\ad_\xi\eta) \\
@@ -133,7 +103,7 @@ $$
 
 ---
 
-### Poisson maps
+## Poisson maps
 
 A map $\,φ: M → N\,{}$ between Poisson manifolds is a *Poisson map* if 
  $$
@@ -158,7 +128,7 @@ $$
 
 ---
 
-### Casimirs
+## Casimirs
 
 $C \in C^∞(M)\, {}$ is called a *Casimir* if the following equivalent conditions are satisfied:
 - $\ \{\ ·\ , C \} = 0 \ {}$ 
@@ -173,7 +143,6 @@ Casimirs in this sense are a special case of a more general algebraic concept of
 "We" say/write Casimir, but Hamilton*ian*. Naming conventions are inconsistent.
 
 ---
-
 
 ***Example:*** An $\Ad$-invariant inner product on $\fg$ determines a Casimir of the Lie-Poisson bracket.
 
@@ -245,7 +214,7 @@ $$
 
 ---
 
-### The Arnold-Euler equation (Euler's equations)
+## The Arnold-Euler equation (Euler's equations)
 
 If we drop the assumption of $\Ad \ G$ invariance of the inner product on $\fg$, we typically obtain a nontrivial Hamiltonian system
 $$
@@ -279,7 +248,7 @@ $~$
 
 ---
 
-***The free rigid body: $G = SO(3, \R)$***
+## The free rigid body: $G = SO(3, \R)$
 
 A rigid body $\, {\cal B},\ {}$ determines the *inertia tensor*
 $$
@@ -300,7 +269,7 @@ $\qquad \qquad \Longleftrightarrow \ \mu_0\ {}$ is a eigenvector of $I^{-1} \ \L
 
 ---
 
-### Geodesics and the Arnold-Euler equations
+## Geodesics and the Arnold-Euler equations
 
 Recall: A *Riemannian manifold* is a smooth manifold $M$ for which each tangent fiber $T_p M$ is equipped with an inner product $\langle \ \, , \ \rangle_p, \ {}$ and the inner products vary smoothly. 
 $~$
@@ -332,7 +301,7 @@ $\ \longrightarrow \ {}$ the induced Poisson bracket on $\ G \times \fg^* \appro
 
 ---
 
-***Very special case:*** $\ \fg = so(3, \R) \approx (\R^3, \times)$
+### Conservation laws determine the trajectories of the Euler equation for $\ \fg = so(3, \R) \approx (\R^3, \times)$
 
 Assume that the given inner product on $\fg \approx \R^3$ is not $\Ad$-invariant, i.e. not rotation invariant. 
 
@@ -348,7 +317,9 @@ Hence trajectories of Euler's equation also lie on Euclidean spheres.
 ---
 
 The intersections of these surfaces determine the trajectories $\mu(t)$ up to direction of travel.
-$~$
-![h:225](Images/blankSpace.png)![h:325](Images/blankSpace.png)  ![rigid body trajectories h:375](Images/rigid_body_trajectories.png)
-$~$
+
+<p align="center">
+  <img alt="rigid_body_trajectories" src="/Images/rigid_body_trajectories.png" width="250" >
+</p>
+
 The process of computing $g(t)$ given $\mu(t)$ is called *reconstruction*.

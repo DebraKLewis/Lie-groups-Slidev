@@ -1,51 +1,6 @@
----
-marp: true
-paginate: true
----
+## $\mathfrak{g}$ semisimple $\ \ \Longrightarrow \ \ \exists \ {}$ compact group with Lie algebra $\mathfrak{g}$
 
-### Wrap up from last week: $\mathfrak{g}$ semisimple $\ \ \Longrightarrow \ \ \exists \ {}$ compact group with Lie algebra $\mathfrak{g}$
-$\newcommand{\fa}{\mathfrak{a}}
-\newcommand{\fb}{\mathfrak{b}}
-\newcommand{\fc}{\mathfrak{c}}
-\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\fn}{\mathfrak{n}}
-\newcommand{\ft}{\mathfrak{t}}
-\newcommand{\fz}{\mathfrak{z}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\bbE}{\mathbb{E}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calB}{{\cal B}}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\triv}{\{ 0 \}}
-\newcommand{\radg}{\text{rad}(\fg)}
-\newcommand{\ker}{\text{ker} \, }
-\newcommand{\tr}{\text{trace}}
-\newcommand{\derg}{\text{Der}(\fg)}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$We showed last week that 
+We've showed that 
 - $\ \ \fg$ semisimple $\quad \Longrightarrow \quad \fg\ {}$ is the Lie algebra of $\ \text{Aut}(\fg)$
 
 - $\ \ \text{Aut}(\fg)\ {}$ is a closed Lie subgroup of $\ GL(\fg)$. 
@@ -120,7 +75,7 @@ $\Longrightarrow \ O(n, \R)\ {}$ is  compact.
 
 ---
 
-### Generalized Jordan decomposition
+## Generalized Jordan decomposition
 
 Let $\fg$ be a complex semisimple Lie algebra, and $\, \xi \in \fg$.
 

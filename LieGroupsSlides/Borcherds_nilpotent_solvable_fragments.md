@@ -1,11 +1,7 @@
----
-marp: true
----
+## Proof of Engel's Theorem
 
-$\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\triv}{\{ 0 \}}$***Proof of Engel's Theorem*** (lifted verbatim modulo notation from Lecture 10 of 
-[Borcherds' lecture notes](https://math.berkeley.edu/~reb/courses/261) for a course on Lie groups and algebras)
+This proof is lifted verbatim modulo notation from Lecture 10 of 
+[Borcherds' lecture notes](https://math.berkeley.edu/~reb/courses/261) for a course on Lie groups and algebras.
 
 Suppose that $\fg$ is a Lie algebra of nilpotent endomorphisms of a non-zero finite dimensional vector space $V$. Then $V$ has a nonzero vector fixed by $\fg$.
 

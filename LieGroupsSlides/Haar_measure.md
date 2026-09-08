@@ -1,36 +1,6 @@
----
-marp: true
-paginate: true
----
-
 ## Haar measure and invariant inner products, etc.
-$\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$A choice of  volume element $\omega_1$ on $\fg$ determines a $\lozenge$-invariant volume form $\omega_\lozenge$ on $G$ via 
+
+A choice of  volume element $\omega_1$ on $\fg$ determines a $\lozenge$-invariant volume form $\omega_\lozenge$ on $G$ via 
 $$
 \omega_\lozenge(g)(d_1 \lozenge_g(\xi_1), \ldots, d_1 \lozenge_g(\xi_n)) := \omega_1(\xi_1, \ldots, \xi_n)
 \qquad \forall \ g \in G, \xi_j \in \fg.
@@ -38,19 +8,20 @@ $$
 Since $\omega_1$ is unique up to rescaling by a nonzero constant, so is $\omega_\lozenge$. 
 
 The associated measure is called a $\lozenge$ *Haar measure* on $G$. 
-$~$
+
 If $G$ is compact, the $\lozenge$ Haar measure satisfying
 $$
 \int_G \omega_\lozenge = 1
 $$
 is called ***the*** $\lozenge$ *Haar measure* on $G$.
-$~$
+
 Left and right Haar measures typically aren't equal!
 
 ---
 
 For any $g \in G, \ {}$ the pullback of a $\lozenge$ Haar measure by $\blacklozenge_g$ is a $\lozenge$ Haar measure, since 
-$$\eqa{
+$$
+\eqa{
 \lozenge_h^*(\blacklozenge_g^*\omega_\lozenge ) &= (\blacklozenge_g \circ \lozenge_h)^* \omega_\lozenge \\
 &= (\lozenge_h \circ \blacklozenge_g)^* \omega_\lozenge \qquad \text{(left and right mult. commute)}\\
 &= \blacklozenge_g^*(\lozenge_h^*\omega_\lozenge) \\
@@ -91,7 +62,8 @@ $~$
 ***Corollary:*** If $\iota: G \to G$ denotes inversion, then $\ \iota^* \omega_\lozenge = \pm \Delta \omega_\lozenge, \ {}$ and is $\blacklozenge$ invariant.
 
 *Verify:* $\ \iota \circ  \blacklozenge_g = \lozenge_{g^{-1}} \circ \iota \quad \Longrightarrow$
-$$\eqa{
+$$
+\eqa{
 \blacklozenge_g^*(\iota^* \omega_\lozenge) &= (\iota \circ \blacklozenge_g)^* \omega_\lozenge \\
 &= (\lozenge_{g^{-1}} \circ \iota)^* \omega_\lozenge \\
 &= \iota^*(\lozenge_{g^{-1}}^* \omega_\lozenge) \\
@@ -103,7 +75,8 @@ $$
 
 so $\iota^*\omega_\lozenge$ is $\blacklozenge$ invariant.
 
-$$\eqa{
+$$
+\eqa{
 \blacklozenge_g^*(\Delta \omega_\lozenge) &= (\blacklozenge_g^*\Delta) \blacklozenge_g^*\omega_\lozenge) \\
 &=  \Delta (\Delta(g) \blacklozenge_g^*\omega_\lozenge) \\
 &= \Delta\omega_\lozenge,
@@ -167,12 +140,12 @@ $~$
 
 For any $\phi \in \text{End}(\fg), \ {}$
 $$
-(\det  \phi) \Omega(\xi_1, \ldots, \xi_n) = \Omega(\phi(\xi_1), \ldots, \phi (\xi_n)). 
+(\text{det} \,  \phi) \Omega(\xi_1, \ldots, \xi_n) = \Omega(\phi(\xi_1), \ldots, \phi (\xi_n)). 
 $$
 Hence $\ \Ad_g = d_1 (L_g \circ R_{g^{-1}}) \ \Longrightarrow \ {}$
 
 $$
-(\det  \Ad_g) \Omega = (L_g \circ R_{g^{-1}})^*\omega_\lozenge(1)
+(\text{det} \,  \Ad_g) \Omega = (L_g \circ R_{g^{-1}})^*\omega_\lozenge(1)
  = R_{g^{-1}}^* L_g^*\omega_\lozenge(1).
 $$
 
@@ -182,7 +155,7 @@ If $G$ is unimodular,
 $$
 R_{g^{-1}}^* L_g^*\omega_\lozenge = \pm \omega_\lozenge \ \Longrightarrow \ \det  \Ad_g = \pm 1 \qquad \forall \ g \in G .
 $$
-On the other hand, $\ |\det \Ad_g| = 1 \quad \forall \ g \in G \quad \Longrightarrow {}$
+On the other hand, $\ |\text{det} \, \Ad_g| = 1 \quad \forall \ g \in G \quad \Longrightarrow {}$
 $$
 \Delta(g) \Omega = (\blacklozenge_{g^{-1}}^* \omega_\lozenge)(1) = (\blacklozenge_{g^{-1}}^* \lozenge_g^* \omega_\lozenge)(1)= \pm \Omega
 \qquad \forall \ g \in G,
@@ -231,7 +204,8 @@ $$
 (a, b) \cdot x = a \, x + b. 
 $$
 *Verify:* 
-$$\eqa{
+$$
+\eqa{
 (a, b) \cdot ((c, d) \cdot x) &= (a, b) \cdot (c \, x + d) \\
 &= a (c \, x + d) + b \\
 &= a c \, x + (a d + b) \\
@@ -242,7 +216,8 @@ $$
 ---
 
 Conjugating $(c, d)$ by $(a, b)$ yields
-$$\eqa{
+$$
+\eqa{
 (a, b) (c, d) (a, b)^{-1} &= (a c, a d + b) \lp \smallfrac 1 a, - \smallfrac b a \rp\\
 &= (c, a d - c b + b),
 }
@@ -265,7 +240,6 @@ $~$
 
 ---
 
-
 ## Riemannian metrics on Lie groups 
 
 An inner product $\langle \ \ , \ \rangle$ on $\fg$ determines a $\lozenge$ invariant Riemannian structure on $G$, with
@@ -282,4 +256,3 @@ $$
 $$
 $~$
 *In-class exercise, as time permits:* Verify these assertions.
-

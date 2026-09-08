@@ -1,44 +1,6 @@
----
-marp: false
----
-
 ## Spherical harmonics exercises
 
-$\newcommand{\fa}{\mathfrak{a}}
-\newcommand{\fb}{\mathfrak{b}}
-\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\fn}{\mathfrak{n}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\ev}{\mathbf{e}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\wv}{\mathbf{w}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-%\newcommand{\R}{\mathbb{R}}
-%\newcommand{\N}{\mathbb{N}}
-%\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\triv}{\{ 0 \}}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$***Goal: Stay as low-tech as possible while avoiding coordinate calculations***
+***Goal: Stay as low-tech as possible while avoiding coordinate calculations***
 
 Let $M = \R^3 - \triv$ and $V = C^\infty(M, \C)$. Let $G = SO(3, \R)$ act on $M$ via the usual matrix-vector multiplication, and $\R^+$ act on $M$ by scalar multiplication, i.e. $s \cdot \pv = s \, \pv$. Note that the $G$ and $\R^+$ actions commute. Let $G$ and $\R^+$ act on $V$ via the standard representations induced by their actions on $M$.
 
@@ -99,8 +61,6 @@ $$
 $$ 
 is $G$-equivariant.
 
-
-
 Using 
 $$\xv \times (\xv \times \yv) = - (\xv^T \yv) \xv \qquad \forall \ \xv, \yv \in \R^3,
 $$
@@ -109,10 +69,3 @@ $$
 - \sum_{j = 1}^3 {\cal L}_{(\ev_j)_M} {\cal L}_{(\ev_j)_M} f
 = \tilde \Delta f + {\cal L}_{1_M} f.
 $$
-
-
-
-
-
-
-

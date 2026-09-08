@@ -1,53 +1,6 @@
----
-marp: true
-paginate: true
----
+## Appendix: More symplectic results
 
-### Appendix: More symplectic results
-$\newcommand{\fa}{\mathfrak{a}}
-\newcommand{\fb}{\mathfrak{b}}
-\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\fn}{\mathfrak{n}}
-\newcommand{\ft}{\mathfrak{t}}
-\newcommand{\fz}{\mathfrak{z}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\ed}{\text{d}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calB}{{\cal B}}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\cXM}{{\cal X}(M)}
-\newcommand{\dcXM}{{\cal X}^*(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\fd}[2]{{\smallfrac {\delta #1}{\delta #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\triv}{\{ 0 \}}
-\newcommand{\radg}{\text{rad}(\fg)}
-\newcommand{\ker}{\text{ker} \, }
-\newcommand{\tr}{\text{trace}}
-\newcommand{\derg}{\text{Der}(\fg)}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$*Verify that $\ [ \ , \ ]_{\dcXM)} \ {}$ satisfies the Jacobi identity:*
+*Verify that $\ [ \ , \ ]_{\dcXM)} \ {}$ satisfies the Jacobi identity:*
 
 $$
 \lp [ \alpha, \beta ]_{\dcXM} \rp^\sharp = \lp  [\alpha^\sharp, \beta^\sharp]^\flat \rp^\sharp = [\alpha^\sharp, \beta^\sharp]
@@ -64,7 +17,8 @@ d \{ f, h \}_{C^\infty(M)} = [df, dh]_{\dcXM}
 $$
 $~$
 Invoke the following identity from the cheat sheet, applied to $\omega$ and $X, Y, Z \in \cXM$:
-$$\eqa{
+$$
+\eqa{
 \ed \omega(X, Y, Z) &= X(\omega(Y, Z)) - \omega(Y, [X, Z]) \\
 &\qquad + \text{cyclic permutations of } X, Y, Z.
 }
@@ -74,26 +28,29 @@ $$
 
 Let $X = \alpha^\sharp$ and $Y = \beta^\sharp$.
 
-$$\eqa{
+$$
+\eqa{
 \alpha^\sharp(\omega(\beta^\sharp, Z)) 
 &= \alpha^\sharp(\beta(Z)) \\
-&= ({\cal L}_{\alpha^\sharp}\beta)(Z) + \beta([\alpha^\sharp, Z]) \\
-&= ({\cal L}_{\alpha^\sharp}\beta)(Z) + \omega(\beta^\sharp, [\alpha^\sharp, Z]) 
+&= (\calL_{\alpha^\sharp}\beta)(Z) + \beta([\alpha^\sharp, Z]) \\
+&= (\calL_{\alpha^\sharp}\beta)(Z) + \omega(\beta^\sharp, [\alpha^\sharp, Z]) 
 }
 $$
 $\ \Longrightarrow$
 $$
-X(\omega(Y, Z)) - \omega(Y, [X, Z]) = ({\cal L}_{\alpha^\sharp}\beta)(Z).
+X(\omega(Y, Z)) - \omega(Y, [X, Z]) = (\calL_{\alpha^\sharp}\beta)(Z).
 $$
 Analogously,
-$$\eqa{
+$$
+\eqa{
 Y(\omega(Z, X)) - \omega(X, [Z, Y])&= - (Y(\omega(X, Z)) - \omega(X, [Y, Z]))  \\
-&= - ({\cal L}_{\beta^\sharp}\alpha)(Z).
+&= - (\calL_{\beta^\sharp}\alpha)(Z).
 }
 $$
 
 Finally,
-$$\eqa{
+$$
+\eqa{
 Z(\omega(X, Y)) - \omega(Z, [Y, X]) &= Z(\omega(\alpha^\sharp, \beta^\sharp)) + \omega([\alpha^\sharp, \beta^\sharp], Z)\\
 &= \lp d(\omega(\alpha^\sharp, \beta^\sharp))+ [ \alpha , \beta ]_{\dcXM} \rp(Z).
 }
@@ -105,18 +62,18 @@ $\omega\, {}$ closed $\ \Longrightarrow \ \ed \omega(\alpha^\sharp, \beta^\sharp
 
 Putting it all together, dropping $Z$, and rearranging terms gives
 $$
-[ \alpha , \beta ]_{\dcXM} = {\cal L}_{\beta^\sharp}\alpha - {\cal L}_{\alpha^\sharp}\beta - d(\omega(\alpha^\sharp, \beta^\sharp)).
+[ \alpha , \beta ]_{\dcXM} = \calL_{\beta^\sharp}\alpha - \calL_{\alpha^\sharp}\beta - d(\omega(\alpha^\sharp, \beta^\sharp)).
 $$
 $~$
 ***Bonus/side result:*** 
-- The space $\, {\cal X^*_C}(M)\, {}$ of closed 1-forms is a Lie subalgebra, and 
-- The derived algebra of $\,  {\cal X^*_C}(M)\, {}$ is contained in the subalgebra $\,  {\cal X^*_E}(M)\, {}$ 
+- The space $\, \calX^*_C(M)\, {}$ of closed 1-forms is a Lie subalgebra, and 
+- The derived algebra of $\,  \calX^*_C(M)\, {}$ is contained in the subalgebra $\,  \calX^*_E(M)\, {}$ 
 of exact 1-forms.
 $~$
 
 *Verify:* The identity
 $$
-{\cal L}_X \alpha = \iota_X \ed \alpha + \ed \iota_X \alpha
+\calL_X \alpha = \iota_X \ed \alpha + \ed \iota_X \alpha
 $$
 $\ \Longrightarrow\ {}$ Lie derivatives of closed forms are exact. 
 
@@ -125,19 +82,19 @@ $\ \Longrightarrow\ {}$ Lie derivatives of closed forms are exact.
 If $\alpha$ is a closed 1-form,
 $$
 \omega(\alpha^\sharp, \beta^\sharp) = \alpha(\beta^\sharp) 
-\qquad \Longrightarrow\qquad  {\cal L}_{\beta^\sharp} \alpha = \ed \iota_{\beta^\sharp} \alpha 
+\qquad \Longrightarrow\qquad \calL_{\beta^\sharp} \alpha = \ed \iota_{\beta^\sharp} \alpha 
 = d \iota_{\beta^\sharp}\iota_{\alpha^\sharp}\omega.
 $$
 
 $\alpha\, {}$ and $\, \beta \, {}$ closed $\ \Longrightarrow\ {}$
 $$\eqa{
-[ \alpha , \beta ]_{\dcXM} &= {\cal L}_{\beta^\sharp}\alpha - {\cal L}_{\alpha^\sharp}\beta - d\iota_{\beta^\sharp}\iota_{\alpha^\sharp}\omega \\
+[ \alpha , \beta ]_{\dcXM} &= \calL_{\beta^\sharp}\alpha - \calL_{\alpha^\sharp}\beta - d\iota_{\beta^\sharp}\iota_{\alpha^\sharp}\omega \\
 &= - d \iota_{\beta^\sharp}\iota_{\alpha^\sharp}\omega.
 }
 $$
 $~$
 
-### Relationships between $[\ \,, \ ], \ [\ \,, \ ]_{{\cal X^*_E}(M)}, \ {}$ and $\ \{·, ·\}$
+### Relationships between $[\ \,, \ ], \ [\ \,, \ ]_{\calX^*_E}(M), \ {}$ and $\ \{·, ·\}$
 
 Setting $\, \alpha = df \, {}$ and $\, \beta = dh\,{}$ gives
 $$\eqa{
@@ -150,7 +107,8 @@ $$
 ---
 
 Applying ${}^\sharp\,{}$ to both sides of the previous equality gives
-$$\eqa{
+$$
+\eqa{
 [X_f, X_h] &= [ df, dh ]_{\dcXM}^\sharp\\ 
 &= \lp d \{f, h \} \rp^\sharp \\
 &= X_{\{f, h \}}.
@@ -172,17 +130,15 @@ so $\, \{·, ·\}\, {}$ is a Poisson bracket.
 
 ---
 
----
-
 *Verify:* 
 $$
-d_{z_q} \pi(d_q \beta(T_q Q)) = d_q (\pi \circ \beta)(T_q Q) = T_qQ
+d_{z_q} \pi(d_q \beta(T_q Q)) = d_q (\pi \circ \beta)(T_q Q) = T_q Q
 $$
 $\Longrightarrow \ d_q \beta\ {}$ is injective.
 
 $$
 \pi(z_q + \epsilon  \, p_q) = q \quad \Longrightarrow \quad
-d_{z_q} \pi(\text{vert}_{z_q}(p_q) = \smallfrac {d\ }{d \epsilon} \pi(z_q + \epsilon  \, p_q)|_{\epsilon = 0} 
+d_{z_q} \pi(\text{vert}_{z_q}(p_q) = \dep{\pi(z_q + \epsilon  \, p_q)} 
  = 0
 $$
 
@@ -201,11 +157,7 @@ suffice to show $\ \text{vert}_{z_q}(T_q^*Q)\, {}$ is an isomorphism.
 
 Injectivity of $d_q \beta \Longrightarrow \ \hat \beta {}$ is an isomorphism. 
 
----
-
----
-
-### Recap from Tuesday: the canonical symplectic structure on a cotangent bundle
+### Recap: the canonical symplectic structure on a cotangent bundle
 
 If $\, \pi: T^* Q \to Q\, {}$ denotes the projection to the base
 $$
@@ -228,13 +180,15 @@ $$
 
 ---
 
-$$\eqa{
+$$
+\eqa{
 \text{vert}_{z_q}: T_q^*Q &\to \ker \, d_{z_q} \pi \\
-p_q & \mapsto\smallfrac {d\ }{d \epsilon} (z_q + \epsilon  \, p_q)|_{\epsilon = 0}
+p_q & \mapsto \dep{(z_q + \epsilon  \, p_q)}
 }
 $$
 and
-$$\eqa{
+$$
+\eqa{
     \hat \beta_q : T_q Q \times T_q^* Q &\to T_{\beta(q)} T^* Q \\
 (v_q, p_q) &\mapsto d_q \beta(v_q) + \text{vert}_{\beta(q)}(p_q)
 }
@@ -245,11 +199,12 @@ $$
 \tilde p_q(v_q) - p_q(\tilde v_q) -  \ed \beta(q)(v_q, \tilde v_q).
 $$ 
 $~$
-*Verify (not shown on Tuesday):* 
+*Verify:* 
 
 Bilinearity of $\omega_0 \ \Longrightarrow \ {}$ we can work term by term.
 
-$$\eqa{
+$$
+\eqa{
 \omega_0(\beta(q))(d_q \beta(v_q), d_q \beta(\tilde v_q))& = \beta^* \omega_0(q)(v_q, \tilde v_q)\\
 &= - \ed \beta(q)(v_q, \tilde v_q).}
 $$ 
@@ -273,26 +228,29 @@ $$
 $$
 $~$
 Let $\alpha \in {\cal X}^*(Q)$ be a 1-form satisfying $\, \alpha(q) = p_q, \ {}$ and define $X_\alpha \in {\cal X}(T^*Q)\,{}$ by
-$$\eqa{
+$$
+\eqa{
 X_\alpha(\tilde z_{\tilde q}) :=& \ \text{vert}_{\tilde z_{\tilde q}}(\alpha(\tilde q)) \\
 =&  
-\ \smallfrac {d\ }{d \epsilon} (\tilde z_{\tilde q} + \epsilon \, \alpha(\tilde q)) |_{\epsilon = 0} }
+ \dep{(\tilde z_{\tilde q} + \epsilon \, \alpha(\tilde q))}
 $$
 
 $\forall \ \tilde z_{\tilde q} \in T^*Q,\ {}$ with flow
 $$
-{\cal F}_t = \text{id}_{T^*Q} + t \, \alpha \circ \pi.
+\calF_t = \text{id}_{T^*Q} + t \, \alpha \circ \pi.
 $$
 
 ---
 
-$$\eqa{
+$$
+\eqa{
 \iota_{X_\alpha}\omega_0 &= - \iota_{X_\alpha} \ed \theta_0 \\
-&= - \underbrace{{\cal L}_{X_\alpha} \theta_0}_{\smallfrac {d\ }{d \epsilon} {\cal F}_\epsilon^* \theta_0 |_{\epsilon = 0}} + \ed \underbrace{\iota_{X_\alpha} \theta_0}_{0}.
+&= - \underbrace{\calL_{X_\alpha} \theta_0}_{\dep{\calF_\epsilon^* \theta_0}} + \ed \underbrace{\iota_{X_\alpha} \theta_0}_{0}.
 }
 $$
 and
-$$\eqa{
+$$
+\eqa{
 ({\cal F}_\epsilon^* \theta_0)(z_q)(w_{z_q})
 &= \theta_0({\cal F}_\epsilon(z_q))(d_{{\cal F}_\epsilon(z_q)} \pi(d_{z_q} {\cal F}_\epsilon(w_{z_q}))\\
 &= \theta_0(z_q + \epsilon \, \alpha(q))((d_{z_q}(\underbrace{\pi \circ {\cal F}_\epsilon}_{\pi})(w_{z_q}))\\
@@ -300,10 +258,11 @@ $$\eqa{
 }
 $$
 $\Longrightarrow$
-$$\eqa{
-\omega_0(z_q)(\text{vert}_{z_q}(p_q), w_{z_q}) &= 
-\iota_{X_\alpha}\omega_0(z_q)(w_{z_q}) \\
-&= - \smallfrac {d\ }{d \epsilon} (z_q + \epsilon \, \alpha(q))(d_{z_q} \pi(w_{z_q})) |_{\epsilon = 0}\\
+$$
+\eqa{
+\omega_0(z_q)(\text{vert}_{z_q}(p_q), w_{z_q}) 
+&= \iota_{X_\alpha}\omega_0(z_q)(w_{z_q}) \\
+&= - \dep{(z_q + \epsilon \, \alpha(q))(d_{z_q} \pi(w_{z_q}))}\\
 &= - \underbrace{\alpha(q)}_{p_q}(d_{z_q} \pi(w_{z_q})).
 %&= - p_q(d_{z_q} \pi(w_{z_q})).
 }

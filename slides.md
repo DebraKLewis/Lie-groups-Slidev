@@ -32,11 +32,13 @@ This will hopefully become slides for Lie Groups
 
 ---
 
-<!--- 
+Table of contents (concise)
+
+<div class="text-sm class:children:text-xs">
+  <Toc  columns="3" minDepth="1" maxDepth="2" />
+</div>
+
 ---
-<Toc minDepth="1" maxDepth="1" />
----
---->
 
 # Navigation
 
@@ -50,6 +52,8 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 | <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
 | <kbd>up</kbd>                                       | previous slide              |
 | <kbd>down</kbd>                                     | next slide                  |
+| <kbd>g</kbd>                                        | 'go to': search             |
+| <kbd>o</kbd>                                        | 'overview': grid of slides  |
 
 <!-- https://sli.dev/guide/animations.html#click-animation -->
 <img
@@ -59,23 +63,189 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
   alt=""
 />
 <p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
 ---
 
-## What will be accomplished by using Slidev?
-
-I hope to obtain the following benefits:
-
-- 📝 **Convenient** - focus on the content with Markdown, and then style them later
-- 🎨 **Organized** - smaller Markdown files can be combined into a single slide set
-- 🧑‍💻 **Better navigation** - should be more efficient to move around
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+# Overview of Lie groups and algebras
 
 ---
 src: LieGroupsSlides/manifoldsLieGroups.md
+---
+
+---
+src: LieGroupsSlides/SUT_notes.md
+---
+
+---
+src: LieGroupsSlides/representations.md
+---
+
+---
+
+# Fundamentals of Lie groups
+
+- The exponential map 
+
+- Lie brackets
+
+- Analytical results commonly used to demonstrate a group is a Lie group
+
+- Lie subgroups 
+
+- Lie's Theorems
+
+---
+src: LieGroupsSlides/exponential.md
+---
+
+---
+src: LieGroupsSlides/bracketStuff.md
+---
+
+---
+src: LieGroupsSlides/topologyIVF.md
+---
+
+---
+src: LieGroupsSlides/subgroups.md
+---
+
+---
+src: LieGroupsSlides/closeLieSubgroupsProof.md
+---
+
+---
+src: LieGroupsSlides/Lies3Theorems.md
+---
+
+---
+
+# Invariants and geometric mechanics
+
+---
+src: LieGroupsSlides/Haar_measure.md
+---
+
+---
+src: LieGroupsSlides/HaarRiemannPoisson.md
+---
+
+---
+src: LieGroupsSlides/PoissonManifolds.md
+---
+
+---
+src: LieGroupsSlides/symplecticManifolds.md
+---
+
+---
+src: LieGroupsSlides/symplecticPoisson2.md
+---
+
+---
+src: LieGroupsSlides/symplecticAppendix.md
+---
+
+---
+src: LieGroupsSlides/PoissonConservedQuantities.md
+---
+
+---
+src: LieGroupsSlides/momentumMapsCoadjointOrbits.md
+---
+
+---
+
+# Representation Theory 
+
+---
+src: LieGroupsSlides/solvable_nilpotent.md
+---
+
+---
+src: LieGroupsSlides/nilpotent_solvable_revised.md
+---
+
+---
+src: LieGroupsSlides/nilpotent_solvable_contd.md
+---
+
+---
+src: LieGroupsSlides/semi-simple.md
+---
+
+---
+src: LieGroupsSlides/Lie_Engel_reducible_semisimple.md
+---
+
+---
+src: LieGroupsSlides/Borcherds_nilpotent_solvable_fragments.md
+---
+
+---
+src: LieGroupsSlides/(ir)reducible_representations.md
+---
+
+---
+src: LieGroupsSlides/(ir)reducible_representations_contd.md
+---
+
+---
+src: LieGroupsSlides/a_few_representations.md
+---
+
+---
+# Exercises
+
+---
+
+---
+src: LieGroupsSlides/Killing_form_structure_algebras_compact_groups.md
+---
+
+---
+src: LieGroupsSlides/structure_algebras_compact_groups.md
+---
+
+---
+src: LieGroupsSlides/matrix_elements.md
+---
+
+---
+src: LieGroupsSlides/max_toral_subalgebras_root_spaces.md
+---
+
+---
+src: LieGroupsSlides/root_systems_classification.md
+---
+
+---
+src: LieGroupsSlides/reps_sl3.md
+---
+
+---
+src: LieGroupsSlides/characters_lead-in_slides.md
+---
+
+---
+src: LieGroupsSlides/characters.md
+---
+
+---
+src: LieGroupsSlides/chars.md
+---
+
+---
+
+# Exercises
+
+---
+src: LieGroupsSlides/infinitesimal_rotations_exercise.md
+---
+
+---
+src: LieGroupsSlides/exercises2.md
+---
+
+---
+src: LieGroupsSlides/spherical_harmonics_exercises.md
 ---

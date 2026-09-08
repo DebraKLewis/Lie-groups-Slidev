@@ -1,42 +1,6 @@
----
-marp: true
-paginate: true
----
-
 ## Tangent vectors as derivations
 
-$\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calC}{{\cal C}}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calL}{{\cal L}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\vsud}{{\phantom{\int}}}
-\newcommand{\vsu}{{\phantom{x^\int}}}
-\newcommand{\vsd}{{\phantom{x_\int}}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\ddt}{\smallfrac {d \ }{dt}}
-\newcommand{\dd}[2]{\smallfrac {d \ }{d #2} \left . #1 \right |_{#2 = 0}}
-\newcommand{\dep}[1]{{#1} \epsilon}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$Tangent vectors can be regarded as existing for the purpose of taking directional derivatives.
+Tangent vectors can be regarded as existing for the purpose of taking directional derivatives.
 $~$
 We can regard a tangent vector $v_p$ to a manifold $M$ at a point $p$ as an equivalence class of smooth curves $\gamma: (-\epsilon, \epsilon) \to M$ with the equivalence relation 
 $$
@@ -94,7 +58,7 @@ $~$
 
 ---
 
-***Dynamics description of the Lie bracket:***
+### Dynamics description of the Lie bracket
 
 If $\calF_t$ denotes the flow at time $t$ of $X$, and ${\mathbf t}$ is a tensor on $M$, then
 $$
@@ -143,19 +107,19 @@ $$
 $$
 $~$
 $$
-\begin{align}
+\beqa{
 \phi_t^* X_\eta^L(g) &= {\color{red}d_{\phi_t(g)}\phi_t^{-1}} \lp{\color{blue} X_\eta^L(\phi_t(g))}\rp \\
 &={\color{red}d_{\phi_t(g)}\phi_t^{-1}} \lp {\color{blue}d_1 L_{\phi_t(g)}(\eta)} \rp \\
 &= d_1 \lp {\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}} \rp({\color{blue}\eta}).
-\end{align}
+}
 $$
 Regroup, using $\ \phi_t= R_{\gamma(t)}$,
 $$
-\begin{align}
+\beqa{
 {\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}} &= {\color{red}R_{\gamma(t)}^{-1}} \circ {\color{blue}L_{R_{\gamma(t)}(g)}} \\
 &= {\color{red}R_{\gamma(t)^{-1}}} \circ \lp {\color{blue} L_g \circ L_{\gamma(t)}} \rp \\
 &= {\color{blue}L_g} \circ \lp {\color{red}R_{\gamma(t)^{-1}}} \circ{\color{blue}L_{\gamma(t)}} \rp
-\end{align}
+}
 $$
 
 ---
@@ -243,7 +207,7 @@ $~$
 
 ---
 
-***In-class example/exercise: $SO(3, \R)$ and infinitesimal rotations***
+## In-class example/exercise: $SO(3, \R)$ and infinitesimal rotations
 
 There is a Lie algebra homomorphism between 
 $$
@@ -259,7 +223,8 @@ $~$
 
 ---
 
-The *Baker-Campbell-Hausdorff* formula:
+## The *Baker-Campbell-Hausdorff* formula
+
 $$
 \eqa{
 \log(\exp(t \, \xi)(\exp(t \, \eta)) &= t(\xi+\eta) +\smallfrac {t^2} 2[\xi,\eta]+\smallfrac {t^3} {12} \lp [\xi,[\xi,\eta]]-[\eta,[\xi,\eta]] \rp  \\
@@ -274,10 +239,10 @@ $$
 What about $\ d_\xi \exp\ {}$ for $\xi \neq 0$?
 
 The following formula is proved (Theorem 1.5.2) in Duistermat and Kolk: For any $\xi \in \fg$, 
-$$\begin{align}
+$$\beqa{
 d_\xi \exp_G &= d_1 R_{\exp_G(\xi)} \circ \int_0^1 \exp_{GL(\fg)}(s \, \ad_\xi) ds \\
 &= d_1 L_{\exp_G(\xi)} \circ \int_0^1 \exp_{GL(\fg)}(-s \, \ad_\xi) ds.
-\end{align}
+}
 $$
 
 ---
@@ -528,7 +493,7 @@ $~$
 
 ---
 
-### Free, effective, and proper actions
+## Free, effective, and proper actions
 
 An action is *free* $\ \Longleftrightarrow \ {}$ for every $p \in M$ the map $\Phi_p: G \to M$ given by
 $$\Phi_p(g) := g \cdot p
@@ -546,18 +511,6 @@ $$\eqa{
 $$
 is proper, i.e. preimages of compact sets are compact.
 
----
-
 If $G$ acts freely and properly on $M$, then 
 - $𝜋:𝑀→𝑀/𝐺 \ {}$ is smooth.
 - For any manifold $N$ and map $𝑓:𝑀/𝐺→𝑁, \ f \circ \pi$ smooth $\ \Longrightarrow \ f$ smooth.
-
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$

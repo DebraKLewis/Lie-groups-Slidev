@@ -1,37 +1,6 @@
----
-marp: true
-paginate: true
----
-
 ## Haar measure 
-$\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\fd}[2]{\smallfrac {{\delta} #1 }{{\delta} #2}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$A choice of  volume element $\omega_1$ on $\fg$ determines a $\lozenge$-invariant volume form $\omega_\lozenge$ on $G$ via 
+
+A choice of  volume element $\omega_1$ on $\fg$ determines a $\lozenge$-invariant volume form $\omega_\lozenge$ on $G$ via 
 $$
 \omega_\lozenge(g)(d_1 \lozenge_g(\xi_1), \ldots, d_1 \lozenge_g(\xi_n)) := \omega_1(\xi_1, \ldots, \xi_n)
 $$
@@ -109,13 +78,13 @@ for any $h \in G$, so
 
 ---
 
-$$\eqa{
+$$
+\eqa{
 \blacklozenge_g^*(\Delta \omega_\lozenge) &= (\blacklozenge_g^*\Delta) \blacklozenge_g^*\omega_\lozenge) \\
 &=  \Delta (\Delta(g) \blacklozenge_g^*\omega_\lozenge) \\
 &= \Delta\omega_\lozenge,
 }
 $$
-
 
 Hence $\Delta \omega_\lozenge$ is also $\blacklozenge$ invariant.
 $~$
@@ -125,7 +94,8 @@ $$
 $$
 for some $\ c \in \R^*$. Hence
 
-$$\eqa{
+$$
+\eqa{
 \iota^*(\Delta \omega_\lozenge) &= c \, \iota^* (\iota^* \omega_\lozenge) \\
 &= c (\iota \circ \iota)^* \omega_\lozenge\\
 &= c \, \omega_\lozenge.
@@ -139,7 +109,8 @@ $$%((\Delta \circ \iota) \Delta)(g) =
 \Delta(\iota(g)) \Delta(g) = \Delta(g^{-1}) \Delta(g) = 1 \qquad \forall \ g \in G,
 $$
 we also have
-$$\eqa{
+$$
+\eqa{
 \iota^*(\Delta \omega_\lozenge) &= (\iota^*\Delta) \iota^* \omega_\lozenge\\
 &= (\Delta \circ \iota) \lp \smallfrac \Delta c \omega_\lozenge \rp \\
 &= \smallfrac 1 c  \omega_\lozenge.
@@ -171,10 +142,10 @@ rather than a left or right Haar measure, and denote the measure by $\ dg$.
 $~$
 For any $\phi \in \text{End}(\fg), \ {}$
 $$
-(\det  \phi) \Omega(\xi_1, \ldots, \xi_n) = \Omega(\phi(\xi_1), \ldots, \phi (\xi_n)). 
+(\text{det} \, \phi) \Omega(\xi_1, \ldots, \xi_n) = \Omega(\phi(\xi_1), \ldots, \phi (\xi_n)). 
 $$
 $~$
-***Claim:*** $G$ is unimodular $\ \Longleftrightarrow \ {} |\det \Ad_g| = 1 \quad \forall \ g \in G$.
+***Claim:*** $G$ is unimodular $\ \Longleftrightarrow \ {} |\text{det} \,\Ad_g| = 1 \quad \forall \ g \in G$.
 
 *Verify:* Let $\Omega := \omega_\lozenge(1). \ {}$ 
 
@@ -182,19 +153,21 @@ $~$
 
 $\Ad_g = d_1 (L_g \circ R_{g^{-1}}) \ \Longrightarrow \ {}$
 
-$$\eqa{
-(\det  \Ad_g) \Omega& = (L_g \circ R_{g^{-1}})^*\omega_\lozenge(1)\\
+$$
+\eqa{
+(\text{det} \, \Ad_g) \Omega& = (L_g \circ R_{g^{-1}})^*\omega_\lozenge(1)\\
  &= R_{g^{-1}}^* L_g^*\omega_\lozenge(1).
 }
 $$
 
 If $G$ is unimodular, 
 $$
-R_{g^{-1}}^* L_g^*\omega_\lozenge = \pm \omega_\lozenge \ \Longrightarrow \qquad \det  \Ad_g = \pm 1 \qquad \forall \ g \in G .
+R_{g^{-1}}^* L_g^*\omega_\lozenge = \pm \omega_\lozenge \ \Longrightarrow \qquad \text{det} \, \Ad_g = \pm 1 \qquad \forall \ g \in G .
 $$
 $~$
-On the other hand, $\ |\det \Ad_g| = 1 \quad \forall \ g \in G \quad \Longrightarrow {}$
-$$\eqa{
+On the other hand, $\ |\text{det} \,\Ad_g| = 1 \quad \forall \ g \in G \quad \Longrightarrow {}$
+$$
+\eqa{
 \Delta(g) \Omega &= (\blacklozenge_{g^{-1}}^* \omega_\lozenge)(1)\\
 &= (\blacklozenge_{g^{-1}}^* \lozenge_g^* \omega_\lozenge)(1)\\
 &= \pm \Omega,
@@ -285,7 +258,6 @@ $~$
 $~$
 
 ---
-
 
 ## Riemannian metrics on Lie groups 
 
@@ -623,5 +595,6 @@ Conservation of $h \ \Longrightarrow \ {}$ trajectories of Euler's equation lie 
 The Euclidean inner product is rotation invariant, so the square of the Euclidean norm is a Casimir. Hence trajectories of Euler's equation also lie on Euclidean spheres. 
 
 The intersections of these surfaces determine the trajectories up to direction of travel:
-
-![h:325](Images/blankSpace.png)![h:325](Images/blankSpace.png)  ![rigid body trajectories h:325](Images/rigid_body_trajectories.png)
+<p align="center">
+  <img alt="rigid_body_trajectories" src="/Images/rigid_body_trajectories.png" width="250" >
+</p>

@@ -21,10 +21,10 @@ are smooth/analytic maps.
 
 - The *orthogonal group* preserves the Euclidean inner product: 
 $$
-\begin{align}
+\eqa{
 O(n, \R) &= \{ A \in {GL(n, \R)} :  \langle A \, \xv, A \, \yv \rangle = \langle \xv, \yv \rangle \quad \forall \ \xv, \yv \in \R^n \} \\
 &= \{ A \in {GL(n, \R)} :  A^T A = \idm \}.
-\end{align}
+}
 $$
 
 - The *unitary group* preserves the Hermitian inner product:
@@ -71,10 +71,10 @@ $\Longrightarrow \ \ G_\Phi$ is a subgroup of $GL(n, F)$.
 
 - The *orthogonal group* preserves the Euclidean inner product: 
 $$
-\begin{align}
+\eqa{
 O(n, \R) &= \{ A \in {GL(n, \R)} :  \langle A \, \xv, A \, \yv \rangle = \langle \xv, \yv \rangle \quad \forall \ \xv, \yv \in \R^n \} \\
 &= \{ A \in {GL(n, \R)} :  A^T A = \idm \}.
-\end{align}
+}
 $$
 
 - The *unitary group* preserves the Hermitian inner product:
@@ -146,17 +146,17 @@ $~$
 
 Let $\ \text{Sym}(n, \R) = \{ A \in \R^{n \times n} : A^T = A \}\ {}$ denote the vector space of symmetric real $n \times n$ matrices, and define 
 $$
-\begin{align}
+\eqa{
 \fv: \R^{n \times n} &\to \text{Sym}(n, \R) \\
 \fv(A) &:= A^T A.
-\end{align}
+}
 $$ 
 To apply the level set theorem, we need to show that $\fv(A) = \idm \ \ \Longrightarrow \ \ d_A \fv$ is surjective.
 $$
-\begin{align}
+\eqa{
 \fv(A + \epsilon \, B) &= (A + \epsilon \, B)^T (A + \epsilon \, B) \\
 &= A^T A + \epsilon ( A^T B + B^T A) + \epsilon^2  B^T B 
-\end{align}
+}
 $$
 
 $\Longrightarrow$
@@ -191,10 +191,10 @@ $$
 
 We can also describe the tangent space at $A$ using right multiplication by $A$:
 $$
-\begin{align}
+\eqa{
 A^T B + B^T A &= A^T B (A^{-1} A) + (A^T A) B^T A \\
 &= A^T (B A^{-1} + (B A^{-1})^T) A,
-\end{align}
+}
 $$
 since 
 $$
@@ -227,76 +227,6 @@ $~$
 $~$
 $~$
 
-
----
-
-## Reminder: Immersed and embedded submanifolds
-
-$f : M → N$ is an *immersion* $\quad \Longleftrightarrow \quad d_p f\ {}$ is injective for all $p \in M$.
-$~$
-
-An *immersed submanifold* in a manifold $N$ is a subset $M ⊂ N$ with a manifold structure such that the inclusion map $\iota: M → N$ is an immersion. 
-$~$
-
-$M ⊂ N$ is a $k$-dimensional *embedded submanifold* of $N$ $\quad \Longleftrightarrow \quad$ for every $p \in M$, there exists a coordinate chart $p \in U\subset N,\varphi :U \to \R^n$, such that 
-$$
-\varphi(M \cap U) =  \varphi(U) \cap \{ (x_1, \ldots, x_k, 0, \ldots, 0) : x_j \in \R \}.%, j = 1, \ldots, k \}.
-$$
-$~$
-$\{ (M \cap U,\varphi \vert_{M\cap U}) \}$  form an atlas for the differential structure on $M$.
-
----
-
-A *smooth embedding* is an injective immersion $f : M → N$ such that $M$ is 
-diffeomorphic to $f(M)$, where $f(M)$ has the submanifold topology described above.
-
-Injective immersions of compact manifolds are embeddings. 
-$~$
-
-***Examples of injective immersions that aren't embeddings***
-
-Figure eight and related injective immersions of $\R$ into $\R^2$
-
-<p align="center">
-  <img alt="figure eight" src="/Images/figureEight.png" width="250" >
-</p>
-
-
----
-
-An irrational winding on the torus, e.g. the trace of a parametrized curve $\R \to T^2 = S^1 \times S^1$ 
-$$
-t \mapsto \lp e^{i \, t },e^{i\, a \, t}\rp
-$$
-for irrational $a \in \R$, is another injective immersion that is not an embedding.
-
----
-
-### Lie subgroups and closed Lie subgroups
-
-A *Lie subgroup* $H$ of a Lie group $G$ is 
-- a subgroup of $G$, and
-- an immersed submanifold of $G$.
-
-A *closed Lie subgroup* $H$ of a Lie group $G$ is a Lie subgroup of $G$ that is an embedded submanifold of $G$.
-
----
-
-***Examples:***
-
-- The matrix groups described earlier are closed Lie subgroups of $GL(n, F)$.
-
-- An irrational winding on the torus is a Lie subgroup, but not a closed Lie subgroup, 
-of $T^2 \approx S^1 \times S^1$.
-
-$~$
-Any closed Lie subgroup of $G$ is closed in $G$.
-
-Any closed subgroup of a Lie group is a closed real Lie subgroup.
-(Proof after we've developed more machinery.)
-$~$
-$~$
-
 ---
 
 ## Actions
@@ -307,10 +237,10 @@ $$
 $$
 and the map
 $$
-\begin{align}
+\eqa{
 \Phi: G × M &→ M\\
 \Phi(g, m) &:= \rho(g)(m)
-\end{align}
+}
 $$
 is smooth.
 

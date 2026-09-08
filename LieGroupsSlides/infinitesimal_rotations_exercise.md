@@ -1,38 +1,6 @@
----
-marp: true
----
+## Infinitesimal rotations (an exercise for the second exercise set)
 
-### Infinitesimal rotations (an exercise for the second exercise set)
-
-$\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\zv}{\mathbf{z}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calL}{{\cal L}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\ddt}{\smallfrac {d \ }{dt}}
-\newcommand{\dd}[2]{\smallfrac {d \ }{d #2} \left . #1 \right |_{#2 = 0}}
-\newcommand{\dep}[1]{{#1} \epsilon}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$Let $M = \R^3$, $G = SO(3, \R)$, and $\rho(A)(\pv) = A \pv$.
+Let $M = \R^3$, $G = SO(3, \R)$, and $\rho(A)(\pv) = A \pv$.
 
 - Show that there is a Lie algebra homomorphism between 
 $$

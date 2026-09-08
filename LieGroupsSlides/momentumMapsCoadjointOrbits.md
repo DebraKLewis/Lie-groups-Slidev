@@ -1,54 +1,6 @@
----
-marp: true
-paginate: true
----
-
 ## More Hamiltonian dynamics
-$\newcommand{\fa}{\mathfrak{a}}
-\newcommand{\fb}{\mathfrak{b}}
-\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\fn}{\mathfrak{n}}
-\newcommand{\ft}{\mathfrak{t}}
-\newcommand{\fz}{\mathfrak{z}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\ed}{\text{d}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calB}{{\cal B}}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calL}{{\cal L}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\cXM}{{\cal X}(M)}
-\newcommand{\dcXM}{{\cal X}^*(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\fd}[2]{{\smallfrac {\delta #1}{\delta #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\triv}{\{ 0 \}}
-\newcommand{\radg}{\text{rad}(\fg)}
-\newcommand{\ker}{\text{ker} \, }
-\newcommand{\tr}{\text{trace}}
-\newcommand{\derg}{\text{Der}(\fg)}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$***Recap from Tuesday:*** A closed, non-degenerate 2-form on a smooth manifold $M$ is called a *symplectic structure*.
+
+***Recap from Tuesday:*** A closed, non-degenerate 2-form on a smooth manifold $M$ is called a *symplectic structure*.
 $~$
 Given $\, (M, \omega), \ {}$ define ${\ }^\flat: \cXM \to \dcXM\,{}$ and ${\ }^\sharp: \dcXM \to \cXM\,{}$ by
 $$
@@ -247,7 +199,7 @@ Finding $\, g(t)\, {}$ given $\, \mu(t)\, {}$ is one version of a process called
 
 ---
 
-### Momentum maps 
+## Momentum maps 
 
 Assume that a Lie group $G$ acts on the symplectic manifold $M$ and preserves the symplectic structure, i.e.
 $$
@@ -387,7 +339,7 @@ X_{J_\xi} = \xi_M \qquad \qquad \forall \ \xi \in \fg.
 $$
 $~$
 
-### Relative equilibria
+## Relative equilibria
 
 If $G$ acts on a symplectic (resp. Poisson) manifold by symplectic (resp. Poisson) maps and $h \in C^\infty(M), \ {}$ is $G$ invariant, then $p \in M$ is a *relative equilibrium with generator $\xi$* of the Hamiltonian system determined by $h$ if 
 $$
@@ -410,6 +362,3 @@ $~$
 If $J: M \to \fg^*$ is a momentum map for the action of $G$ on a Poisson manifold $M$, then $p$ is a relative equilibrium with generator $\xi \ \ \Longleftrightarrow \ \ p\ {}$ is a critical point of 
 $$h - J_\xi - C$$ 
 for some Casimir $C$.
-
-
-

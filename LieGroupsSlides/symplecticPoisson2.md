@@ -1,53 +1,6 @@
----
-marp: true
-paginate: true
----
-
 ## More Hamiltonian dynamics
-$\newcommand{\fa}{\mathfrak{a}}
-\newcommand{\fb}{\mathfrak{b}}
-\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\fn}{\mathfrak{n}}
-\newcommand{\ft}{\mathfrak{t}}
-\newcommand{\fz}{\mathfrak{z}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\ed}{\text{d}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calB}{{\cal B}}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\cXM}{{\cal X}(M)}
-\newcommand{\dcXM}{{\cal X}^*(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\fd}[2]{{\smallfrac {\delta #1}{\delta #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\triv}{\{ 0 \}}
-\newcommand{\radg}{\text{rad}(\fg)}
-\newcommand{\ker}{\text{ker} \, }
-\newcommand{\tr}{\text{trace}}
-\newcommand{\derg}{\text{Der}(\fg)}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$***Recap from Tuesday:*** A closed, non-degenerate 2-form on a smooth manifold $M$ is called a *symplectic structure*.
+
+***Recap:*** A closed, non-degenerate 2-form on a smooth manifold $M$ is called a *symplectic structure*.
 $~$
 Given $\, (M, \omega), \ {}$ define ${\ }^\flat: \cXM \to \dcXM\,{}$ and ${\ }^\sharp: \dcXM \to \cXM\,{}$ by
 $$
@@ -58,7 +11,7 @@ Given $\, h \in C^\infty(M), \ X_h := \ed h^\sharp\ {}$ is the *Hamiltonian vect
 $~$
 $\omega$ determines a Poisson bracket 
 $$
-\{ f, h \} := \omega(X_f, X_h) = X_h(f). %{\cal L}_{X_h} f.
+\{ f, h \} := \omega(X_f, X_h) = X_h(f). 
 %[ \alpha, \beta ]_{\dcXM} := \omega(\alpha^\sharp, \beta^\sharp) = \alpha(\beta^\sharp).
 $$
 $~$
@@ -83,7 +36,7 @@ If $\,\beta\, {}$ is a 1-form on $\,Q,\ {}$ then $\ \beta^*\theta_0 = \beta \ {}
 
 $$\eqa{
 \text{vert}_{z_q}: T_q^*Q &\to \ker \, d_{z_q} \pi \\
-p_q & \mapsto\smallfrac {d\ }{d \epsilon} (z_q + \epsilon  \, p_q)|_{\epsilon = 0}
+p_q & \mapsto\dep{(z_q + \epsilon  \, p_q)}
 }
 $$
 and
@@ -101,7 +54,7 @@ $$
 \tilde p_q(v_q) - p_q(\tilde v_q) -  \ed \beta(q)(v_q, \tilde v_q).
 $$ 
 $~$
-*Verify (not shown on Tuesday):* 
+*Verify:* 
 
 Bilinearity of $\omega_0 \ \Longrightarrow \ {}$ we can work term by term.
 
@@ -127,11 +80,11 @@ $$
 
 ---
 
-Let $\alpha \in {\cal X}^*(Q)$ be a 1-form satisfying $\, \alpha(q) = p_q, \ {}$ and define $X_\alpha \in {\cal X}(T^*Q)\,{}$ by
+Let $\alpha \in \calX^*(Q)$ be a 1-form satisfying $\, \alpha(q) = p_q, \ {}$ and define $X_\alpha \in \calX(T^*Q)\,{}$ by
 $$\eqa{
 X_\alpha(\tilde z_{\tilde q}) :=& \ \text{vert}_{\tilde z_{\tilde q}}(\alpha(\tilde q)) \\
 =&  
-\ \smallfrac {d\ }{d \epsilon} (\tilde z_{\tilde q} + \epsilon \, \alpha(\tilde q)) |_{\epsilon = 0} }
+\ \dep{(\tilde z_{\tilde q} + \epsilon \, \alpha(\tilde q))} }
 $$
 
 $\forall \ \tilde z_{\tilde q} \in T^*Q,\ {}$ with flow
@@ -139,16 +92,18 @@ $$
 {\cal F}_t = \text{id}_{T^*Q} + t \, \alpha \circ \pi.
 $$
 
-$$\eqa{
+$$
+\eqa{
 \iota_{X_\alpha}\omega_0 &= - \iota_{X_\alpha} \ed \theta_0 \\
-&= - \underbrace{{\cal L}_{X_\alpha} \theta_0}_{\smallfrac {d\ }{d \epsilon} {\cal F}_\epsilon^* \theta_0 |_{\epsilon = 0}} + \ed \underbrace{\iota_{X_\alpha} \theta_0}_{0}.
+&= - \underbrace{\calL_{X_\alpha} \theta_0}_{\dep{\calF_\epsilon^* \theta_0}} + \ed \underbrace{\iota_{X_\alpha} \theta_0}_{0}.
 }
 $$
 and
-$$\eqa{
-({\cal F}_\epsilon^* \theta_0)(z_q)(w_{z_q})
-&= \theta_0({\cal F}_\epsilon(z_q))(d_{{\cal F}_\epsilon(z_q)} \pi(d_{z_q} {\cal F}_\epsilon(w_{z_q}))\\
-&= \theta_0(z_q + \epsilon \, \alpha(q))((d_{z_q}(\underbrace{\pi \circ {\cal F}_\epsilon}_{\pi})(w_{z_q}))\\
+$$
+\eqa{
+(\calF_\epsilon^* \theta_0)(z_q)(w_{z_q})
+&= \theta_0(\calF_\epsilon(z_q))(d_{\calF_\epsilon(z_q)} \pi(d_{z_q} \calF_\epsilon(w_{z_q}))\\
+&= \theta_0(z_q + \epsilon \, \alpha(q))((d_{z_q}(\underbrace{\pi \circ \calF_\epsilon}_{\pi})(w_{z_q}))\\
 &= (z_q + \epsilon \, \alpha(q))(d_{z_q} \pi(w_{z_q}))
 }
 $$
@@ -202,7 +157,7 @@ The canonical structure on $T^*G$ determines symplectic structures $\, \omega_\l
 
 ---
 
-### Hamiltonian vector fields on $G \times \fg^*$
+## Hamiltonian vector fields on $G \times \fg^*$
 
 Given $f \in C^\infty(G \times \fg^*), \ {}$ and a choice of $\lozenge, \ \exists!{}$ 
 $$
@@ -226,7 +181,8 @@ $$
 
 ---
 
-$$\eqa{
+$$
+\eqa{
 \fd h g(g, \mu)(\eta) + \nu(\fd h \mu(g, \mu)) &= 
 dh(g, \mu)(\eta_\lozenge(g), \nu) \\
 &= \omega_\lozenge(g, \mu)(X_h(g, \mu),  (\eta_\lozenge(g), \nu))\\
@@ -240,7 +196,8 @@ $$
 $~$
 ***Poisson bracket on $C^\infty(G \times \fg^*)$***
 
-$$\eqa{
+$$
+\eqa{
 \{f, h\}_\lozenge(g, \mu) &= \omega_\lozenge(X_f, X_h) \\
 &= \nu_h(\xi_f) - \nu_f(\xi_h) \pm \mu([\xi_f, \xi_h]) \\
 &=  \fd f g(\fd h \mu) - \fd h g(\fd f \mu)\pm \mu \lp \left [\fd f \mu, \fd h \mu \right ] \rp.
@@ -249,10 +206,11 @@ $$
 
 ---
 
-### $G$-invariant functions on $T^*G$ and the Lie-Poisson bracket 
+## $G$-invariant functions on $T^*G$ and the Lie-Poisson bracket 
 
 $f, h \in C^\infty(\fg^*)\ {}$ determine functions $\tilde f, \tilde h$ on $\ G \times \fg^*\ {}$ with trivial $G$ dependence, satisfying
-$$\eqa{
+$$
+\eqa{
  \fd {\tilde f} g(g, \mu)(\xi) + \nu(\fd {\tilde f} \mu(g, \mu)) &=  d \tilde f(g, \mu)(\xi_\lozenge(g), \nu) \\
 &= df(\mu)(x\nu) \\
 &= \nu(\fd f \mu(\mu)),
@@ -291,7 +249,7 @@ and $g_0$ is called a *relative equilibrium*.
 
 ---
 
-***Example:*** The free rigid body
+## The free rigid body
 
 $G = SO(3, \R),\ {}$ $\lozenge = L, \ {}$ and $\ h(\mu)  = \smallfrac 1 2 \mu(I^{-1} \mu)$.
 
@@ -314,7 +272,7 @@ $\qquad \qquad \Longleftrightarrow \ \mu_0\ {}$ is a eigenvector of $I^{-1} \ \L
 
 ---
 
-### Geodesics
+## Geodesics
 
 A *Riemannian manifold* is a smooth manifold $M$ for which each tangent fiber $T_p M$ is equipped with an inner product $\langle \ \, , \ \rangle_p, \ {}$ and the inner products vary smoothly, in the sense that for any $X, Y \in \cXM, \ {}$
 $$
@@ -334,7 +292,7 @@ Skipping over all of the variational machinery, if $(g, \mu): I \to G \times \fg
 
 ---
 
-### Momentum maps 
+## Momentum maps 
 
 Assume that a Lie group $G$ acts on the symplectic manifold $M$ and preserves the symplectic structure, i.e.
 $$
@@ -376,7 +334,8 @@ $$
 
 *Verify:* $\ \pi \circ P(g) = \rho(g) \circ \pi \ \Longrightarrow$
 
-$$\eqa{
+$$
+\eqa{
 (P(g)^*\theta_0)(z_q)(w_{z_q}) 
 &= (g  \cdot z_q)(d_{g  \cdot z_q} \pi( d_{z_q} P(g)(w_{z_q}))\\
 &= (g \cdot z_q)( d_{z_q} (\pi \circ P(g))(w_{z_q})\\
@@ -390,7 +349,8 @@ $$
 
 Hence $\theta_0$ is $G$-invariant.
 
-$$\eqa{
+$$
+\eqa{
 P(g)^*\omega_0 &= - P(g)^*(\ed \theta_0) \\
 &= - \ed (P(g)^*\theta_0) \\
 &= - \ed \theta_0 \\
@@ -404,7 +364,8 @@ d_{z_q} \pi( \xi_{T^*Q}(z_q)) = \xi_Q(q) \qquad \Longrightarrow \qquad
 J_\xi = \iota_{\xi_{T^*Q}} \theta_0,
 $$
 and hence 
-$$\eqa{
+$$
+\eqa{
 d J_\xi &= d \iota_{\xi_{T^*Q}} \theta_0 \\
 &= {\cal L}_{\xi_{T^*Q}} \theta_0 - \iota_{\xi_{T^*Q}} \ed \theta_0\\
 &= \iota_{\xi_{T^*Q}} \omega_0,
@@ -420,7 +381,8 @@ J(g \cdot z_q) = \Ad_{g^{-1}}^* J(z_q) \qquad \qquad \forall \ g \in G, \ z_q \i
 $$
 
 *Verify:*
-$$\eqa{
+$$
+\eqa{
 J(g \cdot z_q)(\xi) &= J_\xi(g \cdot z_q) \\
 &= (g \cdot z_q)(\xi_Q(\pi((g \cdot z_q))))\\
 &= z_q (d_{g \cdot q}\rho(g^{-1})(\xi_Q(g \cdot q)))\\
@@ -454,4 +416,3 @@ $~$
 This generalizes a classical, coordinate based construction for actions of abelian groups.
 
 *Reconstruction:* As for the "full version" of the Euler equations, we can find solutions of the smaller dynamical system, and then solve for the remaining "groupy" information.
-

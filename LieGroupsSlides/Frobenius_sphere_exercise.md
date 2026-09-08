@@ -1,8 +1,4 @@
----
-marp: true
----
-
-### Correction to, comments on, and possible approach to the Frobenius exercise #1
+## Correction to, comments on, and possible approach to the Frobenius exercise #1
 
 ${\cal D}_0$ should have been defined as $\{0 \}$, not as $0^\perp$. My heartfelt apologies for not recognizing that in trying to hide the underlying construction, I'd botched the specification at the origin. I'd actually typed "${\cal D}_0$ is trivial, so" in these notes before it clicked that I hadn't defined it that way. Sorry to have been all "It's OK that the rank changes" without understanding that you were (probably) telling me that it was changing in the wrong direction.
 

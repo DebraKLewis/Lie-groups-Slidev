@@ -1,43 +1,6 @@
----
-marp: true
-paginate: true
----
+## A little more about nilpotent and solvable Lie algebras
 
-### A little more about nilpotent and solvable Lie algebras
-
-$\newcommand{\fa}{\mathfrak{a}}
-\newcommand{\fb}{\mathfrak{b}}
-\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\fn}{\mathfrak{n}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\triv}{\{ 0 \}}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$***Claim:*** 
+***Claim:*** 
 
 $1. \ \fg$ is nilpotent $\ \Longleftrightarrow \ {}$ there is a sequence of ideals 
 $$
@@ -275,17 +238,6 @@ $Z(\fg)$ is nilpotent, so one of our results from Tuesday $\ \Longrightarrow \ \
 The following can be regarded as a cousin of Lie's Theorem: 
 
 ***Claim,*** *w/out proof here:* If $\fg$ is a subalgebra of $\text{End}(V)$ for a finite dimensional nontrivial space $V$, such that all elements of $\fg$ are nilpotent, then there is a basis of $V$ w.r.t. all matrices of elements of $\fg$ are strictly upper triangular.
-
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-
 
 
 

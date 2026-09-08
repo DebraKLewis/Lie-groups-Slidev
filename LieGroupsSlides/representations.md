@@ -1,29 +1,6 @@
----
-marp: true
-paginate: true
----
-
 ## Representations
 
-$\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\half}{{\textstyle {1 \over 2}}}
-\newcommand{\dep}[1]{{\textstyle {d \ \over d \epsilon}} \left . #1 \right |_{\epsilon = 0}}$We typically work with actions that preserve any special structure of the manifold $M$.
+We typically work with actions that preserve any special structure of the manifold $M$.
 
 A *representation* of a Lie group *G* is a vector space *V* and group morphism 
 $$\rho: G \to \text{End}(V).$$ 
@@ -42,10 +19,11 @@ $$
 
 ***Notation:*** When the action is clear in context, we often use the concise notation
 $$
-g \cdot m =\rho(g)(m).
+g \cdot m = \rho(g)(m).
 $$
 I often use the notation $g \, v$ when working with representations of matrix groups.
 $~$
+
 A *morphism between representations $V$ and $W$ of $G$* is a linear map $f : V \to W$ that commutes with the  actions: 
 $$
 f \circ ρ_V(g) = ρ_W(g) \circ f \qquad \forall \ g \in G.
@@ -59,41 +37,48 @@ $$
 
 ---
 
-### Induced representations
+### Induced representations on scalar functions
 
-An action $\rho$ of $G$ on a manifold $M$ induces a representation $\tilde \rho$ on the space of smooth scalar functions $C^\infty(M)$;
+An action $\rho$ of $G$ on a manifold $M$ induces a representation $\tilde \rho$ on the space of smooth scalar functions.
 $$
-g \cdot f = f \circ \rho(g^{−1}), 
-\qquad \mbox{i.e.} \qquad 
+\tilde \rho(g)(f) := f \circ \rho(g^{−1}), 
+\qquad \text{i.e.} \qquad 
 (g \cdot f)(m) = f(g^{−1} \cdot m).% \qquad \qquad \forall \ g \in G, m \in M.
 $$
+
+If $M$ is a complex manifold, replace smooth with holomorphic functions on $M$.
 $~$
-Verify that this is a left action i.e. $\tilde \rho(g \, h) = \tilde \rho(g) \circ \tilde \rho(h)$
+
+$\tilde \rho$ is a left action:  $\tilde \rho(g \, h) = \tilde \rho(g) \circ \tilde \rho(h)$.
+
+*Verify:*
 $$
-\begin{align}
+\eqa{
 ((g \, h) \cdot f)(m) &= f((g \, h)^{-1} \cdot m) \\
 &= f(h^{-1} \cdot (g^{-1}\cdot m)) \\
 &= (h \cdot f)(g^{-1}\cdot m) \\
 &= (g \cdot (h \cdot f))(m).
-\end{align}
+}
 $$
-$~$
-If $M$ is a complex manifold, replace smooth with holomorphic functions on $M$.
+
 
 ---
+
+### Induced representations on vector fields 
 
 The action $\rho$ also induces representations via pushforward on ${\cal X}(M)$ and ${\cal X}^*(M)$, 
 the spaces of smooth vector fields and one forms on $M$.
 $~$
 $$
-\begin{align}
+\eqa{
 g \cdot X &= (\rho(g)^* X)(m) \\
 &= d_{\rho(g)^{-1}(m)} \rho(g)(X(\rho(g)^{-1}(m)) \\
 % &= d_{g^{−1} \cdot m} \rho(g)(X(g^{−1} \cdot m)) 
 &=\underbrace{d_{g^{−1} \cdot m} \rho(g)(\underbrace{X(g^{−1} \cdot m)}_{\in \, T_{g^{−1} \cdot m} M}) }_{\in \, T_m M} \, 
 \qquad \qquad  \forall \ m \in M.
-\end{align}
+}
 $$
+$~$
 
 Since pushforward by a composition of maps equals the corresponding composition of pushforwards, we have 
 $$
@@ -104,16 +89,19 @@ $$
 
 ---
 
+### Induced representations on one forms
+
 Analogously, for any $\alpha \in {\cal X}^*(M)$ and $v_m \in T_m M,\phantom{\int^\int}$ 
 $$
-\begin{align}
+\eqa{
 (g \cdot \alpha)(m)(v_m) &= (\rho(g)^* \alpha)(m)(v_m) \\
 &= \lp d_m \rho(g)^{−1} \rp^* \alpha(g^{−1} \cdot m)(v_m) \\
 &= \underbrace{\alpha(g^{−1} \cdot m)}_{\in \, T^*_{g^{−1} \cdot m} M}(\underbrace{d_m \rho(g)^{−1})(v_m)}_{\in \, T_{g^{−1} \cdot m} M}
-\end{align}
+}
 $$
 and $\ (g \, h) \cdot \alpha = g \cdot (h \cdot \alpha).$
 $~$
+
 These pushforward representations fit together:
 $$
 \iota_{g \cdot X} (g \cdot \alpha) = g \cdot (\iota_X \alpha),
@@ -131,63 +119,66 @@ Inner automorphisms
 $$\rho(g) = L_g \circ R_{g^{-1}}$$ 
 fix the identity. Since left and right multiplication are invertible, the linearization of $\rho(g)$ at 1 is an automorphism of $T_1G$.
 
-The *adjoint representation* $\Ad: G \to \mbox{Aut}(T_1 G)$ 
+Two crucial constructions in Lie group theory are the *adjoint representation* $\Ad: G \to \text{Aut}(T_1 G)$ 
 $$
-\Ad_g :=  d_1 (L_g \circ R_{g^{-1}}) 
+\Ad_g := \Ad(g) := d_1 (L_g \circ R_{g^{-1}}) 
 $$ 
-and its linearization 
+and its linearization at the identity $\ad: T_1 G \to \text{End}(T_1 G)$ 
 $$
-\ad := d_1 \Ad: T_1 G \to \mbox{End}(T_1 G)
+\ad := d_1 \Ad.
 $$
-at $1$ are key constructions in Lie group theory. 
-$~$
-
-
----
 
 The *Lie bracket* of $\xi$ and $\eta\in T_1 G\ {}$ is defined as
 $$
 [\xi, \eta] := \ad_\xi(\eta) := \ad(\xi)(\eta).
 $$
 
-$~$
+---
 
-### Example: $G = GL(n, F)$
+### Example: The adjoint representation and Lie bracket of $G = GL(n, F)$
 
 The prototypical Lie bracket is the *matrix commutator*
 $$
 [A, B] = AB - BA.
 $$
 $~$
+
 $GL(n, F)$ is open in $F^{n \times n}$, so $T_1 GL(n, F) \approx F^{n \times n}$, and $A, B \in F^{n \times n}$ determine curves
 $$
 A(\epsilon) =  \idm + \epsilon \, A  \sands B(\epsilon) =  \idm + \epsilon \, B
 $$
 in $GL(n, F)$ for sufficiently small $\epsilon$.
 
----
-
 For any $C \in GL(n, F)$, linearity of matrix multiplication in $F^{n \times n}$ implies
 $$
-\begin{align}
-\Ad_{C}(B) &= \textstyle{d \ \over d \epsilon}C B (\epsilon) C^{-1} |_{\epsilon = 0}\\
-&= \textstyle{d \ \over d \epsilon}(\idm + \epsilon \, C B C^{-1} )|_{\epsilon = 0}\\
+\eqa{
+\Ad_{C}(B) &= \dep {C B (\epsilon) C^{-1}}\\
+&= \dep{(\idm + \epsilon \, C B C^{-1} )}\\
 &= C B C^{-1}.
-\end{align}
+}
 $$
-Setting $C = A(\epsilon)$ and linearizing again, using 
+
+---
+
+### Example contd.: Calculation of the Lie bracket of $G = GL(n, F)$
+
+Setting $C = A(\epsilon) = \idm + \epsilon \, A$ and linearizing again, using 
 $$
 (\idm + \epsilon \, A)^{-1} = \idm - \epsilon \, A + {\cal O}(\epsilon^2),
 $$
 gives
 $$
-\begin{align}
-\ad_A(B) &= \textstyle{d \ \over d \epsilon} \Ad_{A(\epsilon)}(B)|_{\epsilon = 0} \\
-&= \textstyle{d \ \over d \epsilon} (\idm + \epsilon \, A)B (\idm + \epsilon \, A)^{-1} |_{\epsilon = 0} \\
-&= \textstyle{d \ \over d \epsilon} \lp B + \epsilon \, (A B - B A) + {\cal O}(\epsilon^2) \rp |_{\epsilon = 0} \\
+\eqa{
+\ad_A(B) &= \dep {\Ad_{A(\epsilon)}(B)x} \\
+&= \dep {(\idm + \epsilon \, A)B (\idm + \epsilon \, A)^{-1}} \\
+&= \dep {\lp B + \epsilon \, (A B - B A) + {\cal O}(\epsilon^2) \rp} \\
 &= A B - B A.
-\end{align}
+}
 $$
+
+$~$
+
+Every Lie group $G$ is equipped with a map from $T_1 G$ to $G$... exponential map.
 
 ---
 
@@ -202,29 +193,31 @@ satisfying
 - alternating property: $\ [x, x] = 0$
 - the Jacobi identity: $\ [x,[y,z]]+[y,[z,x]]+[z,[x,y]]=0$.
 
-$~$
 ***Examples:*** 
 
 1. $F^{n \times n}$ with the matrix commutator is a Lie algebra.
 
+2. The space of endomorphisms of a vector space is a Lie algebra, with bracket given by the commutator.
+
+3. $(\R^3, \times)$ is a Lie algebra, with bracket given by the cross product: $[\xv, \yv] = \xv \times \yv$.
+
 ---
 
-2. More generally, the space $\text{End}(V) = {\mathfrak {gl}}(V)$ of endomorphisms of a vector space $V$ is a Lie algebra, with bracket given by the commutator.
+## The Lie algebra of a Lie group
 
+We'll see that for any Lie group $G$, $\fg := (T_1 G, [\ ,\ ])$, with bracket determined by $\text{ad}$, is a Lie algebra.
 
-3. $(\R^3, \times)$ is a Lie algebra, with bracket given by the cross product:
-$$
-\xv \times \yv = \xv \times \yv.
-$$
-$~$
-We'll see that for any Lie group $G$, $\fg := (T_1 G, [\ ,\ ])$, with bracket determined by $\text{ad}$, 
-is a Lie algebra.
-(There are multiple ways of defining the bracket on $T_1G$, all of which are equivalent.)
-$~$
-There is an algebra isomorphism between $(\R^3, \times)$ and ${\mathfrak so}(3) = (T_1 SO(3), [\ ,\ ])$.
-$~$
-$~$
-$~$
+There are multiple ways of defining the bracket on $T_1G$, all of which are equivalent.
+
+We'll construct two spaces of special vector fields on $G$, and an isomorphism between each of these spaces and the tangent space $T_1G$ of $G$ at the identity. 
+
+We'll then use Lie derivatives to construct a Lie bracket on each family of vector fields.
+
+### Examples
+
+- $T_\idm GL(n, F) \approx F^{n \times n}$,  with the matrix commutator
+
+- There is an algebra isomorphism between $(\R^3, \times)$ and ${\mathfrak so}(3) := (T_1 SO(3), [\ ,\ ])$.
 
 ---
 
@@ -241,9 +234,6 @@ $$
 for all $\xi, \eta \in \fg$.
 
 $~$
-$\text{ad}: \fg \to \text{End}(\fg)$ is a Lie algebra representation. 
+$\ad: \fg \to \text{End}(\fg)$ is a Lie algebra representation. 
 
-More generally, for any group homomorphism $φ : G → H$ between Lie groups, $d_1φ : \fg → {\mathfrak h}$ is a Lie algebra representation.
-
-
-
+More generally, for any group homomorphism $φ : G → H$ between Lie groups, $d_1φ : \fg → \fh$ is a Lie algebra representation.

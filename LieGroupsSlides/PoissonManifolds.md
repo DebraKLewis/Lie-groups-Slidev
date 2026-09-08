@@ -1,52 +1,6 @@
----
-marp: true
-paginate: true
----
-
 ## Poisson manifolds 
 
-$\newcommand{\fa}{\mathfrak{a}}
-\newcommand{\fb}{\mathfrak{b}}
-\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\fn}{\mathfrak{n}}
-\newcommand{\ft}{\mathfrak{t}}
-\newcommand{\fz}{\mathfrak{z}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\calB}{{\cal B}}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\cXM}{{\cal X}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\fd}[2]{{\smallfrac {\delta #1}{\delta #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\triv}{\{ 0 \}}
-\newcommand{\radg}{\text{rad}(\fg)}
-\newcommand{\ker}{\text{ker} \, }
-\newcommand{\tr}{\text{trace}}
-\newcommand{\derg}{\text{Der}(\fg)}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$A *Poisson manifold* $(M, \{\ , \ \})$ is a smooth manifold $M$ equipped with a skew-symmetric bilinear map 
+A *Poisson manifold* $(M, \{\ , \ \})$ is a smooth manifold $M$ equipped with a skew-symmetric bilinear map 
 $$\{·, ·\}: V × V → V, \qquad \text{where} \quad V = C^∞(M),
 $$ 
 satisfying the *derivation property*
@@ -105,7 +59,7 @@ Specifically, Lie-Poisson brackets arise from trivializations of $T^*G$, and the
 
 ---
 
-### Hamiltonian vector fields on (finite dimensional) Poisson manifolds
+## Hamiltonian vector fields on (finite dimensional) Poisson manifolds
 
 In finite dimensions, the space of derivations on $C^∞(M)$ is isomorphic to $\, \cXM$.
 
@@ -197,7 +151,7 @@ Informal exercise: Prove this. (Hints available if you want to tackle this.)
 
 ---
 
-### Conserved quantities
+## Conserved quantities
 
 If $X_h$ is a Hamiltonian vector field and $\, {\cal F}_t: M \to M\, {}$ denotes the flow at time $t$ of $X_h, \ {}$ 
 $$
@@ -295,7 +249,7 @@ Conservation of Casimirs implies that all trajectories of Hamiltonian vector fie
 
 ---
 
-### Euler's equation
+## Euler's equation
 
 *Euler's equation* 
 $$
@@ -320,4 +274,6 @@ The Euclidean inner product is rotation invariant, so the square of the Euclidea
 
 The intersections of these surfaces determine the trajectories up to direction of travel:
 
-![h:325](Images/blankSpace.png)![h:375](Images/blankSpace.png)  ![rigid body trajectories h:325](Images/rigid_body_trajectories.png)
+<p align="center">
+  <img alt="rigid_body_trajectories" src="/Images/rigid_body_trajectories.png" width="250" >
+</p>

@@ -1,39 +1,6 @@
----
-marp: true
----
-
 ## Interlude: Fourier and harmonic analysis tidbits 
 
-$\newcommand{\fg}{\mathfrak{g}}
-\newcommand{\fh}{\mathfrak{h}}
-\newcommand{\fk}{\mathfrak{k}}
-\newcommand{\Ad}{\text{Ad}}
-\newcommand{\ad}{\text{ad}}
-\newcommand{\sands}{\qquad \text{and}\qquad}
-\newcommand{\av}{\mathbf{a}}
-\newcommand{\bv}{\mathbf{b}}
-\newcommand{\cv}{\mathbf{c}}
-\newcommand{\fv}{\mathbf{f}}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\xv}{\mathbf{x}}
-\newcommand{\yv}{\mathbf{y}}
-\newcommand{\idm}{\mathbb{1}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Rn}{\mathbb{R}^n}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\calF}{{\cal F}}
-\newcommand{\calX}{{\cal X}}
-\newcommand{\lp}{\left (}
-\newcommand{\rp}{\right )}
-\newcommand{\setdef}[4]{#1 = \{ #2 \in #3 : #4 \}}
-\newcommand{\diffM}{\mbox{Diff}(M)}
-\newcommand{\smallfrac}[2]{{\textstyle {#1 \over #2}}}
-\newcommand{\half}{\smallfrac 1 2}
-\newcommand{\dep}[1]{\smallfrac {d \ }{d \epsilon} \left . #1 \right |_{\epsilon = 0}}
-\newcommand{\eqa}[1]{\begin{align} #1 \end{align}}$The *heat equation* is a linear PDE of the form
+The *heat equation* is a linear PDE of the form
 $$
 \smallfrac {\partial u}{\partial t} = \Delta u = \smallfrac {\partial^2 u}{\partial x_1 x_1} + \cdots \smallfrac {\partial^2 u}{\partial x_n x_n}
 $$
@@ -305,8 +272,3 @@ for $\ m \in \Z\ {}$ and $\ \Theta_{\lambda, m}\ {}$ satisfying
 $$
 \sin \theta {\frac {d\ }{d\theta }}\left(\sin \theta {\frac {d\Theta }{d\theta }}\right)= \lp m^{2} - \lambda \sin ^{2}\theta \rp \Theta.
 $$
-$~$
-$~$
-$~$
-$~$
-$~$
