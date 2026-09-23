@@ -8,7 +8,7 @@ $\varphi: M \to N$ is an *immersion* if $d_p \varphi$ is injective $\forall \, p
 
 An *immersed submanifold* in a manifold $N$ is a subset $M ⊂ N$ with a manifold structure such that the inclusion map $\iota: M → N$ is an immersion. 
 
-$M ⊂ N$ is a $k$-dimensional *embedded submanifold* of $N$ $\quad \Longleftrightarrow \quad$ for every $p \in M$, there exists a coordinate chart $p \in U\subset N,\varphi :U \to \R^n$, such that 
+$M ⊂ N$ is a $k$-dimensional *embedded submanifold* (AKA *regular submanifold) of $N$ $\quad \Longleftrightarrow \quad$ for every $p \in M$, there exists a coordinate chart $p \in U\subset N,\varphi :U \to \R^n$, such that 
 $$
 \varphi(M \cap U) =  \varphi(U) \cap \{ (x_1, \ldots, x_k, 0, \ldots, 0) : x_j \in \R \}.%, j = 1, \ldots, k \}.
 $$
@@ -51,17 +51,23 @@ $\exists$ neighborhoods $V \subset U$ of $p$ and $W \subset \R^n$ of $F(p)$ such
 
 I.e., invertibility of the linearization at a point implies local invertibiilty of the original mapping. 
 
-### The Rank Theorem
+### The Constant Rank and Constant Rank Level Set Theorems
 
 Assume $𝑀$ and $𝑁$ are manifolds of dimension $𝑚$ and $𝑛$, $𝑝∈𝑀$, and $𝐹:𝑀→𝑁$ is smooth.
 
 If $d_q𝐹:𝑇𝑞𝑀→𝑇_{𝐹(𝑞)}𝑁$ has rank $𝑘$ for all $q$ in a neighborhood of $𝑝$, 
-$\Longrightarrow \ \ {}$ are coordinates $(𝑥_1, \ldots ,𝑥_𝑚)$ around $𝑝$ and $(𝑣_1, \ldots,𝑣_𝑛)$ around $𝐹(𝑝)$ such that the coordinate representation of $F$ is
+there are coordinates $(𝑥_1, \ldots ,𝑥_𝑚)$ around $𝑝$ and $(𝑣_1, \ldots,𝑣_𝑛)$ around $𝐹(𝑝)$ such that the coordinate representation of $F$ is
 $$
 𝐹(𝑥_1,\ldots,𝑥_𝑚)=(𝑥_1, \ldots,𝑥_𝑘,0, \ldots,0).
 $$
+<Spacer/>
 
+Let $f : M \to N$ be a smooth map, and $c \in $N$.
+If $f$ has constant rank $k$ in a neighborhood of $f^{−1}(c)$, then $f^{−1}(c)$ is an embedded submanifold of $M$ of codimension $k$.
 
+<Spacer/>
+
+*Proofs:* See, e.g., Theorems 11.1-2 in Lee's *An Introduction to Manifolds*. (Regular submanifold = embedded submanifold.)
 
 ---
 
@@ -98,8 +104,8 @@ If $G_1$ is a connected and simply connected Lie group, then for any Lie group $
 $$
 \text{Hom}(G_1, G_2) = \text{Hom}(\fg_1, \fg_2).
 $$
-$~$
-We showed last week that a morphism of Lie groups determines a morphism of Lie algebras, and
+
+FIX/CHECK We showed last week that a morphism of Lie groups determines a morphism of Lie algebras, and
 $$
 \text{Hom}(G_1,G_2) → \text{Hom}(\fg_1, \fg_2)
 $$

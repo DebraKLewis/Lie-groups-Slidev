@@ -18,33 +18,28 @@ transition: slide-left
 # enable Comark Syntax: https://comark.dev/syntax/markdown
 comark: true
 # duration of the presentation
-duration: 35min
+duration: 85min
+pwa: false
+hideInToc: true
 
 ---
 
 # Lie Groups
 
-This will hopefully become slides for Lie Groups
+## Math 227 $\qquad \qquad \qquad {}$ Fall 2026
 
 <div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
   Press Space for next page <carbon:arrow-right />
 </div>
 
----
-
-Table of contents (concise)
-
-<div class="text-sm class:children:text-xs">
-  <Toc  columns="3" minDepth="1" maxDepth="2" />
-</div>
 
 ---
 
-# Navigation
+## Navigation
 
 Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
 
-## Keyboard Shortcuts
+### Keyboard Shortcuts
 
 |                                                     |                             |
 | --------------------------------------------------- | --------------------------- |
@@ -63,16 +58,36 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
   alt=""
 />
 <p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+
 ---
 
-# Overview of Lie groups and algebras
+## Concise table of contents 
+<br/>
+
+<!-- <div class="text-sm class:children:text-xs"> -->
+  <Toc  columns="1" minDepth="1" maxDepth="1" />
+<!--  </div> -->
+
+<Spacer/>
+
+Jump to a "section" for a list of topics in that section.
+
+---
+
+# Overview 
+
+- Lie groups
+
+- Matrix groups 
+
+- Actions
+
+- Representations
+
+- Lie algebras
 
 ---
 src: LieGroupsSlides/manifoldsLieGroups.md
----
-
----
-src: LieGroupsSlides/SUT_notes.md
 ---
 
 ---
@@ -83,15 +98,25 @@ src: LieGroupsSlides/representations.md
 
 # Fundamentals of Lie groups
 
-- The exponential map 
+- Lie subgroups and closed Lie subgroups
 
-- Lie brackets
+- The matrix exponential
 
-- Analytical results commonly used to demonstrate a group is a Lie group
+- Flows of left and right invariant vector fields
 
-- Lie subgroups 
+- The exponential map: moving between a Lie group and its algebra 
 
-- Lie's Theorems
+- The Lie algebra structures on $\calX(G)$ and the spaces of left (right) invariant vector fields
+
+- Infinitesimal generators
+
+- Orbits, isotropy, and quotients by group actions
+
+- Lie's Three Theorems 
+
+---
+src: LieGroupsSlides/subgroups.md
+---
 
 ---
 src: LieGroupsSlides/exponential.md
@@ -99,14 +124,6 @@ src: LieGroupsSlides/exponential.md
 
 ---
 src: LieGroupsSlides/bracketStuff.md
----
-
----
-src: LieGroupsSlides/topologyIVF.md
----
-
----
-src: LieGroupsSlides/subgroups.md
 ---
 
 ---
@@ -119,7 +136,25 @@ src: LieGroupsSlides/Lies3Theorems.md
 
 ---
 
-# Invariants and geometric mechanics
+# Invariant structures and geometric mechanics
+
+- Haar measure
+
+- Invariant volume elements
+
+- Geodesics on Lie groups
+
+- Poisson manifolds, the Lie-Poisson structure on $\fg^*$, and the Euler-Arnold equations
+
+- Symplectic manifolds and the canonical symplectic structure on $T^*G \approx G \times \fg^*$ 
+
+- Momentum maps and coadjoint orbits
+
+- Principal bundles
+
+*Slides currently being tidied up.*
+
+<!--
 
 ---
 src: LieGroupsSlides/Haar_measure.md
@@ -153,9 +188,29 @@ src: LieGroupsSlides/PoissonConservedQuantities.md
 src: LieGroupsSlides/momentumMapsCoadjointOrbits.md
 ---
 
+-->
+
 ---
 
-# Representation Theory 
+# Representation theory 
+
+- (Ir)reducible representations
+
+- Solvable Lie algebras
+
+- Nilpotent Lie algebras
+
+- Semi-simple Lie algebras
+
+- Lie's and Engel's Theorems
+
+Matrix coefficients and characters
+Characters of SU(2) and irreducible representations of sl(3, C)
+Matrix elements and the Peter-Weyl Theorem
+
+*Slides currently being tidied up.*
+
+<!--
 
 ---
 src: LieGroupsSlides/solvable_nilpotent.md
@@ -193,10 +248,25 @@ src: LieGroupsSlides/(ir)reducible_representations_contd.md
 src: LieGroupsSlides/a_few_representations.md
 ---
 
----
-# Exercises
+-->
 
 ---
+
+# Structure of compact Lie algebras
+
+- Semisimple Lie algebras and the Killing form
+
+- Toral and Cartan subalgebras
+
+- Maximal toral subalgebras, root systems, and the Weyl group
+
+- Representations of $\mathfrak{sl}(3)$
+
+- Characters
+
+*Slides currently being tidied up.*
+
+<!--
 
 ---
 src: LieGroupsSlides/Killing_form_structure_algebras_compact_groups.md
@@ -233,10 +303,28 @@ src: LieGroupsSlides/characters.md
 ---
 src: LieGroupsSlides/chars.md
 ---
+-->
+
+---
+src: LieGroupsSlides/background_material.md
+---
+
+---
+src: LieGroupsSlides/long_proof.md
+---
+
+<!--
+---
+src: LieGroupsSlides/matrix_calculations.md
+---
 
 ---
 
 # Exercises
+
+TBA
+
+---
 
 ---
 src: LieGroupsSlides/infinitesimal_rotations_exercise.md
@@ -248,4 +336,24 @@ src: LieGroupsSlides/exercises2.md
 
 ---
 src: LieGroupsSlides/spherical_harmonics_exercises.md
+---
+
+-->
+
+---
+
+# Blank slides
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
 ---

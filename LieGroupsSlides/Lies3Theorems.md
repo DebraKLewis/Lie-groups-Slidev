@@ -31,7 +31,7 @@ We won't prove that.
 
 ---
 
-## Distributions, integral submanifolds, and Frobenius' Theorem
+## Recap: Distributions, integral submanifolds, and Frobenius' Theorem
 
 A $k$-*dimensional distribution* ${\cal D} ⊂ TM$ on a smooth manifold $M$ is a smooth assignment of a $k$-dimensional subspace ${\cal D}_p$ of the tangent space $T_p M$ of $M$ at $p$.
 
@@ -50,7 +50,7 @@ is a Lie subalgebra of ${\cal X}(M)$.
 
 ---
 
-***Examples of distributions.***
+### Examples of distributions
 
 - If we identify the tangent space $T_p \R^n$ with $\R^n$, then any $k$-dimensional subspace $S$ of $\R^n$ determines a $k$-dimensional distribution $\calD$ on $\R^n$ with $\calD_{\xv} = S, \ \ \forall \ \xv \in \R^n$. 
 Involutive.
@@ -103,7 +103,6 @@ $~$
 
 ---
 
-
 ### Left (or right) invariant involutive distributions on Lie groups
 
 A distribution ${\cal D}$ on a manifold $M$ acted on by a Lie group $G$ is $G$-*invariant* if 
@@ -130,6 +129,8 @@ $$
 
 ---
 
+### Subalgebras determine involutive left (or right) invariant distributions
+
 ***Claim:*** A subalgebra $\fh$ of the Lie algebra $\fg$ of a Lie group $G$ determines an involutive 
 $\lozenge$-invariant distribution ${\cal D}$ on $G$ given by
 $$
@@ -147,6 +148,8 @@ $~$
 $~$
 
 ---
+
+#### Proof that subalgebras determine involutive left (or right) invariant distributions
 
 In proving the claim, we'll use the following: 
 
@@ -169,7 +172,8 @@ Hence $\tilde G$ is a nonempty subset of $G$ that is both open and closed in $G$
 
 ---
 
-*Verify the maximal integral submanifold of $\calD$ claim:*
+
+#### Second slide of the proof that subalgebras determine involutive left (or right) invariant distributions: verify the maximal integral submanifold claim
 
 $\lozenge$-invariance of ${\cal D}$ implies that for any $\ h \in H, \ h \cdot H$ is an integral manifold of ${\cal D}$.
 $$
@@ -186,6 +190,8 @@ is an integral curve of $X_\xi^\lozenge$.
 $~$
 
 ---
+
+#### Third slide of the proof that subalgebras determine involutive left (or right) invariant distributions: still verifying the maximal integral submanifold claim
 
 Since $\, \exp(U) \subseteq H, \ {}$ given $\ t \in \R \ {}$ and $\xi \in \fh, \ \exists \ n \in {\mathbb N} \ {}$ such that  
 $$
@@ -206,7 +212,7 @@ $~$
 
 ---
 
-### Local homomorphisms and local formulations of some Lie theorems
+## Local homomorphisms and local formulations of some Lie theorems
 
 A *local homomorphism* between Lie groups $G$ and $H$ is a smooth map $\ f: U \to V,\ {}$ where $U \subseteq G$ is a neighborhood of $1_G$ and $V \subseteq H$ is a neighborhood of $1_H$ such that
 $$
@@ -221,7 +227,6 @@ $f$ is a *local isomorphism* if
 $~$
 Any local homomorphism determines a Lie algebra homomorphism $\ d_1f: \fg \to \fh$.
 
----
 
 ***Claim:***
 
@@ -229,15 +234,15 @@ Any local homomorphism determines a Lie algebra homomorphism $\ d_1f: \fg \to \f
 
 2. If $\fg$ and $\fh$ are isomorphic Lie algebras, then $G$ and $H$ are locally isomorphic Lie groups.
 
-$~$
-*Verify:* If $f$ is a local isomorphism between $G$ and $H$, then since $\exists\ {}$ neighborhood $\tilde U \subseteq \fg$ of $0$ such that $\exp|_{\tilde U}$ is a diffeomorphism onto its image,
+---
+
+#### Proof of the local formulations of some Lie theorems
+
+If $f$ is a local isomorphism between $G$ and $H$, then since $\exists\ {}$ neighborhood $\tilde U \subseteq \fg$ of $0$ such that $\exp|_{\tilde U}$ is a diffeomorphism onto its image,
 $$
 f \circ \exp = \exp \circ d_1f
 $$
 implies that $d_1 f$ is a Lie algebra isomorphism, i.e. a bijective Lie algebra homomorphism.
-$~$
-
----
 
 If $\ \psi : \fg → \fh$ is the Lie algebra isomorphism, then
 $$
@@ -259,6 +264,8 @@ $$
 is a Lie group homomorphism and $\ d_1 ϕ : \fk → \fg \ {}$ is bijective.
 
 ---
+
+#### Second slide in the proof of the local formulations of some Lie theorems
 
 Hence $\ \exists\ {}$ neighborhood $U \subseteq K$ of $1_K$ such that
 - $\phi_U$ is a diffeomorphism onto $\phi(U)$
@@ -290,16 +297,16 @@ $~$
 
 ***Claim:*** If $G$ is Lie group with Lie algebra $\fg$, and $H$ is a normal closed Lie subgroup of $G$, then $\ \fh = T_1H \ {}$ is an ideal in $\fg$, and the Lie algebra of $G/H$ is isomorphic to $\ \fg/\fh$.
 
----
-
 Conversely, if 
 - $H$ is a connected closed Lie subgroup of a connected Lie group $G$, and 
 - $\ \fh=T_1H\ {}$ is an ideal in $\fg$, 
 
 then $H$ is normal.
 
+---
 
-*Verify:* 
+#### Proof of the relationship between normal subgroups and ideals
+
 $$
 \eta ∈ T_1H \ \Longrightarrow\  \exp(t\, \eta) ∈ H \qquad \qquad \forall\ t.
 $$
@@ -311,8 +318,6 @@ and hence
 $$
 [\eta, \xi] = {\smallfrac {\partial^2 \ }{\partial s \partial t} \left . \exp(t \, \eta) \exp(s \, \xi) \exp(t \, \eta)^{-1} \right |_{s = t = 0}} \in \fh,
 $$
-
----
 
 so $\fh$ is an ideal in $\fg$.
 
@@ -329,6 +334,8 @@ $~$
 The image $\exp(U)$ of a neighborhood $U$ of the origin in $\fg$ under the exponential map generates $G$, so for any $g ∈ G$, $\fh$ is invariant under $\Ad_g$. 
 
 ---
+
+#### Second slide of the proof of the relationship between normal subgroups and ideals
 
 Since 
 - $g \exp(\eta)g^{−1} = \exp(\Ad_g(\eta))$
@@ -347,15 +354,11 @@ $$
 
 $H$ is normal. 
 
----
-
-We showed last week that a morphism of Lie groups determines a morphism of Lie algebras, and
+We know that a morphism of Lie groups determines a morphism of Lie algebras, and
 $$
 \text{Hom}(G_1,G_2) → \text{Hom}(\fg_1, \fg_2)
 $$
 is injective if $G_1$ is connected. 
-
----
 
 We still NTS that a morphism $\psi : \fg_1 → \fg_2$ determines a morphism of Lie groups $\Psi: G_1 → G_2$ with $\ d_1 \Psi = \psi$.
 
@@ -368,9 +371,10 @@ $\fh$ is a Lie algebra with bracket
 $$
 [(\xi, \psi(\xi)), (\eta, \psi(\eta))]_\fk = \lp [\xi, \eta]_\fg, [\psi(\xi), \psi(\eta)]_\fh \rp.
 $$
-$~$
 There is a corresponding connected Lie subgroup 
 $$H \hookrightarrow G_1 × G_2.$$
+
+#### Third slide of the proof of the relationship between normal subgroups and ideals
 
 If $P_1: G_1 \times G_2 \to G_1$ denotes projection onto the first factor, then 
 $$
@@ -378,9 +382,7 @@ d_{(1, 1)}P_1|_{\fh} : \fh \to \fg_1
 $$
 is an isomorphism. 
 
----
-
-Exercise 2.3 implies that $P_1|_ H$ is a covering map. 
+Exercise 2.3 in Kirillov implies that $P_1|_ H$ is a covering map. 
 
 Since $G_1$ is simply-connected, and $H$ is connected, so $P_1|_ H$ is an isomorphism. 
 $~$
@@ -389,8 +391,3 @@ $$
 \Psi := P_2 \circ \iota_H \circ (P_1|_H)^{-1} : G_1 \to G_2,
 $$
 where $\iota_H: H \to G_1 \times G_2$ denotes inclusionn and $P_2$ denotes projection onto the second factor, is a morphism of Lie groups, with $d_1 \Psi = \psi$. 
-
-
----
-
-

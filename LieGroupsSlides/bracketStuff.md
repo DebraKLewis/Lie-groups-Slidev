@@ -1,130 +1,123 @@
-## Tangent vectors as derivations
+### Recap: Tangent vectors and derivations
 
-Tangent vectors can be regarded as existing for the purpose of taking directional derivatives.
-$~$
-We can regard a tangent vector $v_p$ to a manifold $M$ at a point $p$ as an equivalence class of smooth curves $\gamma: (-\epsilon, \epsilon) \to M$ with the equivalence relation 
+If we define a tangent vector $v_p$ to a manifold $M$ at a point $p$ as an equivalence class of smooth curves <br/>$\gamma: (-\epsilon, \epsilon) \to M$ with the equivalence relation 
 $$
-\gamma \approx \tilde \gamma \qquad \Longleftrightarrow \qquad \gamma(0) = \tilde \gamma(0) \quad \text{and} \quad \gamma'(0) = \tilde \gamma'(0)
+\gamma \approx \tilde \gamma \qquad \Longleftrightarrow \qquad \gamma(0) = \tilde \gamma(0) \quad \text{and} \quad \gamma'(0) = \tilde \gamma'(0),
 $$
-and evaluate the directional derivative of $f$ in the direction of $v_p$ as
+we can evaluate the directional derivative of a map $f: M \to N$ in the direction of $v_p$ as
 $$
-v_p(f) = \dd {f(\gamma(t)) } \epsilon
+v_p(f) := \dep {f(\gamma(\epsilon)) } 
 $$
 for some representative $\gamma$ of the equivalence class.
-$~$
 
----
-
-We can also cut to the chase and define a tangent vector at $p$ as a *derivation* at $p$, i.e. a linear map $D_p: \calC^\infty(M) \to \calC^\infty(M)$ satisfying 
+Alternatively, we can define a tangent vector at $p$ as a *derivation* at $p$, i.e. a linear map <br/>$D_p: \mathcal{C}^\infty(M) \to \mathcal{C}^\infty(M)$ satisfying 
 $$
 D_p(f \, g) = D_p(f) g(p) + f(p) D_p(g).
 $$
-$~$
-These two characterizations ae equivalent.
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-
-
+These two characterizations are equivalent.
 
 ---
 
-### Recap: the Lie algebra ${\cal X}(M)$ of smooth vector fields on $M$
+### Recap continued: the Lie algebra $\calX(M)$ of smooth vector fields on $M$
 
-The *Lie derivative* $\, \calL_X: \calC^\infty(M) \to \calC^\infty(M)$ associated to a vector field $V$ is given by
+The *Lie derivative* $\, \calL_X: \mathcal{C}^\infty(M) \to \mathcal{C}^\infty(M)$ associated to a smooth vector field $V$ is given by
 $$
 \calL_X f(p) = X(p)(f) \qquad \qquad \forall \ p \in M.
 $$
-$~$
+<Spacer/>
 
-***Algebraic description of the Lie bracket:***
+#### Algebraic description of the Lie bracket on $\calX(M)$
 
 The Lie bracket $\ [X, Y]\ {}$ of vector fields $X$ and $Y$ is the unique vector field such that 
 $$
 \calL_{[X, Y]} = [\calL_X, \calL_Y] = \calL_X Y.
 $$
-$~$
-The bracket is natural with respect to push-forward by diffeomorphisms: 
-If $\varphi: M \to N$ is a diffeomorphism and $X, Y \in \calX(M)$, then 
-$$
-\varphi_*[X, Y] = [\varphi_* X, \varphi_*Y].
-$$
-$~$
-$~$
+<Spacer/>
+
+***Heads up!*** The Lie bracket of vector fields is also commonly defined with the opposite sign convention. There are sound arguments in favor of both options. 
 
 ---
 
-### Dynamics description of the Lie bracket
+#### Dynamics description of the Lie bracket
 
-If $\calF_t$ denotes the flow at time $t$ of $X$, and ${\mathbf t}$ is a tensor on $M$, then
+If $\mathcal{F}$ denotes the flow of $X$, and $\bm{t}$ is a tensor on $M$, then
 $$
-\ddt \calF_t^* {\mathbf t} \ = \calF_t^*(\calL_X {\mathbf t}).
+{\textstyle \frac {d\ }{d \epsilon}} \mathcal{F}_\epsilon^* \bm{t} = \mathcal{F}_\epsilon^*(\calL_X \bm{t}).
 $$
 In particular,
 $$
-\dd {\calF_t^* Y} t = \calL_X Y = [X, Y].
+\dep {\mathcal{F}_\epsilon^* Y} = \calL_X Y = [X, Y].
 $$
-$~$
+<Spacer/>
+
 The algebraic and dynamics descriptions are equivalent.
-
 Each have their advantages!
+<Spacer/>
 
-$~$
-$~$
-$~$
+#### Naturality with respect to push-forward
+
+If $\varphi: M \to N$ is a diffeomorphism and $X, Y \in \calX(M)$,
+$$
+\varphi_*[X, Y]_M = [\varphi_* X, \varphi_*Y]_N.
+$$
 
 ---
 
-### Relationships between the Lie algebra structures of $\fg$ and $\calX(G)$
+## Relationships between the algebra structures of $\fg$ and $\calX(G)$
 
-$\lozenge$ invariant vector fields on $G$ form a Lie subalgebra of $\calX(G)$, i.e. 
-- they form a subspace of $\calX(G)$, and 
-- the Lie bracket of two $\lozenge$ invariant vector fields is $\lozenge$ invariant 
-(because of naturality of the bracket w.r.t. push-forwards). 
-$~$
+Naturality w.r.t. push-forward of the Lie bracket on $\calX(G) \ \ \Longrightarrow \ \ {}$ the Lie bracket of two $\lozenge$-invariant vector fields is $\lozenge$-invariant.
 
-$\xi \mapsto X_\xi^L\ {}$ (resp. $X_\xi^R$) is a Lie algebra homomorphism (resp. anti-homomorphism), i.e.
+Hence $\lozenge$-invariant vector fields on $G$ form a Lie subalgebra of $\calX(G)$.
+<Spacer />
+
+***Claim:*** $\xi \mapsto X_\xi^L\ {}$ (resp. $X_\xi^R$) is a Lie algebra homomorphism (resp. anti-homomorphism), i.e.
 $$
 [X_\xi^L, X_\eta^L] = X^L_{[\xi, \eta]_{\fg}}
 \sands
 [X_\xi^R, X_\eta^R] = - X^R_{[\xi, \eta]_{\fg}}.
 $$
+<Spacer />
 
-*Verify:* Given $\xi \in \fg$, let
+***Heads up!*** When using the other sign convention for the Lie bracket on $\calX(G)$, the L/R (anti)homomorphisms are swapped.
+
+---
+
+#### Verification that $\xi \mapsto X^L_\xi$ is an algebra homomorphism (first slide)
+
+Given $\xi \in \fg$, let
 $$
 \gamma(t) := \exp(t \, \xi) \sands \phi_t := \lp \calF_\xi^L \rp_t = R_{\gamma(t)},
 $$
+and compute $\ [X_\xi^L, X_\eta^L]\ {}$ using the "dynamic formulation"
+$$
+[X, Y] = \dep {\calF_\epsilon^* Y}.
+$$
+<Spacer size="5px"/>
 
----
-
-and compute $\ [X_\xi^L, X_\eta^L]\ {}$ using
+Evaluating the definitions of the pullback and the left invariant vector field, then regrouping, gives
 $$
-[X, Y] = \dd{\calF_t^* Y} t.
-$$
-$~$
-$$
-\beqa{
-\phi_t^* X_\eta^L(g) &= {\color{red}d_{\phi_t(g)}\phi_t^{-1}} \lp{\color{blue} X_\eta^L(\phi_t(g))}\rp \\
-&={\color{red}d_{\phi_t(g)}\phi_t^{-1}} \lp {\color{blue}d_1 L_{\phi_t(g)}(\eta)} \rp \\
+\eqa{
+\phi_t^* X_\eta^L(g) &= {\color{red}d_{\phi_t(g)}\phi_t^{-1}} \lp{\color{blue} X_\eta^L(\phi_t(g))}\rp \phantom{\sum} \\
+&={\color{red}d_{\phi_t(g)}\phi_t^{-1}} \lp {\color{blue}d_1 L_{\phi_t(g)}(\eta)} \rp \phantom{\int} \\
 &= d_1 \lp {\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}} \rp({\color{blue}\eta}).
 }
 $$
-Regroup, using $\ \phi_t= R_{\gamma(t)}$,
-$$
-\beqa{
-{\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}} &= {\color{red}R_{\gamma(t)}^{-1}} \circ {\color{blue}L_{R_{\gamma(t)}(g)}} \\
-&= {\color{red}R_{\gamma(t)^{-1}}} \circ \lp {\color{blue} L_g \circ L_{\gamma(t)}} \rp \\
-&= {\color{blue}L_g} \circ \lp {\color{red}R_{\gamma(t)^{-1}}} \circ{\color{blue}L_{\gamma(t)}} \rp
-}
-$$
 
 ---
 
-Linearizing at $1$ yields
+#### Second slide of the verification that $\xi \mapsto X^L_\xi$ is an algebra homomorphism
+<Spacer size="5px"/>
+
+$$
+\eqa{
+{\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}} &= {\color{red}R_{\gamma(t)}^{-1}} \circ {\color{blue}L_{R_{\gamma(t)}(g)}} \phantom{\sum} \\
+&= {\color{red}R_{\gamma(t)^{-1}}} \circ \lp {\color{blue} L_g \circ L_{\gamma(t)}} \rp \phantom{\int} \\
+&= {\color{blue}L_g} \circ \lp {\color{red}R_{\gamma(t)^{-1}}} \circ{\color{blue}L_{\gamma(t)}} \rp.
+}
+$$
+<Spacer size="2px"/>
+
+Linearizing ${\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}}: G \to G$ at the identity thus yields
 $$
 d_1 \lp {\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}} \rp
 = d_1 {\color{blue}L_g} \circ d_1 \lp {\color{red}R_{\gamma(t)^{-1}}} \circ {\color{blue}L_{\gamma(t)}} \rp
@@ -132,170 +125,150 @@ d_1 \lp {\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}} \rp
 $$
 so
 $$
-\phi_t^* X_\eta^L(g) = d_1 {\color{blue}L_g}({\color{purple}\Ad_{\gamma(t)}}(\eta)) = X^L_{\Ad_{\gamma(t)}(\eta)}(g).
-$$
-$~$
-$$
-\dd {\Ad_{\gamma(t)}(\eta)} t = \ad_\xi(\eta) = [\xi, \eta]_\fg
-$$
-and linearity of $\ \xi \mapsto X^L_\xi\ {}$ imply that
-$$
-[X_\xi^L, X_\eta^L] = \dd {X^L_{\Ad_{\gamma(t)}(\eta)}} t = X^L_{[\xi, \eta]_\fg}.
+\eqa{
+\phi_t^* X_\eta^L(g) &= d_1 \lp {\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}} \rp({\color{blue}\eta}) \phantom{\sum} \\
+&= d_1 {\color{blue}L_g}({\color{purple}\Ad_{\gamma(t)}}(\eta))\phantom{\int}  \\
+&= X^L_{\Ad_{\gamma(t)}(\eta)}(g).
+}
 $$
 
 ---
+
+#### Third slide of the verification that $\xi \mapsto X^L_\xi$ is an algebra homomorphism
+
+$\gamma(t) := \exp(t \, \xi)\ \ \Longrightarrow$
+$$
+\dep {\Ad_{\gamma(\epsilon)}(\eta)} = \ad_\xi(\eta) = [\xi, \eta]_\fg.
+$$
+
+Linearity of $\ \xi \mapsto X^L_\xi\ \ \Longrightarrow$
+$$
+[X_\xi^L, X_\eta^L] = \dep {X^L_{\Ad_{\gamma(\epsilon)}(\eta)}} = X^L_{[\xi, \eta]_\fg}.
+$$
+<Spacer />
 
 Exchanging the roles of left and right multiplication gives 
 $$
-\phi_t^* X_\eta^R = X^R_{\Ad_{\gamma(t)^{-1}}(\eta)},
+L_{\gamma(t)}^* X_\eta^R = X^R_{\Ad_{\gamma(t)^{-1}}(\eta)},
 $$
-where $\phi_t$ now denotes $L_{\gamma(t)}$.
-
+so the corresponding result for right invariant vector fields follows from
 $$
-[X_\xi^R, X_\eta^R] = - X^R_{[\xi, \eta]_{\fg}}
-$$
-for right invariant vector fields follows from
-$$
-\gamma(t)^{-1} = \exp(t \, \xi)^{-1} = \exp(- t \, \xi)
-$$
-and the Chain Rule.
-$~$
-$~$
-$~$
-
----
-
-## More about the Lie bracket and the exponential map
-
-If $φ: G → H$ is a group homomorphism, then $d_1φ$ is a Lie algebra homomorphism: 
-$$
-d_1φ([\xi, \eta]_\fg) = [d_1φ(\xi),d_1 φ(\eta)]_\fh \qquad \forall \ \xi, \eta ∈ \fg = T_1 G. \vsud
-$$
-Equivalently,
-$$
-d_1 φ \circ \ad_\xi = \ad_{d_1φ(\xi)} \circ d_1 φ.
-$$
-$~$
-*Verify:*  $\ φ$ a group homomorphism $\ \Longrightarrow$
-$$
-φ \lp g \tilde g g^{-1} \rp =  φ(g) φ(\tilde g) φ\lp g^{-1} \rp =  φ(g) φ(\tilde g) φ(g)^{-1} \vsd
-$$
-for all $g, \tilde g \in G$, i.e.
-$$
-φ \circ R_{g^{-1}} \circ L_g = R_{φ(g)^{-1}} \circ L_{φ(g)} \circ φ. \vsd
+\gamma(t)^{-1} = \exp(t \, \xi)^{-1} = \exp(- t \, \xi).
 $$
 
 ---
 
-Linearizing at $1$ gives
+## Actions, infinitesimal generators, orbits, and stabilizers
+
+Recall that a $G$-action on a manifold $M$ is a homorphism $\rho: G \to \text{Diff}(M)$. 
+
+$\text{Diff}(M)$ isn't a Lie group, but many of our results and constructions for Lie group homomorphisms and the action of $G$ on itself by left/right multiplication have natural analogs for more general actions.
+<Spacer size="5px" />
+
+### Infinitesimal generators
+
+An action $\rho$ determines a subalgebra of $\calX(M)$ consisting of *infinitesimal generators*: Given $\xi \in \fg$,  
+
 $$
-d_1 φ \circ \Ad_g = \Ad_{φ(g)} \circ d_1 φ. \vsud
+\xi_M(p) := \dep {\rho(\exp(\epsilon \, \xi))(p)}.
+$$
+<Spacer />
+
+***A classic example:*** $M = \R^3$, $G = SO(3, \R)$, and $\rho(A)(\xv) = A \, \xv$.
+
+Using the Lie algebra homomorphism $\hat {\ } : \R^3 \to {\mathfrak so}(3, \R)$ to describe the infinitesimal generators gives
+$$
+\xi_{\R^3}(\xv) = \dep{\exp(\epsilon \, \hat \xi) \xv} 
+= \dep{(\idm + \epsilon \, \hat \xi + \cdots ) \xv} = \hat \xi \xv = \xi \times \xv.
 $$
 
-Setting $g = \exp(t \, \xi)$ and then differentiating w.r.t. yields
-$$
-d_1 φ \circ \ad_\xi = \ad_{d_1φ(\xi)} \circ d_1 φ.
-$$
-$~$
-***Very important special case:***
-
-Taking $\ φ = L_g \circ R_{g^{-1}}\ {}$gives
-$$
-\Ad_g([\xi, \eta]) = [\Ad_g(\xi), \Ad_g(\eta)] \qquad \forall \ g \in G, \ \xi, \eta ∈ \fg. \vsu
-$$
-$~$
-
----
-
-## In-class example/exercise: $SO(3, \R)$ and infinitesimal rotations
-
-There is a Lie algebra homomorphism between 
-$$
-\setdef {\fg} B {\R^{3 \times 3}} {B + B^T = 0}, \qquad \text{with} \qquad [B, C] = B C - C B,
-$$
-and $\R^3$ with 
-$$[\xv, \yv]_{\R^3} = \xv \times \yv.$$
-
-Use this homomorphism to describe the adjoint representation of $SO(3, \R)$ on ${\mathfrak so}(3, \R)$ in terms of matrix-vector multiplication of $SO(3, \R)$ on $\R^3$
-$~$
-$~$
-$~$
 
 ---
 
-## The *Baker-Campbell-Hausdorff* formula
+#### More examples: infinitesimal multiplication on $G$ and the infinitesimal adjoint action on $\fg$
+
+If $M = G$ and $\rho(g) = \lozenge_g$, then 
+$$
+\xi_G = X_\xi^\blacklozenge,
+$$ 
+where $\blacklozenge = R$ if $\lozenge = L$ and vice versa.
+
+*Verify:* $\lozenge_g(h) = \blacklozenge_h(g) \ \ \Longrightarrow$ 
 
 $$
 \eqa{
-\log(\exp(t \, \xi)(\exp(t \, \eta)) &= t(\xi+\eta) +\smallfrac {t^2} 2[\xi,\eta]+\smallfrac {t^3} {12} \lp [\xi,[\xi,\eta]]-[\eta,[\xi,\eta]] \rp  \\
-& \qquad  + \text{higher order terms involving nested brackets}.
-}
-$$
-
-We've seen that 
-$$
-d_0 \exp = \text{id}_\fg.
-$$
-What about $\ d_\xi \exp\ {}$ for $\xi \neq 0$?
-
-The following formula is proved (Theorem 1.5.2) in Duistermat and Kolk: For any $\xi \in \fg$, 
-$$\beqa{
-d_\xi \exp_G &= d_1 R_{\exp_G(\xi)} \circ \int_0^1 \exp_{GL(\fg)}(s \, \ad_\xi) ds \\
-&= d_1 L_{\exp_G(\xi)} \circ \int_0^1 \exp_{GL(\fg)}(-s \, \ad_\xi) ds.
-}
-$$
-
----
-
-## Infinitesimal generators
-
-An action $\rho$ of a group $G$ on a manifold $M$ determines a subalgebra of vector fields called *infinitesimal generators*. 
-
-$$
-\xi_M(p) := \dd {\rho(\exp(t \, \xi))(p)} t.
-$$
-
-### Examples
-
-If $M = G$ and $\rho(g) = \lozenge_g$, then $\ \xi_G = X_\xi^\blacklozenge,$ where $\blacklozenge = R$ if $\lozenge = L$ and vice versa.
-
-*Verify:* Let $\gamma(t) = \exp(t \, \xi)$.
-
-$$\eqa{
-\xi_G(g) &= \dd {\lozenge_{\gamma(t)}(g)} t \\
-&= \dd {\blacklozenge_g (\gamma(t))} t \\
-&= d_1 \blacklozenge_g(\xi) \\
+\xi_G(g) &= \dep {\lozenge_{\exp(\epsilon \, \xi)}(g)} \phantom{\sum}\\
+&= \dep {\blacklozenge_g (\exp(\epsilon \, \xi))} \phantom{\sum}\\
+&= d_1 \blacklozenge_g(\xi) \phantom{\sum}\\
 &= X_\xi^\blacklozenge(g).
 }
 $$
 
----
-
+<Spacer />
+Infinitesimal generators of the adjoint action: 
 If $M = \fg$ and $\rho(g) = \Ad_g$, then $\ \xi_G = \ad_\xi$. 
-$~$
-***In-class example/exercise, part 2: infinitesimal rotations***
-
-$M = \R^3$, $G = SO(3, \R)$, and $\rho(A)(\pv) = A \pv$.
-
-Use the Lie algebra homomorphism between ${\mathfrak so}(3, \R)$ and $\R^3$ to describe the infinitesimal generators in terms of classical/traditional infinitesimal rotations 
-$$
-\xi_{\R^3}(\pv) = \xi \times \pv.
-$$
-$~$
-$~$
-$~$
-$~$
-$~$
 
 ---
 
-## Stabilizers and isotropy
+### Orbits
 
-Given an action $\rho$ of a Lie group $G$ on a manifold $M$, for any $p \in M$, the *stabilizer (isotropy subgroup)* of $p$ is
+Given $p \in M$, if we define $\Phi_p: G \to M$ by
 $$
-G_p := \{g \in G : g \cdot p := \rho(g)(p) = p \}.
+\Phi_p(g) := g \cdot p,
 $$
-$~$
+then the *orbit* of $p$ is
+$$
+\mathcal{O}_p := \Phi_p(G) = \{g \cdot p : g \in G\}.
+$$
+$G \cdot p$ is another common notation for the orbit of $p$. 
+<Spacer size="5px"/>
+
+Evaluations of infinitesimal generators at $p$ are elements of $T_p \mathcal{O}_p$:
+$$
+\eqa{
+\xi_M(p) &= \dep {\exp(\epsilon \, \xi) \cdot p \,} \phantom{\sum} \\
+&= \dep {\Phi_p(\exp(\epsilon \, \xi))} \phantom{\sum} \\
+&= d_1 \Phi_p(\xi).
+}
+$$
+
+---
+
+#### The tangent bundle of $\mathcal{O}_p$
+
+Taking the directional derivative of both sides of the identity 
+$$
+\Phi_p \circ L_g = \rho(g) \circ \Phi_p
+$$
+in the direction of $\xi$ gives
+$$
+d_g \Phi_p(d_1 L_g(\xi)) 
+= d_p \rho(g)(d_1 \Phi_p(\xi)).
+$$
+Using 
+$$
+X^L_\xi(g) = d_1 L_g(\xi) \sands \xi_M(p) = d_1 \Phi_p(\xi),
+$$
+we obtain
+$$
+d_g \Phi_p(X^L_\xi(g)) = d_p \rho(g)(\xi_M(p)).
+$$
+
+Since $T_g G = \{X^L_\xi(g) \, : \, \xi \in \fg \}$, we have 
+$$
+T_{g \cdot p} \mathcal{O}_p = d_p \rho(g) \lp \{ \xi_M(p) \, : \, \xi \in \fg \} \rp.
+$$ 
+
+---
+
+### Stabilizers and isotropy
+
+Given an action $\rho$ of a Lie group $G$ on a manifold $M$, the *stabilizer (isotropy subgroup)* of a point $p \in M$ is
+$$
+G_p := \Phi_p^{-1}(p) = \{g \in G : g \cdot p = p \}.
+$$
+<Spacer />
+
 ***Claim:*** $G_p$ is a closed Lie subgroup of $G$, with 
 $$
 T_g G_p = \ker d_g \Phi_p = d_1 L_g(\fg_p),
@@ -304,94 +277,15 @@ where
 $$
 \setdef{\fg_p} \xi \fg {\xi_M(p) = 0}.
 $$  
-$~$
-$~$
-$~$
+<Spacer />
+
+*Proof*: See <Link to="isotropy-subgroups-closed">Appendix C</Link> for proof that $G_p$ is closed. 
 
 ---
 
-*Verify:* If we define 
-$$\eqa{
-\Phi_p: G &\to M \\
-\Phi_p(g) &:= g \cdot p, 
-}
-$$
-then 
-$$
-G_p = \Phi_p^{-1}(p).
-$$
-Since $\Phi_p$ is continuous, $G_p$ is a closed subgroup of $G$, and thus a closed Lie subgroup.
-$~$
-$$
-T_g G_p \subseteq \ker d_g \Phi_p,
-$$
-since for any smooth curve $\ \gamma: (-\epsilon, \epsilon) \to G_p\ {}$, $\ \Phi_p \circ \gamma\ {}$ is constant.
+### Orbits ignore isotropy subgroups
 
-To show that $\ T_g G_p \supseteq \ker d_g \Phi_p,\ {}$ given $v_g \in \ker d_g \Phi_p$, we need to construct a curve $\gamma: (-\epsilon, \epsilon) \to G_p\ {}$ with $\gamma'(0) = v_g\ {}$.  
-$~$
-
----
-
-Crucial identity: For any $g \in G$,
-$$
-\Phi_p \circ L_g = \rho(g) \circ \Phi_p,
-$$
-since $\ (g h) \cdot p = g \cdot (h \cdot p)$.
-
-Linearizing at $1$ in the direction of $\eta \in \fg$ gives
-$$
-%d_g \Phi_p(X_\eta^L(g)) = 
-d_g \Phi_p(d_1 L_g(\eta))
-= d_p \rho(g)(d_1 \Phi_p(\eta)).
-%&= d_p \rho(g)(\eta_M(p)).%
-$$
-$~$
-Start with the case $g = 1$: Consider $\ \xi \in \ker d_1 \Phi_p$ and define 
-$$
-\gamma(t) := \exp(t \, \xi), \qquad \text{with}\qquad \gamma'(t) = X_\xi^L(\gamma(t)) = d_1 L_{\gamma(t)}(\xi).
-$$
-
-Taking $g = \gamma(t)$ and $\eta = \xi$, we see that 
-$$
-\smallfrac {d \ }{dt} \Phi_p(\gamma(t)) = d_{\gamma(t)} \Phi_p(d_1 L_{\gamma(t)}(\xi))
-= d_p \rho(\gamma(t))(d_1 \Phi_p(\xi)) = 0.
-$$
-Hence $\gamma(t) \in G_p$. 
-
----
-
-General case: Given $v_g \in \ker d_g \Phi_p$, if we set
-$$
-\xi := d_gL_{g^{-1}}(v_g) \in \fg, \sands \gamma(\epsilon) := g \, \exp(\epsilon \, \xi),
-$$
-then
-$$
-\gamma'(0) = d_1 L_g(\xi) = d_1 L_g(d_gL_{g^{-1}}(v_g)) = d_1 (L_g \circ L_{g^{-1}})(v_g) = v_g,
-$$
-and
-$$\eqa{
-    0 &= d_p\rho(g^{-1})(d_g\Phi_p(v_g)) \\
-    &= d_1 \Phi_p(d_1 L_{g^{-1}}(v_g)) \\
-    &= d_1 \Phi_p(\xi)
-}
-$$
-implies that $\exp(t \, \xi) \in G_p,\ {}$ and hence
-$$
-\Phi_p(\gamma(t)) = \rho(g)(\Phi_p(\exp(t \, \xi))) = \rho(g)(p) = p,
-$$
-since $g \in G_p$.
-
----
-
-### Orbits
-
-For any $p \in M$, 
-$$
-{\cal O}_p = G \cdot p := \{g \cdot p : g \in G\}
-$$
-is the *orbit* of $p$. 
-$~$
-If $h \in G_p$, then for any $g \in G$, 
+If $h \in G_p = \{ g \in G: g \cdot p = p \}$, then for any $g \in G$, 
 $$
 \Phi_p({g h}) = (g h) \cdot p = g \cdot (h \cdot p) = g \cdot p,
 $$
@@ -402,23 +296,12 @@ $$\eqa{
 }
 $$
 
----
-`
 $\tilde \Phi_p$ is injective, with image $G \cdot p$, since 
 $$
 \tilde \Phi_p([g]) = \tilde \Phi_p([h]) \ \Longleftrightarrow \
 g \cdot p = h \cdot p \ \Longleftrightarrow \
 g^{-1} h \in G_p\ \Longleftrightarrow \ [g] = [h].
-$~$
 
-The linearization of the crucial identity again:
-$$
-d_g \Phi_p(X_\eta^L(g)) = 
-d_g \Phi_p(d_1 L_g(\eta))
-= d_p \rho(g)(d_1 \Phi_p(\eta))
-= d_p \rho(g)(\eta_M(p)).
-$$
-$~$
 Hence $\tilde \Phi_p$ is an immersion, and
 $$
 T_p (G \cdot p) = \{ \eta_M(p) : \eta \in \fg \} \approx \fg/\fg_p.
@@ -426,15 +309,16 @@ $$
 
 ---
 
-## Quotient spaces and orbits
+### Quotient spaces and orbits
 
-Given an action $\rho$ of a Lie group $G$ on a manifold $M$, define 
+Given an action $\rho$ of a Lie group $G$ on a manifold $M$, let $M/G$ denote the quotient of $M$ with respect to the equivalence relation
 $$
-M/G := 
+p \equiv q \qquad \Longleftrightarrow q \in G \cdot p.
 $$
 $M/G$ has the quotient topology: $U \subset M/G$ is open $\ \Longleftrightarrow\  \pi^{-1}(U)\ {}$ is open in $M$.
-$~$
-***Example of a non-Hausdorff quotient:***
+<Spacer/>
+
+***Example of a non-Hausdorff quotient by a group action:***
 
 $G = \R^+$, $M = \R$, and $g \cdot p = g \, p$.
 $$
@@ -448,7 +332,9 @@ The only open set containing $[0]$ is $M/G$, so $M/G$ isn't Hausdorff.
 
 ---
 
-***Claim:*** If
+#### A sufficient condition for a Hausdorff quotient
+
+If
 $$
 \setdef R {(p, g \cdot p)} {M \times M} {p \in M, g \in G}
 $$
@@ -473,6 +359,8 @@ $$
 $$
 
 ---
+
+#### Second slide of proof of the sufficient condition for $M/G$ to be Hausdorff
 
 $R$ closed $\ \Longrightarrow$
 $$

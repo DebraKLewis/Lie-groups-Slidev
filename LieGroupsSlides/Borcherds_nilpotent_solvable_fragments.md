@@ -11,7 +11,6 @@ Now look at the subspace $W$ of $V$ fixed by all elements of $\fh$, which is non
 
 ---
 
-Now look at the subspace $W$ of $V$ fixed by all elements of $\fh$, which is nonzero by induction. This is acted on by the 1-dimensional Lie algebra $\fg/\fh$ as $\fh$ is an ideal, and as $\fg/\fh$ acts by a nilpotent endomorphism of $W$ there must be a non-trivial fixed vector.
 
 This theorem shows that if $\fg$ is a Lie algebra of nilpotent endomorphisms of $V$, then there is a flag 
 $$
@@ -47,11 +46,12 @@ $~$
 
 Borcherds [Lecture 11](https://math.berkeley.edu/~reb/courses/261/11.pdf) covers solvable Lie groups and algebras. Some fragments:
 
+"in some sense solvable connected Lie groups are not too far from nilpotent ones: they are given by sticking an abelian group on top of a nilpotent one. For (disconnected) finite groups, the solvable ones can be much more complicated than nilpotent ones."
+
 "a solvable group is one all of whose composition factors are abelian. The term comes from Galois theory, where a polynomial is solvable by radicals (and Artin–Schrier extensions in positive characteristic) if and only if its Galois group is solvable."
 
 "There are obvious analogues of Lie’s theorems for connected solvable Lie groups of matrices. However for disconnected solvable groups the conclusions do not hold. For example, the symmetric group $S_3$ acting on its irreducible 2-dimensional representation has no eigenvectors. And the derived subgroup of a solvable finite group is usually not nilpotent: an example is the solvable symmetric group $S_4$ whose derived subgroup is the alternating group $A_4$."
 
-"in some sense solvable connected Lie groups are not too far from nilpotent ones: they are given by sticking an abelian group on top of a nilpotent one. For (disconnected) finite groups, the solvable ones can be much more complicated than nilpotent ones."
 
 
 
