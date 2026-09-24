@@ -1,14 +1,34 @@
 ## Representations
 
-We typically work with actions that preserve any special structure of the manifold $M$.
+We often work with actions that preserve some special structure of the manifold $M$.
 
 A *representation* of a Lie group *G* is a vector space *V* and group morphism 
 $$\rho: G \to \text{End}(V).$$ 
 If $V$ is finite-dimensional, $\rho$ must be smooth (analytic if $G$ is complex). 
 
-### Examples
+***Notation:*** I often use the notation 
+$$
+g \, v := \rho(g)(v)
+$$ 
+when working with representations.
+<Spacer size="5px" />
+
+A *morphism between representations $V$ and $W$ of $G$* is a linear map $f : V \to W$ that commutes with the  actions: 
+$$
+f \circ ρ_V(g) = ρ_W(g) \circ f \qquad \forall \ g \in G.
+$$
+
+---
+
+### Examples of representations
 
 - For $F = \R$ or $\C$, $F^n$ is a representation of $GL(n, F)$ with the action determined by matrix-vector multiplication.
+
+- $\R^2$ is a representation of $\setdef {S^1} z \C {|z|=1}$, with action determined by scalar multiplication in $\C$ and maps
+$$
+f(x + i \, y) = \begin{bmatrix}x \\ y\end{bmatrix} \sands
+\cos \theta + i \, \sin \theta \mapsto \begin{bmatrix} \cos \theta & - \sin \theta \\ \sin \theta & \ \ \cos \theta \end{bmatrix}.
+$$ 
 
 - $V = T_1 G$, with the *adjoint action* 
 $$
@@ -16,26 +36,6 @@ $$
 $$
 $\quad$ Much more about this example soon!
 
----
-
-***Notation:*** When the action is clear in context, we often use the concise notation
-$$
-g \cdot m = \rho(g)(m).
-$$
-I often use the notation $g \, v$ when working with representations.
-$~$
-
-A *morphism between representations $V$ and $W$ of $G$* is a linear map $f : V \to W$ that commutes with the  actions: 
-$$
-f \circ ρ_V(g) = ρ_W(g) \circ f \qquad \forall \ g \in G.
-$$
-<Spacer />
-
-***Example:*** $\R^2$ is a representation of $\setdef {S^1} z \C {|z|=1}$, with action determined by scalar multiplication in $\C$ and maps
-$$
-f(x + i \, y) = \begin{bmatrix}x \\ y\end{bmatrix} \sands
-\cos \theta + i \, \sin \theta \mapsto \begin{bmatrix} \cos \theta & - \sin \theta \\ \sin \theta & \ \ \cos \theta \end{bmatrix}.
-$$ 
 
 ---
 
@@ -50,7 +50,7 @@ $$
 
 If $M$ is a complex manifold, replace smooth with holomorphic functions on $M$.
 
-Analogously, an action $\rho$ induces <Link to="representations-via-pushforward">representations via pushforward on ${\cal X}(M)$ and ${\cal X}^*(M)$</Link>, 
+Analogously, an action on $M$ induces <Link to="representation-via-pushforward">representations via pushforward on ${\cal X}(M)$ and ${\cal X}^*(M)$</Link>, 
 the spaces of smooth vector fields and one forms on $M$.
 <Spacer size="1px" />
 

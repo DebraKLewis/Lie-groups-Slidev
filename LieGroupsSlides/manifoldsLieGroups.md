@@ -10,7 +10,7 @@ are smooth/analytic maps.
 
 - $F^n$, where $F = \R$ or $\C$, with vector addition
 
-- $\setdef {\R^+} x \R {x>0}$, with scalar multiplicationx
+- $\setdef {\R^+} x \R {x>0}$, with scalar multiplication
 
 - $\setdef {S^1} z \C {|z|=1}$, with scalar multiplication
 
@@ -118,21 +118,24 @@ A (left) *action* of a Lie group $G$ on a manifold $M$ is a map $\ \rho: G \to \
 $$
 \rho(1) = \text{id}_M, \qquad \qquad \rho(g \, h) = \rho(g)\circ \rho(h),
 $$
-and the map
+determines a smooth map
 $$
 \eqa{
 \Phi: G × M &→ M\\
-\Phi(g, m) &:= \rho(g)(m)
+\Phi(g, m) &:= \rho(g)(m).
 }
 $$
-is smooth.
+
+Right actions are defined analogously, but with $\rho(g \, h) = \rho(h)\circ \rho(g)$. <br/>By default, I'll mean a left action when saying/writing 'action', but some authors favor right actions.
 
 Ignoring the technical issues of infinite dimensional manifolds, $\diffM$ is a Lie group, 
 with multiplication given by composition, and an action is a group homomorphism.
 
-Right actions are defined analogously, but with $\rho(g \, h) = \rho(h)\circ \rho(g)$.
+***Notation:*** When the action is clear in context, we often use the concise notation
+$$
+g \cdot m = \rho(g)(m).
+$$
 
-***Heads up:*** By default, I'll mean a left action when saying/writing 'action', but some authors favor right actions.
 
 ---
 
@@ -140,15 +143,17 @@ Right actions are defined analogously, but with $\rho(g \, h) = \rho(h)\circ \rh
 
 - For $F = \R$ or $\C$, $\ GL(n, F)$ acts on $F^n$ by matrix-vector multiplication. 
 
+- The group of *affine transformations* $GL(n, F) \ltimes F^n$ acts on $F^n$:
+$$\rho(A, \mathbf{b})(\xv) := A \xv + \mathbf{b}.$$
+$\ \quad{}$Affine transformations and the subgroup of Euclidean transformations are *semi-direct product* groups, <br/>$\ \quad{}$with group multiplication "dictated" by the action.
+
 - Any Lie group $G$ acts on itself by 
 
     - Left multiplication: $\rho(g) = L_g$, where $L_g(h) := g \, h$,
     - Right multiplication by the inverse: $\rho(g) = R_{g^{-1}}$, where $R_g(h) := h \, g$,
-    - Inner automorphisms: $\rho(g) = L_g \circ R_{g^{-1}}$. <br/> This action is trivial if $G$ is Abelian.
+    - Inner automorphisms: $\rho(g) = L_g \circ R_{g^{-1}}$. <br/> This action is trivial if $G$ is commutative.
     
 - Linearization at the identity of the inner automorphism action determines an action of $G$ on $T_1G$. 
-
-- Any Lie group acts trivially on any manifold: $\rho(g) =  \text{id}_M \quad \forall \ g \in G$.
 
 ---
 
@@ -199,6 +204,7 @@ Continued on next slide.
 ---
 
 #### Second slide of map-preserving actions form groups 
+<Spacer size = "5px" />
 
 - ***Closure under inversion***. $g \in G \ \ \Longrightarrow$ 
 $$

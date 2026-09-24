@@ -120,3 +120,81 @@ $$
 <Spacer size="5px"/>
 
 *Proof:* See, e.g., Corollary 5.24 in Lee's *An Introduction to Manifolds*. 
+
+---
+routeAlias: distributions
+---
+
+## Distributions, integral submanifolds, and Frobenius' Theorem
+
+A $k$-*dimensional distribution* ${\cal D} ⊂ TM$ on a smooth manifold $M$ is a smooth assignment of a $k$-dimensional subspace ${\cal D}_p$ of the tangent space $T_p M$ of $M$ at $p$.
+
+More precisely, for every $p \in M, \exists \ {}$ a neighborhood $U$ of $p$ and vector fields $\ X_1, \ldots, X_k \ \in \calX(U)$ such that 
+$$
+\calD_m = \text{span}\{X_1(m), \ldots, X_k(m)\} \qquad \qquad \forall \ m \in U.
+$$
+$~$
+A vector field $X \in {\cal X}(M)$ *belongs to a distribution* $\calD$ if 
+$$
+X(p) ∈ \calD_p \qquad \forall \ p ∈ M.
+$$
+$~$
+A distribution $\calD$ is *involutive* if the subspace of $\calX(M)$ of vector fields belonging to $\calD$ 
+is a Lie subalgebra of $\calX(M)$.
+
+---
+
+### Examples of distributions
+
+- If we identify the tangent space $T_p \R^n$ with $\R^n$, then any $k$-dimensional subspace $S$ of $\R^n$ determines a $k$-dimensional distribution $\calD$ on $\R^n$ with $\calD_{\xv} = S, \ \ \forall \ \xv \in \R^n$. 
+Involutive.
+
+- $\calD$ on $\R^3$, with $\ \calD_{\xv} := \mbox{span}\{V, W \}$, where 
+$$
+𝑉(𝑥,𝑦,𝑧)= \ev_1 + y \, \ev_3 = (1,0,𝑦) \sands  𝑊(𝑥,𝑦,𝑧)=\ev_2 = (0,1,0).
+$$ 
+$\qquad{}$Not involutive.
+
+- $\calD$ on $\R^n\backslash \{\bzero\}$, with $\ \calD_\xv := \{ \vv \in \R^n : \langle \vv, \xv \rangle = 0 \}, \ {}$. 
+Involutive.
+
+- $\calD$ on $SO(3, \R)$, with $\ \calD_U := \mbox{span}\{U \widehat \ev_1, U \widehat \ev_2 \}$. 
+Not involutive.
+
+---
+routeAlias: integral-manifolds 
+---
+
+### Integral manifolds
+
+An immersed submanifold $N \subseteq M$ is an *integral manifold* of $\calD$ if 
+$$
+T_p N = \calD_p \qquad \forall \ p ∈ N.
+$$
+<Spacer size="5px"/>
+
+*Heads up!* &nbsp; Integral manifolds don't need to be embedded submanifolds.
+<Spacer size="5px"/>
+
+${\cal D}$ is *completely integrable* if $\ \forall \ p ∈ M, \ \exists \ {}$ an integral manifold of $\calD$ containing $p$.
+<Spacer size="5px"/>
+
+A connected integral manifold $N$ of $\calD$ is *maximal* if it contains any other connected integral manifold of $\calD$.
+<Spacer size="5px"/>
+
+***Frobenius' Theorem:*** 
+If $\calD$ is an involutive distribution on $M$, then for every $\  p ∈ M, \ \exists \ {}$ unique maximal connected integral manifold of $\calD$ containing $p$.
+
+---
+
+### Examples of integral manifolds
+
+- Translations of subspaces in $\R^n$. 
+Given a $k$-dimensional subspace $S$ of $\R^n$, and point $\xv \in \R^n$, 
+$$
+N = \{ \xv + \vv : \vv \in S \}
+$$
+$\qquad{}$is an integral submanifold of our first example of a distribution.
+
+- Nested spheres centered at the origin in $\R^n \backslash \{ \mathbf{0} \}$ are integral submanifolds of 
+$$ \calD_\xv := \{ \vv \in \R^n : \langle \vv, \xv \rangle = 0 \}. $$

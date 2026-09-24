@@ -31,86 +31,14 @@ We won't prove that.
 
 ---
 
-## Recap: Distributions, integral submanifolds, and Frobenius' Theorem
-
-A $k$-*dimensional distribution* ${\cal D} ⊂ TM$ on a smooth manifold $M$ is a smooth assignment of a $k$-dimensional subspace ${\cal D}_p$ of the tangent space $T_p M$ of $M$ at $p$.
-
-More precisely, for every $p \in M, \exists \ {}$ a neighborhood $U$ of $p$ and vector fields $\ X_1, \ldots, X_k \ \in \calX(U)$ such that 
-$$
-{\cal D}_m = \text{span}\{X_1(m), \ldots, X_k(m)\} \qquad \qquad \forall \ m \in U.
-$$
-$~$
-A vector field $X \in {\cal X}(M)$ *belongs to a distribution* ${\cal D}$ if 
-$$
-X(p) ∈ {\cal D}_p \qquad \forall \ p ∈ M.
-$$
-$~$
-A distribution ${\cal D}$ is *involutive* if the subspace of ${\cal X}(M)$ of vector fields belonging to ${\cal D}$ 
-is a Lie subalgebra of ${\cal X}(M)$.
-
----
-
-### Examples of distributions
-
-- If we identify the tangent space $T_p \R^n$ with $\R^n$, then any $k$-dimensional subspace $S$ of $\R^n$ determines a $k$-dimensional distribution $\calD$ on $\R^n$ with $\calD_{\xv} = S, \ \ \forall \ \xv \in \R^n$. 
-Involutive.
-
-- $\calD$ on $\R^3$, with $\ \calD_{\xv} := \mbox{span}\{V, W \}$, where 
-$$
-𝑉(𝑥,𝑦,𝑧)= \ev_1 + y \, \ev_3 = (1,0,𝑦) \sands  𝑊(𝑥,𝑦,𝑧)=\ev_2 = (0,1,0).
-$$ 
-$\qquad{}$Not involutive.
-
-- $\calD$ on $\R^n\backslash \{\bzero\}$, with $\ \calD_\xv := \{ \vv \in \R^n : \langle \vv, \xv \rangle = 0 \}, \ {}$. 
-Involutive.
-
-- $\calD$ on $SO(3, \R)$, with $\ \calD_U := \mbox{span}\{U \widehat \ev_1, U \widehat \ev_2 \}$. 
-Not involutive.
-
----
-
-An immersed submanifold $N \subseteq M$ is an *integral manifold* of ${\cal D}$ if 
-$$
-T_p N = {\cal D}_p \qquad \forall \ p ∈ N.
-$$
-$~$
-*Heads up!* &nbsp; Integral manifolds don't need to be embedded submanifolds.
-$~$
-${\cal D}$ is *completely integrable* if $\ \forall \ p ∈ M, \ \exists \ {}$ an integral manifold of ${\cal D}$ containing $p$.
-$~$
-A connected integral manifold $N$ of ${\cal D}$ is *maximal* if it contains any other connected integral manifold of ${\cal D}$.
-$~$
-***Frobenius' Theorem:*** 
-If ${\cal D}$ is an involutive distribution on $M$, then for every $\  p ∈ M, \ \exists \ {}$ unique maximal connected integral manifold of ${\cal D}$ containing $p$.
-
----
-
-### Examples of integral manifolds
-
-- Translations of subspaces in $\R^n$. 
-Given a $k$-dimensional subspace $S$ of $\R^n$, and point $\xv \in \R^n$, 
-$$
-N = \{ \xv + \vv : \vv \in S \}
-$$
-$\qquad{}$is an integral submanifold of our first example of a distribution.
-
-- Nested spheres centered at the origin in $\R^n\backslash \{\bzero\}$ are integral submanifolds of 
-$$ \calD_\xv := \{ \vv \in \R^n : \langle \vv, \xv \rangle = 0 \}. $$
-$~$
-$~$
-$~$
-$~$
-
----
-
 ### Left (or right) invariant involutive distributions on Lie groups
 
-A distribution ${\cal D}$ on a manifold $M$ acted on by a Lie group $G$ is $G$-*invariant* if 
+A <Link to="distributions">distribution</Link> $\calD$ on a manifold $M$ acted on by a Lie group $G$ is $G$-*invariant* if 
 $$
-{\cal D}_{g \cdot p} = d_p \rho(g)({\cal D}_p) \qquad \qquad \forall \ g \in G, p \in M.\phantom{x_\int}
+\calD_{g \cdot p} = d_p \rho(g)(\calD_p) \qquad \qquad \forall \ g \in G, p \in M.\phantom{x_\int}
 $$
 
-The $G$ action takes integral manifolds of a $G$-invariant distribution ${\cal D}$ to integral manifolds:
+The $G$ action takes <Link to="integral-manifolds">integral manifolds</Link> of a $G$-invariant distribution $\calD$ to integral manifolds:
 
 ***Claim:*** If $N$ is an integral manifold of a $G$-invariant distribution ${\cal D}, \, {}$ and $g \in G,\, {}$ then
 $$

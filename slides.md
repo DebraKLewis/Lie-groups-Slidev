@@ -342,7 +342,7 @@ src: LieGroupsSlides/spherical_harmonics_exercises.md
 
 ---
 
-# Blank slides
+## Blank slides
 
 ---
 

@@ -6,6 +6,7 @@ $$
 $$
 
 For our purposes, it will be most useful to regard $\exp(B)$ as the unit time solution of a pair of IVPs on $F^{n \times n}$ determined by $B$.
+<Spacer size="5px"/>
 
 Any matrices $B \in F^{n \times n}$ and $A_0 \in GL(n, F)$ determine a pair of IVPs
 $$
@@ -18,7 +19,7 @@ $$
 
 ---
 
-### Calculating the matrix exponential: a few special cases + Jordan normal form 
+### Calculating the matrix exponential: a few special cases  
 <br/>
 
 #### Diagonal
@@ -97,14 +98,14 @@ $$
 <Spacer size="5px" />
 
 ***Heads up!*** If we have a real matrix with repeated complex conjugate eigenvalue pairs, we may need to work with a block version of $\text{exp}(\lambda \, \idm + B) = e^\lambda \, \text{exp}(B)$, where $\lambda$ is a real $2 \times 2$ block matrix.
-<Spacer size="5px" />
+<Spacer size="8px" />
 
 ### Relationship between the trace, determinant, and exponential
 
 $$
 \det \lp \text{exp}(A) \rp = e^{\operatorname{tr} (A)}.
 $$
-See the appendix for more information.
+<!-- See the appendix for more information. -->
 
 
 ---
@@ -395,6 +396,7 @@ If a homomorphism $\ \varphi: G \to H$ is differentiable at $1$, then
 $$
 \varphi(\exp(\xi)) = \exp(d_1 \varphi(\xi)) \qquad \forall \ \xi \in \fg.
 $$
+<Spacer size="5px" />
 
 *Verify:* Fix $\xi \in \fg$. The homomorphism $\ h: (\R, +) \to H \ {}$ given by
 $$
@@ -405,6 +407,17 @@ $$
 h'(0) = d_1 \varphi(d_0 \exp(\xi)) = d_1 \varphi(\xi),
 $$
 so uniqueness of one parameter subgroups implies $\ h(t) = \exp(t \, d_1 \varphi(\xi))$.
+
+<!--
+---
+
+### Homomorphisms of simply connected Lie groups 
+
+FIX: The group and manifold structures of $G$ give the Lie algebra a lot of control over global behavior. 
+
+If $G$ is simply connected and a morphism $\ f: G \to H$ is differentiable at $1$, then 
+
+-->
 
 ---
 
@@ -486,14 +499,6 @@ $$
 \sands 
 A(\xv \times \yv) = (A \xv) \times (A \yv).
 $$
-
----
-
-### Homomorphisms of connected Lie groups 
-
-FIX: The group and manifold structures of $G$ give the Lie algebra a lot of control over global behavior. 
-
-If $G$ is connected and a morphism $\ f: G \to H$ is differentiable at $1$, then 
 
 ---
 

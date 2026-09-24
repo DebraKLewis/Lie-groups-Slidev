@@ -103,6 +103,8 @@ These relationships between the tangent fibers are not unique to this example!
 
 ### Triviality of the tangent bundle of a Lie group
 
+The description of the tangent fiber at an arbitrary group element in terms of the tangent fiber at the identity in the $O(n, \R)$ calculations isn't a one off thing.
+
 We'll soon see that for any Lie group $G$, if 
 $$L_g: G \to G \sands R_g: G \to G$$
 denote left (respectively right) multiplication by $g$, i.e.
