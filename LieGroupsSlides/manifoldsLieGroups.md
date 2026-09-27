@@ -221,7 +221,7 @@ $\Longrightarrow \ \ G$ is a subgroup of $\diffM$.
 Lie groups must be smooth manifolds, with smooth group operations.
 <Spacer size="2px" />
 
-If the group is a <Link to="constant-rank-level-sets">constant rank level set</Link> or <Link to="regular-level-sets">regular level set</Link>, it is an embedded submanifold of its domain *and* we have nice descriptions of the tangent spaces.
+If the group is a [constant rank level set](constant-rank-level-sets) or [regular level set](regular-level-sets), it is an embedded submanifold of its domain *and* we have nice descriptions of the tangent spaces.
 
 We'll can use this approach to show that the classical matrix groups are Lie groups. <br/>
 (More about this soon.)

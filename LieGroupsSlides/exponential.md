@@ -501,24 +501,47 @@ A(\xv \times \yv) = (A \xv) \times (A \yv).
 $$
 
 ---
+routeAlias: BCH-Lie-Trotter
+---
 
-### Computing/approximating the exponential
+### Products of exponentials and exponentials of sums:<br/> the Baker-Campbell-Hausdorff and Lie–Trotter formulas
 
-The product of two exponentials equals the exponential of the sum only if the bracket of the two algebra elements is trivial!
-
-The *Baker-Campbell-Hausdorff* formula is a series expansion for the product in terms of nested Lie brackets:
+The *Baker-Campbell-Hausdorff* formula is a formal series expansion in terms of nested Lie brackets:
 $$
 \eqa{
-\log(\exp(t \, \xi)(\exp(t \, \eta)) &= t(\xi+\eta) +\smallfrac {t^2} 2[\xi,\eta]+\smallfrac {t^3} {12} \lp [\xi,[\xi,\eta]]-[\eta,[\xi,\eta]] \rp  \\
-& \qquad  + \text{higher order terms involving nested brackets}.
+\exp(t \, \xi)\exp(t \, \eta) &= \exp {\Large (} t(\xi+\eta) +\smallfrac {t^2} 2[\xi,\eta]+\smallfrac {t^3} {12} \lp [[\xi,\eta], \eta] - [[\xi,\eta], \xi]] \rp  \\
+& \qquad \qquad + \text{higher order terms involving nested brackets} {\Large )}.
 }
 $$
+
+Consequences: 
+
+- $(\exp(\xi))^n =  \exp(n \, \xi).$
+
+- The Lie–Trotter product formula
+$$
+\exp(\xi + \eta) = \lim_{n \to \infty} \lp \exp \lp \smallfrac 1 n \, \xi \rp \exp \lp \smallfrac 1 n \, \eta \rp \rp^n.
+$$
+
+- If $G$ is a Lie subgroup of $GL(V)$ for a vector space $V$, then 
+$$\text{tr} (\log (\exp(\xi) \exp(\eta))) = \text{tr} \, \xi + \text{tr} \, \eta.$$
+
+<!-- If $\ad_{[ \xi , \eta]}$ annihilates $\xi$ and $\eta$, then $\ \ \exp(\xi) \exp(\eta) =\exp \lp\xi + \eta + \half [\xi, \eta]\rp.$
+
+<!-- 
+$$
+(\exp(\xi))^n = \underbrace{\exp(\xi) \cdots \exp(\xi)}_{\text{$n$ copies}} 
+= \exp(\underbrace{ \xi + \cdots + \xi)}_{\text{$n$ copies}} 
+= \exp(n \, \xi).
+$$
+
 <Spacer />
 
-We've seen that $d_0 \exp = \text{id}_\fg$. What about $\ d_\xi \exp\ {}$ for $\xi \neq 0$?
-
-ODE techniques (see, e.g. Theorem 1.5.2 in Duistermat and Kolk) can be used to show that
-for any $\xi \in \fg$ 
+The integral formula
+$$
+\log \left(e^{X}e^{Y}\right)=X+\left(\int _{0}^{1}\psi \left(e^{\operatorname {ad} _{X}}~e^{t\operatorname {ad} _{Y}}\right)dt\right)Y.
+$$
+yields a tractable formula for $\ d_\xi \exp\ {}$ when $\xi \neq 0$ (see, e.g. Theorem 1.5.2 in Duistermat and Kolk):
 $$
 \eqa{
 d_\xi \exp_G &= d_1 R_{\exp_G(\xi)} \circ \int_0^1 \exp_{GL(\fg)}(s \, \ad_\xi) ds \\
@@ -526,3 +549,113 @@ d_\xi \exp_G &= d_1 R_{\exp_G(\xi)} \circ \int_0^1 \exp_{GL(\fg)}(s \, \ad_\xi) 
 }
 $$
 
+---
+
+### The Lie–Trotter product formula
+
+$$
+\exp(\xi + \eta) = \lim_{n \to \infty} \lp \exp \lp \smallfrac 1 n \, \xi \rp \exp \lp \smallfrac 1 n \, \eta \rp \rp^n.
+$$
+<Spacer size="5px"/>
+
+*Verify:* The Baker-Campbell-Hausdorff formula $\ \ \Longrightarrow$
+
+$$
+\eqa{
+\lp \exp \lp \smallfrac 1 n \, \xi \rp \exp \lp \smallfrac 1 n \, \eta \rp \rp^n 
+&= \exp \lp \smallfrac 1 n (\xi + \eta) + O \lp n^{-2} \rp \rp^n \phantom{\sum} \\ 
+&= \exp \lp \xi + \eta + O \lp n^{-1} \rp \rp.
+}
+$$
+-->
+
+---
+routeAlias: Cartan-closed-subgroup
+---
+
+## Cartan's closed subgroup theorem
+
+Closed subgroups of Lie groups are closed Lie subgroups.
+
+*Verify:* Let $H$ be a closed subgroup of $G$.<br/>
+Let $\fh$ denote the set of algebra elements in $\fg$ with one parameter subgroups contained in $H$.
+
+***Claim 1.***
+$\ \fh$ is a subspace of $\fg$.
+
+*Verify:* $\fh$ is closed under scalar multiplication, since $\xi \in \fh \ \ \Longleftrightarrow \ \ \exp(t \, \xi) \in H \ \ \forall \ t \in \R$.
+
+If $\xi, \eta \in \fh$, the Lie-Trotter formula and $H$ closed $\ \ \Longrightarrow \ \ {}$ 
+$$
+\exp(\xi + \eta) = \lim_{n \to \infty} \lp \exp \lp \smallfrac 1 n \, \xi \rp \exp \lp \smallfrac 1 n \, \eta \rp \rp^n \in H,
+$$
+so $\fh$ is closed under vector addition.
+
+To obtain a convergent subsequence, we will invoke compactness after slapping an inner product on $\fg$ and normalizing to construct sequences on the unit spheres in $\fg$ and the orthogonal complement of $\fh$ in $\fg$. <br/>
+(Any complement will work.)
+
+---
+
+#### Second slide of proof that closed subgroups of Lie groups are closed Lie subgroups
+
+***Claim 2.*** If $\xi_1, \xi_2, \ldots \ \in \fg$ satisfy
+
+- $\xi_n \neq 0\ {}$ and $\exp(\xi_n) \in H\ \ \ \forall \ n \in \mathbb{N}$,
+- $\lim_{n \to \infty} \xi_n = 0$,
+- $\displaystyle \zeta := \lim_{n \to \infty} \frac {\xi_n}{|\xi_n|}$ exists,
+
+then $\zeta \in \fh$.
+
+*Verify:* Fix $t \neq 0$ and let $k_n$ denote the integer part of $\displaystyle \frac t {|\xi_n|}$.
+Then
+$$
+\eqa{
+\exp(t \, \xi) &= \lim_{n \to \infty} \exp \! \lp  t \, \frac {\xi_n}{|\xi_n|} \rp \phantom{\sum} \\
+&= \lim_{n \to \infty} \exp(k_n \xi_n) \phantom{\sum}\\
+&= \lim_{n \to \infty} \exp(\xi_n)^{k_n} \in H.
+}
+$$
+
+---
+
+#### Third slide of proof that closed subgroups of Lie groups are closed Lie subgroups
+
+***Claim 3.*** There is a a neighborhood $\mathcal{U}$ of $0$ in $\fh$ such that $\exp|_{\mathcal{U}}$ is a bijection onto its image.  
+
+*Verify:* Define $f: \fh \oplus \fh^\perp \to G$, where $\fh^\perp$ is the orthogonal complement to $\fh$ in $\fg$, by
+$$
+f(\xi, \eta) := \exp(\xi) \exp(\eta).
+$$
+The linearization of $f$ at $(0, 0)$ is 
+$$
+d_{(0, 0)}f(\zeta, \omega) = \zeta + \omega,
+$$
+so $f$ is a local diffeomorphism.
+
+Assume there are sequences $\{ \xi_n \}$ in $\fh$ and $\{ \eta_n \}$ in $\fh^\perp$ satisfying
+- $\eta_n \neq 0$ and $f(\xi_n, \eta_n) \in H\ \ \ \forall \ n \in \mathbb{N}$, and
+- $\lim_{n \to \infty} \xi_n + \eta_n = 0$.
+
+We'll obtain a contradiction from this assumption.
+
+---
+
+#### Fourth slide of proof that closed subgroups of Lie groups are closed Lie subgroups
+
+$\exp(\xi_n) \in H$, since $\xi_n \in \fh$, so $f(\xi_n, \eta_n) \in H \ \ \Longrightarrow$
+$$
+\exp(\eta_n) = \exp(\xi_n)^{-1} f(\xi_n, \eta_n) \in H.
+$$
+
+Compactness of the unit sphere in $\displaystyle \fh^\perp \ \ \Longrightarrow \ \ \left \{ \frac {\eta_n} {|\eta_n|} \right \}$ has a convergent subsequence, with limit $\zeta$. 
+
+Claim 2 $\ \ \Longrightarrow \ \ \zeta \in \fh$. 
+
+$\zeta \in \fh \cap \fh^\perp \ \  \Longrightarrow \ \ \zeta = 0$, but $\zeta$ is the limit of a sequence in the unit sphere in $\fh^\perp$. 
+
+Contradiction! No such sequences $\{ \xi_n \}$ in $\fh$ and $\{ \eta_n \}$ in $\fh^\perp$ exist.
+
+$\Longrightarrow \ \ \exists$ neighborhoods $\, \mathcal{U}$ of $0$ in $\fh$ and $\, \mathcal{V}$ of $1$ in $H$ such that $f|_{\mathcal{U} \times \{0\}} = \exp|_{\mathcal{U}}$ is a bijection onto $\mathcal{V}$. 
+<Spacer/>
+
+Finally, we can construct an atlas for $H$ using $\lp \exp|_{\mathcal{U}} \rp^{-1}: \mathcal{V} \to \mathcal{U}$ and  left (or right) multiplication, as for $G$.

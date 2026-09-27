@@ -142,3 +142,49 @@ $$
 since $g \in G_p$.
 
 -->
+
+---
+routeAlias: Hausdoff-quotient-condition
+---
+
+*Proof that if*
+$$
+\setdef R {(p, g \cdot p)} {M \times M} {p \in M, g \in G}
+$$
+*is closed, then the quotient topology on $M/G$ is Hausdorff.* 
+
+Given $p, \tilde p \in M$, if $\{ V_j\}$ and $\{ \tilde V_j \}$ are nested bases of nbhds of $p$ and $\tilde p$, then
+$$
+U_j := \pi(V_j) \sands \tilde U_j := \pi(\tilde V_j)
+$$
+are nested bases of nbhds of $[p]$ and $[\tilde p]$. 
+
+We need to show that
+$$
+U_j \cap \tilde U_j \neq \emptyset \quad \forall \ j \qquad \Longrightarrow \qquad [p] = [\tilde p].
+$$
+<Spacer size="5px"/>
+
+$U_j \cap \tilde U_j \neq \emptyset \quad \Longrightarrow \quad \exists \ m_j \in V_j, \tilde m_j \in \tilde V_j, \ \text{and} \ g_j, \tilde g_j \in G\ {}$ satisfying
+$$
+g_j \cdot m_j = \tilde g_j \cdot \tilde m_j,
+$$ 
+
+---
+
+#### Second slide of proof of the sufficient condition for $M/G$ to be Hausdorff
+<Spacer size="5px"/>
+
+and hence
+$$
+(m_j, \tilde m_j) = (m_j, (\tilde g_j^{-1} g_j) \cdot p_j) \in R.
+$$
+<Spacer size="5px"/>
+
+$R$ closed $\ \Longrightarrow$
+$$
+(p, \tilde p) = \lim_{j \to \infty}(m_j, \tilde m_j) \in R,
+$$
+so $\exists \ g \in G\ {}$ such that $\ \tilde p = g \cdot p, \ {}$ and hence $\ [\tilde p] = [p]$.
+
+

@@ -1,27 +1,25 @@
 ## Lie's three theorems
+<Spacer/>
 
-Lie's "three theorems" establish fundamental relationships between Lie algebras and connected Lie groups. 
-$~$
- 1. For any Lie group $G$, the map
+1. For any Lie group $G$, the map
 $$H → \fh := T_1 H$$
-$\quad \ {}$is a bijection between the set of connected Lie subgroups of $G$ and the set of Lie 
-$\quad \ {}$subalgebras of $\fg$.
+$\quad \ {}$is a bijection between the set of connected Lie subgroups of $G$ and the set of Lie subalgebras of $\fg$.
 
 2. If $G_1$ is a connected and simply connected Lie group, then for any Lie group $G_2$, 
 $$
-\text{Hom}(G_1, G_2) = \text{Hom}(\fg_1, \fg_2).
+\text{Hom}(G_1, G_2) \approx \text{Hom}(\fg_1, \fg_2).
 $$
 
 3. Any finite-dimensional Lie algebra is isomorphic to the Lie algebra of some Lie group.
-$~$
+<Spacer/>
+
+***Corollary:*** For any finite-dimensional Lie algebra $\fg$, there is a unique (up to isomorphism) connected simply-connected Lie group $G$ with Lie algebra $\fg$. 
+
+If $\widetilde G$ is a connected Lie group with Lie algebra $\fg$, then there is a discrete central subgroup $Z ⊂ G$ such that $\widetilde G \approx G/Z$.
 
 ---
 
-*Corollary:* For any finite-dimensional Lie algebra $\fg$, there is a unique (up to isomorphism) connected simply-connected Lie group $G$ with Lie algebra $\fg$. 
-$~$
-If $\widetilde G$ is a connected Lie group with Lie algebra $\fg$, then there is a discrete central subgroup $Z ⊂ G$ such that $\widetilde G = G/Z$.
-$~$
-We'll (mostly) prove 1. today, and defer the proof of 2.
+We'll (mostly) prove 1., and defer the proof of 2.
 $~$
 The proof of 3.  relies on Ado's Theorem:
 

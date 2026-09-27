@@ -1,94 +1,36 @@
-### Recap: Tangent vectors and derivations
-
-If we define a tangent vector $v_p$ to a manifold $M$ at a point $p$ as an equivalence class of smooth curves <br/>$\gamma: (-\epsilon, \epsilon) \to M$ with the equivalence relation 
-$$
-\gamma \approx \tilde \gamma \qquad \Longleftrightarrow \qquad \gamma(0) = \tilde \gamma(0) \quad \text{and} \quad \gamma'(0) = \tilde \gamma'(0),
-$$
-we can evaluate the directional derivative of a map $f: M \to N$ in the direction of $v_p$ as
-$$
-v_p(f) := \dep {f(\gamma(\epsilon)) } 
-$$
-for some representative $\gamma$ of the equivalence class.
-
-Alternatively, we can define a tangent vector at $p$ as a *derivation* at $p$, i.e. a linear map <br/>$D_p: \mathcal{C}^\infty(M) \to \mathcal{C}^\infty(M)$ satisfying 
-$$
-D_p(f \, g) = D_p(f) g(p) + f(p) D_p(g).
-$$
-These two characterizations are equivalent.
-
 ---
 
-### Recap continued: the Lie algebra $\calX(M)$ of smooth vector fields on $M$
+## Relationships between the algebra structures of $\fg$ and $\calX(G)$ 
+<Spacer size="5px"/>
 
-The *Lie derivative* $\, \calL_X: \mathcal{C}^\infty(M) \to \mathcal{C}^\infty(M)$ associated to a smooth vector field $V$ is given by
+Naturality with respect to pullback of the [Lie bracket on $\calX(G)$](algebra-vector-fields-dynamic) <br/> $\quad \Longrightarrow \ \ {}$ the Lie bracket of two $\lozenge$-invariant vector fields $X$ and $Y$ is $\lozenge$-invariant:
 $$
-\calL_X f(p) = X(p)(f) \qquad \qquad \forall \ p \in M.
-$$
-<Spacer/>
-
-#### Algebraic description of the Lie bracket on $\calX(M)$
-
-The Lie bracket $\ [X, Y]\ {}$ of vector fields $X$ and $Y$ is the unique vector field such that 
-$$
-\calL_{[X, Y]} = [\calL_X, \calL_Y] = \calL_X Y.
-$$
-<Spacer/>
-
-***Heads up!*** The Lie bracket of vector fields is also commonly defined with the opposite sign convention. There are sound arguments in favor of both options. 
-
----
-
-#### Dynamics description of the Lie bracket
-
-If $\mathcal{F}$ denotes the flow of $X$, and $\bm{t}$ is a tensor on $M$, then
-$$
-{\textstyle \frac {d\ }{d \epsilon}} \mathcal{F}_\epsilon^* \bm{t} = \mathcal{F}_\epsilon^*(\calL_X \bm{t}).
-$$
-In particular,
-$$
-\dep {\mathcal{F}_\epsilon^* Y} = \calL_X Y = [X, Y].
-$$
-<Spacer/>
-
-The algebraic and dynamics descriptions are equivalent.
-Each have their advantages!
-<Spacer/>
-
-#### Naturality with respect to push-forward
-
-If $\varphi: M \to N$ is a diffeomorphism and $X, Y \in \calX(M)$,
-$$
-\varphi_*[X, Y]_M = [\varphi_* X, \varphi_*Y]_N.
+\lozenge_g^* [X, Y] = [\lozenge_g^* X, \lozenge_g^* Y ] = [X, Y].
 $$
 
----
-
-## Relationships between the algebra structures of $\fg$ and $\calX(G)$
-
-Naturality w.r.t. push-forward of the Lie bracket on $\calX(G) \ \ \Longrightarrow \ \ {}$ the Lie bracket of two $\lozenge$-invariant vector fields is $\lozenge$-invariant.
-
-Hence $\lozenge$-invariant vector fields on $G$ form a Lie subalgebra of $\calX(G)$.
+Hence the $\lozenge$-invariant vector fields on $G$, $\{ X_\xi^\lozenge \, : \, \xi \in \fg \}$,
+form a Lie subalgebra of $\calX(G)$.
 <Spacer />
 
 ***Claim:*** $\xi \mapsto X_\xi^L\ {}$ (resp. $X_\xi^R$) is a Lie algebra homomorphism (resp. anti-homomorphism), i.e.
 $$
-[X_\xi^L, X_\eta^L] = X^L_{[\xi, \eta]_{\fg}}
+[X_\xi^L, X_\eta^L]_{\calX(G)} = X^L_{[\xi, \eta]_{\fg}}
 \sands
-[X_\xi^R, X_\eta^R] = - X^R_{[\xi, \eta]_{\fg}}.
+[X_\xi^R, X_\eta^R]_{\calX(G)} = - X^R_{[\xi, \eta]_{\fg}}.
 $$
 <Spacer />
 
-***Heads up!*** When using the other sign convention for the Lie bracket on $\calX(G)$, the L/R (anti)homomorphisms are swapped.
+***Heads up!*** When using the other sign convention for the [Lie bracket on $\calX(G)$](algebra-vector-fields-algebraic), the L/R (anti)homomorphisms are swapped.
 
 ---
 
-#### Verification that $\xi \mapsto X^L_\xi$ is an algebra homomorphism (first slide)
+#### Proof that $\xi \mapsto X^L_\xi$ is an algebra homomorphism (first of three slides)
 
 Given $\xi \in \fg$, let
 $$
 \gamma(t) := \exp(t \, \xi) \sands \phi_t := \lp \calF_\xi^L \rp_t = R_{\gamma(t)},
 $$
-and compute $\ [X_\xi^L, X_\eta^L]\ {}$ using the "dynamic formulation"
+and compute $\ [X_\xi^L, X_\eta^L]\ {}$ using the [dynamic formulation](algebra-vector-fields-dynamic)
 $$
 [X, Y] = \dep {\calF_\epsilon^* Y}.
 $$
@@ -105,7 +47,7 @@ $$
 
 ---
 
-#### Second slide of the verification that $\xi \mapsto X^L_\xi$ is an algebra homomorphism
+#### Second slide of the proof that $\xi \mapsto X^L_\xi$ is an algebra homomorphism
 <Spacer size="5px"/>
 
 $$
@@ -160,14 +102,14 @@ $$
 
 ## Actions, infinitesimal generators, orbits, and stabilizers
 
-Recall that a $G$-action on a manifold $M$ is a homorphism $\rho: G \to \text{Diff}(M)$. 
+A $G$-action on a manifold $M$ is a group homorphism $\rho: G \to \text{Diff}(M)$. 
 
 $\text{Diff}(M)$ isn't a Lie group, but many of our results and constructions for Lie group homomorphisms and the action of $G$ on itself by left/right multiplication have natural analogs for more general actions.
 <Spacer size="5px" />
 
 ### Infinitesimal generators
 
-An action $\rho$ determines a subalgebra of $\calX(M)$ consisting of *infinitesimal generators*: Given $\xi \in \fg$,  
+An action $\rho$ determines a subalgebra of $\calX(M)$ of *infinitesimal generators*: Given $\xi \in \fg$ and $p \in M$,  
 
 $$
 \xi_M(p) := \dep {\rho(\exp(\epsilon \, \xi))(p)}.
@@ -210,31 +152,33 @@ If $M = \fg$ and $\rho(g) = \Ad_g$, then $\ \xi_G = \ad_\xi$.
 
 ---
 
-### Orbits
+## Orbits
 
 Given $p \in M$, if we define $\Phi_p: G \to M$ by
 $$
-\Phi_p(g) := g \cdot p,
+\Phi_p(g) := g \cdot p = \rho(g)(p),
 $$
-then the *orbit* of $p$ is
+then the *orbit* $\mathcal{O}_p$ (AKA $\, G \cdot p$) of $p$ is
 $$
 \mathcal{O}_p := \Phi_p(G) = \{g \cdot p : g \in G\}.
 $$
-$G \cdot p$ is another common notation for the orbit of $p$. 
-<Spacer size="5px"/>
+<Spacer size="1px"/>
 
-Evaluations of infinitesimal generators at $p$ are elements of $T_p \mathcal{O}_p$:
+***Claim:*** $\ T_p \mathcal{O}_p = \{ \xi_M(p) \, : \, \xi \in \fg \}$. 
+
+*Verify:* We can express a parametrized curve through $p$ in $\mathcal{O}_p$ as the image under $\Phi_p$ of a curve $\gamma: I \to G$<br/> with $\gamma(0) = 1$. If $\xi := \gamma'(0)$, then
+
 $$
 \eqa{
-\xi_M(p) &= \dep {\exp(\epsilon \, \xi) \cdot p \,} \phantom{\sum} \\
-&= \dep {\Phi_p(\exp(\epsilon \, \xi))} \phantom{\sum} \\
-&= d_1 \Phi_p(\xi).
+\dep {\Phi_p(\gamma(\epsilon))} &= d_1 \Phi_p(\xi) \phantom{\sum}\\
+&= \dep {\exp(\epsilon \, \xi) \cdot p} \phantom{\sum}\\
+&= \xi_M(p).
 }
 $$
 
 ---
 
-#### The tangent bundle of $\mathcal{O}_p$
+### The tangent bundle of $\mathcal{O}_p$
 
 Taking the directional derivative of both sides of the identity 
 $$
@@ -256,7 +200,7 @@ $$
 
 Since $T_g G = \{X^L_\xi(g) \, : \, \xi \in \fg \}$, we have 
 $$
-T_{g \cdot p} \mathcal{O}_p = d_p \rho(g) \lp \{ \xi_M(p) \, : \, \xi \in \fg \} \rp.
+T_{g \cdot p} \mathcal{O}_p = d_p \rho(g) (T_p \mathcal{O}_p) .
 $$ 
 
 ---
@@ -279,32 +223,35 @@ $$
 $$  
 <Spacer />
 
-*Proof*: See <Link to="isotropy-subgroups-closed">Appendix C</Link> for proof that $G_p$ is closed. 
+*Verify*: $G_p$ is a subgroup of $G$. <br/>
+The action is smooth with respect to both $G$ and $M$, so $G_p = \Phi_p^{-1}(p)$ is closed, and 
+[Cartan's closed subgroup theorem](Cartan-closed-subgroup) implies $G_p$ is a closed Lie subgroup of $G$. 
 
 ---
 
 ### Orbits ignore isotropy subgroups
 
-If $h \in G_p = \{ g \in G: g \cdot p = p \}$, then for any $g \in G$, 
+If $h \in G_p$, then for any $g \in G$, 
 $$
 \Phi_p({g h}) = (g h) \cdot p = g \cdot (h \cdot p) = g \cdot p,
 $$
-so $\Phi_p$ determines a map 
-$$\eqa{
-\tilde \Phi_p: G/G_p &\to M \\
-\tilde \Phi_p([g]) &:= g \cdot p, 
+so $\Phi_p$ drops to a map $\, \tilde \Phi_p: G/G_p \to M$:
+$$
+\tilde \Phi_p([g]) := \Phi_p(g) = g \cdot p. 
+$$
+
+$\tilde \Phi_p$ is injective,  since 
+$$
+\eqa{
+\tilde \Phi_p([g_1]) = \tilde \Phi_p([g_2]) \quad &\Longleftrightarrow \quad g_1 \cdot p = g_2 \cdot p \\
+&\Longleftrightarrow \quad g_1^{-1} g_2 \in G_p\\
+&\Longleftrightarrow \quad [g_1] = [g_2],
 }
 $$
-
-$\tilde \Phi_p$ is injective, with image $G \cdot p$, since 
+with image $\mathcal{O}_p$. Hence $\tilde \Phi_p$ is an immersion, and $\mathcal{O}_p$ is an immersed submanifold of $M$ with
 $$
-\tilde \Phi_p([g]) = \tilde \Phi_p([h]) \ \Longleftrightarrow \
-g \cdot p = h \cdot p \ \Longleftrightarrow \
-g^{-1} h \in G_p\ \Longleftrightarrow \ [g] = [h].
-
-Hence $\tilde \Phi_p$ is an immersion, and
-$$
-T_p (G \cdot p) = \{ \eta_M(p) : \eta \in \fg \} \approx \fg/\fg_p.
+T_p \mathcal{O}_p = %\{ \eta_M(p) : \eta \in \fg \} 
+d_p \Phi_p(\fg) \approx \fg/\fg_p.
 $$
 
 ---
@@ -313,9 +260,9 @@ $$
 
 Given an action $\rho$ of a Lie group $G$ on a manifold $M$, let $M/G$ denote the quotient of $M$ with respect to the equivalence relation
 $$
-p \equiv q \qquad \Longleftrightarrow q \in G \cdot p.
+p \equiv q \quad \Longleftrightarrow \quad q \in \mathcal{O}_p,
 $$
-$M/G$ has the quotient topology: $U \subset M/G$ is open $\ \Longleftrightarrow\  \pi^{-1}(U)\ {}$ is open in $M$.
+with the quotient topology: $U \subset M/G$ is open $\ \Longleftrightarrow\  \pi^{-1}(U)\ {}$ is open in $M$.
 <Spacer/>
 
 ***Example of a non-Hausdorff quotient by a group action:***
@@ -334,70 +281,42 @@ The only open set containing $[0]$ is $M/G$, so $M/G$ isn't Hausdorff.
 
 #### A sufficient condition for a Hausdorff quotient
 
-If
+***Claim:*** If
 $$
 \setdef R {(p, g \cdot p)} {M \times M} {p \in M, g \in G}
 $$
 is closed, then the quotient topology on $M/G$ is Hausdorff. 
 
-*Verify:* Given $p, \tilde p \in M$, if $\{ V_j\}$ and $\{ \tilde V_j \}$ are nested bases of nbhds of $p$ and $\tilde p$, then
-$$
-U_j := \pi(V_j) \sands $\tilde U_j := \pi(\tilde V_j)
-$$
-are nested bases of nbhds of $[p]$ and $[\tilde p]$. NTS that
-$$
-U_j \cap \tilde U_j \neq \emptyset \quad \forall \ j \qquad \Longrightarrow \qquad [p] = [\tilde p].
-$$
-
-$U_j \cap \tilde U_j \neq \emptyset \ \Longrightarrow \ \exists \ m_j \in V_j, \tilde m_j \in \tilde V_j, \ \text{and} \ g_j, \tilde g_j \in G\ {}$ satisfying
-$$
-g_j \cdot m_j = \tilde g_j \cdot \tilde m_j,
-$$ 
-and hence
-$$
-(m_j, \tilde m_j) = (m_j, (\tilde g_j^{-1} g_j) \cdot p_j) \in R.
-$$
-
----
-
-#### Second slide of proof of the sufficient condition for $M/G$ to be Hausdorff
-
-$R$ closed $\ \Longrightarrow$
-$$
-(p, \tilde p) = \lim_{j \to \infty}(m_j, \tilde m_j) \in R,
-$$
-so $\exists \ g \in G\ {}$ such that $\ \tilde p = g \cdot p, \ {}$ and hence $\ [\tilde p] = [p]$.
-$~$
+*[Proof](Hausdoff-quotient-condition) in Appendix B.*
+<Spacer/>
 
 ***Claim:*** $M/G$ has a smooth manifold structure such that $\ \pi: M \to M/G \ {}$ is a submersion $\ \Longleftrightarrow \ R\ {}$ is a closed submanifold of $\ M \times M$. 
 
-See, e.g., Theorem 4.1.20 in the *Foundations of Mechanics* excerpt for the proof. 
-$~$
+See, e.g., Theorem 4.1.20 in *Foundations of Mechanics* for the proof. 
+<Spacer/>
 
 ***Special case:*** If $H$ is a closed subgroup of $G$, then $G/H$ is a smooth manifold and the projection is a submersion.
-$~$
-$~$
-$~$
+
 
 ---
 
 ## Free, effective, and proper actions
 
-An action is *free* $\ \Longleftrightarrow \ {}$ for every $p \in M$ the map $\Phi_p: G \to M$ given by
-$$\Phi_p(g) := g \cdot p
-$$
+An action is *free* $\ \Longleftrightarrow \ {}$ for every $p \in M$ the map $\Phi_p: G \to M$ 
 is injective, i.e. $G_p$ is trivial for all $p \in M$.
-$~$
-An action is *effective* (or *faithful*) $\ \Longleftrightarrow \ {}$ it is injective, i.e. if 
+
+An action $\rho: G \to \diffM$ is *effective* (or *faithful*) $\ \Longleftrightarrow \ \rho$  is injective, i.e. if 
 $$\rho(g) = \text{id}_M \qquad \Longleftrightarrow \qquad g = 1.$$
-$~$
-An action is *proper* $\ \Longleftrightarrow \ {}$ the map 
-$$\eqa{
+
+An action  is *proper* $\ \Longleftrightarrow \ {}$ the map 
+$$
+\eqa{
 \Psi: G \times M &\to M \times M \\
 (g, p) &\mapsto (p, g \cdot p)
 }
 $$
 is proper, i.e. preimages of compact sets are compact.
+<Spacer size="5px"/>
 
 If $G$ acts freely and properly on $M$, then 
 - $𝜋:𝑀→𝑀/𝐺 \ {}$ is smooth.

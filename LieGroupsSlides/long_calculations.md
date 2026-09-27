@@ -1,6 +1,5 @@
 ---
-routeAlias: isotropy-subgroups-closed
----
+routeAlias: induced-representations
 
 ### Induced representations on vector fields 
 

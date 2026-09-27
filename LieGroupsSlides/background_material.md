@@ -1,12 +1,18 @@
 
 # Appendix A: Background definitions and results for manifolds
 
-- Smooth maps on manifolds: diffeomorphisms, submersions, immersions, and embeddings
+- [Smooth maps on manifolds](immersed-and-embedded-submanifolds): diffeomorphisms, submersions, immersions, and embeddings 
 
 - Relationships between linearizations and local behavior
-    - Inverse Function and Rank Theorems
-    - The constant rank level set theorem
-    - The regular level set theorem
+    - [Inverse Function and Rank Theorems](inverse-function-theorem)
+    - The [constant rank](constant-rank-level-sets) and [regular](regular-level-sets) level set theorems
+
+- Vector fields and distributions
+    - [Tangent vectors and derivations](tangent-vectors")
+    - The Lie bracket of vector fields ([algebraic characterization](algebra-vector-fields-algebraic))
+    - The Lie bracket of vector fields ([dynamic characterization](algebra-vector-fields-dynamic))
+    - [Distributions](distributions)
+    - [Integral manifolds and Frobenius' Theorem](integral-manifolds)
 
 ---
 routeAlias: immersed-and-embedded-submanifolds
@@ -120,6 +126,77 @@ $$
 <Spacer size="5px"/>
 
 *Proof:* See, e.g., Corollary 5.24 in Lee's *An Introduction to Manifolds*. 
+
+---
+routeAlias: tangent-vectors
+---
+
+## Tangent vectors and derivations
+
+If we define a tangent vector $v_p$ to a manifold $M$ at a point $p$ as an equivalence class of smooth curves <br/>$\gamma: (-\epsilon, \epsilon) \to M$ with the equivalence relation 
+$$
+\gamma \sim \tilde \gamma \qquad \Longleftrightarrow \qquad \gamma(0) = \tilde \gamma(0) \quad \text{and} \quad \gamma'(0) = \tilde \gamma'(0),
+$$
+we can evaluate the directional derivative of a map $f: M \to N$ in the direction of $v_p$ as
+$$
+v_p(f) := \dep {f(\gamma(\epsilon)) } 
+$$
+for some representative $\gamma$ of the equivalence class.
+
+Alternatively, we can define a tangent vector at $p$ as a *derivation* at $p$, i.e. a linear map <br/>$D_p: \mathcal{C}^\infty(M) \to \mathcal{C}^\infty(M)$ satisfying 
+$$
+D_p(f \, g) = D_p(f) g(p) + f(p) D_p(g).
+$$
+These two characterizations are equivalent.
+
+---
+routeAlias: algebra-vector-fields-algebraic
+---
+
+## The Lie algebra $\calX(M)$ of smooth vector fields on $M$
+
+The *Lie derivative* $\, \calL_X: \mathcal{C}^\infty(M) \to \mathcal{C}^\infty(M)$ associated to a smooth vector field $V$ is given by
+$$
+\calL_X f(p) = X(p)(f) \qquad \qquad \forall \ p \in M.
+$$
+<Spacer/>
+
+### Algebraic description of the Lie bracket on $\calX(M)$
+
+The Lie bracket $\ [X, Y]\ {}$ of vector fields $X$ and $Y$ is the unique vector field such that 
+$$
+\calL_{[X, Y]} = [\calL_X, \calL_Y].
+$$
+<Spacer/>
+
+***Heads up!*** The Lie bracket of vector fields is also commonly defined with the opposite sign convention. There are sound arguments in favor of both options. 
+
+---
+routeAlias: algebra-vector-fields-dynamic
+---
+
+### Dynamics description of the Lie bracket
+
+If $\mathcal{F}$ denotes the flow of $X$, and $\bm{t}$ is a tensor on $M$, then
+$$
+{\textstyle \frac {d\ }{d \epsilon}} \mathcal{F}_\epsilon^* \bm{t} = \mathcal{F}_\epsilon^*(\calL_X \bm{t}).
+$$
+In particular,
+$$
+\dep {\mathcal{F}_\epsilon^* Y} = \calL_X Y = [X, Y].
+$$
+<Spacer/>
+
+The algebraic and dynamics descriptions are equivalent.
+Each have their advantages!
+<Spacer/>
+
+### Naturality with respect to push-forward
+
+If $\varphi: M \to N$ is a diffeomorphism and $X, Y \in \calX(M)$,
+$$
+\varphi_*[X, Y]_M = [\varphi_* X, \varphi_*Y]_N.
+$$
 
 ---
 routeAlias: distributions

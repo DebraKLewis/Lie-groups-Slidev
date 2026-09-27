@@ -50,7 +50,7 @@ $$
 
 If $M$ is a complex manifold, replace smooth with holomorphic functions on $M$.
 
-Analogously, an action on $M$ induces <Link to="representation-via-pushforward">representations via pushforward on ${\cal X}(M)$ and ${\cal X}^*(M)$</Link>, 
+Analogously, an action on $M$ induces [representations via pushforward](representation-via-pushforward) on ${\cal X}(M)$ and ${\cal X}^*(M)$, 
 the spaces of smooth vector fields and one forms on $M$.
 <Spacer size="1px" />
 

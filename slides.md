@@ -127,10 +127,6 @@ src: LieGroupsSlides/bracketStuff.md
 ---
 
 ---
-src: LieGroupsSlides/closeLieSubgroupsProof.md
----
-
----
 src: LieGroupsSlides/Lies3Theorems.md
 ---
 

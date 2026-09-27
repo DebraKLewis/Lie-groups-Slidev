@@ -18,7 +18,7 @@ An irrational winding on the torus is a Lie subgroup, but not a closed Lie subgr
 
 ***Claim:*** Any closed subgroup of a Lie group $G$ is a closed real Lie subgroup of $G$.
 
-Proof after we've developed more machinery.
+<Link to = "Cartan-closed-subgroup">Proof</Link> after we've developed more <Link to = "BCH-Lie-Trotter">machinery</Link>.
 
 ---
 
@@ -153,10 +153,8 @@ $\Longrightarrow \ \ {}$ If $c$ is a regular value of $f: G \to N$ and $f^{-1}(c
 
 The classical matrix groups are subgroups of $GL(n, F)$, $F = \R$ or $\C$, determined by constraints on the action involving preservation of multilinear forms:
 
-- The *orthogonal group* $\setdef {O(n, \R)} A {GL(n, \R)} {A^T A = \idm}$ 
-preserves the Euclidean inner product.
-
-- The *unitary group* $U(n)$ preserves the Hermitian inner product.
+- The *orthogonal group* $\setdef {O(n, \R)}$ (resp. *unitary group* $U(n)$) 
+preserves the Euclidean (resp. Hermitian) inner product.
 
 - The *special linear group*  $\setdef {SL(n, F)} A {GL(n, F)} {\det A = 1}, \qquad F = \R \text{ or } \C,$ preserves signed volume. 
 
