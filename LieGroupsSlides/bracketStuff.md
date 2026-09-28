@@ -1,5 +1,6 @@
 ---
-
+routeAlias: LR-invariant-vector-fields
+---
 ## Relationships between the algebra structures of $\fg$ and $\calX(G)$ 
 <Spacer size="5px"/>
 
@@ -318,6 +319,8 @@ $$
 is proper, i.e. preimages of compact sets are compact.
 <Spacer size="5px"/>
 
-If $G$ acts freely and properly on $M$, then 
-- $𝜋:𝑀→𝑀/𝐺 \ {}$ is smooth.
-- For any manifold $N$ and map $𝑓:𝑀/𝐺→𝑁, \ f \circ \pi$ smooth $\ \Longrightarrow \ f$ smooth.
+***Claim:*** If $G$ acts freely and properly on $M$, then 
+$𝜋:𝑀→𝑀/𝐺 \ {}$ is smooth, and
+for any manifold $N$ and map $𝑓:𝑀/𝐺→𝑁, \ f \circ \pi$ smooth $\ \Longrightarrow \ f$ smooth.
+
+See, e.g. *Foundations of Mechanics*, R. Abraham and J.E. Marsden, for the proof.

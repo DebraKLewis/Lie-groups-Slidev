@@ -202,7 +202,7 @@ $$
 routeAlias: distributions
 ---
 
-## Distributions, integral submanifolds, and Frobenius' Theorem
+## Distributions
 
 A $k$-*dimensional distribution* ${\cal D} ⊂ TM$ on a smooth manifold $M$ is a smooth assignment of a $k$-dimensional subspace ${\cal D}_p$ of the tangent space $T_p M$ of $M$ at $p$.
 
@@ -210,12 +210,14 @@ More precisely, for every $p \in M, \exists \ {}$ a neighborhood $U$ of $p$ and 
 $$
 \calD_m = \text{span}\{X_1(m), \ldots, X_k(m)\} \qquad \qquad \forall \ m \in U.
 $$
-$~$
+<Spacer size="5px"/>
+
 A vector field $X \in {\cal X}(M)$ *belongs to a distribution* $\calD$ if 
 $$
 X(p) ∈ \calD_p \qquad \forall \ p ∈ M.
 $$
-$~$
+<Spacer size="5px"/>
+
 A distribution $\calD$ is *involutive* if the subspace of $\calX(M)$ of vector fields belonging to $\calD$ 
 is a Lie subalgebra of $\calX(M)$.
 
@@ -223,32 +225,39 @@ is a Lie subalgebra of $\calX(M)$.
 
 ### Examples of distributions
 
-- If we identify the tangent space $T_p \R^n$ with $\R^n$, then any $k$-dimensional subspace $S$ of $\R^n$ determines a $k$-dimensional distribution $\calD$ on $\R^n$ with $\calD_{\xv} = S, \ \ \forall \ \xv \in \R^n$. 
-Involutive.
+<Spacer/>
 
-- $\calD$ on $\R^3$, with $\ \calD_{\xv} := \mbox{span}\{V, W \}$, where 
+- Involutive: If we identify the tangent space $T_p \R^n$ with $\R^n$, then any $k$-dimensional subspace $S$ of $\R^n$ determines a $k$-dimensional distribution $\calD$ on $\R^n$ with 
 $$
-𝑉(𝑥,𝑦,𝑧)= \ev_1 + y \, \ev_3 = (1,0,𝑦) \sands  𝑊(𝑥,𝑦,𝑧)=\ev_2 = (0,1,0).
+\calD_{\xv} = S \qquad \forall \ \xv \in \R^n.
 $$ 
-$\qquad{}$Not involutive.
 
-- $\calD$ on $\R^n\backslash \{\bzero\}$, with $\ \calD_\xv := \{ \vv \in \R^n : \langle \vv, \xv \rangle = 0 \}, \ {}$. 
-Involutive.
+- Involutive: $\calD$ on $\R^n\backslash \{\mathbf{0}\}$, with 
+$$
+\calD_\xv := \{ \vv \in \R^n : \langle \vv, \xv \rangle = 0 \}.
+$$ 
 
-- $\calD$ on $SO(3, \R)$, with $\ \calD_U := \mbox{span}\{U \widehat \ev_1, U \widehat \ev_2 \}$. 
-Not involutive.
+- Not involutive: $\calD$ on $\R^3$, with $\ \calD_{\xv} := \text{span}\{V, W \}$, where 
+$$
+𝑉(𝑥,𝑦,𝑧)= \mathbf{e}_1 + y \, \mathbf{e}_3 = (1,0,𝑦) \sands  𝑊(𝑥,𝑦,𝑧)=\mathbf{e}_2 = (0,1,0).
+$$ 
+
+- Not involutive: $\calD$ on $SO(3, \R)$, with 
+$$
+\calD_U := \text{span}\{U \widehat {\mathbf{e}_1}, U \widehat {\mathbf{e}_2} \},
+$$ 
+$\quad{}$ where $\hat {\ }: \R^3 \to \mathfrak{so}(3)$, $\widehat \xv \, \yv = \xv \times \yv$.
 
 ---
 routeAlias: integral-manifolds 
 ---
 
-### Integral manifolds
+### Integral manifolds and Frobenius' Theorem
 
 An immersed submanifold $N \subseteq M$ is an *integral manifold* of $\calD$ if 
 $$
 T_p N = \calD_p \qquad \forall \ p ∈ N.
 $$
-<Spacer size="5px"/>
 
 *Heads up!* &nbsp; Integral manifolds don't need to be embedded submanifolds.
 <Spacer size="5px"/>
@@ -260,7 +269,7 @@ A connected integral manifold $N$ of $\calD$ is *maximal* if it contains any oth
 <Spacer size="5px"/>
 
 ***Frobenius' Theorem:*** 
-If $\calD$ is an involutive distribution on $M$, then for every $\  p ∈ M, \ \exists \ {}$ unique maximal connected integral manifold of $\calD$ containing $p$.
+If $\calD$ is an involutive distribution on $M$, then for every $\  p ∈ M, \ \exists !\ {}$ maximal connected integral manifold of $\calD$ containing $p$.
 
 ---
 
@@ -271,7 +280,8 @@ Given a $k$-dimensional subspace $S$ of $\R^n$, and point $\xv \in \R^n$,
 $$
 N = \{ \xv + \vv : \vv \in S \}
 $$
-$\qquad{}$is an integral submanifold of our first example of a distribution.
+$\qquad{}$is an integral submanifold of our first example of an involutive distribution.
 
 - Nested spheres centered at the origin in $\R^n \backslash \{ \mathbf{0} \}$ are integral submanifolds of 
-$$ \calD_\xv := \{ \vv \in \R^n : \langle \vv, \xv \rangle = 0 \}. $$
+$$ \calD_\xv := \{ \vv \in \R^n : \langle \vv, \xv \rangle = 0 \}, $$
+our second example of an involutive distribution.
