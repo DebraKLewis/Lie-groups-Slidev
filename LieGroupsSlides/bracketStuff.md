@@ -205,6 +205,8 @@ T_{g \cdot p} \mathcal{O}_p = d_p \rho(g) (T_p \mathcal{O}_p) .
 $$ 
 
 ---
+routeAlias: stabilizers
+---
 
 ### Stabilizers and isotropy
 
@@ -254,6 +256,29 @@ $$
 T_p \mathcal{O}_p = %\{ \eta_M(p) : \eta \in \fg \} 
 d_p \Phi_p(\fg) \approx \fg/\fg_p.
 $$
+
+---
+
+### Kernels and images of Lie group morphisms
+
+***Claim:*** Let $f : G_1 → G_2$ be a morphism of Lie groups. Then 
+- $\ker f$ is a closed Lie subgroup of $G_1$ with Lie algebra $\ker d_{1_{G_1}}f$
+
+- $f$ determines an injective immersion from $G_1/\ker f$ to $G_2$, and
+
+- $\text{im} \, f$ is a Lie subgroup of $G_2$. 
+
+If $\text{im} \, f$ is a closed Lie subgroup of $G_2$, it is isomorphic to $G_1/\ker f$.
+
+*Verify*: $f$ determines an action of $G_1$ on $G_2$:
+$$
+g_1 \cdot g_2 := f(g_1) g_2.
+$$
+
+$\ker f$ is the stabilizer of $1_{G_2}$ with respect to this action, and $\text{im} \, f = \mathcal{O}_{1_{G_2}}$, so the three bullet points follow immediately from our previous results for [stabilizers](stabilizers).
+
+If $\text{im} \,  f$ is an embedded submanifold of $G_2$, the induced map from $G_1/\ker f$ to $\text{im} \,  f$ is a diffeomorphism.
+
 
 ---
 

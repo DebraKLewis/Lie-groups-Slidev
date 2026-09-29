@@ -15,7 +15,7 @@ $$
 
 ***Corollary:*** For any finite-dimensional Lie algebra $\fg$, there is a unique (up to isomorphism) connected simply-connected Lie group $G$ with Lie algebra $\fg$. 
 
-If $\widetilde G$ is a connected Lie group with Lie algebra $\fg$, then there is a discrete central subgroup $Z ⊂ G$ such that $\widetilde G \approx G/Z$.
+If $\widetilde G$ is a connected Lie group with Lie algebra $\fg$, $\exists$ discrete central subgroup $Z ⊂ G$ such that $\widetilde G \approx G/Z$.
 
 ---
 
@@ -25,14 +25,13 @@ If $\widetilde G$ is a connected Lie group with Lie algebra $\fg$, then there is
 We'll (mostly) prove 1. and 2., after developing some machinery over the next few slides.
 <Spacer size="5px"/>
 
-We'll construct connected Lie subgroups by applying [Frobenius' Theorem](integral-manifolds) to [$\lozenge$-invariant vector field](LR-invariant-vector-fields). 
+We'll construct connected Lie subgroups by applying [Frobenius' Theorem](integral-manifolds) to [$\lozenge$-invariant vector fields](LR-invariant-vector-fields). 
 <Spacer size="5px"/>
 
-The proof of 3.  relies on [Ado's Theorem](https://terrytao.wordpress.com/2011/05/10/ados-theorem):
+Proof of 3. uses [Ado's Theorem](https://terrytao.wordpress.com/2011/05/10/ados-theorem):
+Any Lie algebra is isomorphic to a subalgebra of $\,\mathfrak{gl}(n, F), \ F = \R$ or $\C$.
 
-$\quad{}$Any Lie algebra is isomorphic to a subalgebra in $\ gl(n, F), \ F = \R$ or $\C$.
-
-We won't prove that.
+We won't prove Ado's Theorem.
 
 ---
 
@@ -84,32 +83,52 @@ $h \in H \cap h \cdot H$ and maximality of $H \ \ \Longrightarrow \ \ h \cdot H 
 
 ---
 
-#### Second slide of the proof that subalgebras determine Lie subgroups: verify the maximal integral submanifold claim
+#### Second slide of the proof that subalgebras determine Lie subgroups
 <Spacer size="5px"/>
 
-$\lozenge$-invariance of ${\cal D}$ implies that for any $\ h \in H, \ h \cdot H$ is an integral manifold of ${\cal D}$.
+$\lozenge$-invariance of $\calD^\fh$ implies that for any $\ h \in H, \ h \cdot H$ is an integral manifold of $\calD^\fh$.
 $$
 h = h \cdot 1 \in h \cdot H \qquad \Longrightarrow \qquad H \cap h \cdot H \neq \emptyset.
 $$
-<Spacer size="5px"/>
 
 Maximality of $H \ \Longrightarrow \ \ h \cdot H = H. \ {}$ Hence $H$ is closed under multiplication. 
-<Spacer size="5px"/>
 
-Given a neighborhood $\ U \subset \fh\ {}$ of $0$, $\lozenge_g(\exp(U)) \ {}$ is an integral manifold of ${\cal D}$ containing $g,$ since for any $\xi \in \fh,$ 
+Given a neighborhood $\ U \subset \fh\ {}$ of $0$, $\lozenge_g(\exp(U)) \ {}$ is an integral manifold of $\calD^\fh$ containing $g,$ since  
 $$
 t \mapsto \lozenge_g(\exp(t \, \xi)) 
 $$
-is an integral curve of $X_\xi^\lozenge$.
+is an integral curve of $X_\xi^\lozenge$ for any $\xi \in \fh$.
 
 Since $\, \exp(U) \subseteq H, \ {}$ given $\ t \in \R \ {}$ and $\xi \in \fh, \ \exists \ n \in {\mathbb N} \ {}$ such that  
 $$
 \smallfrac t n \, \xi \in U \quad \text{and hence}\quad
 \exp(t \, \xi) = \exp\lp \smallfrac t n \, \xi \rp^n \in H.
 $$
-Hence $\exp(\fh) \subseteq H$. 
+Hence $\exp(\fh) \subseteq H$. <br/>
+The image under the exponential map of a neighborhood of $0$ in $\fh$ is thus a neighborhood of $1$ is $H$.<br/>
+This neighborhood generates a connected Lie group, which equals $H$.
 
-Since $\exp(\fh)$ generates a connected Lie group, $H$ is a Lie group.
+---
+
+### Connected components and universal covers of Lie groups
+
+***Claim:*** The connected component $G^0$ of a real or complex Lie group $G$ that contains the identity element is a Lie subgroup and a normal subgroup of $G$.
+
+*Verify:* Multiplication, inversion, and inner automorphisms are continuous maps that fix the identity element. 
+
+Continuous maps take connected spaces to connected spaces, so the group operations and inner automorphisms preserve $G^0$. 
+<Spacer size="5px"/>
+
+The quotient group $G/G^0$ is discrete, consisting of the "labels" of the connected components of $G$.
+<Spacer size="5px"/>
+
+***Claim:*** The universal cover $\tilde G$ of a connected Lie group $G$ is a Lie group
+such that the covering map
+$p :\tilde G → G$ is a Lie group morphism with kernel isomorphic to the fundamental group of $G$.
+
+$\text{ker}\, p$  is a discrete central subgroup of $\tilde G$.
+
+*Rough idea of proof:* General covering space results guarantee that choices of "upstairs" elements in $\tilde G$ determine unique lifts of the group operations. 
 
 ---
 
@@ -120,16 +139,10 @@ $$
 f(g_1g_2) = f(g_1)f(g_2)
 $$
 when both sides are defined, i.e. when $g_1, g_2$, and $g_1g_2 ∈ U$. 
-<Spacer size="5px"/>
 
-$f$ is a *local isomorphism* if
-- $f$ is a diffeomorphism
-- $f$ and $f^{-1}$ are both local homomorphisms.
-
-<Spacer size="5px"/>
+A diffeomorphism $f$ is a *local isomorphism* if $f$ and $f^{-1}$ are both local homomorphisms.
 
 Any local homomorphism determines a Lie algebra homomorphism $\ d_1f: \fg \to \fh$.
-<Spacer size="5px"/>
 
 ***Claim:***
 
@@ -155,10 +168,13 @@ is a Lie algebra with bracket
 $$
 [(\xi, \psi(\xi)), (\eta, \psi(\eta))]_\fk = \lp [\xi, \eta]_\fg, [\psi(\xi), \psi(\eta)]_\fh \rp.
 $$
-$~$
+
 Let $K$ denote the connected Lie subgroup of $G × H$ with Lie algebra $\fk$. 
 (The existence of $K$ is guaranteed by our earlier versions Lie's Theorems.) 
-<Spacer size="5px"/>
+
+---
+
+#### Second slide in the proof of the local formulations of some Lie theorems
 
 If $P_1: G \times H \to G$ denotes projection onto the first factor, then
 $$
@@ -166,16 +182,9 @@ $$
 $$
 is a Lie group homomorphism and $\ d_1 ϕ : \fk → \fg \ {}$ is bijective.
 
----
-
-#### Second slide in the proof of the local formulations of some Lie theorems
-
-Hence $\ \exists\ {}$ neighborhood $U \subseteq K$ of $1_K$ such that
-- $\phi_U$ is a diffeomorphism onto $\phi(U)$
-- $\phi(1_K) = 1_G$,
-
-so $\phi$ is a local isomorphism.
-<Spacer size="5px"/>
+$\Longrightarrow \ \ \exists\ {}$ neighborhood $U \subseteq K$ of $1_K$ such that
+$\phi|_U$ is a diffeomorphism onto $\phi(U)$ <br/>
+$\Longrightarrow \ \ \phi$ is a local isomorphism.
 
 Analogously, projection $P_2: G \times H \to H$ onto the second factor determines a 
 Lie group homomorphism
@@ -190,45 +199,37 @@ $\tilde \phi \circ \phi^{-1}: G \to H \ {}$ is the desired local isomorphism.
 
 ### Normal subgroup (with some strings attached) $\ \Longleftrightarrow \ {}$ algebra is an ideal
 
-A subgroup $H$ of a group $G$ (not necessarily Lie groups) is *normal* if $H$ is invariant under the action of $G$ on itself by conjugation
-$$
-\rho(g)= L_g \circ R_{g^{-1}},
-$$
-i.e. if $h \in H$, then $g h g^{-1} \in H$ for any $g \in G$.
-$~$
+*Recall:* A subgroup $H$ of a group $G$ (not necessarily Lie groups) is *normal* if $H$ is invariant under inner automorphisms,
+i.e. $h \in H  \ \ \Longrightarrow \ \ g h g^{-1} \in H$ for any $g \in G$.
+
 A subspace $\fh$ of a Lie algebra $\fg$ is an *ideal* if $\fh$ is invariant under the endomorphisms $\ad_\xi: \fg \to \fg$ for all $\xi \in \fg$, i.e. if $\xi \in \fg$ and $\eta \in \fh$, then $[\xi, \eta] \in \fh$.
-$~$
+<Spacer size="5px"/>
 
 ***Claim:*** If $G$ is Lie group with Lie algebra $\fg$, and $H$ is a normal closed Lie subgroup of $G$, then $\ \fh = T_1H \ {}$ is an ideal in $\fg$, and the Lie algebra of $G/H$ is isomorphic to $\ \fg/\fh$.
 
 Conversely, if 
-- $H$ is a connected closed Lie subgroup of a connected Lie group $G$, and 
-- $\ \fh=T_1H\ {}$ is an ideal in $\fg$, 
+$H$ is a connected closed Lie subgroup of a connected Lie group $G$, and 
+$\,\fh=T_1H\,{}$ is an ideal in $\fg$, then $H$ is normal.
 
-then $H$ is normal.
+*Verify:* Normality of $H$ implies
+$$
+\exp(t \, \xi) \exp(s \, \eta) \exp(t \, \xi)^{-1} \in H 
+$$
+$\forall\ s, t \in \R, \xi \in \fg, \eta \in \fh$.
 
 ---
 
-#### Proof of the relationship between normal subgroups and ideals
+#### Second slide of the proof of the relationship between normal subgroups and ideals
 
+Hence
 $$
-\eta ∈ T_1H \ \Longrightarrow\  \exp(t\, \eta) ∈ H \qquad \qquad \forall\ t.
+[\xi, \eta] = {\smallfrac {\partial^2 \ }{\partial s \partial t} \left . \exp(t \, \xi) \exp(s \, \eta) \exp(t \, \xi)^{-1} \right |_{s = t = 0}} \in \fh,
 $$
-Hence normality of $H$ implies
-$$
-\exp(t \, \eta) \exp(s \, \xi) \exp(t \, \eta)^{-1} \in H \qquad \qquad \forall\ s, t \in \R, \xi \in \fg,
-$$
-and hence
-$$
-[\eta, \xi] = {\smallfrac {\partial^2 \ }{\partial s \partial t} \left . \exp(t \, \eta) \exp(s \, \xi) \exp(t \, \eta)^{-1} \right |_{s = t = 0}} \in \fh,
-$$
-
 so $\fh$ is an ideal in $\fg$.
 
-$~$
 For any $\xi \in \fg$, 
 $$
-\Ad(\exp_G(\xi)) = \exp_{GL(\fg)}(\ad_\xi) = \sum_{j = 0}^\infty \smallfrac 1 {j!}(\ad_\xi)^j.
+\textstyle{\Ad(\exp_G(\xi)) = \exp_{GL(\fg)}(\ad_\xi) = \sum_{j = 0}^\infty \frac 1 {j!}(\ad_\xi)^j}.
 $$
 Hence if $\fh$ is an ideal in $\fg$, and $\eta \in \fh$, then 
 $$
@@ -236,7 +237,7 @@ $$
 $$
 <Spacer size="5px"/>
 
-The image $\exp(U)$ of a neighborhood $U$ of the origin in $\fg$ under the exponential map generates $G$, so for any $g ∈ G$, $\fh$ is invariant under $\Ad_g$. 
+The image $\exp(U)$ of a neighborhood $U$ of the origin in $\fg$ generates $G$, so $\fh$ is invariant under $\Ad_g$ for any $g ∈ G$. 
 
 ---
 

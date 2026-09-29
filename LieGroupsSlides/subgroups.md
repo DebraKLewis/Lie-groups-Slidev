@@ -31,16 +31,16 @@ A [regular level set](regular-level-sets) $\, f^{-1}(c)$ of a smooth map $f: M \
 $\Longrightarrow \ \ {}$ If $c$ is a regular value of $f: G \to N$ and $f^{-1}(c)$ is a subgroup of $G$, $f^{-1}(c)$ is a closed Lie subgroup.
 <Spacer size="5px"/>
 
-The classical matrix groups are subgroups of $GL(n, F), F = \R$ or $\C$, determined by constraints on the $GL(n, F)$ action involving preservation of multilinear forms:
+The [classical matrix groups](classical-matrix-groups) are subgroups of $GL(n, F), F = \R$ or $\C$, determined by constraints on the $GL(n, F)$ action involving preservation of multilinear forms:
 
-- The *orthogonal group* $O(n, \R)$ and *unitary group* $U(n)$ 
+- The orthogonal group $O(n, \R)$ and unitary group $U(n)$ 
 preserve inner products.
 
-- The *special linear group*  $SL(n, F)$ preserves signed volume. 
+- The special linear group  $SL(n, F)$ preserves signed volume. 
 
-- The *rotation group* $\ SO(n, \R) = O(n, \R) \cap SL(n, \R)$.
+- The rotation group $\ SO(n, \R) = O(n, \R) \cap SL(n, \R)$.
 
-- The *special unitary group* $SU(n) = U(n) \cap SL(n, \C)$.
+- The special unitary group $SU(n) = U(n) \cap SL(n, \C)$.
 
 These examples, and others, can be shown to be closed Lie subgroups of $GL(n, F)$ by showing that they are level sets of regular values of appropriate maps. 
 

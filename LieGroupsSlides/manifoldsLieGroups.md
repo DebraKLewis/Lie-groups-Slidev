@@ -18,7 +18,8 @@ are smooth/analytic maps.
 
 - the classical matrix groups.
 
-
+---
+routeAlias: classical-matrix-groups
 ---
 
 ## The classical matrix groups
