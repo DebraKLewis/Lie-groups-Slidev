@@ -259,6 +259,105 @@ $$
 
 ---
 
+### Transitive actions and homogeneous spaces
+
+If the action of a Lie group $G$ on a manifold $M$ satisfies 
+$$
+\mathcal{O}_p = M 
+$$
+for some (and hence any) $p \in M$, the action is *transitive* and $M$ is a *homogeneous space*.
+
+All orbits are, by construction, homogeneous spaces.
+
+A tangent vector to a homogeneous space can be expressed as the evaulation of an infinitesimal generator.
+<Spacer size="5px"/>
+
+***Example:*** Spheres in $\R^n$ are orbits of $SO(n, \R)$
+The orbit $\mathcal{O}_\xv$ of a nonzero vector $\xv \in \R^n$ under the usual action of $SO(n, \R)$ is the sphere of radius $||\xv||$.
+
+The isotropy subgroup of $\xv$ is the subgroup of rotations fixing $\xv$. E.g., 
+- $SO(2, \R)_\xv$ is trivial for $\xv \neq \mathbf{0}$
+
+- $SO(3, \R)_\xv \simeq SO(2, \R) \simeq S^1$ for $\xv \neq \mathbf{0}$.
+
+---
+routeAlias: Hopf-fibration
+---
+
+### The Hopf fibration as a map from a Lie group to an orbit
+
+The *Hopf fibration* $\,\pi\, : S^3 \to S^2 \, {}$ can be constructed and interpreted in many ways.
+
+We'll see later that the Hopf fibration is a principal $SO(2, \R)$-bundle. 
+
+For now, we'll consider the action of the Lie group $G$ of *versors* (unit quaternions) on itself by quaternion multiplication. 
+$G$ is homomorphic to $SU(2), \text{Sp}(1)$, and $\text{Spin}(3)$.
+
+- $S^3$ is diffeomorphic to $G$, and
+
+- $S^2$ is diffeomorphic to the orbit $\mathcal{O}_p$ of a versor $p$ with zero real part
+
+$\Longrightarrow \ \ \pi$ can be implemented via the map $g \mapsto g p$. 
+<Spacer size="1px"/>
+
+The spin group $\text{Spin}(n)\,{}$ describes the symmetries of (electrically neutral, uncharged) fermions. 
+
+$\text{Spin}(n)\,{}$ is a double cover of $SO(n, \R)$.<br/> 
+For $n > 2$, $\text{Spin}(n)\,{}$ is simply connected, and thus is the universal cover of $SO(n, \R)$.
+
+---
+
+#### The Lie group of versors
+
+If we denote by $\psi: \R^4 \to {\mathbb H}$ the isomorphism  
+$$
+\psi(\xv) := x_{1}+x_{2} \, \mathbf {i} +x_{3} \, \mathbf {j} + x_{4} \, \mathbf {k},
+$$
+and assign ${\mathbb H}$ the norm determined by $\psi$ and the Euclidean norm on $\R^4$, then $\psi$ is an isometry and
+$G = \psi(S^3)$ is the group of versors, with quaternion multiplication (determined by
+$$
+i² = j² = k² = ijk = -1, \qquad ij = k = -  ji,
+$$
+and cyclic permutations of these relations), as the group operation.
+<Spacer size="5px"/>
+
+If we define 
+$$
+(x_{1}+x_{2} \, \mathbf {i} +x_{3} \, \mathbf {j} + x_{4} \, \mathbf {k})^* :=  x_{1} - x_{2} \, \mathbf {i} - x_{3} \, \mathbf {j} - x_{4} \, \mathbf {k}.
+$$
+the inner product of $\xv, \yv \in {\mathbb H}$ satisfies
+$$
+\langle \xv, \yv \rangle = \half (\xv \yv^* + \yv \xv^*)
+$$
+
+---
+
+#### The action of versors on $\R^3$
+
+Given a versor $g$, define $\rho(g): \R^3 \to \R^3$ by
+$$
+\rho(g)(\xv) := \psi^{-1}(g \, \psi(\xv) \, g^*).
+$$
+
+If $g \in G$ and $p \in {\mathbb H}$, 
+$$
+|g p g^∗|^2 = g p g^∗ g p^∗ g^∗ = g p p^∗ g^∗ = |p|^2
+$$
+$\Longrightarrow \ \ \rho(g)\,{}$ is an isometry. 
+In fact, $\rho$ is the covering map for $G$ over $SO(3, \R)$. <br/>
+(The [Euler-Rodrigues formula](https://en.wikipedia.org/wiki/Euler%E2%80%93Rodrigues_formula) for rotations in $\R^3$ can be expressed in terms of conjugation by an versor.) 
+
+Hence $\Phi_\xv: G \to \R^3$ given by
+$$
+\Phi_\xv(g) := \rho(g)(\xv)
+$$
+has image in $S^2$.
+
+Since $\rho(G) = SO(3, \R)$, which acts transitively on $S^2$, $\Phi_\xv(S^3) = S^2$,
+so we can take $\pi = \Phi_\xv$.
+
+---
+
 ### Kernels and images of Lie group morphisms
 
 ***Claim:*** Let $f : G_1 → G_2$ be a morphism of Lie groups. Then 
@@ -349,3 +448,4 @@ $𝜋:𝑀→𝑀/𝐺 \ {}$ is smooth, and
 for any manifold $N$ and map $𝑓:𝑀/𝐺→𝑁, \ f \circ \pi$ smooth $\ \Longrightarrow \ f$ smooth.
 
 See, e.g. *Foundations of Mechanics*, R. Abraham and J.E. Marsden, for the proof.
+

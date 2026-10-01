@@ -1,3 +1,6 @@
+---
+routeAlias: Lies-three-theorems
+---
 ## Lie's three theorems
 <Spacer size="5px"/>
 
@@ -22,16 +25,21 @@ If $\widetilde G$ is a connected Lie group with Lie algebra $\fg$, $\exists$ dis
 ### Proving Lie's three theorems
 <Spacer size="5px"/>
 
-We'll (mostly) prove 1. and 2., after developing some machinery over the next few slides.
+We'll (mostly) prove theorems 1. and 2., after developing some machinery over the next few slides.
 <Spacer size="5px"/>
 
-We'll construct connected Lie subgroups by applying [Frobenius' Theorem](integral-manifolds) to [$\lozenge$-invariant vector fields](LR-invariant-vector-fields). 
-<Spacer size="5px"/>
+To prove theorem 1., we'll construct connected Lie subgroups by applying [Frobenius' Theorem](integral-manifolds) to <br/> 
+[$\lozenge$-invariant vector fields](LR-invariant-vector-fields). 
+<Spacer />
 
-Proof of 3. uses [Ado's Theorem](https://terrytao.wordpress.com/2011/05/10/ados-theorem):
-Any Lie algebra is isomorphic to a subalgebra of $\,\mathfrak{gl}(n, F), \ F = \R$ or $\C$.
+The proof of theorem 2. bootstraps from theorem 1. via the graph of the Lie algebra homomorphism, <br/> followed by a little bit of covering space theory.
+<Spacer/>
 
-We won't prove Ado's Theorem.
+The proof of theorem 3. uses [Ado's Theorem](https://terrytao.wordpress.com/2011/05/10/ados-theorem):
+
+$\quad{}$Any Lie algebra is isomorphic to a subalgebra of $\,\mathfrak{gl}(n, F), \ F = \R$ or $\C$.
+
+We won't prove Ado's Theorem or theorem 3.
 
 ---
 
@@ -129,6 +137,28 @@ $p :\tilde G → G$ is a Lie group morphism with kernel isomorphic to the fundam
 $\text{ker}\, p$  is a discrete central subgroup of $\tilde G$.
 
 *Rough idea of proof:* General covering space results guarantee that choices of "upstairs" elements in $\tilde G$ determine unique lifts of the group operations. 
+
+---
+
+#### Proof of [Lie's second theorem](Lies-three-theorems)
+
+Let $G_1$ be connected and simply connected, and let $f : \fg_1 \to \fg_2$ be a Lie algebra homomorphism.
+
+The graph
+$$
+\fh := \{( \xi, f(\xi)) \, : \, \xi \in \fg_1 \}
+$$
+of $f$ is a Lie subalgebra of $\fg_1 \times \fg_2$.
+
+The first of Lie's three theorems $\ \ \Longrightarrow \ \ \exists \ {}$  connected Lie subgroup $H$ of $G_1 × G_2$ with Lie algebra $\fh$.
+
+Composition of inclusion of $H$ in $G_1 × G_2$ with projection onto the first factor gives a Lie group homomorphism $π : H → G_1$ such that $d_1 \pi$ is an isomorphism.
+
+$\ \ \Longrightarrow \ \  \pi$ is a covering map.  (Exercise 2.3 in Kirillov.)
+
+$G_1$ simply connected $\ \ \Longrightarrow \ \  \pi$ is an isomorphism. 
+
+The composition $\phi : G_1 \to G_2$ of projection onto the second factor of $H$ with $\pi^{-1}$ is a Lie group homomorphism with $d_1 \phi = f$.
 
 ---
 

@@ -143,4 +143,4 @@ $$
 <Spacer/>
 
 It follows that the tangent bundle of a Lie group is trivial:<br/> 
-left and right muliplication each determine diffeomorphisms between $TG$ and $G \times T_1 G$. 
+left and right multiplication each determine diffeomorphisms between $TG$ and $G \times T_1 G$. 

@@ -394,7 +394,8 @@ $\{ (\mathcal{U}_g, \phi_g ) \, : \, g \in G \}$ is an atlas for $G$.
 
 ***Claim:*** An open subgroup of a connected topological group equals the group
 
-*Verify:* We first show that an open subgroup $H$ of a topological group $G$ is closed.
+*Verify:* It suffices to show that an open subgroup $H$ of a topological group $G$ is closed,
+since the only <br/>non-empty clopen subset of a connected set is the set itself. 
 
 $$
 G\setminus H = \cup _{g\notin H}L_g(H).
@@ -402,8 +403,6 @@ G\setminus H = \cup _{g\notin H}L_g(H).
 $$
 $L_g: G \to G$ is a homeomorphism 
 $\Longrightarrow \ \ G\setminus H$ is open, since it's the union of open sets $L_g(H)$.
-$\Longrightarrow \ \ H$ is closed.
-Since the non-empty $H$ is both open and closed in the connected set $G$, $H = G$.
 <Spacer size="5px"/>
 
 ***Claim:*** If $G$ is a connected Lie group and $V$ is a neighborhood of 1, then $V$ generates $G$.<br/> 
@@ -422,12 +421,12 @@ Hence $\tilde G$ is open in $G$, and thus equals $G$.
 
 The preceding results determine a leading role for the linearization of a Lie group homomorphism at $1$.
 
-***Claim:*** If a morphism of Lie groups $f : G_1 → G_2$ has connected codomain, and
-$d_1f : \fg_1 → \fg_2$ is surjective, then $f$ is surjective.
+***Claim:*** If the codomain of a Lie group homomorphism $f : G_1 → G_2$ is connected, <br/>surjectivity of 
+$d_1f : \fg_1 → \fg_2 \ \ \Longrightarrow \ \ {}$ surjectivity of $f$.
 
-*Verify:* The [Inverse Function Theorem](inverse-function-theorem) implies $f$ is surjective onto some neighborhood $U$ of $1 \in G_2$. 
+*Verify:* The [Inverse Function Theorem](inverse-function-theorem) implies $f(G_1)$ contains a neighborhood $U$ of $1 \in G_2$. 
 <br/>
-Since $U$ generates $G_2$, $f$ is surjective.
+Since $U$ generates $G_2$ and $f$ is a group homomorphism, $f(G_1) = G_2$.
 <Spacer/>
 
 ***Claim:*** If a homomorphism $\ \varphi: G \to H$ is differentiable at $1$, then 
@@ -435,9 +434,8 @@ $$
 \varphi \circ \exp = \exp \circ d_1 \varphi.
 $$
 
-*Verify:* Fix $\xi \in \fg$. The homomorphism $\ h: (\R, +) \to H \ {}$ given by
-$\, h(t) := \varphi(\exp(t \, \xi))\,{}$
-satisfies
+*Verify:* Fix $\xi \in \fg$. $\ h: (\R, +) \to H \ {}$ given by
+$\, h(t) := \varphi(\exp(t \, \xi))\,{}$ is a group homomorphism satisfying
 $$
 h'(0) = d_1 \varphi(d_0 \exp(\xi)) = d_1 \varphi(\xi).
 $$
@@ -451,10 +449,6 @@ Uniqueness of one parameter subgroups $\ \ \Longrightarrow \ \ h(t) = \exp(t \, 
 $$
 d_1φ([\xi, \eta]_\fg) = [d_1φ(\xi),d_1 φ(\eta)]_\fh \qquad \forall \ \xi, \eta ∈ \fg = T_1 G. 
 $$
-Equivalently,
-$$
-d_1 φ \circ \ad_\xi = \ad_{d_1φ(\xi)} \circ d_1 φ.
-$$
 
 *Verify:*  $\ φ$ a group homomorphism $\ \Longrightarrow$
 $$
@@ -466,10 +460,11 @@ $$
 d_1 φ \circ \Ad_g = \Ad_{φ(g)} \circ d_1 φ. 
 $$
 
-Setting $g = \exp(t \, \xi)$ and then differentiating w.r.t. $t$ yields
+Setting $g = \exp(t \, \xi)$ and then differentiating with respect to $t$ yields
 $$
-d_1 φ \circ \ad_\xi = \ad_{d_1φ(\xi)} \circ d_1 φ.
+d_1 φ \circ \ad_\xi = \ad_{d_1φ(\xi)} \circ d_1 φ,
 $$
+which is an alternative expression of the desired relationship.
 
 <!--
 ---
@@ -506,7 +501,7 @@ $$
 which satisfies $\ad_\xi(\eta) = [\xi, \eta]$.
 <Spacer  size="2px" />
 
-The previous result $\ \ \Longrightarrow \ \ {}$ for any $g \in G$ and $\xi \in \fg$, 
+Previous results $\ \ \Longrightarrow \ \ {}$ for any $g \in G$ and $\xi \in \fg$, 
 - $g \exp(\xi) g^{-1} = \exp(\Ad_g (\xi))$
 
 - $\Ad_{\exp(\xi)} = \exp_{GL(\fg)} (\ad_\xi)$.
@@ -514,13 +509,13 @@ The previous result $\ \ \Longrightarrow \ \ {}$ for any $g \in G$ and $\xi \in 
 
 ---
 
-#### More relationships between the adjoint and infinitesimal adjoint representations
+### Linearize again to win a free prize: the Jacobi identity!
 
 Taking $\ φ = L_g \circ R_{g^{-1}}\ {}$gives
 $$
 \Ad_g([\xi, \eta]) = [\Ad_g(\xi), \Ad_g(\eta)] \qquad \forall \ g \in G, \ \xi, \eta ∈ \fg. 
 $$
-<Spacer />
+<Spaceri size="8px"/>
 
 Setting $g = g(\epsilon) := \exp(\epsilon \, \zeta)$ and differentiating both sides of this equality gives
 $$
@@ -664,15 +659,15 @@ To obtain a convergent subsequence, we will invoke compactness after slapping an
 
 - $\xi_n \neq 0\ {}$ and $\exp(\xi_n) \in H\ \ \ \forall \ n \in \mathbb{N}$,
 - $\lim_{n \to \infty} \xi_n = 0$,
-- $\displaystyle \zeta := \lim_{n \to \infty} \frac {\xi_n}{|\xi_n|}$ exists,
+- $\displaystyle \upsilon:= \lim_{n \to \infty} \frac {\xi_n}{|\xi_n|}$ exists,
 
-then $\zeta \in \fh$.
+then $\upsilon \in \fh$.
 
 *Verify:* Fix $t \neq 0$ and let $k_n$ denote the integer part of $\displaystyle \frac t {|\xi_n|}$.
 Then
 $$
 \eqa{
-\exp(t \, \xi) &= \lim_{n \to \infty} \exp \! \lp  t \, \frac {\xi_n}{|\xi_n|} \rp \phantom{\sum} \\
+\exp(t \, \upsilon) &= \lim_{n \to \infty} \exp \! \lp  t \, \frac {\xi_n}{|\xi_n|} \rp \phantom{\sum} \\
 &= \lim_{n \to \infty} \exp(k_n \xi_n) \phantom{\sum}\\
 &= \lim_{n \to \infty} \exp(\xi_n)^{k_n} \in H.
 }
@@ -709,11 +704,11 @@ $$
 \exp(\eta_n) = \exp(\xi_n)^{-1} f(\xi_n, \eta_n) \in H.
 $$
 
-Compactness of the unit sphere in $\displaystyle \fh^\perp \ \ \Longrightarrow \ \ \left \{ \frac {\eta_n} {|\eta_n|} \right \}$ has a convergent subsequence, with limit $\zeta$. 
+Compactness of the unit sphere in $\displaystyle \fh^\perp \ \ \Longrightarrow \ \ \left \{ \frac {\eta_n} {|\eta_n|} \right \}$ has a convergent subsequence, with limit $\upsilon$. 
 
-Claim 2 $\ \ \Longrightarrow \ \ \zeta \in \fh$. 
+Claim 2 $\ \ \Longrightarrow \ \ \upsilon \in \fh$. 
 
-$\zeta \in \fh \cap \fh^\perp \ \  \Longrightarrow \ \ \zeta = 0$, but $\zeta$ is the limit of a sequence in the unit sphere in $\fh^\perp$. 
+$\upsilon \in \fh \cap \fh^\perp \ \  \Longrightarrow \ \ \upsilon = 0$, but $\upsilon$ is the limit of a sequence in the unit sphere in $\fh^\perp$. 
 
 Contradiction! No such sequences $\{ \xi_n \}$ in $\fh$ and $\{ \eta_n \}$ in $\fh^\perp$ exist.
 
