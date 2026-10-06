@@ -134,13 +134,11 @@ src: LieGroupsSlides/Lies3Theorems.md
 
 # Invariant structures and geometric mechanics
 
-- Haar measure
+- Haar measure and $G$-invariant structures
 
-- Invariant volume elements
+- Geodesics on Lie groups and the Euler-Arnold equations
 
-- Geodesics on Lie groups
-
-- Poisson manifolds, the Lie-Poisson structure on $\fg^*$, and the Euler-Arnold equations
+- Poisson manifolds and the Lie-Poisson structure on $\fg^*$
 
 - Symplectic manifolds and the canonical symplectic structure on $T^*G \approx G \times \fg^*$ 
 
@@ -148,21 +146,18 @@ src: LieGroupsSlides/Lies3Theorems.md
 
 - Principal bundles
 
-*Slides currently being tidied up.*
+*The symplectic manifolds, momentum maps, and principal bundles slides still need to be tidied up.*
 
-<!--
 
 ---
 src: LieGroupsSlides/Haar_measure.md
 ---
 
 ---
-src: LieGroupsSlides/HaarRiemannPoisson.md
----
-
----
 src: LieGroupsSlides/PoissonManifolds.md
 ---
+
+<!--
 
 ---
 src: LieGroupsSlides/symplecticManifolds.md

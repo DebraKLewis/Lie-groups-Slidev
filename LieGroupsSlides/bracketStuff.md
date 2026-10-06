@@ -6,12 +6,15 @@ routeAlias: LR-invariant-vector-fields
 
 Naturality with respect to pullback of the [Lie bracket on $\calX(G)$](algebra-vector-fields-dynamic) <br/> $\quad \Longrightarrow \ \ {}$ the Lie bracket of two $\lozenge$-invariant vector fields $X$ and $Y$ is $\lozenge$-invariant:
 $$
-\lozenge_g^* [X, Y] = [\lozenge_g^* X, \lozenge_g^* Y ] = [X, Y].
+\eqa{
+\lozenge_g^* [X, Y] &= [\lozenge_g^* X, \lozenge_g^* Y ] \phantom{\sum}\\
+&= [X, Y].
+}
 $$
 
 Hence the $\lozenge$-invariant vector fields on $G$, $\{ X_\xi^\lozenge \, : \, \xi \in \fg \}$,
 form a Lie subalgebra of $\calX(G)$.
-<Spacer />
+<Spacer size="5px"/>
 
 ***Claim:*** $\xi \mapsto X_\xi^L\ {}$ (resp. $X_\xi^R$) is a Lie algebra homomorphism (resp. anti-homomorphism), i.e.
 $$
@@ -19,7 +22,7 @@ $$
 \sands
 [X_\xi^R, X_\eta^R]_{\calX(G)} = - X^R_{[\xi, \eta]_{\fg}}.
 $$
-<Spacer />
+<Spacer size="5px"/>
 
 ***Heads up!*** When using the other sign convention for the [Lie bracket on $\calX(G)$](algebra-vector-fields-algebraic), the L/R (anti)homomorphisms are swapped.
 
@@ -27,22 +30,25 @@ $$
 
 #### Proof that $\xi \mapsto X^L_\xi$ is an algebra homomorphism (first of three slides)
 
-Given $\xi \in \fg$, let
+*Recall:* Given $\xi \in \fg$, if we set $\gamma(t) := \exp(t \, \xi)$ and let $\calF_t$ denote the time $t$ flow of $X_\xi^L \in \calX(G)$, then
 $$
-\gamma(t) := \exp(t \, \xi) \sands \phi_t := \lp \calF_\xi^L \rp_t = R_{\gamma(t)},
+X_\xi^L(g) = d_1 L_g(\xi) \sands \calF_t = R_{\gamma(t)}.
 $$
-and compute $\ [X_\xi^L, X_\eta^L]\ {}$ using the [dynamic formulation](algebra-vector-fields-dynamic)
+<Spacer size="2px"/>
+
+We'll compute $\ [X_\xi^L, X_\eta^L]\ {}$ using the [dynamic formulation](algebra-vector-fields-dynamic)
 $$
 [X, Y] = \dep {\calF_\epsilon^* Y}.
 $$
-<Spacer size="5px"/>
+***Warning!*** This is a festival of definition chasing, and knowing your right hand from your left!
+<Spacer size="2px"/>
 
 Evaluating the definitions of the pullback and the left invariant vector field, then regrouping, gives
 $$
 \eqa{
-\phi_t^* X_\eta^L(g) &= {\color{red}d_{\phi_t(g)}\phi_t^{-1}} \lp{\color{blue} X_\eta^L(\phi_t(g))}\rp \phantom{\sum} \\
-&={\color{red}d_{\phi_t(g)}\phi_t^{-1}} \lp {\color{blue}d_1 L_{\phi_t(g)}(\eta)} \rp \phantom{\int} \\
-&= d_1 \lp {\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}} \rp({\color{blue}\eta}).
+\calF_t^* X_\eta^L(g) &= {\color{red}d_{\calF_t(g)}\calF_t^{-1}} \lp{\color{blue} X_\eta^L(\calF_t(g))}\rp \phantom{\sum} \\
+&={\color{red}d_{\calF_t(g)}\calF_t^{-1}} \lp {\color{blue}d_1 L_{\calF_t(g)}(\eta)} \rp \phantom{\int} \\
+&= d_1 \lp {\color{red}\calF_t^{-1}} \circ {\color{blue}L_{\calF_t(g)}} \rp({\color{blue}\eta}).
 }
 $$
 
@@ -53,23 +59,23 @@ $$
 
 $$
 \eqa{
-{\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}} &= {\color{red}R_{\gamma(t)}^{-1}} \circ {\color{blue}L_{R_{\gamma(t)}(g)}} \phantom{\sum} \\
+{\color{red}\calF_t^{-1}} \circ {\color{blue}L_{\calF_t(g)}} &= {\color{red}R_{\gamma(t)}^{-1}} \circ {\color{blue}L_{R_{\gamma(t)}(g)}} \phantom{\sum} \\
 &= {\color{red}R_{\gamma(t)^{-1}}} \circ \lp {\color{blue} L_g \circ L_{\gamma(t)}} \rp \phantom{\int} \\
 &= {\color{blue}L_g} \circ \lp {\color{red}R_{\gamma(t)^{-1}}} \circ{\color{blue}L_{\gamma(t)}} \rp.
 }
 $$
 <Spacer size="2px"/>
 
-Linearizing ${\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}}: G \to G$ at the identity thus yields
+Linearizing ${\color{red}\calF_t^{-1}} \circ {\color{blue}L_{\calF_t(g)}}: G \to G$ at the identity thus yields
 $$
-d_1 \lp {\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}} \rp
+d_1 \lp {\color{red}\calF_t^{-1}} \circ {\color{blue}L_{\calF_t(g)}} \rp
 = d_1 {\color{blue}L_g} \circ d_1 \lp {\color{red}R_{\gamma(t)^{-1}}} \circ {\color{blue}L_{\gamma(t)}} \rp
 = d_1 {\color{blue}L_g} \circ {\color{purple}\Ad_{\gamma(t)}},
 $$
 so
 $$
 \eqa{
-\phi_t^* X_\eta^L(g) &= d_1 \lp {\color{red}\phi_t^{-1}} \circ {\color{blue}L_{\phi_t(g)}} \rp({\color{blue}\eta}) \phantom{\sum} \\
+\calF_t^* X_\eta^L(g) &= d_1 \lp {\color{red}\calF_t^{-1}} \circ {\color{blue}L_{\calF_t(g)}} \rp({\color{blue}\eta}) \phantom{\sum} \\
 &= d_1 {\color{blue}L_g}({\color{purple}\Ad_{\gamma(t)}}(\eta))\phantom{\int}  \\
 &= X^L_{\Ad_{\gamma(t)}(\eta)}(g).
 }
@@ -130,11 +136,10 @@ $$
 
 #### More examples: infinitesimal multiplication on $G$ and the infinitesimal adjoint action on $\fg$
 
-If $M = G$ and $\rho(g) = \lozenge_g$, then 
-$$
-\xi_G = X_\xi^\blacklozenge,
-$$ 
-where $\blacklozenge = R$ if $\lozenge = L$ and vice versa.
+If $M = G$ and $\rho(g) = \lozenge_g$, then $\ \xi_G = X_\xi^\blacklozenge,\ {}$
+where $\blacklozenge = R$ if $\lozenge = L$ and vice versa. 
+
+*Reminder:* $\rho(g) = R_g$ is a right action; if we want a left action, we need $\rho(g) = R_{g^{-1}}$, which will introduce a minus sign in the infinitesimal generator.
 
 *Verify:* $\lozenge_g(h) = \blacklozenge_h(g) \ \ \Longrightarrow$ 
 
@@ -147,9 +152,12 @@ $$
 }
 $$
 
-<Spacer />
+<Spacer size="5px"/>
 Infinitesimal generators of the adjoint action: 
 If $M = \fg$ and $\rho(g) = \Ad_g$, then $\ \xi_G = \ad_\xi$. 
+
+Infinitesimal generators of the coadjoint action: 
+If $M = \fg^*$ and $\rho(g) = \Ad_{g^{-1}}$, then $\ \xi_G = -\ad_\xi^*$. 
 
 ---
 
@@ -159,11 +167,36 @@ Given $p \in M$, if we define $\Phi_p: G \to M$ by
 $$
 \Phi_p(g) := g \cdot p = \rho(g)(p),
 $$
-then the *orbit* $\mathcal{O}_p$ (AKA $\, G \cdot p$) of $p$ is
+the *orbit* $\mathcal{O}_p$ (AKA $\, G \cdot p$) of $p$ is
 $$
 \mathcal{O}_p := \Phi_p(G) = \{g \cdot p : g \in G\}.
 $$
 <Spacer size="1px"/>
+
+***Example:*** The orbit $\mathcal{O}_\xv$ of a nonzero vector $\xv \in \R^n$ under the usual action of $SO(n, \R)$ is the sphere of radius $||\xv||$ centered at the origin. 
+<Spacer size="1px"/>
+
+If the action of a Lie group $G$ on a manifold $M$ satisfies $\ \mathcal{O}_p = M\ {}$
+for some (and hence any) $p \in M$,<br/> the action is *transitive* and $M$ is a *homogeneous space*. 
+
+Homogeneous spaces inherit much of the computational convenience of Lie groups.
+
+All orbits are, by construction, homogeneous spaces.
+
+---
+
+<!-- The isotropy subgroup of $\xv$ is the subgroup of rotations fixing $\xv$. E.g., 
+- $SO(2, \R)_\xv$ is trivial for $\xv \neq \mathbf{0}$
+
+- $SO(3, \R)_\xv \simeq SO(2, \R) \simeq S^1$ for $\xv \neq \mathbf{0}$.
+
+---
+
+***Examples:***
+
+- Rotations: $G = SO(n, \R)$ and $M = \R^n$. If $\xv \neq \boldsymbol{0}, \ \mathcal{O}_\xv$ is the sphere of radius $|\xv|$ centered at $\boldsymbol{0}$.
+
+- Coadjoint action: $M = \fg^*$ and $\rho(g) = \Ad_{g^{-1}}^*$.
 
 ***Claim:*** $\ T_p \mathcal{O}_p = \{ \xi_M(p) \, : \, \xi \in \fg \}$. 
 
@@ -176,33 +209,29 @@ $$
 &= \xi_M(p).
 }
 $$
-
----
+-->
 
 ### The tangent bundle of $\mathcal{O}_p$
 
-Taking the directional derivative of both sides of the identity 
+Differentiating both sides of the equality
 $$
 \Phi_p \circ L_g = \rho(g) \circ \Phi_p
 $$
-in the direction of $\xi$ gives
+at $1$ in the direction of $\xi \in \fg$ gives
 $$
-d_g \Phi_p(d_1 L_g(\xi)) 
-= d_p \rho(g)(d_1 \Phi_p(\xi)).
+d_g \Phi_p(\underbrace{d_1 L_g(\xi)}_{X^L_\xi(g)}) 
+= d_p \rho(g)(\underbrace{d_1 \Phi_p(\xi)}_{\xi_M(p)}),
 $$
-Using 
+so $\ T_g G = \{ X^L_\xi(g) \, : \, \xi \in \fg \}\ \ \Longrightarrow$
 $$
-X^L_\xi(g) = d_1 L_g(\xi) \sands \xi_M(p) = d_1 \Phi_p(\xi),
-$$
-we obtain
-$$
-d_g \Phi_p(X^L_\xi(g)) = d_p \rho(g)(\xi_M(p)).
-$$
-
-Since $T_g G = \{X^L_\xi(g) \, : \, \xi \in \fg \}$, we have 
-$$
-T_{g \cdot p} \mathcal{O}_p = d_p \rho(g) (T_p \mathcal{O}_p) .
+\eqa{
+T_{g \cdot p} \mathcal{O}_p &= d_g \Phi_p(T_g G) \phantom{\sum}\\
+&= d_p \rho(g) (\{ \xi_M(p) \, : \, \xi \in \fg \}).
+}
 $$ 
+<Spacer size="5px"/>
+
+This description of the tangent fibers can be used to define $G$-invariant constructs on orbits, analogous to $\lozenge$ invariant constructions on $G$.
 
 ---
 routeAlias: stabilizers
@@ -224,10 +253,11 @@ where
 $$
 \setdef{\fg_p} \xi \fg {\xi_M(p) = 0}.
 $$  
-<Spacer />
+<Spacer size="5px"/>
 
-*Verify*: $G_p$ is a subgroup of $G$. <br/>
-The action is smooth with respect to both $G$ and $M$, so $G_p = \Phi_p^{-1}(p)$ is closed, and 
+*Verify*: 
+The action is smooth with respect to both $G$ and $M$, so $G_p = \Phi_p^{-1}(p)$ is a closed subgroup of $G$.
+
 [Cartan's closed subgroup theorem](Cartan-closed-subgroup) implies $G_p$ is a closed Lie subgroup of $G$. 
 
 ---
@@ -256,29 +286,6 @@ $$
 T_p \mathcal{O}_p = %\{ \eta_M(p) : \eta \in \fg \} 
 d_p \Phi_p(\fg) \approx \fg/\fg_p.
 $$
-
----
-
-### Transitive actions and homogeneous spaces
-
-If the action of a Lie group $G$ on a manifold $M$ satisfies 
-$$
-\mathcal{O}_p = M 
-$$
-for some (and hence any) $p \in M$, the action is *transitive* and $M$ is a *homogeneous space*.
-
-All orbits are, by construction, homogeneous spaces.
-
-A tangent vector to a homogeneous space can be expressed as the evaulation of an infinitesimal generator.
-<Spacer size="5px"/>
-
-***Example:*** Spheres in $\R^n$ are orbits of $SO(n, \R)$
-The orbit $\mathcal{O}_\xv$ of a nonzero vector $\xv \in \R^n$ under the usual action of $SO(n, \R)$ is the sphere of radius $||\xv||$.
-
-The isotropy subgroup of $\xv$ is the subgroup of rotations fixing $\xv$. E.g., 
-- $SO(2, \R)_\xv$ is trivial for $\xv \neq \mathbf{0}$
-
-- $SO(3, \R)_\xv \simeq SO(2, \R) \simeq S^1$ for $\xv \neq \mathbf{0}$.
 
 ---
 routeAlias: Hopf-fibration
@@ -358,37 +365,14 @@ so we can take $\pi = \Phi_\xv$.
 
 ---
 
-### Kernels and images of Lie group morphisms
-
-***Claim:*** Let $f : G_1 → G_2$ be a morphism of Lie groups. Then 
-- $\ker f$ is a closed Lie subgroup of $G_1$ with Lie algebra $\ker d_{1_{G_1}}f$
-
-- $f$ determines an injective immersion from $G_1/\ker f$ to $G_2$, and
-
-- $\text{im} \, f$ is a Lie subgroup of $G_2$. 
-
-If $\text{im} \, f$ is a closed Lie subgroup of $G_2$, it is isomorphic to $G_1/\ker f$.
-
-*Verify*: $f$ determines an action of $G_1$ on $G_2$:
-$$
-g_1 \cdot g_2 := f(g_1) g_2.
-$$
-
-$\ker f$ is the stabilizer of $1_{G_2}$ with respect to this action, and $\text{im} \, f = \mathcal{O}_{1_{G_2}}$, so the three bullet points follow immediately from our previous results for [stabilizers](stabilizers).
-
-If $\text{im} \,  f$ is an embedded submanifold of $G_2$, the induced map from $G_1/\ker f$ to $\text{im} \,  f$ is a diffeomorphism.
-
-
----
-
-### Quotient spaces and orbits
+### Quotients by group actions
 
 Given an action $\rho$ of a Lie group $G$ on a manifold $M$, let $M/G$ denote the quotient of $M$ with respect to the equivalence relation
 $$
 p \equiv q \quad \Longleftrightarrow \quad q \in \mathcal{O}_p,
 $$
 with the quotient topology: $U \subset M/G$ is open $\ \Longleftrightarrow\  \pi^{-1}(U)\ {}$ is open in $M$.
-<Spacer/>
+<Spacer size="5px"/>
 
 ***Example of a non-Hausdorff quotient by a group action:***
 
@@ -422,6 +406,27 @@ See, e.g., Theorem 4.1.20 in *Foundations of Mechanics* for the proof.
 
 ***Special case:*** If $H$ is a closed subgroup of $G$, then $G/H$ is a smooth manifold and the projection is a submersion.
 
+---
+
+### Kernels and images of Lie group morphisms
+
+***Claim:*** Let $f : G_1 → G_2$ be a morphism of Lie groups. Then 
+- $\ker f$ is a closed Lie subgroup of $G_1$ with Lie algebra $\ker d_{1_{G_1}}f$
+
+- $f$ determines an injective immersion from $G_1/\ker f$ to $G_2$, and
+
+- $\text{im} \, f$ is a Lie subgroup of $G_2$. 
+
+If $\text{im} \, f$ is a closed Lie subgroup of $G_2$, it is isomorphic to $G_1/\ker f$.
+
+*Verify*: $f$ determines an action of $G_1$ on $G_2$:
+$$
+g_1 \cdot g_2 := f(g_1) g_2.
+$$
+
+$\ker f$ is the stabilizer of $1_{G_2}$ with respect to this action, and $\text{im} \, f = \mathcal{O}_{1_{G_2}}$, so the three bullet points follow immediately from our previous results for [stabilizers](stabilizers).
+
+If $\text{im} \,  f$ is an embedded submanifold of $G_2$, the induced map from $G_1/\ker f$ to $\text{im} \,  f$ is a diffeomorphism.
 
 ---
 
@@ -448,4 +453,3 @@ $𝜋:𝑀→𝑀/𝐺 \ {}$ is smooth, and
 for any manifold $N$ and map $𝑓:𝑀/𝐺→𝑁, \ f \circ \pi$ smooth $\ \Longrightarrow \ f$ smooth.
 
 See, e.g. *Foundations of Mechanics*, R. Abraham and J.E. Marsden, for the proof.
-

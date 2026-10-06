@@ -17,6 +17,7 @@ $$
 <Spacer/>
 
 ***Corollary:*** For any finite-dimensional Lie algebra $\fg$, there is a unique (up to isomorphism) connected simply-connected Lie group $G$ with Lie algebra $\fg$. 
+<Spacer size="5px"/>
 
 If $\widetilde G$ is a connected Lie group with Lie algebra $\fg$, $\exists$ discrete central subgroup $Z ⊂ G$ such that $\widetilde G \approx G/Z$.
 
@@ -29,10 +30,10 @@ We'll (mostly) prove theorems 1. and 2., after developing some machinery over th
 <Spacer size="5px"/>
 
 To prove theorem 1., we'll construct connected Lie subgroups by applying [Frobenius' Theorem](integral-manifolds) to <br/> 
-[$\lozenge$-invariant vector fields](LR-invariant-vector-fields). 
+[distributions](distributions) determined by [$\lozenge$-invariant vector fields](LR-invariant-vector-fields). 
 <Spacer />
 
-The proof of theorem 2. bootstraps from theorem 1. via the graph of the Lie algebra homomorphism, <br/> followed by a little bit of covering space theory.
+The proof of theorem 2. follows from theorem 1. via the graph of the Lie algebra homomorphism, <br/> plus a little bit of covering space theory.
 <Spacer/>
 
 The proof of theorem 3. uses [Ado's Theorem](https://terrytao.wordpress.com/2011/05/10/ados-theorem):
@@ -71,50 +72,52 @@ $$
 
 ### Subalgebras determine Lie subgroups
 
-Recall that $\xi \mapsto X^\lozenge_\xi \in \calX(G)$, where  
+Recall that the map $\xi \mapsto X^\lozenge_\xi$, where
+$$ 
+X^\lozenge_\xi(g) = d_1 \lozenge_g(\xi),
 $$
-X^\lozenge_\xi(g) = d_1 \lozenge_g(\xi)
-$$
-is the [$\lozenge$-invariant vector field](LR-invariant-vector-fields) satisfying $X^\lozenge_\xi(1) = \xi$, is an algebra homomorphism or anti-homomorphism.
+from $\fg$ to the Lie algebra of [$\lozenge$-invariant vector fields](LR-invariant-vector-fields) is an algebra homomorphism or anti-homomorphism.<br/>
 
-Hence a subalgebra $\fh$ of $\fg$ determines an involutive 
+Hence a Lie subalgebra $\fh$ of $\fg$ determines an involutive 
 $\lozenge$-invariant distribution $\calD^\fh$ on $G$:
 $$
 \calD^\fh_g := \{ X^\lozenge_\xi(g) \, : \, \xi \in \fh \}.
 $$
-<Spacer size="5px"/>
+<Spacer/>
 
 ***Claim:*** The maximal connected integral submanifold $H$ of $\calD^\fh$ containing the identity element is a Lie subgroup of $G$ with Lie algebra $\fh$.
 
-*Verify:* $h \in H \ \ \Longrightarrow \ \ h \cdot H$ is a maximal connected integral submanifold of $\calD^\fh$. <br/>
-$h \in H \cap h \cdot H$ and maximality of $H \ \ \Longrightarrow \ \ h \cdot H = H$ <br/>$\Longrightarrow \ \ H$ is closed under multiplication.
+*Verify:* $h \in H \ \ \Longrightarrow \ \ h \cdot H$ is a maximal connected integral submanifold of $\calD^\fh$. 
+
+$h \in H \cap h \cdot H$ and maximality of $H \ \ \Longrightarrow \ \ h \cdot H = H \ \ \Longrightarrow \ \ H$ is closed under multiplication.
+
+*Proof continues on next slide*
 
 ---
 
 #### Second slide of the proof that subalgebras determine Lie subgroups
 <Spacer size="5px"/>
 
-$\lozenge$-invariance of $\calD^\fh$ implies that for any $\ h \in H, \ h \cdot H$ is an integral manifold of $\calD^\fh$.
-$$
-h = h \cdot 1 \in h \cdot H \qquad \Longrightarrow \qquad H \cap h \cdot H \neq \emptyset.
-$$
+$t \mapsto \lozenge_g(\exp(t \, \xi)) \ {}$
+is an integral curve of $X_\xi^\lozenge$ containing $1$, so
+Frobenius' Theorem $\ \ \Longrightarrow$ <br/>
+$\exists\,{}$ neighborhood $U$ of $0$ in $\fh$, such that $\, \lozenge_g(\exp(U)) \, {}$ is an integral manifold of $\calD^\fh$ containing $g$. 
 
-Maximality of $H \ \Longrightarrow \ \ h \cdot H = H. \ {}$ Hence $H$ is closed under multiplication. 
+Maximality of $H \ \ \Longrightarrow \ \ \exp(U) \subseteq H$
 
-Given a neighborhood $\ U \subset \fh\ {}$ of $0$, $\lozenge_g(\exp(U)) \ {}$ is an integral manifold of $\calD^\fh$ containing $g,$ since  
-$$
-t \mapsto \lozenge_g(\exp(t \, \xi)) 
-$$
-is an integral curve of $X_\xi^\lozenge$ for any $\xi \in \fh$.
+$\exp(U)$ generates a connected Lie subgroup. 
 
-Since $\, \exp(U) \subseteq H, \ {}$ given $\ t \in \R \ {}$ and $\xi \in \fh, \ \exists \ n \in {\mathbb N} \ {}$ such that  
-$$
-\smallfrac t n \, \xi \in U \quad \text{and hence}\quad
-\exp(t \, \xi) = \exp\lp \smallfrac t n \, \xi \rp^n \in H.
-$$
-Hence $\exp(\fh) \subseteq H$. <br/>
-The image under the exponential map of a neighborhood of $0$ in $\fh$ is thus a neighborhood of $1$ is $H$.<br/>
-This neighborhood generates a connected Lie group, which equals $H$.
+Closure of $H$ under multiplication $\ \ \Longrightarrow \ \ {}$ that subgroup equals $H$.
+
+<!--
+$\Longrightarrow \ \ {}$ given $\ t \in \R \ {}$ and $\xi \in \fh, \ \exists \ n \in {\mathbb N} \ {}$ such that $\, \smallfrac t n \, \xi \in U\,{}$
+
+$\Longrightarrow \ \ \exp(t \, \xi) = \exp\lp \smallfrac t n \, \xi \rp^n \in H$.
+
+$\Longrightarrow\ \ \exp(\fh) \subseteq H$.
+
+The image under the exponential map of a neighborhood of $0$ in $\fh$ is thus a neighborhood of $1$ is $H$.
+-->
 
 ---
 
@@ -159,6 +162,81 @@ $\ \ \Longrightarrow \ \  \pi$ is a covering map.  (Exercise 2.3 in Kirillov.)
 $G_1$ simply connected $\ \ \Longrightarrow \ \  \pi$ is an isomorphism. 
 
 The composition $\phi : G_1 \to G_2$ of projection onto the second factor of $H$ with $\pi^{-1}$ is a Lie group homomorphism with $d_1 \phi = f$.
+
+---
+
+### Normal subgroup (with some strings attached) $\ \Longleftrightarrow \ {}$ algebra is an ideal
+
+*Recall:* A subgroup $H$ of a group $G$ is *normal* if $H$ is invariant under inner automorphisms,
+i.e.
+$$
+g \in G, h \in H  \qquad \Longrightarrow \qquad g h g^{-1} \in H .
+$$
+<Spacer size="5px"/>
+
+A subspace $\fh$ of a Lie algebra $\fg$ is an *ideal* if $\fh$ is invariant under the endomorphisms $\ad_\xi: \fg \to \fg$<br/> for all $\xi \in \fg$, i.e. 
+$$
+\xi \in \fg, \eta \in \fh\qquad \Longrightarrow \qquad [\xi, \eta] \in \fh.
+$$
+
+<Spacer/>
+
+***Claim:*** If $G$ is Lie group with Lie algebra $\fg$, and $H$ is a normal closed Lie subgroup of $G$, then $\ \fh = T_1H \ {}$ is an ideal in $\fg$, and the Lie algebra of $G/H$ is isomorphic to $\ \fg/\fh$.
+
+Conversely, if 
+$H$ is a connected closed Lie subgroup of a connected Lie group $G$, and 
+$\,\fh=T_1H\,{}$ is an ideal in $\fg$, then $H$ is normal.
+
+---
+
+#### First slide of the proof of the relationship between normal subgroups and ideals
+
+If $H$ is a normal closed Lie subgroup of $G$, normality of $H$ implies
+$$
+\exp(t \, \xi) \exp(s \, \eta) \exp(t \, \xi)^{-1} \in H 
+$$
+for all $s, t \in \R, \xi \in \fg, \eta \in \fh$, and hence
+$$
+[\xi, \eta] = {\smallfrac {\partial^2 \ }{\partial s \partial t} \left . \exp(t \, \xi) \exp(s \, \eta) \exp(t \, \xi)^{-1} \right |_{s = t = 0}} \in \fh,
+$$
+so $\fh$ is an ideal in $\fg$.
+<Spacer size="5px"/>
+
+Conversely, assume $\fh$ is an ideal.
+$$
+\textstyle{\Ad(\exp_G(\xi)) = \exp_{GL(\fg)}(\ad_\xi) = \sum_{j = 0}^\infty \frac 1 {j!}(\ad_\xi)^j}\qquad \forall \ \xi \in \fg, 
+$$
+and hence $\eta \in \fh \ \ \Longrightarrow$ 
+$$
+\Ad(\exp_G(\xi))(\eta) = \eta + [\xi, \eta] + \smallfrac 1 2 [\xi, [\xi, \eta]] + \cdots \ \in \fh.
+$$
+
+---
+
+#### Second slide of the proof of the relationship between normal subgroups and ideals
+<Spacer size="5px"/>
+
+$G$ connected $\ \ \Longrightarrow \ \ G$ is generated by the image under $\exp$ of any neighborhood of $0$ in $\fg$.
+
+$\Longrightarrow \ \ \fh$ is invariant under $\Ad_g$ for all $g \in G$, i.e. $\fh$ is a representation of $G$ with $\rho(g) = \Ad_g|_\fh$. 
+<Spacer size="5px"/>
+
+If we define $\psi: H \to \text{End}(G)$ and $\tilde H \subset H$ by 
+$$
+\psi(h)(g) := \psi_h(g) := g h g^{-1} 
+\sands
+\setdef {\tilde H} h H {\psi_h(G) \subseteq H}, 
+$$
+
+$\tilde H$ is a subgroup of $H$. $\, H$ is normal $\ \ \Longleftrightarrow \ \ H = \tilde H$.
+<Spacer size="5px"/>
+
+$$
+L_g \circ R_{g^{−1}} \circ \exp = \exp \circ \Ad_g \qquad \forall \ \ g \in G
+$$
+$\Longrightarrow \ \ \exp(\fh) \subseteq \tilde H$. 
+
+The connected closed Lie subgroup $H$ is generated by $\exp\!|_\fh(U)$ for any neighborhood $U$ of $0$ in $\fh$, <br/> so $H = \tilde H$ is normal.
 
 ---
 
@@ -224,108 +302,3 @@ $$
 with bijective $d_1 \tilde \phi$ (since $\psi$ is an isomorphism), etc., so $\tilde \phi$ is also a local isomorphism.
 
 $\tilde \phi \circ \phi^{-1}: G \to H \ {}$ is the desired local isomorphism.
-
----
-
-### Normal subgroup (with some strings attached) $\ \Longleftrightarrow \ {}$ algebra is an ideal
-
-*Recall:* A subgroup $H$ of a group $G$ (not necessarily Lie groups) is *normal* if $H$ is invariant under inner automorphisms,
-i.e. $h \in H  \ \ \Longrightarrow \ \ g h g^{-1} \in H$ for any $g \in G$.
-
-A subspace $\fh$ of a Lie algebra $\fg$ is an *ideal* if $\fh$ is invariant under the endomorphisms $\ad_\xi: \fg \to \fg$ for all $\xi \in \fg$, i.e. if $\xi \in \fg$ and $\eta \in \fh$, then $[\xi, \eta] \in \fh$.
-<Spacer size="5px"/>
-
-***Claim:*** If $G$ is Lie group with Lie algebra $\fg$, and $H$ is a normal closed Lie subgroup of $G$, then $\ \fh = T_1H \ {}$ is an ideal in $\fg$, and the Lie algebra of $G/H$ is isomorphic to $\ \fg/\fh$.
-
-Conversely, if 
-$H$ is a connected closed Lie subgroup of a connected Lie group $G$, and 
-$\,\fh=T_1H\,{}$ is an ideal in $\fg$, then $H$ is normal.
-
-*Verify:* Normality of $H$ implies
-$$
-\exp(t \, \xi) \exp(s \, \eta) \exp(t \, \xi)^{-1} \in H 
-$$
-$\forall\ s, t \in \R, \xi \in \fg, \eta \in \fh$.
-
----
-
-#### Second slide of the proof of the relationship between normal subgroups and ideals
-
-Hence
-$$
-[\xi, \eta] = {\smallfrac {\partial^2 \ }{\partial s \partial t} \left . \exp(t \, \xi) \exp(s \, \eta) \exp(t \, \xi)^{-1} \right |_{s = t = 0}} \in \fh,
-$$
-so $\fh$ is an ideal in $\fg$.
-
-For any $\xi \in \fg$, 
-$$
-\textstyle{\Ad(\exp_G(\xi)) = \exp_{GL(\fg)}(\ad_\xi) = \sum_{j = 0}^\infty \frac 1 {j!}(\ad_\xi)^j}.
-$$
-Hence if $\fh$ is an ideal in $\fg$, and $\eta \in \fh$, then 
-$$
-\Ad(\exp_G(\xi))(\eta) = \eta + [\xi, \eta] + \smallfrac 1 2 [\xi, [\xi, \eta]] + \cdots \in \fh.
-$$
-<Spacer size="5px"/>
-
-The image $\exp(U)$ of a neighborhood $U$ of the origin in $\fg$ generates $G$, so $\fh$ is invariant under $\Ad_g$ for any $g ∈ G$. 
-
----
-
-#### Second slide of the proof of the relationship between normal subgroups and ideals
-
-Since 
-- $g \exp(\eta)g^{−1} = \exp(\Ad_g(\eta))$
-
-- the image under $\exp_H$ of a neighborhood of $0$ in $\fh$ generates $H$, as above, 
-
-- $h_1, h_2 \in H \ \Longrightarrow$
-$$
-g h_1 h_2 g^{−1} = \lp g h_1 g^{−1} \rp \lp g h_2 g^{−1} \rp \in H, \qquad \text{and}
-$$
-
-- $h \in H \ \Longrightarrow$
-$$
-g h^{-1} g^{−1} =  \lp g h g^{−1} \rp^{-1} \in H,
-$$
-
-$H$ is normal. 
-
-We know that a morphism of Lie groups determines a morphism of Lie algebras, and
-$$
-\text{Hom}(G_1,G_2) → \text{Hom}(\fg_1, \fg_2)
-$$
-is injective if $G_1$ is connected. 
-
-We still NTS that a morphism $\psi : \fg_1 → \fg_2$ determines a morphism of Lie groups $\Psi: G_1 → G_2$ with $\ d_1 \Psi = \psi$.
-
-Let 
-$$
-G=G_1×G_2 \sands \fh= \{(\xi,\psi(\xi)): \xi ∈\fg_1 \}⊂ \fg.
-$$
-
-$\fh$ is a Lie algebra with bracket
-$$
-[(\xi, \psi(\xi)), (\eta, \psi(\eta))]_\fk = \lp [\xi, \eta]_\fg, [\psi(\xi), \psi(\eta)]_\fh \rp.
-$$
-There is a corresponding connected Lie subgroup 
-$$H \hookrightarrow G_1 × G_2.$$
-
----
-
-#### Third slide of the proof of the relationship between normal subgroups and ideals
-
-If $P_1: G_1 \times G_2 \to G_1$ denotes projection onto the first factor, then 
-$$
-d_{(1, 1)}P_1|_{\fh} : \fh \to \fg_1
-$$
-is an isomorphism. 
-
-Exercise 2.3 in Kirillov implies that $P_1|_ H$ is a covering map. 
-
-Since $G_1$ is simply-connected, and $H$ is connected, so $P_1|_ H$ is an isomorphism. 
-$~$
-The map
-$$
-\Psi := P_2 \circ \iota_H \circ (P_1|_H)^{-1} : G_1 \to G_2,
-$$
-where $\iota_H: H \to G_1 \times G_2$ denotes inclusionn and $P_2$ denotes projection onto the second factor, is a morphism of Lie groups, with $d_1 \Psi = \psi$. 

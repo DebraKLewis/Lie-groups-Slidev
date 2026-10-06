@@ -668,10 +668,42 @@ Then
 $$
 \eqa{
 \exp(t \, \upsilon) &= \lim_{n \to \infty} \exp \! \lp  t \, \frac {\xi_n}{|\xi_n|} \rp \phantom{\sum} \\
-&= \lim_{n \to \infty} \exp(k_n \xi_n) \phantom{\sum}\\
-&= \lim_{n \to \infty} \exp(\xi_n)^{k_n} \in H.
+&= \lim_{n \to \infty} \exp((\frac t {|\xi_n|} - k_n) \xi_n) \exp(k_n \xi_n) \phantom{\sum}\\
+&= \lim_{n \to \infty} \exp((\frac t {|\xi_n|} - k_n) \xi_n) \exp(\xi_n)^{k_n} \in H.
 }
 $$
+
+<!--
+---
+
+Not sure this is any better.
+
+#### Variant of the compactness argument for existence of a convergent subsequence of a modification of $\{ \xi_n \}$
+
+Rather than normalizing the $\xi_n$'s to obtain a sequence on the unit sphere, we can work with a closed (bounded, and hence compact) spherical shell $S_{(R, r)}$ centered at $0$, with outer radius $\frac R 2 \geq |\xi_n| \ \ \forall \ n$ and inner radius $r > 0$. 
+
+Let $m_n \in \mathbb{N}$ denote the smallest natural number such that 
+$$
+m_n |\xi_n| \geq r
+$$
+and define 
+$$
+\sigma_n := m_n \, \xi_n \in S.
+$$
+
+Compactness of $S \ \ \Longrightarrow \ \ \{\sigma_n\}$ has a convergent subsequence, with limit $\sigma$.
+
+
+For $t \in \R^*$, let $m(t, n) \in \mathbb{N}$ denote the smallest natural number such that 
+$$
+m(t, n) |t \, \xi_n| \geq r
+$$
+and define 
+$$
+\sigma_n(t) := m(t, n) t \, \xi_n \in S.
+$$
+
+-->
 
 ---
 
@@ -716,3 +748,4 @@ $\Longrightarrow \ \ \exists$ neighborhoods $\, \mathcal{U}$ of $0$ in $\fh$ and
 <Spacer/>
 
 Finally, we can construct an atlas for $H$ using $\lp \exp|_{\mathcal{U}} \rp^{-1}: \mathcal{V} \to \mathcal{U}$ and  left (or right) multiplication, as for $G$.
+

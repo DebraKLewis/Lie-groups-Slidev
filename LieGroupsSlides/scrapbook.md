@@ -190,3 +190,81 @@ $$
 \omega_\lozenge(g)(d_1 \lozenge_g(\xi_1), \ldots, d_1 \lozenge_g(\xi_n)) = \omega_1(\xi_1, \ldots, \xi_n)
 \qquad \forall \ g \in G.
 $$
+
+---
+
+We know that a morphism of Lie groups determines a morphism of Lie algebras, and
+$$
+\text{Hom}(G_1,G_2) → \text{Hom}(\fg_1, \fg_2)
+$$
+is injective if $G_1$ is connected. 
+
+We still NTS that a morphism $\psi : \fg_1 → \fg_2$ determines a morphism of Lie groups $\Psi: G_1 → G_2$ with $\ d_1 \Psi = \psi$.
+
+Let 
+$$
+G=G_1×G_2 \sands \fh= \{(\xi,\psi(\xi)): \xi ∈\fg_1 \}⊂ \fg.
+$$
+
+$\fh$ is a Lie algebra with bracket
+$$
+[(\xi, \psi(\xi)), (\eta, \psi(\eta))]_\fk = \lp [\xi, \eta]_\fg, [\psi(\xi), \psi(\eta)]_\fh \rp.
+$$
+There is a corresponding connected Lie subgroup 
+$$H \hookrightarrow G_1 × G_2.$$
+
+---
+
+#### Third slide of the proof of the relationship between normal subgroups and ideals
+
+If $P_1: G_1 \times G_2 \to G_1$ denotes projection onto the first factor, then 
+$$
+d_{(1, 1)}P_1|_{\fh} : \fh \to \fg_1
+$$
+is an isomorphism. 
+
+Exercise 2.3 in Kirillov implies that $P_1|_ H$ is a covering map. 
+
+Since $G_1$ is simply-connected, and $H$ is connected, so $P_1|_ H$ is an isomorphism. 
+$~$
+The map
+$$
+\Psi := P_2 \circ \iota_H \circ (P_1|_H)^{-1} : G_1 \to G_2,
+$$
+where $\iota_H: H \to G_1 \times G_2$ denotes inclusionn and $P_2$ denotes projection onto the second factor, is a morphism of Lie groups, with $d_1 \Psi = \psi$. 
+
+
+
+---
+
+## The Arnold-Euler equation (Euler's equations)
+
+If we drop the assumption of $\Ad \ G$ invariance of the inner product on $\fg$, we typically obtain a nontrivial Hamiltonian system
+$$
+\dot \mu = X_h(\mu) = \mp \ad^*_{I^{-1} \mu} \mu
+$$
+on $\fg^*$, with Hamiltonian
+$$
+h(\mu) := \smallfrac 1 2 ||\mu||_{\fg^*}^2 = \smallfrac 1 2 \mu(I^{-1} \mu). 
+$$
+$~$
+This system is known as *Euler's equation* in the historical cases 
+
+- Free rigid body motion: $G = SO(3, \R)$, with $\mathfrak{so}(3, \R)$ identified with $(\R^3, \times)$
+
+- Incompressible ideal fluids: $G = \text{Diff}_\text{vol}(M)$, with algebra $\ \calX(M)$.
+
+---
+
+In the context of more general Lie groups, it is known as the *Arnold-Euler equation*.
+$~$
+Arnold's development of key geometric and analytic properties of such systems led to important new results for well known PDEs.
+
+- Burgers’ equation ($\text{Diff}_\text{vol}(M)$), and 
+- the Korteweg-de Vries equation (Virasoro-Bott group), 
+
+both with the right invariant $L_2$  metric, are two well known PDEs that satisfy Arnold-Euler equations. 
+$~$
+$~$
+$~$
+$~$
