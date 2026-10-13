@@ -157,7 +157,7 @@ Infinitesimal generators of the adjoint action:
 If $M = \fg$ and $\rho(g) = \Ad_g$, then $\ \xi_G = \ad_\xi$. 
 
 Infinitesimal generators of the coadjoint action: 
-If $M = \fg^*$ and $\rho(g) = \Ad_{g^{-1}}$, then $\ \xi_G = -\ad_\xi^*$. 
+If $M = \fg^*$ and $\rho(g) = \Ad_{g^{-1}}^*$, then $\ \xi_G = -\ad_\xi^*$. 
 
 ---
 

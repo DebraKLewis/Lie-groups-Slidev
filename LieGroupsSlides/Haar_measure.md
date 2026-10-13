@@ -484,7 +484,7 @@ $\ \ \Longleftrightarrow \ \ \mu\ {}$ is an eigenvector of $\mathbb{I}^{-1}$.
 In particular, if $\mathbb{I}$ is a scalar multiple of the identity, all $\mu$ are equilibria.
 <Spacer size="5px"/>
 
-We can determine the paths followed by non-equilibrium solutions using two scalar functions that are constant along solutions:
+We can determine the paths followed by non-equilibrium solutions using two quadratic scalar functions that are constant along solutions:
 $$
 C_1(\mu) := \half \mu^T \mathbb{I}^{-1} \mu
 \sands 
@@ -574,7 +574,6 @@ $$
 $$
 If $G$ is a matrix group, we can treat the evolution equation for $g$ as a linear ODE on $F^{n \times n}$.
 
----
 <!-- 
 ### Conservation laws determine the trajectories of the Euler equation for $\ \fg = so(3, \R) \approx (\R^3, \times)$
 

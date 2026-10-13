@@ -267,4 +267,123 @@ both with the right invariant $L_2$  metric, are two well known PDEs that satisf
 $~$
 $~$
 $~$
+$~$a
+
+---
+
+MODIFY: The previous calculations show that Euler's equation is trivial if the inner product on $\fg^*$ is invariant with respect to the coadjoint action.
+
+In our $SO(3, \R)$ example, the coadjoint action is simply multiplication of $\mu$ by the rotation matrix $A$.
+
+Hence the inner product determined by $\mathbb{I}$ is invariant with respect to the coadjoint action $\ \ $\Longrightarrow \ \ \mathbb{I}$ is a multiple of the identity matrix. 
+
+
+---
+
+***Example:***  Hamiltonian vector fields for Lie-Poisson brackets (of reflexive Lie algebras)
 $~$
+If $X_h^\pm$ denotes the Hamiltonian vector field determined by $\{·,·\}_\pm\ {}$ and $h \in C^∞(\fg^*), \ {}$ then
+$$
+X_h^\pm(\mu) = \mp \ad^*_{\fd h \mu(\mu)} \mu.
+$$
+$~$
+An inner product $\, \langle \ \, , \ \rangle_\fg\, {}$ on $\fg$ induces an isomorphism $\, I: \fg \to \fg^*$
+$$
+(I \xi)(\eta) = \langle \xi , \eta \rangle \qquad \forall \ \xi, \eta \in \fg,
+$$
+and an associated inner product $\, \langle \ \,, \ \rangle_{\fg^*}\, {}$ on $\fg^*$,
+$$
+\langle \mu , \nu \rangle_{\fg^*} = \langle I^{-1} \mu, I^{-1} \nu \rangle_{\fg}
+= \mu(I^{-1} \nu).
+$$
+
+***Claim:*** $\ \langle \ \, , \ \rangle_\fg\ \Ad$-invariant $\ \Longrightarrow \ \langle \ \, , \ \rangle_{\fg^*} \ \Ad^*$-invariant, and hence
+$$
+C(\mu) := \smallfrac 1 2 ||\mu||_{\fg^*}^2
+$$
+is a Casimir of the Lie-Poisson bracket.
+
+---
+
+*Verify*: $\, \langle \ , \ \rangle_\fg\, {}$ $\Ad$-invariant $\ \Longrightarrow$
+$$\eqa{
+(\Ad^*_g I \Ad_g(\xi))(\eta) &=  (I \Ad_g(\xi))(\Ad_g \eta) \\
+&= \langle \Ad_g(\xi), \Ad_g \eta \rangle_\fg \\
+&=  \langle \xi, \eta \rangle_\fg \\
+&= (I \xi)(\eta)}
+$$
+for all $\, g \in G, \xi, \eta \in \fg \quad \Longrightarrow$
+$$
+\Ad^*_g \, I \, \Ad_g = I, \qquad \text{and hence} \qquad \Ad_g \, I^{-1} \, \Ad^*_g = I^{-1}
+\qquad \forall \ g \in G.
+$$
+Hence
+$$
+\langle \Ad_g^* \mu , \Ad_g^* \nu \rangle_{\fg^*}
+= \Ad_g^* \mu(I^{-1} \, \Ad^*_g \nu) = \mu(I^{-1} \nu)
+= \langle \mu , \nu \rangle_{\fg^*}.
+$$
+$~$
+It follows that $\ \langle \ \, , \ \rangle_{\fg^*}\ {}$ is $\ad$-invariant, i.e.
+$$
+0  =\langle \ad_\xi^* \mu , \nu \rangle_{\fg^*} + \langle  \mu , \ad_\xi^*\nu \rangle_{\fg^*} 
+%= \nu (I^{-1} \ad_\xi^* \mu + \ad_\xi I^{-1} \mu)
+\qquad \forall \ \xi \in \fg, \ \mu, \nu \in \fg^*.
+$$
+
+---
+
+In particular, 
+$$
+0 = \langle \ad_\xi^* \mu , \mu \rangle_{\fg^*}
+= \ad_\xi^* \mu(I^{-1}\mu).
+$$
+$~$
+$$
+C(\mu) =  \smallfrac 1 2 ||\mu||_{\fg^*}^2 = \smallfrac 1 2 \mu(I^{-1} \mu)
+\qquad \Longrightarrow \qquad \fd C \mu(\mu) = I^{-1} \mu.
+$$
+$~$
+Hence, letting $\, \xi = \fd f \mu(\mu),$
+$$\eqa{
+\pm \{f, C \}_\pm(\mu) &= \mu([\xi, I^{-1} \mu ]) \\
+&= \ad_\xi^*\mu(I^{-1} \mu)\\
+&= 0
+}
+$$
+for all $\, f \in  C^∞(\fg^*)\ {}$ and $\, \mu \in \fg^*$.
+$~$
+Conservation of Casimirs implies that all trajectories of Hamiltonian vector fields are constrained to the level sets of any Casimirs.
+
+---
+
+## Euler's equation
+
+*Euler's equation* 
+$$
+\dot \mu = \mp \ad^*_{I^{-1} \mu} \mu
+$$
+is Hamilton's equation for 
+$$
+h(\mu) := \smallfrac 1 2 ||\mu||_{\fg^*}^2 = \smallfrac 1 2 \mu(I^{-1} \mu). 
+$$
+$~$
+The previous calculations show that Euler's equation is trivial if the inner product on $\fg^*$ is $\Ad^*$ invariant.
+$~$
+***Special case:*** $\ \fg = so(3, \R) \approx (\R^3, \times)$
+
+Assume that the given inner product on $\fg \approx \R^3$ is not $\Ad$-invariant, i.e. not rotation invariant. Equivalently, $I$ is not a multiple of the identity matrix. 
+
+---
+
+Conservation of $h \ \Longrightarrow \ {}$ trajectories of Euler's equation lie on spheres w.r.t. the given norm, which are ellipsoids.
+
+The Euclidean inner product is rotation invariant, so the square of the Euclidean norm is a Casimir. Hence trajectories of Euler's equation also lie on Euclidean spheres. 
+
+The intersections of these surfaces determine the trajectories up to direction of travel:
+
+<p align="center">
+  <img alt="rigid_body_trajectories" src="/Images/rigid_body_trajectories.png" width="250" >
+</p>
+
+-->

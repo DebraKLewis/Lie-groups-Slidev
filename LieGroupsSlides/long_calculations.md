@@ -1,5 +1,6 @@
 ---
 routeAlias: induced-representations
+---
 
 ### Induced representations on vector fields 
 
@@ -47,3 +48,58 @@ where
 $$
 \iota_X \alpha(m) := \alpha(m)(X(m))\qquad \qquad  \forall \ m \in M. 
 $$
+
+---
+routeAlias: symplectic-induces-Poisson
+---
+
+***Claim:*** $\omega$ determines a Poisson bracket 
+$$
+\{ f, h \} := \omega(X_f, X_h) = {\cal L}_{X_h} f.
+%[ \alpha, \beta ]_{\dcXM} := \omega(\alpha^\sharp, \beta^\sharp) = \alpha(\beta^\sharp),
+$$
+and the Hamiltonian vector fields determined by this Poisson structure equal those determined by $\omega$.
+
+*Verify:*
+
+$\{·, h\}\, {}$ is a derivation, and the Hamiltonian vector fields determined by $\,\omega\,$ and $\, \{·, ·\}\, {}$ 
+are equal, since
+$$
+X_h(f) = \iota_{X_h} df = \iota_{X_h}\iota_{X_f}\omega = \{f,h\}  
+$$
+for all $\, f, h \in C^\infty(M)$.
+
+To show that $\, \{·, ·\}\, {}$ satisfies the Jacobi identity, we'll introduce another bracket.
+$~$
+$\omega$ also determines a Lie bracket on the space $\, \dcXM \, {}$ of smooth 1-forms:
+$$
+[ \alpha, \beta ]_{\dcXM} := - [\alpha^\sharp, \beta^\sharp]^\flat.
+$$
+
+- The space $\, {\cal X^*_C}(M)\, {}$ of closed 1-forms is a Lie subalgebra, and 
+- The derived algebra of $\,  {\cal X^*_C}(M)\, {}$ is contained in the subalgebra $\,  {\cal X^*_E}(M)\, {}$ 
+of exact 1-forms.
+
+---
+
+Setting $\, \alpha = df \, {}$ and $\, \beta = dh\,{}$ gives
+$$\eqa{
+[ df, dh ]_{\dcXM} &= d \iota_{dh^\sharp}\iota_{df^\sharp}\omega \\
+&= d \iota_{X_h}\iota_{X_f}\omega \\
+ &= d \{f, h \}.
+}
+$$
+
+Applying ${}^\sharp\,{}$ to both sides of the previous equality gives
+$$\eqa{
+[X_f, X_h] &= [ df, dh ]_{\dcXM}^\sharp\\ 
+&= \lp d \{f, h \} \rp^\sharp \\
+&= X_{\{f, h \}}.
+}
+$$ 
+
+$\, \{·, ·\}\, {}$ satisfies the Jacobi identity $\quad  \Longleftrightarrow$
+$$
+[X_f , X_h] = X_{\{f,h\}} \qquad \qquad \forall\ f, h \in C^\infty(M),
+$$
+so $\, \{·, ·\}\, {}$ is a Poisson bracket.

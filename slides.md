@@ -157,11 +157,10 @@ src: LieGroupsSlides/Haar_measure.md
 src: LieGroupsSlides/PoissonManifolds.md
 ---
 
-<!--
-
 ---
 src: LieGroupsSlides/symplecticManifolds.md
 ---
+
 
 ---
 src: LieGroupsSlides/symplecticPoisson2.md
@@ -179,6 +178,7 @@ src: LieGroupsSlides/PoissonConservedQuantities.md
 src: LieGroupsSlides/momentumMapsCoadjointOrbits.md
 ---
 
+<!--
 -->
 
 ---
