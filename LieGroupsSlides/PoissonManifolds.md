@@ -300,8 +300,6 @@ $$
 
 Hence $f$ $\Ad^*$-invariant $\ \ \Longrightarrow \ \ X_f(\mu)(\eta) = 0$.
 
-<!--
-
 ---
 
 ### Poisson maps
@@ -312,10 +310,42 @@ $φ^∗: C^∞(N) → C^∞(M)\,{}$ preserves the Poisson brackets, i.e.
  $$
 \{ f, g\}_N \circ φ = \{f \circ φ, g \circ φ \}_M \qquad \forall \ f, g ∈ C^∞(N).
 $$
+<Spacer size="2px"/>
+
+***Example:***  The time $t$ flow $\, {\cal F}_t\, {}$ of a Hamiltonian vector field $X_h$ is a Poisson map. <br/>
+Informal exercise: Prove this. $\phantom{\int^\int}$
 <Spacer size="5px"/>
 
-***Claim:***  The time $t$ flow $\, {\cal F}_t\, {}$ of a Hamiltonian vector field $X_h$ is a Poisson map.
+A *Poisson action* of a Lie group $G$ is an action $\rho$ such that $\rho(g)$ is a Poisson map for all $g \in G$.
+<Spacer size="1px"/>
 
-Informal exercise: Prove this. 
+***Example:*** The coadjoint action of $G$ on $\fg^*$ is Poisson with respect to the Lie-Poisson bracket. <br/> 
+[Verification](coadjoint-action-is-Poisson) in the Appendix. Key relationships: $\phantom{\int^\int}$
+$$
+[ \Ad_g \xi, \Ad_g \eta] = \Ad_g [\xi, \eta] 
+\sands
+\fd {\ }\mu (f \circ \Ad^*_{g}) = \Ad_{g} \circ \fd f \mu \circ \Ad^*_{g}.
+$$
 
--->
+---
+
+### Momentum maps
+
+Momentum maps generalize linear momentum&mdash;associated to translational symmetry&mdash;and angular momentum&mdash;associated to rotational symmetry.  
+
+A *momentum map* for a Poisson action of a Lie group $G$ on a Poisson manifold $M$ is a map $J: M \to \fg^*$ such that for any $\xi \in \fg$ the scalar function 
+$$
+j_\xi(p) := J(p)(\xi)
+$$
+has Hamiltonian vector field equal to the infinitesimal generator determined by $\xi$, i.e.
+$$
+\ X_{j_\xi}(p) = \xi_M(p) = \dep{\exp(\epsilon \, \xi) \cdot p} \qquad \qquad 
+$$
+
+$\forall \ p \in M$. Equivalently, $\ \forall \ f \in C^\infty(M),$
+$$
+\{f, j_\xi \} = \mathcal{L}_{\xi_M}f.
+$$
+***Example:*** Coadjoint action of $G$ on $\fg^*$, with momentum map $J(\mu) := \mu$.
+<br/>
+*Verify:* In-class exercise.

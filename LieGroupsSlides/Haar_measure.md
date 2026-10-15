@@ -434,6 +434,36 @@ The mechanics/physics of a system typically suggest a convenient trivialization.
 
 For the free rigid body, there are no "special directions" (no gravity!), which we'll later see suggests $\lozenge = L$.
 
+<!--
+---
+layout: two-cols-header
+---
+
+#### Left (body) and right (spatial) trivializations for $SO(3, \R)$
+
+The body angular velocity (left trivialized velocity) describes infinitesimal rotations of the rigid body from the perspective of an "observer" moving with the body, e.g. the pilot of a plane.
+
+The spatial angular velocity (right trivialized velocity) describes infinitesimal rotations of the rigid body from the perspective of an external "observer", e.g. air traffic controller or person holding the phone.
+
+The mechanics/physics of a system typically suggest a convenient trivialization.
+
+::left::
+
+![aircraft yaw, pitch, and roll axes](/Images/yaw_pitch_roll.png)
+
+::right::
+
+![phone yaw, pitch, and roll axes](/Images/phone_yaw_pitch_roll.png)
+
+<style>
+.two-cols-header {
+  column-gap: 20px; /* Adjust the gap size as needed */
+}
+
+</style>
+-->
+
+
 ---
 
 #### The Euler-Arnold and geodesic equations for $SO(3, \R)$
@@ -481,14 +511,14 @@ We first find a trajectory $\xi(t)$ of the Euler-Arnold equation, then solve the
 $\mu \ {}$ is an equilibrium of Euler's equation 
 $\ \ \Longleftrightarrow \ \ \mu\ {}$ is an eigenvector of $\mathbb{I}^{-1}$.
 
-In particular, if $\mathbb{I}$ is a scalar multiple of the identity, all $\mu$ are equilibria.
-<Spacer size="5px"/>
+In particular, if $\mathbb{I}$ is a scalar multiple of the identity (the inner product is $\Ad$-invariant), all $\mu$ are equilibria.
+<Spacer size="2px"/>
 
 We can determine the paths followed by non-equilibrium solutions using two quadratic scalar functions that are constant along solutions:
 $$
 C_1(\mu) := \half \mu^T \mathbb{I}^{-1} \mu
 \sands 
-C_2(\mu) := || \mu||^2 = \mu^T \mu.
+C_2(\mu) := \mu^T \mu.
 $$
 
 If $\mu: I \to \R^3$ is a trajectory of the Euler-Arnold equation, then symmetry of $\, \mathbb{I}^{-1} \ \ \Longrightarrow$
@@ -526,8 +556,8 @@ What do those level sets look like?
 - $C_1^{-1}(0) = C_2^{-1}(0) = \{\mathbf{0}\}$. 
 
 - If $r > 0$, $C_2^{-1}(r)$ is the sphere of radius $r$ centered at the origin,
-and $C_2^{-1}(r)$ is 
-    - a sphere if $\mathbb{I}$ is a scalar multiple of the identity (all points in $\R^3$ are equilibria), 
+and $C_1^{-1}(r)$ is 
+    - a sphere if $\mathbb{I}$ is a scalar multiple of the identity, 
     - a spheroid if $\mathbb{I}$ has one repeated eigenvalue and one distinct eigenvalue, and
     - an ellipse if $\mathbb{I}$ has three distinct eigenvalues.
 

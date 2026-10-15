@@ -239,11 +239,72 @@ $$
 \iota_X \alpha(m) := \alpha(m)(X(m))\qquad \qquad  \forall \ m \in M. 
 $$
 
+
+---
+routeAlias: coadjoint-action-is-Poisson
+---
+
+### Proof that the coadjoint action is a Poisson action
+
+Given $g \in G$ and $\mu, \nu \in \fg^*$, 
+linearity of the coadjoint action $\ \ \Longrightarrow$
+$$
+\eqa{
+\nu\lp \fd {\ }\mu (f \circ \Ad^*_{g})(\mu) \rp 
+&= \dep {f(\Ad^*_{g}(\mu + \epsilon \, \nu))} \\
+&= df(\Ad^*_{g}\mu)(\Ad^*_{g}\nu) \\
+&= \Ad^*_{g}\nu \lp \fd f \mu(\Ad^*_{g}\mu) \rp  \\
+&= \nu \lp \Ad_{g}\lp \fd f \mu(\Ad^*_{g}\mu) \rp \rp
+}
+$$
+$\Longrightarrow$
+$$
+\fd {\ }\mu (f \circ \Ad^*_{g})(\mu) = \Ad_{g}\lp \fd f \mu(\Ad^*_{g}\mu)\rp .
+$$
+
+To reduce notational clutter, set
+$$
+\xi := \fd f \mu(\Ad^*_{g}\mu)
+\sands
+\eta := \fd h \mu(\Ad^*_{g}\mu).
+$$
+
+---
+
+#### Second slide of proof that the coadjoint action is a Poisson action
+
+The calculations on the previous slide $\ \ \Longrightarrow$
+$$
+\left \{f \circ \Ad^*_{g}, h \circ \Ad^*_{g} \right \}(\mu)
+%= \mu \lp \left [ \Ad_{g}\fd f \mu(\Ad^*_{g}\mu), \Ad_{g}\fd h \mu(\Ad^*_{g}\mu) \right ].
+= \mu \lp [\Ad_{g}\xi, \Ad_{g}\eta] \rp.
+$$
+
+On the other hand,
+$$
+\lp \{f, h \} \circ \Ad^*_{g} \rp(\mu) 
+%= \Ad^*_{g}\mu \lp \left [ \fd f \mu(\Ad^*_{g}\mu), \fd h \mu(\Ad^*_{g}\mu) \right ]
+= \Ad^*_{g}\mu([\xi, \eta])
+= \mu(\Ad_{g}[\xi, \eta]).
+$$
+<Spacer size="5px"/>
+
+Since the adjoint action preserves the Lie bracket,
+$$
+[\Ad_{g}\xi, \Ad_{g}\eta] = \Ad_{g}[\xi, \eta],
+$$
+and hence
+$$
+\left \{f \circ \Ad^*_{g}, h \circ \Ad^*_{g} \right \} = \{f, h \} \circ \Ad^*_{g}.
+$$
+
 ---
 routeAlias: symplectic-induces-Poisson
 ---
 
-***Claim:*** $\omega$ determines a Poisson bracket 
+### A symplectic structure determines a Poisson bracket
+
+$\omega$ determines a Poisson bracket 
 $$
 \{ f, h \} := \omega(X_f, X_h) = {\cal L}_{X_h} f.
 %[ \alpha, \beta ]_{\dcXM} := \omega(\alpha^\sharp, \beta^\sharp) = \alpha(\beta^\sharp),
@@ -258,37 +319,50 @@ $$
 X_h(f) = \iota_{X_h} df = \iota_{X_h}\iota_{X_f}\omega = \{f,h\}  
 $$
 for all $\, f, h \in C^\infty(M)$.
+<Spacer size="5px"/>
 
 To show that $\, \{·, ·\}\, {}$ satisfies the Jacobi identity, we'll introduce another bracket.
-$~$
-$\omega$ also determines a Lie bracket on the space $\, \dcXM \, {}$ of smooth 1-forms:
-$$
-[ \alpha, \beta ]_{\dcXM} := - [\alpha^\sharp, \beta^\sharp]^\flat.
-$$
-
-- The space $\, {\cal X^*_C}(M)\, {}$ of closed 1-forms is a Lie subalgebra, and 
-- The derived algebra of $\,  {\cal X^*_C}(M)\, {}$ is contained in the subalgebra $\,  {\cal X^*_E}(M)\, {}$ 
-of exact 1-forms.
 
 ---
 
+#### Second slide of construction of a Poisson bracket from a symplectic structure 
+
+$\omega$ determines a Lie bracket on the space $\, {\cal X^*}(M) \, {}$ of smooth 1-forms:
+$$
+[ \alpha, \beta ]_{{\cal X^*}(M)} := - [\alpha^\sharp, \beta^\sharp]^\flat.
+$$
+
+- The space $\, {\cal X}^*_C(M)\, {}$ of closed 1-forms is a Lie subalgebra of ${\cal X^*}(M)$, and 
+- The derived algebra of $\,  {\cal X}^*_C(M)\, {}$ is contained in the subalgebra $\,  {\cal X}^*_E(M)\, {}$ 
+of exact 1-forms.
+
 Setting $\, \alpha = df \, {}$ and $\, \beta = dh\,{}$ gives
-$$\eqa{
-[ df, dh ]_{\dcXM} &= d \iota_{dh^\sharp}\iota_{df^\sharp}\omega \\
+$$
+\eqa{
+[ df, dh ]_{{\cal X^*}(M)} &= d \iota_{dh^\sharp}\iota_{df^\sharp}\omega \\
 &= d \iota_{X_h}\iota_{X_f}\omega \\
  &= d \{f, h \}.
 }
 $$
 
 Applying ${}^\sharp\,{}$ to both sides of the previous equality gives
-$$\eqa{
-[X_f, X_h] &= [ df, dh ]_{\dcXM}^\sharp\\ 
-&= \lp d \{f, h \} \rp^\sharp \\
-&= X_{\{f, h \}}.
-}
+$$
+[ df, dh ]_{{\cal X^*}(M)}^\sharp
+= \lp d \{f, h \} \rp^\sharp 
+= X_{\{f, h \}}.
 $$ 
 
-$\, \{·, ·\}\, {}$ satisfies the Jacobi identity $\quad  \Longleftrightarrow$
+---
+
+#### Third slide of construction of a Poisson bracket from a symplectic structure 
+
+Hence 
+$$
+X_{\{f, h \}} = [ df, dh ]_{{\cal X^*}(M)}^\sharp = [X_f, X_h].
+$$ 
+<Spacer size="5px"/>
+
+We showed that $\, \{·, ·\}\, {}$ satisfies the Jacobi identity $\quad  \Longleftrightarrow$
 $$
 [X_f , X_h] = X_{\{f,h\}} \qquad \qquad \forall\ f, h \in C^\infty(M),
 $$
