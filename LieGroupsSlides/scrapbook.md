@@ -387,3 +387,174 @@ The intersections of these surfaces determine the trajectories up to direction o
 </p>
 
 -->
+
+---
+
+---
+
+***More recap: The symplectic structures on $T^*G$ and $G \times \fg^*$*** 
+
+Given $\, \xi \in \fg, \ \mu \in \fg^*, \ \text{and}\ \lozenge = L\ {}$ or $\ R, {}$ the $\lozenge$-invariant vector fields and 1-forms
+$$
+\xi_\lozenge(g) := d_1 \lozenge(\xi) \sands 
+\mu_\lozenge(g) := (d_g \lozenge_{g^{-1}})^* \mu.
+%, \sands \Omega^\lozenge_\mu := \Omega_{\mu_\lozenge}.
+$$
+determine a diffeomorphism
+$$\eqa{
+\tau_\lozenge: G \times& \fg^* \times \fg \times \fg^* \to T(T^*G) \\ 
+(g, \mu, \xi, \nu) &\mapsto d_g \mu_\lozenge(\xi_\lozenge(g)) + \text{vert}_{\mu_\lozenge(g)}(\nu_\lozenge(g))\in T_{\mu_\lozenge(g)}T^*G.
+}
+$$
+$~$
+The canonical symplectic structure on $T^*G$ satisfies
+$$
+%\omega_\lozenge(g, \mu)((\xi_\lozenge(g), \nu), ((\tilde \xi_\lozenge(g), \tilde \nu)
+\omega_0(\mu_\lozenge(g))(\tau_\lozenge(g, \mu, \xi, \nu), \tau_\lozenge(g, \mu, \tilde \xi,\tilde \nu))
+ = \tilde \nu(\xi) - \nu(\tilde \xi) \pm_\lozenge \mu([\xi,  \tilde \xi])
+$$
+and determines symplectic structures $\, \omega_\lozenge\ {}$ on $G \times \fg^*$.
+
+---
+
+### $G$-invariant functions on $T^*G$ and the Lie-Poisson bracket 
+
+$f\in C^\infty(\fg^*)\ {}$ determines a function $\tilde f$ on $\ G \times \fg^*\ {}$ with trivial $G$ dependence
+$$
+\tilde f(g, \mu) := f(\mu)
+$$
+ satisfying
+$$\eqa{
+ \fd {\tilde f} g(g, \mu)(\xi) + \nu(\fd {\tilde f} \mu(g, \mu)) &=  d \tilde f(g, \mu)(\xi_\lozenge(g), \nu) \\
+&= df(\mu)(x\nu) \\
+&= \nu(\fd f \mu(\mu)).
+}
+$$
+The Poisson bracket of two $G$-invariant functions on $G \times \fg^*$ equals their Lie-Poisson bracket, regarded as functions on $\fg^*$, with $\pm$ determined by the handedness of $\lozenge$
+$$
+\{\tilde f, \tilde h \}_\lozenge(g, \mu) = \{f, h\}_\pm(\mu).
+$$
+
+---
+
+The IVP 
+$$
+(\dot g, \dot \mu) = X_{\tilde h}(g, \mu) = \lp \lp \fd f \mu(\mu) \rp_{\!\lozenge}(g), \pm \ad^*_{\fd f \mu(\mu)} \mu \rp,
+$$
+with initial data $g(0) = g_0, \ \mu(0) = \mu_0, \ {}$ is partially decoupled. 
+
+$~$
+The solution $\mu: I \to \fg^*$ of the Euler equation
+$$
+\dot  \mu = \pm \ad^*_{\fd f \mu(\mu)} \mu \sands \mu(0) = \mu_0,
+$$
+determines a time-dependent IVP
+$$
+\dot g = d_1 \lozenge_g(\fd f \mu(\mu(t))) \sands g(0) = g_0.
+$$
+
+Finding $\, g(t)\, {}$ given $\, \mu(t)\, {}$ is one version of a process called *reconstruction*.
+
+---
+
+## Recap: Poisson manifolds
+
+A *Poisson manifold* $(M, \{\ , \ \})$ is a smooth manifold $M$  such that
+- $V = C^∞(M)$ is a Lie algebra, with Lie bracket $\{·, ·\}$, and
+- for every $f \in V$, $\{f, \cdot \}: V \to V$ is a derivation, i.e.
+$$
+\{f, gh\} = \{f, g\}h + g\{f, h\} \qquad \qquad\forall \ g, h \in V.\phantom{x^\int}
+$$
+
+$~$
+The *Lie-Poisson bracket* on $\fg^*$ is
+$$
+\{f, g\}_\pm(\mu) = \pm \mu \lp \left [\fd f \mu(\mu), \fd g \mu(\mu) \right ] \rp,
+$$
+where $\, \fd f \mu: \fg^* → \fg\, {}$ is determined by 
+$$
+\nu(\fd f \mu(\mu)) = \smallfrac {d \ }{d \epsilon} f (\mu + \epsilon \, \nu) |_{\epsilon = 0} \qquad \qquad \forall \ \mu, \nu \in \fg^*.\phantom{x_\int}
+$$
+
+---
+
+### Hamiltonian vector fields on finite dimensional Poisson manifolds
+
+$\ \{ ·, ·\}\, {}$ determines a map 
+$$\eqa{
+X: C^∞(M) &\to \calX(M)\\
+h &\mapsto X_h
+}
+$$
+satisfying
+$$
+{\cal L}_{X_h}f = \{f, h \} \qquad \forall \ f, h \in V.
+$$
+$~$
+$X_h$ is called the *Hamiltonian vector field* associated to the *Hamiltonian* $h$.
+$~$
+$f \mapsto X_f$ is a Lie algebra homomorphism (or anti-hom, depending on sign conventions):
+$$
+[X_f , X_h] = X_{\{f,h\}} \qquad \qquad \forall\ f, h \in V.
+$$
+
+---
+
+## Lie-Poisson brackets
+
+The Hamiltonian vector field $X_h$ determined by the Lie-Poisson bracket satisfies
+$$\eqa{
+ d f(\mu)(X_h(\mu)) &=\smallfrac {d \ }{dt} f(\calF_t(\mu))|_{t = 0}\\
+&= \{f, h\}_\pm(\mu) \\
+&= \pm \mu \lp \left [\fd f \mu(\mu), \fd h \mu(\mu) \right ] \rp\\
+&= \mp \ad^*_{\fd h \mu(\mu)} \mu\lp \fd f \mu(\mu) \rp \\
+&= \mp d f(\mu)\lp \ad^*_{\fd h \mu(\mu)} \mu \rp,
+}
+$$
+so 
+$$
+X_h(\mu) = \mp \ad^*_{\fd h \mu(\mu)} \mu.
+$$
+
+---
+
+---
+
+## Poisson maps
+
+A map $\,φ: M → N\,{}$ between Poisson manifolds is a *Poisson map* if 
+ $$
+\{ f, g\}_N \circ φ = \{f \circ φ, g \circ φ \}_M \qquad \forall \ \ f, g ∈ C^∞(N).
+$$
+$~$
+The time $t$ flow $\, {\cal F}_t\, {}$ of a Hamiltonian vector field $X_h$ is a Poisson map.
+$~$
+If $X_h$ is a Hamiltonian vector field and $\, {\cal F}_t: M \to M\, {}$ is the time $t$ flow of $X_h, \ {}$ 
+$$
+h \circ {\cal F}_t = h. \phantom{x_\int} 
+$$
+
+*Verify:* ${\cal F}_0 = \text{id}_M, \ {}$ so the equality holds for $\ t = 0$.
+
+Skew-symmetry of $\ \{ \ , \ \} \ \Longrightarrow \ \{h, h \} = 0 \ \Longrightarrow \ \ {}$ 
+$$
+\smallfrac {d \ }{dt} h \circ {\cal F}_t = {\mathcal L}_{X_h}h \circ {\cal F}_t 
+= \{h, h \}\circ {\cal F}_t 
+= 0.
+$$
+
+---
+
+## Casimirs
+
+$C \in C^∞(M)\, {}$ is called a *Casimir* if the following equivalent conditions are satisfied:
+- $\ \{\ ·\ , C \} = 0 \ {}$ 
+- $\ X_C = 0, \ {}$
+- $\ C$ is preserved by the flow of any Hamiltonian vector field, i.e. for any $h \in C^∞(M)$, 
+$${\cal L}_{X_h} C = 0.$$
+$~$
+The space of Casimirs is the kernel of the map from $C^∞(M)$ to $\calX(M)$ determined by the Poisson structure on $M$.
+
+Casimirs in this sense are a special case of a more general algebraic concept of Casimirs.
+
+"We" say/write Casimir, but Hamilton*ian*. Naming conventions are inconsistent.

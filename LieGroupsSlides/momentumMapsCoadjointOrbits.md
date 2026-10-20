@@ -1,3 +1,5 @@
+<!--
+
 ## More Hamiltonian dynamics
 
 ***Recap from Tuesday:*** A closed, non-degenerate 2-form on a smooth manifold $M$ is called a *symplectic structure*.
@@ -33,27 +35,39 @@ $$
 $$
 $~$
 
-### Fill in some of the gaps in verifying the Jacobi identity from Poisson brackets
+-->
 
-Preliminary to proving that $\ \{ \ , \ \}_{C^\infty(M)} \ {}$ satisfies the Jacobi identity, show that:
+## The Poisson bracket determined by a symplectic structure
+
+The canonical sympectic structure on $T^*M$ and Lie bracket on $\cXM$ determine a Lie algebra structure on the space $\calX^*(M)$ of smoooth 1-forms on $M$:
 $$
-d \{ f, h \}_{C^\infty(M)} = [df, dh]_{\dcXM}
+[\beta_1, \beta_2]_{\calX^*(M)} := \lp [\beta_1^\sharp, \beta_2^\sharp]_{\cXM} \rp^\flat,
 $$
-$~$
+where $\flat: \cXM \to \calX^*(M)$ and $\sharp:\calX^*(M) \to \cXM$ are the isomorphisms
+$$
+X^\flat = \iota_X \omega \sands \iota_{\beta^\sharp} \omega = \beta.
+$$
 
----
-
-Invoke the following identity from the "cheat sheet" (see Resources module), applied to $\omega$ and $X, Y, Z \in \cXM$:
-$$\eqa{
+Preliminary to proving that $\ \{ \ , \ \} \ {}$ satisfies the Jacobi identity, we'll show that:
+$$
+d \{ f, h \} = [df, dh]_{\calX^*(M)},
+$$
+using the following identity from the "cheat sheet", applied here to $\omega$ and $X, Y, Z \in \cXM$:
+$$
+\eqa{
 \ed \omega(X, Y, Z) &= X(\omega(Y, Z)) - \omega(Y, [X, Z]) \\
 &\qquad + \text{cyclic permutations of } X, Y, Z.
 }
 $$
 
+---
+
+#### Second slide of the Jacobi identity for the canonical Poisson bracket on $T^*M$
 
 Let $X = \alpha^\sharp$ and $Y = \beta^\sharp$.
 
-$$\eqa{
+$$
+\eqa{
 \alpha^\sharp(\omega(\beta^\sharp, Z)) 
 &= \alpha^\sharp(\beta(Z)) \\
 &= ({\cal L}_{\alpha^\sharp}\beta)(Z) + \beta([\alpha^\sharp, Z]) \\
@@ -67,17 +81,21 @@ $$
 
 Analogously,
 
----
-
-$$\eqa{\beta^\sharp(\omega(Z, \alpha^\sharp)) - \omega(\alpha^\sharp, [Z, \beta^\sharp])&= - (\beta^\sharp(\omega(\alpha^\sharp, Z)) - \omega(\alpha^\sharp, [\beta^\sharp, Z]))  \\
+$$
+\eqa{\beta^\sharp(\omega(Z, \alpha^\sharp)) - \omega(\alpha^\sharp, [Z, \beta^\sharp])&= - (\beta^\sharp(\omega(\alpha^\sharp, Z)) - \omega(\alpha^\sharp, [\beta^\sharp, Z]))  \\
 &= - ({\cal L}_{\beta^\sharp}\alpha)(Z).
 }
 $$
 
+---
+
+#### Third slide of the Jacobi identity for the canonical Poisson bracket on $T^*M$
+
 Finally,
-$$\eqa{
+$$
+\eqa{
 Z(\omega(X, Y)) - \omega(Z, [Y, X]) &= Z(\omega(\alpha^\sharp, \beta^\sharp)) + \omega([\alpha^\sharp, \beta^\sharp], Z)\\
-&= \lp d(\omega(\alpha^\sharp, \beta^\sharp))+ [ \alpha , \beta ]_{\dcXM} \rp(Z).
+&= \lp d(\omega(\alpha^\sharp, \beta^\sharp))+ [ \alpha , \beta ]_{\calX^*(M)} \rp(Z).
 }
 $$
 
@@ -86,12 +104,10 @@ $~$
 
 Putting it all together, dropping $Z$, and rearranging terms gives
 $$
-[ \alpha , \beta ]_{\dcXM} = {\cal L}_{\beta^\sharp}\alpha - {\cal L}_{\alpha^\sharp}\beta - d(\omega(\alpha^\sharp, \beta^\sharp)).
+[ \alpha , \beta ]_{\calX^*(M)} = \mathcal{L}_{\beta^\sharp}\alpha - \mathcal{L}_{\alpha^\sharp}\beta - d(\omega(\alpha^\sharp, \beta^\sharp)).
 $$
 
----
-
-Now show that the space $\, {\cal X^*_C}(M)\, {}$ of closed 1-forms is a Lie subalgebra.
+Now show that the space $\, {\calX^*_C}(M)\, {}$ of closed 1-forms is a Lie subalgebra.
 
 The identity ("Cartan's magic formula")
 $$
@@ -132,6 +148,7 @@ $$\eqa{
 $$ 
 We showed last week that satisfaction of this equality for all $f, h$ is equivalent to satisfaction of the Jacobi identity by $\{\ , \ \}$.
 
+<!--
 ---
 
 ***More recap: The symplectic structures on $T^*G$ and $G \times \fg^*$*** 
@@ -197,20 +214,22 @@ $$
 
 Finding $\, g(t)\, {}$ given $\, \mu(t)\, {}$ is one version of a process called *reconstruction*.
 
+-->
+
 ---
 
-## Momentum maps 
+## Momentum maps on symplectic manifolds 
 
 Assume that a Lie group $G$ acts on the symplectic manifold $M$ and preserves the symplectic structure, i.e.
 $$
 \rho(g)^* \omega = \omega \qquad \qquad \forall \ g \in G.
 $$
-$~$
+
 Given a map $J: M \to \fg^* \ {}$ and $\xi \in \fg, \ {}$ define $J_\xi \in C^\infty(M)\, {}$ by
 $$
 J_\xi(p) := J(p)(\xi).
 $$
-$~$
+
 $J$ is a *momentum map* for the $G$ action on $M$ if
 $$
 X_{J_\xi} = \xi_M \qquad \qquad \forall \ \xi \in \fg,
@@ -222,13 +241,15 @@ where $\xi_M(p)  = \dep {\exp(\epsilon \, \xi) \cdot p}$ is the infinitesimal ge
 ***Claim:*** If $h \in C^\infty(M)\, {}$ is $G$-invariant, then $J$ is preserved by the flow of $X_h$.
 
 *Verify:* 
-$$\eqa{
+$$
+\eqa{
 \calL_{X_h} J_\xi &= \omega(X_{J_\xi}, X_h) \\
 &= - \omega(X_h, X_{J_\xi}) \\
 &= - \calL_{\xi_M}h \\
 &= \dep{h \circ \rho(\epsilon \, \xi)}\\
 &= \dep{h} \\
-& = 0. \phantom{\int_\int}}
+& = 0. \phantom{\int_\int}
+}
 $$
 
 *Very important example:* $M = T^*Q, \ {}$ where $G$ acts on $Q$, and the action of $G$ on $T^*Q$ is the cotangent lifted action
@@ -249,7 +270,8 @@ $$
 $~$
 *Verify:* $\ \pi \circ P(g) = \rho(g) \circ \pi \ \Longrightarrow$
 
-$$\eqa{
+$$
+\eqa{
 (P(g)^*\theta_0)(z_q)(w_{z_q}) 
 &= (g  \cdot z_q)(d_{g  \cdot z_q} \pi( d_{z_q} P(g)(w_{z_q}))\\
 &= (g \cdot z_q)( d_{z_q} (\pi \circ P(g))(w_{z_q})\\
@@ -263,7 +285,8 @@ $$
 
 Hence $\theta_0$ is $G$-invariant.
 
-$$\eqa{
+$$
+\eqa{
 P(g)^*\omega_0 &= - P(g)^*(\ed \theta_0) \\
 &= - \ed (P(g)^*\theta_0) \\
 &= - \ed \theta_0 \\
@@ -277,7 +300,8 @@ d_{z_q} \pi( \xi_{T^*Q}(z_q)) = \xi_Q(q) \qquad \Longrightarrow \qquad
 J_\xi = \iota_{\xi_{T^*Q}} \theta_0,
 $$
 and hence 
-$$\eqa{
+$$
+\eqa{
 d J_\xi &= d \iota_{\xi_{T^*Q}} \theta_0 \\
 &= {\cal L}_{\xi_{T^*Q}} \theta_0 - \iota_{\xi_{T^*Q}} \ed \theta_0\\
 &= \iota_{\xi_{T^*Q}} \omega_0.
@@ -293,7 +317,8 @@ J(g \cdot z_q) = \Ad_{g^{-1}}^* J(z_q) \qquad \qquad \forall \ g \in G, \ z_q \i
 $$
 
 *Verify:*
-$$\eqa{
+$$
+\eqa{
 J(g \cdot z_q)(\xi) &= J_\xi(g \cdot z_q) \\
 &= (g \cdot z_q)(\xi_Q(\pi((g \cdot z_q))))\\
 &= z_q (d_{g \cdot q}\rho(g^{-1})(\xi_Q(g \cdot q)))\\
@@ -337,7 +362,7 @@ If $M$ is a Poisson manifold and $G$ acts on $M$ by Poisson maps, then (as for t
 $$
 X_{J_\xi} = \xi_M \qquad \qquad \forall \ \xi \in \fg.
 $$
-$~$
+
 
 ## Relative equilibria
 
@@ -352,13 +377,13 @@ If $p$ is a relative equilibrium with generator $\xi$ and $\calF_t$ denotes the 
 $$
 \calF_t(p) = \exp(t \, \xi) \cdot p.
 $$
-$~$
+
 If $J: M \to \fg^*$ is a momentum map for the action of $G$ on a symplectic manifold $M$, then $p$ is a relative equilibrium with generator $\xi \ \ \Longleftrightarrow \ \ p\ {}$ is a critical point of $h - J_\xi$, since
 $$
 X_h - \xi_M = (d (h - J_\xi))^\sharp,
 $$
 and $\ {}^\sharp\ {}$ is injective.
-$~$
+
 If $J: M \to \fg^*$ is a momentum map for the action of $G$ on a Poisson manifold $M$, then $p$ is a relative equilibrium with generator $\xi \ \ \Longleftrightarrow \ \ p\ {}$ is a critical point of 
 $$h - J_\xi - C$$ 
 for some Casimir $C$.

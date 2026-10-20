@@ -161,6 +161,11 @@ src: LieGroupsSlides/PoissonManifolds.md
 src: LieGroupsSlides/symplecticManifolds.md
 ---
 
+<!--
+
+---
+src: LieGroupsSlides/principal_bundles.md
+---
 
 ---
 src: LieGroupsSlides/symplecticPoisson2.md
@@ -178,9 +183,7 @@ src: LieGroupsSlides/PoissonConservedQuantities.md
 src: LieGroupsSlides/momentumMapsCoadjointOrbits.md
 ---
 
-<!--
 -->
-
 ---
 
 # Representation theory 

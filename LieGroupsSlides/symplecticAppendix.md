@@ -1,4 +1,6 @@
-## Appendix: More symplectic results
+<!-- 
+
+## More symplectic results
 
 *Verify that $\ [ \ , \ ]_{\dcXM)} \ {}$ satisfies the Jacobi identity:*
 
@@ -200,6 +202,14 @@ $$
 $$ 
 $~$
 *Verify:* 
+
+-->
+
+---
+routeAlias: trivialized_canonical_symplectic_structure
+---
+
+### Derivation of the locally trivialized expression for the canonical symplectic structure on $T^*Q$
 
 Bilinearity of $\omega_0 \ \Longrightarrow \ {}$ we can work term by term.
 

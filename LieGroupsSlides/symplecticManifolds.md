@@ -62,7 +62,7 @@ $$
 
 The associated Poisson bracket is 
 $$
-\{f, g\}=∑_{𝑖=1}^n \frac {∂f}{∂𝑞_𝑖} \frac {∂f}{∂𝑝_𝑖} − \frac {∂g}{∂𝑞_𝑖} \frac {∂f}{∂𝑝_𝑖}.
+\{f, h\}=∑_{𝑖=1}^n \frac {∂f}{∂𝑞_𝑖} \frac {∂h}{∂𝑝_𝑖} − \frac {∂h}{∂𝑞_𝑖} \frac {∂f}{∂𝑝_𝑖}.
 $$
 
 ---
@@ -74,10 +74,11 @@ $$
 \omega(\xv)(\uv \times \xv, \vv \times \xv) := 
 \xv^T(\uv \times \vv).
 $$
+<Spacer size="5px"/>
 
 *In-class exercise:* Show that $\omega$ is a symplectic structure, i.e. that
 
-- $\omega$ is a well-defined $2$-form,
+- $\omega$ is a well-defined 2-form,
 
 - $\omega$ is closed, and
 
@@ -87,12 +88,108 @@ and determine the Hamiltonian vector fields and Poisson bracket determined by $\
 
 ---
 
+### An example that generalizes the previous one: coadjoint orbits
+
+The pairing
+$$
+\omega_\pm(\nu)(\ad^*_\xi \nu, \ad^*_\eta \nu) := \pm \nu([\xi, \eta])
+$$
+is well-defined and determines an $\Ad^*$-invariant 2-form on $\mathcal{O}_\mu$. 
+<Spacer size="1px"/>
+
+*Verify for $\omega_+. \ \ \Ad^*$-invariance* : 
+Identifying $T_\nu \fg^*$ with a subspace of $\fg^*$, and 
+$d_\nu \Ad^*_{g}$ with $\Ad^*_{g}$, we have
+$$
+\lp \lp \Ad^*_{g^{-1}}\rp^* \omega_+ \rp(\nu)(\ad^*_\xi \nu, \ad^*_\eta \nu)
+= \omega_+(\Ad^*_{g^{-1}}\nu) \lp \Ad^*_{g^{-1}}(\ad^*_\xi \nu), \Ad^*_{g^{-1}}(\ad^*_\eta \nu) \rp.
+$$
+
+For arbitrary $\zeta \in \fg$, $\Ad$-invariance of the Lie bracket $\ \ \ \Longrightarrow$
+$$
+\eqa{
+\Ad^*_{g^{-1}}(\ad^*_\xi \nu)(\zeta)
+&= \nu ([\xi, \Ad_{g^{-1}}\zeta ]) \\
+&= \nu ( \Ad_{g^{-1}} [ \Ad_{g}\xi, \zeta ]) \\
+&= \Ad_{g^{-1}}^*\nu ([ \Ad_{g}\xi, \zeta ]) \\
+&= \lp \ad_{\Ad_{g}\xi}\Ad_{g^{-1}}^*\nu \rp(\zeta).
+}
+$$
+
+---
+
+#### Second slide of coadjoint orbit symplectic structure example
+
+Hence
+$$
+\eqa{
+\omega_+(\Ad^*_{g^{-1}}\nu) \lp \Ad^*_{g^{-1}}(\ad^*_\xi \nu), \Ad^*_{g^{-1}}(\ad^*_\eta \nu) \rp
+&= \omega_+(\Ad^*_{g^{-1}}\nu) \lp \ad_{\Ad_{g}\xi}\Ad_{g^{-1}}^*\nu, \ad_{\Ad_{g}\eta}\Ad_{g^{-1}}^*\nu \rp \\
+&= \Ad_{g^{-1}}^*\nu \lp [\Ad_{g}\xi, \Ad_{g}\eta ] \rp \\
+&= \nu \lp \Ad_{g^{-1}}(\Ad_g [\xi, \eta] )\rp \\
+&= \nu([\xi, \eta]).
+}
+$$
+
+<!--
+$$
+T_{\Ad^*_{g} \mu} \mathcal{O}_\mu = \{ \Ad^*_{g}(\ad^*_\xi \mu) \, : \, \xi \in \fg \}.
+$$
+-->
+
+<Spacer size="2px"/>
+
+Closure follows from $\Ad^*$-invariance and Cartan's magic formula:
+$$
+\mathcal{L}_{X_\zeta} \omega_+ = \iota_{X_\zeta}d \omega_+ + d \iota_{X_\zeta} \omega_+,
+$$
+where $X_\zeta$ is the infinitesimal generator associated to $\zeta \in \fg$ of the coadjoint action. 
+
+$\Ad^*$-invariance of $\omega_+ \ \ \Longrightarrow \ \ \mathcal{L}_{X_\zeta} \omega_+ = 0$.
+
+*In-class exercise:* $\iota_{X_\zeta} \omega_+ = - \varphi(\zeta)$.
+
+---
+
+#### Third slide of coadjoint orbit symplectic structure example
+
+Since $\varphi(\zeta)$ is a constant function, $d \iota_{X_\zeta} \omega_+ = 0$, and 
+Cartan's magic formula gives 
+$$
+\iota_{X_\zeta}d \omega_+ = 0
+$$
+for any $\zeta \in \fg$. 
+Since $T_\nu \mathcal{O}_\mu = \{ X_\zeta(\nu) \, : \, \zeta \in \fg \}$, it follows that $d \omega_+ = 0$, i.e. $\omega_+$ is closed.
+<Spacer size="2px"/>
+
+*Nondegeneracy:* 
+$$
+\eqa{
+0 &= \omega_+(\nu)(\ad^*_\xi \nu, \ad^*_\eta \nu) \\
+&= \nu([\xi, \eta]) \\
+&= \ad^*_\xi \nu(\eta)
+}
+$$
+$\forall \ \eta \in \fg \ \ \Longrightarrow \ \ \ad^*_\xi \nu = 0$, so $\omega_+$ is nondegenerate.
+<Spacer size="2px"/>
+
+The Hamiltonian vector fields and the Poisson bracket look like those for the Lie-Poisson bracket, but the functions have domain $\mathcal{O}_\mu$, not $\fg^*$.
+
+---
+
 ### The canonical symplectic structure on a cotangent bundle
 
-If $\, \pi: T^*Q \to Q\, {}$ denotes the projection to the base
-$$
+Newtonian mechanics relates of change of position (and orientation, of point masses, particles in a continuum, charges in a electromagentic field, etc.), velocity, and momentum. 
+<Space size="5px"/>
+
+If the position/state is described by a point of a manifold $Q$, the velocity is an element of the tangent bundle $TQ$, and the momentum is an element of the cotangent bundle $T^*Q$.
+
+Every cotangent bundle has a canonical symplectic structure,  which determines Hamiltonian vector fields given a Hamiltonian $h \in C^\infty(T^*Q)$.
+
+If $\, \pi: T^*Q \to Q\, {}$ denotes the projection 
+$
 \pi(z_q) = q,% \qquad \quad \forall \ z_g \in T^*_q Q, \ q \in Q,
-$$
+$
 the *canonical 1-form* $\, \theta_0\, {}$ on $\, T^*Q\, {}$ is given by
 $$
 \theta_0(w_{z_p}) := z_p(d_{z_p} \pi(w_{z_p})) 
@@ -104,46 +201,102 @@ The *canonical symplectic structure* on $T^*Q$ is
 $$
 \omega_0 := - \ed \theta_0.
 $$
-<Spacer size ="5px"/>
 
+
+---
+
+### Computing Hamiltonian vector fields on cotangent bundles 
+
+$\omega_0$ has an elegant intrinsic definition, but... extraction of an explicit expression for the Hamiltonian vector field from that definition typically involves a choice of non-canonical "horizontal helper".
+<Space size="5px"/>
+
+When working with $\R^n$ as our state space, if we interpret $\R^n \times \R^n$ as the global trivialization of the associated phase space $T^*\R^n$, the canonical formulation of Hamilton's equation is readily expressed in terms of vector partial derivatives of position coordinates $\mathbf{q} = (q_1, \ldots, q_n)$ and momentum coordinates $\mathbf{p} = (p_1, \ldots, p_n)$.  
+<Space size="5px"/>
+
+When the states are modeled using points in a nonlinear manifold $Q$, we typically don't have a global trivialization of the cotangent bundle $T^*Q$.
+
+We can construct a "horizontal-vertical split" $\, T_{z_q}(T^*Q) \approx T_q Q \oplus T_q ^*Q\,$ by decomposing a tangent vector in $T_{z_q}(T^*Q)$ into 
+- a component in $T_qQ$ capturing "change of the basepoint $q$" using a (local) one form, and
+- a component in $T_q^*Q$ capturing change within the fiber $T_q^*Q$.
+
+---
+
+#### Horizontal and vertical decomposition of tangent vectors to $T^*Q$
+
+The "*horizontal component*" of $\ w_{z_q} \in T_{z_q}T^*Q$ is determined by the projection to the base:
+$$
+v_q := d_{z_q} \pi(w_{z_q}) \in T_q Q.
+$$
+
+The tricky bit is using $v_q$ to define a horizontal projection in the fiber $T_{z_q}T^*Q$.
+
+<Spacer size="5px"/>
 ***Useful property:*** If $\,\beta\, {}$ is a 1-form on $\,Q,\ {}$ then 
 $$
 \beta^*\theta_0 = \beta \qquad \text{and hence}\qquad \beta^*\omega_0 = - \ed \beta.
 $$
 
----
+*Verify: In-class exercise*.
+<Spacer size="5px"/>
 
-#### Vertical and horizontal decomposition of tangent vectors to $T^*Q$
-
-If we regard $\R^n \times \R^n$ as the global trivialization of $T^*\R^n$, blah,blah,
-position and momentum in physical/mechanical applications, particularly those involving Newton's Law, which relates rates of change of position and momentum.
-
-We can split a tangent vector in $T_{z_q}(T^*Q)$ into 
-- a component capturing "change of the basepoint $q$" using a (local) one form, and
-- a component capturing change within the fiber $T_q^*Q$.
-
-<Space size="5px"/>
-
-Given $\ w_{z_q} \in T_{z_q}T^*Q, \ {}$ choose a 1-form $\beta$ such that $\ \beta(q) = z_q$. 
+Given $\ w_{z_q} \in T_{z_q}T^*Q, \ {}$ choose a 1-form $\beta$ such that $\ \beta(q) = z_q$, and declare that 
 $$
-v_q := d_{z_q} \pi(w_{z_q}) \in T_q Q\phantom{X^{\int^\int}}
-$$
-is the *horizontal component* of $\ w_{z_q} \in T_{z_q}T^*Q$ with respect to $\beta$.
+w_{z_q}^\text{hor} := d_q (\beta \circ \pi)(w_{z_q}) 
+$$ 
+is the projection of $w_{z_q}$ onto the horizontal subspace $d_q (\beta \circ \pi)(T_{z_q}T^*Q) \subset T_{z_q}T^*Q$.
+
 
 ---
 
-#### Second slide of vertical and horizontal decomposition of tangent vectors to $T^*Q$
+#### Second slide of vertical and horizontal decomposition: vertical lifts
+
+To construct the $T_q^*Q$ factor in the "horizontal-vertical split" $\, T_{z_q}(T^*Q) \approx T_q Q \oplus T_q ^*Q\,$ we will identify
+$$
+w_{z_q}^\text{vert} := w_{z_q} -  w_{z_q}^\text{hor}
+$$
+with an element of $T_q ^*Q$.
+<Spacer size="5px"/>
 
 The *vertical lift* at $z_q$ is the isomorphism $\, \text{vert}_{z_q}: T_q^*Q \to \ker \, d_{z_q} \pi \, {}$ given by
 $$
 \text{vert}_{z_q}(p_q) := \dep {z_q + \epsilon  \, p_q}.
 $$
-<Space size="5px"/>
 
-Given $z_q = \beta(q)$ and $w_{z_q} \in T_{z_q}T^*Q$, the *vertical component of $\ w_{z_q}\ {}$ with respect to* $\beta$ is 
+$\pi \circ \beta = \text{id}_Q \ \ \Longrightarrow$
 $$
-\text{vert}_{z_q}^{-1}(w_{z_q} -  d_q (\beta \circ \pi)(w_{z_q}) ).
+d_{z_q} \pi(w_{z_q}^\text{vert}) =
+d_{z_q} \pi(w_{z_q}) - d_{z_q} (\pi \circ \beta \circ \pi)(w_{z_q})= 0,
 $$
+so we can define
+the *vertical component of $\ w_{z_q}\ {}$ with respect to* $\beta$ as 
+$$
+\text{vert}_{z_q}^{-1}(w_{z_q}^\text{vert}).
+$$
+
+---
+
+#### Third slide of vertical and horizontal decomposition: the symplectic structure 
+
+The map $\hat \beta_q : T_q Q \times T_q^* Q \to T_{\beta(q)} T^* Q$ given by
+$$
+\hat \beta_q(v_q, p_q) := d_q \beta(v_q) + \text{vert}_{\beta(q)}(p_q)
+$$
+is an isomorphism.
+
+If $v_1, v_2 \in T_q Q$ and $p_1, p_2 \in T_q^* Q$, then
+$$
+\omega_0(\beta(q))(\hat \beta_q(v_1, p_1), \hat \beta_q(v_2, p_2)) = 
+p_2(v_1) - p_1(v_2) -  \text{d} \beta(q)(v_1, v_2).
+$$ 
+
+See the [Appendix](canonical-symplectic-in-terms-of-1-form) for the calculations.
+<Spacer size="5px"/>
+
+Note that if $\beta$ is closed, the expression looks like the expression for the canonical symplectic structure on a vector space. The $\text{d} \beta$ term has a physical interpretation in many applications.
+
+For an arbitrary manifold $Q$, the choice of 1-form $\beta$ is usually suggested by the point of interest in $T^*Q$, <br/>
+but if $Q$ is a Lie group, left or right invariant 1-forms are the natural, globally relevant, choices.
+
 
 ---
 
@@ -164,7 +317,9 @@ $$
 (g, \xi) &\mapsto  X_\xi^\lozenge(g)\ \ \qquad \qquad \quad (g, \mu) \mapsto \beta_\mu^\lozenge(g).
 }
 $$
-pair nicely. For any $\xi \in \fg$ and $\mu \in \fg^*$
+pair nicely. 
+
+For any $\xi \in \fg$ and $\mu \in \fg^*$
 $$
 \iota_{X^\lozenge_\xi} \beta^\lozenge_\mu = \mu(\xi).
 $$
@@ -202,12 +357,18 @@ $$
 
 Using these maps, we can construct a diffeomorphism
 $\tau^\lozenge: G \times \fg^* \times \fg \times \fg^* \to T(T^*G)$
+<br/>
+that plays the role of the tangent fiber isomorphism $\hat \beta$. 
+
+For notational simplicity, we drop the superscripts $\lozenge$ throughout.
+
 $$
-\tau^\lozenge(g, \mu, \xi, \nu) := d_g \beta_\mu^\lozenge(X_\xi^\lozenge(g)) + \dep{\beta_{\mu + \epsilon \, \nu}^\lozenge(g)}.
+\tau(g, \mu, \xi, \nu) := d_g \beta_\mu(X_\xi(g)) + \dep{\beta_{\mu + \epsilon \, \nu}(g)} \in T_{\beta_\mu(g)}T^*G.
+%\tau^\lozenge(g, \mu, \xi, \nu) := d_g \beta_\mu^\lozenge(X_\xi^\lozenge(g)) + \dep{\beta_{\mu + \epsilon \, \nu}^\lozenge(g)} \in T_{\beta_\mu^\lozenge(g)}T^*G.
 $$
+<!--
 $\tau^\lozenge(g, \mu, \xi, \nu) \in T_{\beta_\mu^\lozenge(g)}T^*G$.
 
-<!--
 *Note:* $\mu \mapsto \beta_\mu^\lozenge(g) \in T_g^*G$ is linear, so
 $$
 \text{vert}_{\beta_\mu^\lozenge(g)}(\beta_\nu^\lozenge(g)) 
@@ -220,44 +381,58 @@ $$
 ***Claim:*** The canonical symplectic structure on $T^*G$ satisfies
 $$
 %\omega_\lozenge(g, \mu)((\xi_\lozenge(g), \nu), ((\tilde \xi_\lozenge(g), \tilde \nu)
-\omega_0(\beta_\mu^\lozenge(g))(\tau^\lozenge(g, \mu, \xi_1, \nu_1), \tau^\lozenge(g, \mu, \xi_2, \nu_2))
+\omega_0(\beta_\mu(g))(\tau(g, \mu, \xi_1, \nu_1), \tau(g, \mu, \xi_2, \nu_2))
+%\omega_0(\beta_\mu^\lozenge(g))(\tau^\lozenge(g, \mu, \xi_1, \nu_1), \tau^\lozenge(g, \mu, \xi_2, \nu_2))
 %= \Omega_{\mu_\lozenge}(g)((\xi_\lozenge(g), \nu_\lozenge(g)), (\tilde \xi_\lozenge(g), \tilde \nu_\lozenge(g)))
  = \nu_2(\xi_1) - \nu_1(\xi_2) \pm \mu([\xi_1, \xi_2])
 $$
 for all $g \in G, \ \xi_1, \xi_2 \in \fg$, and $\mu, \nu_1, \nu_2 \in \fg^*$.
 
 The sign of the last term is determined by the handedness of $\lozenge$.
+<Spacer size="5px"/>
+
+Note that the RHS of the expression doesn't depend on $g$.
 
 ---
 
 #### Proof of the expression for the canonical sympectic structure on $T^*G$
 
-$$
-\eqa{
-\iota_{\xi_\lozenge}\tilde \nu_\lozenge(g)
-&= ((d_g \lozenge_{g^{-1}})^* \tilde \nu)(d_1 \lozenge_g(\xi))\\
-&= \tilde \nu(d_g \lozenge_{g^{-1}}(d_1 \lozenge_g(\xi))\\
-&= \tilde \nu(\xi).
-}
-$$
-
 The identity (see, e.g., the Lie derivatives and exterior derivatives cheat sheet)
 $$
-\iota_Y \iota_X \ed \beta = {\cal L}_Y (\iota_X \beta) - {\cal L}_X (\iota_Y \beta)
+\iota_Y \iota_X \text{d} \beta = \mathcal{L}_Y (\iota_X \beta) - \mathcal{L}_X (\iota_Y \beta)
 - \iota_{[X, Y]} \beta
 $$
-for vector fields $X$ and $Y$, and 1-form $\beta$, on an arbitrary manifold $M$ implies 
+for vector fields $X$ and $Y$, and 1-form $\beta$, on an arbitrary manifold $M \ \ \Longrightarrow$ 
+
 $$
-\iota_{X_{\xi_2}^\lozenge} \iota_{X_{\xi_1}^\lozenge} \ed \beta_\mu^\lozenge 
-= - \iota_{[X_{\xi_1}^\lozenge, X_{\xi_2}^\lozenge]} \beta_\mu^\lozenge 
-= \pm \mu([\xi_1, \xi_2]).
+\iota_{X_{\xi_2}} \iota_{X_{\xi_1}} \text{d} \beta_\mu
+%\iota_{X_{\xi_2}^\lozenge} \iota_{X_{\xi_1}^\lozenge} \text{d} \beta_\mu^\lozenge 
+= - \iota_{[X_{\xi_1}, X_{\xi_2}]} \beta_\mu 
+%= - \iota_{[X_{\xi_1}^\lozenge, X_{\xi_2}^\lozenge]} \beta_\mu^\lozenge 
+= \pm \mu([\xi_1, \xi_2]),
 $$
+since $\iota_{X_{\xi_j}} \beta_\mu$ is constant, $j = 1, 2$.
+
+Setting $\beta = \beta_\mu$, $v_j = X_{\xi_j}(g)$, and $p_j = \beta_{\nu_j}(g)$ in our general horizontal-vertical expression for $\omega_0$ yields
+$$
+\eqa{
+\omega_0(\beta_\mu(g))(\tau(g, \mu, \xi_1, \nu_1), \tau(g, \mu, \xi_2, \nu_2))
+%d_g \beta_\mu(X_{\xi_2}(g)) + \dep{\beta_{\mu + \epsilon \, \nu_2}(g)})
+%\omega_0(\beta_\mu(g))(d_g \beta_\mu(X_{\xi_1}(g)) + \dep{\beta_{\mu + \epsilon \, \nu_1}(g)}, d_g \beta_\mu(X_{\xi_2}(g)) + \dep{\beta_{\mu + \epsilon \, \nu_2}(g)})
+&= 
+\beta_{\nu_2}(g)(X_{\xi_1}(g)) - \beta_{\nu_1}(g)(X_{\xi_2}(g)) \\
+&\qquad{} - \text{d} \beta_\mu(g)(X_{\xi_1}(g), X_{\xi_2}(g)) \phantom{\sum}\\
+&= \lp \iota_{X_{\xi_1}}\beta_{\nu_2} - \iota_{X_{\xi_2}}\beta_{\nu_1}
+ - \iota_{X_{\xi_2}}\iota_{X_{\xi_1}}\text{d} \beta_\mu\rp(g) \phantom{\sum} \\
+&= \nu_2(\xi_1) - \nu_1(\xi_2) -  \text{d} \beta(q)(v_1, v_2).
+}
+$$ 
 
 ---
 
-## Hamiltonian vector fields on $G \times \fg^*$
+### Hamiltonian vector fields on $G \times \fg^* \approx T^*G$
 
-Given $f \in C^\infty(G \times \fg^*), \ {}$ and a choice of $\lozenge, \ \exists!{}$ 
+Assume that $\fg$ is reflexive. Given $f \in C^\infty(G \times \fg^*), \ {}$ and a choice of $\lozenge, \ \exists!{}$ 
 $$
 \fd f g: G \times \fg^* \to \fg^* \sands \fd f \mu: G \times \fg^* \to \fg
 $$
@@ -266,44 +441,65 @@ $$
 df(g, \mu)(\xi_\lozenge(g), \nu) = \fd f g(g, \mu)(\xi) + \nu(\fd f \mu(g, \mu))
 $$
 $\forall \ g \in G, \ \xi \in \fg, \ \mu, \nu\in \fg^*$.
-$~$
+<Spacer size="5px"/>
+
 ***Claim:*** The Hamiltonian vector field $X_h$ of $h \in C^\infty(G \times \fg^*)\ {}$ is
 $$
-X_h(g, \mu) = \lp d_1 \lozenge_g\lp \fd f \mu(g, \mu) \rp, - \fd f g(g, \mu) \pm \ad^*_{\fd f \mu(g, \mu)} \mu \rp.
+X_h(g, \mu) = \lp d_1 \lozenge_g\lp \fd h \mu(g, \mu) \rp, - \fd h g(g, \mu) \pm \ad^*_{\fd h \mu(g, \mu)} \mu \rp.
 $$
 
 ---
 
-*Verify:* If $\ \xi_h: G \times \fg^* \to \fg\ {}$ and $\ \nu_h: G \times \fg^* \to \fg^*\ {}$ satisfy
+*Verify:* The Hamiltonian vector field $X_h$ of $h$ must satisfy
+$$
+\eqa{
+\omega_\lozenge(g, \mu)(X_h(g, \mu),  (X_\eta^\lozenge(g), \phi))
+&= dh(g, \mu)(X_\eta^\lozenge(g), \phi)  \\
+&= \fd h g(g, \mu)(\eta) + \phi(\fd h \mu(g, \mu))
+} 
+$$
+$\forall \ g \in G, \ \xi, \eta \in \fg, \ \mu, \phi \in \fg^*$.
+
+If 
 $$
 X_h(g, \mu) = (d_1 \lozenge_g(\xi_h(g, \mu)), \nu_h(g, \mu)),\phantom{X^\int}
 $$
-so that
-$$\eqa{
-\fd h g(g, \mu)(\eta) + \nu(\fd h \mu(g, \mu)) &= 
-dh(g, \mu)(\eta_\lozenge(g), \nu) \\
-&= \omega_\lozenge(g, \mu)(X_h(g, \mu),  (\eta_\lozenge(g), \nu))\\
-&= \nu(\xi_h) - \nu_h(\eta) \pm \underbrace{\mu([\xi_h, \eta])}_{\ad^*_{\xi_h}\mu( \eta)}
-}
+for functions $\ \xi_h: G \times \fg^* \to \fg\ {}$ and $\ \nu_h: G \times \fg^* \to \fg^*,\ {}$  then
 $$
-$\forall \ g \in G, \ \xi, \eta \in \fg, \ \mu, \nu \in \fg^*, \ {}$ it follows that
-$~$
+\omega_\lozenge(g, \mu)(X_h(g, \mu),  (X_\eta^\lozenge(g), \phi))
+= \phi(\xi_h) - \nu_h(\eta) \pm \mu([\xi_h, \eta])
+$$
+$\Longrightarrow$
 $$
 \xi_h(g, \mu) = \fd h \mu(g, \mu) \sands \nu_h(g, \mu) = - \fd h g(g, \mu) \pm \ad^*_{\xi_h(g, \mu)}\mu.
 $$
 
 ---
 
-## The Poisson bracket on $C^\infty(G \times \fg^*)$
+### The Poisson bracket on $C^\infty(G \times \fg^*)$
 
-$$\eqa{
-\{f, h\}_\lozenge(g, \mu) &= \omega_\lozenge(X_f, X_h)(g, \mu) \phantom{int^{\int^\int}} \\
-&= \nu_h(\xi_f) - \nu_f(\xi_h) \pm \mu([\xi_f, \xi_h]) \\
-&=  \fd f g(\fd h \mu) - \fd h g(\fd f \mu)\pm \mu \lp \left [\fd f \mu, \fd h \mu \right ] \rp,
+Recall that a symplectic structure determines a Poisson bracket:
+$$
+\eqa{
+\{f, h\} &= 
+X_h(f) \\
+&= \iota_{(X_{\xi_h}, \nu_h)}df  \\
+&= \fd f g(\xi_h) + \nu_h\lp \fd f \mu \rp.
+}
+$$
+
+Evaluating at $(g, \mu)$ yields
+$$
+\eqa{
+\{f, h\}(g, \mu) &= \fd f g \lp \fd h \mu \rp + \lp - \fd h g \pm \ad^*_{\fd h \mu}\mu \rp \lp \fd f \mu \rp\\
+&= \fd f g \lp \fd h \mu \rp - \fd h g \lp \fd f \mu \rp 
+\mp  \mu \lp \left [ \fd f \mu, \fd h \mu \right ] \rp,
 }
 $$
 where all derivatives are evaluated at $(g, \mu)$.
-$~$
+
+<!--
+
 ***Example.*** The standard Poisson bracket on $\R^{2n}$
 $$
 \textstyle \{f, g\}=∑_{𝑖=1}^n \frac {∂f}{∂𝑞_𝑖} \frac {∂f}{∂𝑝_𝑖} − \frac {∂g}{∂𝑞_𝑖} \frac {∂f}{∂𝑝_𝑖}.
@@ -314,38 +510,255 @@ $$
 \sands
 \fd f \mu = \lp \frac {∂f}{∂p_1}, \ldots, \frac {∂f}{∂p_n} \rp.
 $$
-$~$
+-->
 
 
 ---
 
-###$G$-invariant functions on $T^*G$ and the Lie-Poisson bracket 
+#### Special case: $G$-invariant functions on $G \times \fg^* \approx T^*G$ and the Lie-Poisson bracket 
 
 $f \in C^\infty(\fg^*)\ {}$ determines a function $\tilde f$ on $\ G \times \fg^*\ {}$ with trivial $G$ dependence, 
 $$
 \tilde f(g, \mu) := f(\mu) ,
 $$
-with partial derivative satisfying
-$$\eqa{
+with 
+$$
+\eqa{
  \fd {\tilde f} g(g, \mu)(\xi) + \nu(\fd {\tilde f} \mu(g, \mu)) &=  d \tilde f(g, \mu)(\xi_\lozenge(g), \nu) \\
 &= df(\mu)(x\nu) \\
 &= \nu(\fd f \mu(\mu)),
 }
 $$
-for all $g \in G$, $\xi \in \fg$, and $\mu, \nu \in \fg^*$. 
+for all $g \in G$, $\xi \in \fg$, and $\mu, \nu \in \fg^*$
 
-It follows that
+$\Longrightarrow \quad \fd {\tilde f} g = 0\ {}$ and $\ \fd {\tilde f} \mu = \fd f \mu \quad \Longrightarrow$
+
 $$
-\{\tilde f, \tilde h \}_\lozenge(g, \mu) = \{f, h\}_\pm(\mu).
+\{\tilde f, \tilde h \}_\lozenge(g, \mu) = \{f, h\}_\pm(\mu),
 $$
+the Lie-Poisson bracket on $\fg^*$.
 
 ---
+
+## Momentum maps and relative equilibria
+
+Poisson and symplectic structures (and the Euler-Lagrange equations of the calculus of variations) associate vector fields to scalar functions. 
+
+<!-- 
+`The analysis of the dynamical systems determined by Hamiltonian vector field is facilitated by the relative simplicity of scalar functions. E.g., critical points of the Hamiltonian $h$ are equilibria of the flow of $X_h$, and the stability of these eqiulibria is determined by the Jacobian of $h$ and the Poisson/symplectic structure. 
+-->
+
+Given a Poisson or symplectic action of a Lie group $G$, we can often (not always!) describe the infinitesimal generators $\xi_M \in \cXM$
+$$
+\xi_M(p) = \dep {\exp(\epsilon \, \xi) \cdot p}
+$$
+as the Hamiltonian vector fields of functions $j_\xi \in C^\infty(M)$, parametrized by $\xi \in\fg$, with useful properties.
+
+We can characterize *relative equilibria* (AKA "steady motions"), i.e. initial data $p \in M$ such that 
+$$
+\calF_t(p) = \exp(t \, \xi) \cdot p
+$$ 
+for some $\xi \in \fg$, as critical points of $h - j_\xi$.
+
+The maps $J: M \to \fg^*$ determing these families of functions generalize linear and angular momentum, <br/> 
+and the relative equilibria generalize constant velocity (linear or angular) motion in $\R^3$.
+
+---
+
+### So what?!?
+
+For one thing, analysis and identification/computation of critical points of scalar functions is much easier than analysis and identification/computation of trajectories (including periodic orbits).
+
+Relatively (no pun intended) straightforward generalizations of the second derivative test from lower division calculus courses yield stability results for relative equilibria. 
+
+Even *defining* stability, much less verifying it, for nonconstant trajectories gets tricky, so the ability to interpret steady motions as equilibria, seen in a different "frame", is a big deal.
+<Spacer size="5px"/>
+
+The structures carved out by momentum maps have been shown to have lots of significant properties that constrain the dynamics of $G$-invariant Hamiltonian systems. 
+
+The structure of $G$, $\fg$, and the coadjoint orbits in $\fg^*$ doesn't fully dictate the dynamics on $M$ (unless $M$ is a homogeneous space), but in many contexts it determines a lot of the "really important" behavior, and there's a lot of geometric machinery available to help you get that behavior right.
+
+---
+
+### Momentum maps
+
+A *momentum map* for a Poisson (resp. symplectic) action of a Lie group $G$ on a Poisson (resp. symplectic) manifold $M$ is a map $J: M \to \fg^*$ such that for any $\xi \in \fg$ the scalar function 
+$$
+j_\xi(p) := J(p)(\xi)
+$$
+has Hamiltonian vector field equal to the infinitesimal generator determined by $\xi$, i.e.
+$$
+\ X_{j_\xi} = \xi_M.
+$$
+
+<!--
+Equivalently, $\ \forall \ f \in C^\infty(M),$
+$$
+\{f, j_\xi \} = \mathcal{L}_{\xi_M}f.
+$$
+-->
+
+<Spacer size ="2px"/>
+
+***Example:*** The coadjoint action of $G$ on $\fg^*$, with the Lie-Poisson bracket
+$\, \{ \, \cdot \, , \, \cdot \, \}_-$, has momentum map 
+$$
+J(\mu) := \mu, \qquad \text{with} \qquad  j_\xi = \varphi(\xi).
+$$
+
+*Verify:* In-class exercise.
+<Spacer size ="2px"/>
+
+*Note:* Momentum maps relative features of coadjoint orbits to features of Hamiltonian systems on arbitrary manifolds with momentum maps.
+
+---
+
+### Very important example: $M = T^*Q$ with a lifted $G$ action
+
+An action $\rho$ of $G$ on $Q$ induces an action $P$ on $T^*Q$ called the *cotangent lifted action*:
+$$
+g \cdot z_q = P(g)(z_q) := (d_{g \cdot q}\rho(g^{-1}))^* z_q \in T_{g \cdot q}^*Q.
+$$
+<Spacer size="5px"/>
+
+***Claim:*** $\theta_0$ and $\omega_0$ are $G$-invariant, and 
+$$
+J_\xi(z_q) := z_q(\xi_Q(q)) 
+$$
+determines an *equivariant* momentum map $J$ on $T^*Q$, i.e.
+$$
+J(g \cdot z_q) = \Ad^*_{g^{-1}} J(z_q).
+$$
+<Spacer size="5px"/>
+
+*[Proof](momentum-map-cotangent-bundle)*  in the Appendix.
+
+<!--
+---
+
+Assume that a Lie group $G$ acts on the symplectic manifold $M$ and preserves the symplectic structure, i.e.
+$$
+\rho(g)^* \omega = \omega \qquad \qquad \forall \ g \in G.
+$$
+
+Given a map $J: M \to \fg^* \ {}$ and $\xi \in \fg, \ {}$ define $J_\xi \in C^\infty(M)\, {}$ by
+$$
+J_\xi(p) := J(p)(\xi).
+$$
+
+$J$ is a *momentum map* for the $G$ action on $M$ if
+$$
+X_{J_\xi} = \xi_M \qquad \qquad \forall \ \xi \in \fg,
+$$
+where $\xi_M(p)  = \dep {\exp(\epsilon \, \xi) \cdot p}$ is the infinitesimal generator determined by $\xi$.
+-->
+
+---
+
+### $G$-equivariant Hamiltonian flows preserve momentum maps 
+
+If $h$ is $G$-invariant, the time $t$ flow $\calF_t$ of $X_h$ is $G$-equivariant, i.e.
+$\calF_t$ commutes with the action of $G$.
+<Spacer size="5px"/>
+
+***Claim:*** If $h \in C^\infty(M)\, {}$ is $G$-invariant, then $J$ is preserved by the flow of $X_h$.
+
+*Verify:* Given $\xi \in \fg$, 
+$G$-invariance of $h \ \ \Longrightarrow$
+$$
+\eqa{ 
+\calL_{\xi_M}h \\
+&= - \dep{\rho(\epsilon \, \xi)^*h }\\
+&= \dep{h} \\
+& = 0. 
+}
+$$
+
+Hence $X_{j_\xi} = \xi_M$ and
+$$
+\calL_{X_h} j_\xi  
+= - \calL_{X_{j_\xi}}h = 0
+$$
+$\Longrightarrow \ \ \calF_t^* j_\xi$ is constant with respect to $t$.
+
+<!--
+---
+
+*Consequence:* $J$ maps $G$-orbits in $T^*Q$ onto coadjoint orbits in $\fg^*$.
+
+***Claim:***(without proof here) If $G$ acts on a symplectic manifold $M$, 
+- there is an equivariant momentum map $J : M \to \fg^*$ associated to the $G$ action, 
+$\mu$ is a regular value of $J$, and
+- the restriction of the $G$-action to $\, J^{-1}(\mu)\, {}$ is free and proper, then 
+
+$J^{-1}(\mu)/G_\mu \, {}$ is a symplectic manifold, with symplectic structure $\omega_\mu$ satisfying
+$$
+\pi_\mu^* \omega_\mu = \iota_\mu^* \omega,
+$$
+where 
+$$
+\pi_\mu: J^{-1}(\mu) \to J^{-1}(\mu)/G_\mu \sands \iota_\mu: J^{-1}(\mu) \to M
+\sands 
+$$
+denote the quotient and inclusion maps.
+$~$
+This generalizes a classical, coordinate based construction for actions of abelian groups.
+
+*Reconstruction:* As for the "full version" of the Euler equations, we can find solutions of the smaller dynamical system, and then solve for the remaining "groupy" information.
+
+-->
+---
+
+### Relative equilibria 
+
+Consider a Poisson (resp. symplectic) manifold $M$ and Poisson (resp. symplectic) and a Lie group $G$ with a Poisson (resp. symplectic) action on $M$, and $G$-invariant $h \in C^\infty(M)$. 
+
+$p \in M$ is a *relative equilibrium with generator $\xi$* of the Hamiltonian system determined by $h$, with flow $\calF_t$, if 
+$$
+\calF_t(p) = \exp(t \, \xi) \cdot p.
+$$
+<Spacer size="5px"/>
+
+Differentiating with respect to $t$ and invoking $\, \exist!\,$ of solutions of ODEs, $p$ is a relative equilibrium $\ \ \Longleftrightarrow$
+$$
+X_h(p) = \xi_M(p)
+$$
+for some $\xi \in \fg$.
+<Spacer size="5px"/>
+
+If $J: M \to \fg^*$ is a momentum map for the action of $G$ on $M$, then $p$ is a relative equilibrium with generator $\xi$ if $p$ is a critical point of $h - j_\xi$.
+
+---
+
+#### Second slide of relative equilibria
+
+*Verify:* 
+$$
+X_h(p) = \xi_M(p) \qquad \Longleftrightarrow \qquad \lp \mathcal{L}_{X_h - \xi_M}f\rp(p) = 0 \quad \forall \ f \in C^\infty(M).
+$$
+
+$X_h - \xi_M = X_{h - j_\xi} \quad \Longrightarrow$
+
+$$
+\eqa{
+\mathcal{L}_{X_h - \xi_M}f &= \mathcal{L}_{X_{h - j_\xi}}f \\
+&=  \iota_{X_{h - j_\xi}}d f \\
+&= - \iota_{X_f} d(h - j_\xi),
+}
+$$
+so $\ d(h - j_\xi)(p) = 0 \ \ \Longrightarrow \ \ (X_h - \xi_M)(p) = 0$.
+<Spacer size="5px"/>
+
+If the kernel of $f \mapsto X_f$ is trivial, as is guaranteed by nondegeneracy of $\omega$ in the symplectic case, $p$ if a relative equilibrium with generator $\xi \ \ \Longleftrightarrow \ \ p$ is a critical point of $h - J_\xi$.
+
+In the Poisson setting, we may need to shift $h - j_\xi$ by a Casimir to obtain a critical point.
+
+<!--
+
 The IVP 
 $$
 (\dot g, \dot \mu) = X_{\tilde h}(g, \mu) = \lp \lp \fd h \mu(\mu) \rp_{\!\lozenge}(g), \pm \ad^*_{\fd fh\mu(\mu)} \mu \rp,
 $$
-with initial data $g(0) = g_0, \ \mu(0) = \mu_0, \ {}$ is partially decoupled. 
-$~$
 
 A solution $\mu: (a, b) \to \fg^*$ of the Euler equation
 $$
@@ -356,7 +769,6 @@ $$
 \dot g = d_1 \blacklozenge_g(\fd h \mu(\mu(t))) \sands g(0) = g_0
 $$
 on $G$.
-$~$
 
 ---
 
@@ -385,14 +797,6 @@ $$
 $\Longrightarrow \quad \mu_0 \ {}$ is an equilibrium of Euler's equation $\ \Longleftrightarrow \ \mu_0\ {}$ is a eigenvector of $I^{-1}$. 
 $~$
 $g(t)\, {}$ is a constant speed rotation about the axis $\mu_0$. 
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
 
 ---
 
@@ -424,3 +828,4 @@ with
 $$\tilde h(g, \mu) = h(\mu) = \half |\mu|^2_{\fg^*}, \phantom{x_\int}
 $$
 satisfy the Euler-Lagrange equations, and hence also satisfy the geodesic equation.
+-->
