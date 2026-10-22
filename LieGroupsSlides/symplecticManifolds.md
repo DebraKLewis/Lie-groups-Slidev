@@ -243,7 +243,7 @@ Given $\ w_{z_q} \in T_{z_q}T^*Q, \ {}$ choose a 1-form $\beta$ such that $\ \be
 $$
 w_{z_q}^\text{hor} := d_q (\beta \circ \pi)(w_{z_q}) 
 $$ 
-is the projection of $w_{z_q}$ onto the horizontal subspace $d_q (\beta \circ \pi)(T_{z_q}T^*Q) \subset T_{z_q}T^*Q$.
+is the horizontal projection of $w_{z_q}$.
 
 
 ---
@@ -300,7 +300,7 @@ but if $Q$ is a Lie group, left or right invariant 1-forms are the natural, glob
 
 ---
 
-## The canonical symplectic structure of $T^*G$
+### The canonical symplectic structure of $T^*G$
 
 The natural choices for 1-forms $\beta$ on a Lie group $G$ are the left or right invariant 1-forms determined by elements of $\fg^*$: 
 Given $\mu \in \fg^*$, and $\lozenge = L\ {}$ or $\ R, {}$ define $\beta_\mu^\lozenge \in \cXM^*$ by
@@ -473,6 +473,67 @@ $\Longrightarrow$
 $$
 \xi_h(g, \mu) = \fd h \mu(g, \mu) \sands \nu_h(g, \mu) = - \fd h g(g, \mu) \pm \ad^*_{\xi_h(g, \mu)}\mu.
 $$
+
+---
+
+### Example: the Lagrange top
+
+![Lagrange top gif](https://cdn.shopify.com/s/files/1/0200/7616/files/top_spin_e04dfa81-a322-43d5-b5e2-453917606e64_large.gif?v=1480189749)
+
+---
+
+#### The Lagrange top: the specs
+
+The *Lagrange top* is an "axisymmetric" rigid body pinned at one point, 
+with inertia tensor
+$$
+\mathbb{I} = I_1 \idm + (I_3 - I_1) \sigmav \sigmav^T,
+$$
+where $\sigmav$ is the "axis of symmetry" of the body, 
+center of mass $\sigmav$, and total mass $m$, 
+in the presence of gravity, with our Euclidean basis oriented such that the force of gravity is $- g \, \ev_3$. <br/>
+(Heads up! Some people include the minus sign in $g$.)
+<Spacer size="1px"/>
+
+$Q = SO(3, \R)$.
+We'll use the left ("body") trivialization $\, SO(3, \R) \times \R^3\,{}$ of $\, T^* SO(3, \R)$.
+
+The Hamiltonian for the Lagrange top is 
+$$
+h(A, \mu)=\half \muv^T \mathbb{I}^{-1} \muv + g\, m \, \ev_3^T A \sigmav.
+$$
+<Spacer size="5px"/>
+
+*In-class exercise:* Compute the Hamiltonian vector field for $h$.
+
+$\quad{}$ Define $\gammav := g\, m \, A^T\ev_3$, and determine the evolution equation $\, \dot \gammav = \underline{\qquad}\,$ for $\gammav$.
+
+<!--
+is invariant under the action of $S^1 \times S^1$ on $SO(3, \R)$) by
+$$
+(\theta, \varphi) \cdot A=\exp (\theta \, \ev_3) A \exp (-\varphi \, \sigma),
+$$
+corresponding to spatial rotations about the vertical axis and body rotations about the axis of symmetry.
+-->
+
+---
+
+#### Hints for the example
+
+Let $\xiv$ denote the body angular velocity, i.e. $\dot A = A \widehat \xiv$.
+
+- There will be places in which it's helpful to use the specific form of the inertia tensor and its inverse, e.g.
+$$
+\muv = \mathbb{I} \xiv = I_1 \xiv + (I_3 - I_1) (\sigmav^T \xiv)\sigmav
+\sands
+\xiv = \mathbb{I}^{-1}\muv = \smallfrac 1 {I_1} \muv + \lp \smallfrac 1 {I_3} - \smallfrac 1 {I_1} \rp (\sigmav^T \muv)\sigmav,
+$$
+$\quad{}$ and places where that just clutters things up.  
+
+- Exploit the properties of the triple product, e.g. $\, \xv^T(\yv \times \xv) = 0$.
+
+- You should be able to express various combinations of terms as scalar multiples of $\gammav \times \sigmav$.
+
 
 ---
 
