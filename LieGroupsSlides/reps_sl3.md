@@ -19,11 +19,11 @@ $$
 ---
 
 $V$ irreducible $\quad \Longrightarrow \quad \text{Hom}_G(V, V) \approx \C \quad \Longrightarrow   \quad |\chi_V|_{L_2(G)} = 1$.
-$~$
+
 $V$ and $W$ irreducible and non-isomorphic $\quad \Longrightarrow \quad 
 \text{Hom}_G(V, W) = \{0 \}$
 $\Longrightarrow \quad \chi_V$ and $\chi_W$ are orthogonal.
-$~$
+
 $V$ completely reducible, with
 $$
 V \approx \oplus V_k^{\oplus n_k},
@@ -45,7 +45,7 @@ where $\phi: S^3 \subseteq \C^2 \to SU(2)$ is given by
 $$
 \phi(z_1, z_2) := \begin{bmatrix} z_1 & z_2 \\ - \bar z_2 & \bar z_1 \end{bmatrix}. 
 $$
-$~$
+
 Using spherical coordinates on $S^3$,
 $$
 \Phi(\theta, \varphi, \psi) := \phi(\cos \theta + i \, \sin \theta \cos \varphi,
@@ -74,13 +74,13 @@ $$
 $$ 
 V_n := \text{span} \left \{ m_0, \ldots, m_n \right \}, \qquad \text{where}\qquad m_k(z_1, z_2) := z_1^k z_2 ^{n - k}.
 $$
-$~$
+
 Representations 3. and 4. are infinite dimensional.
 
 ---
 
 We now compute the character of $V_n, n \in \N$, and see that $V_n$ is irreducible.
-$~$
+
 $\Phi(\theta, \varphi, \psi)$ has eigenvalues $e^{i \, \theta}$ and $e^{- i \, \theta}, \ {}$ and hence is congugate to 
 $$
 \gamma(\theta) := \Phi(\theta, 0, 0) = \begin{bmatrix} e^{i \, \theta} & 0 \\ 0 &  e^{-i \, \theta} \end{bmatrix}. 
@@ -108,7 +108,7 @@ $$
 &= \frac {\sin ((n + 1) \theta)}{\sin \theta}.
 }
 $$
-$~$
+
 
 The representations $V_j$ and $V_n$ are non-isomorphic if $j \neq n$. 
 
@@ -137,26 +137,20 @@ $$
 \left \{ \begin{align} \smallfrac \pi 2 & \qquad j = n \\
 0 & \qquad j \neq n \end{align} \right . 
 $$
-$~$
+
 $\displaystyle \Longrightarrow \qquad \qquad \qquad \qquad 
 \int_{SU(2)} \langle \chi_{V_j}, \chi_{V_n} \rangle d g = \delta_{jn}.$
 
 ---
 
 $SU(2)$ is compact, so all representations of $SU(2)$ are completely reducible. 
-$~$
+
 The orthogonality relations for matrix coefficients imply that a complex representation $V$ 
 of a compact group is irreducible $\quad \Longleftrightarrow$
 $$
 \int_G \langle \chi_{V}, \chi_{V} \rangle d g = 1,
 $$
 so $V_n$ is irreducible for all $n \in \N$.
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
 
 ---
 
@@ -189,9 +183,8 @@ $$
 $SU(2)$ connected $\quad \Longrightarrow \quad \mathfrak{su}(2)$-modules correspond to $SU(2)$-representations.
 
 $SU(2)$ compact $\quad \Longrightarrow \quad {}$ $SU(2)$-representations are completely reducible.
-$~$
+
 Thus every $\mathfrak{sl}(2, \C)$-module is completely reducible, and can be expressed as a direct sum of irreducible representations.
-$~$
 
 We'll use the basis $\{e, f, h \}$ of $\fg = \ \mathfrak{sl}(2, \C)$, where
 $$
@@ -227,7 +220,6 @@ Given a weight $λ$ of $V$, let $V[λ] ⊂ V$ denote the eigenspace of $λ$.
 
 A vector in $V[λ]$ is called a *vector of weight* $λ$. 
 If $\lambda$ is a highest weight, then vectors in $V[λ]$ are *highest weight vectors*.
-$~$
 
 ---
 
@@ -269,16 +261,10 @@ e \cdot V[λ] ⊂ V [λ + 2]
 f \cdot V [λ] ⊂ V [λ − 2].
 $$
 
-$~$
 Let $v ∈ V[λ]$ be a highest weight vector, and define
 $$
 v^k : = \frac {f^k}{k!} \cdot v \qquad \quad k≥0.
 $$
-$~$
-$~$
-$~$
-$~$
-$~$
 
 ---
 
@@ -298,10 +284,6 @@ The second and third assertions follow from the calculations on the previous sli
 $$
 f \cdot V [λ] ⊂ V [λ − 2] \quad \Longrightarrow \quad h \cdot v^1 = (λ − 2) v^1.
 $$ 
-
----
-
-### Give this slide a name continued
 
 If 
 $$
@@ -337,7 +319,6 @@ $$
 ### Constructing irreducible $\fg$-modules with highest weight $n \in \N$
 
 We can use these relationships to construct a family of irreducible $\fg$-modules. 
-$~$
 
 Given $n \in \N$, let $V_n$ denote the vector space with basis $\{ v^0, v^1, \ldots, v^n \}$, and define an action of $\fg$ on $V$ by
 $$
@@ -354,11 +335,10 @@ This action makes $V_n$ an irreducible $\fg$-module with highest weight $n$.
 We can construct an infinite-dimensional $\fg$-module with basis $\{ v^0, v^1, \ldots \}$.
 
 See, e.g., Kirillov Theorem 4.59 for the details of the proof.
-$~$
-$V_k$ and $V_n$ are non-isomorphic if $k \neq n$.
-$~$
-Every finite-dimensional irreducible $\fg$-module is isomorphic to $V_n$ for some $n$.
 
+$V_k$ and $V_n$ are non-isomorphic if $k \neq n$.
+
+Every finite-dimensional irreducible $\fg$-module is isomorphic to $V_n$ for some $n$.
 
 ---
 
@@ -367,7 +347,7 @@ $$
 V= \oplus_{λ \in \Lambda_V} V[λ] .
 $$
 This decomposition is called the *weight decomposition of* $V$.
-$~$
+
 *Verify:* $\fg$-modules are completely reducible, so we only need to consider the irreducible submodules.
 
 Assume that $V$ is an irreducible $\fg$-module.
@@ -375,7 +355,7 @@ $$
 λ_1 \neq λ_2 \qquad \Longrightarrow \qquad V[λ_1] \cap V[λ_2] = \{0\},
 $$
 so the sum of all of the eigenspaces is a direct sum. 
-$~$
+
 The actions of $e, f,$ and $h$ all map eigenvectors to eigenvectors, so $\,\oplus_{λ \in \Lambda_V} V[λ]\ {}$ is a submodule of $V$. 
 
 ---

@@ -356,6 +356,7 @@ is finite-dimensional.
 $~$
 ***Claim*** *(without proof here)*: Any representative function is a linear combination of matrix elements of a finite dimensional representation.
 
+<!--
 ---
 
 ### The Peter-Weyl Theorem
@@ -401,8 +402,111 @@ $~$
 $~$
 $~$
 
+
 ---
 
+### Interlude: Fourier and harmonic analysis lighting tour/review
+
+The *heat equation* is a linear second order PDE of the form
+$$
+\frac {\partial u}{\partial t} = \Delta u = \frac {\partial^2 u}{\partial x_1 x_1} + \cdots \frac {\partial^2 u}{\partial x_n x_n}
+$$
+where $u : R  \times I \to \R$ for some region $R$ and interval $I \subset \R$ containing $0$.
+<Spacer size="2px"/>
+
+***Initial and boundary data:*** If $\partial R = B_d \cup B_n$, a solution  $u$ of the heat equation is determined by functions 
+ - $\ f: R \to \R \qquad{}$ (initial data), 
+
+ - $\ b_d: B_d \times I \to \R \qquad  {}$  (Dirichlet boundary data), and 
+
+ - $\ b_n: B_n \times I \to \R, \qquad {}$ (Neumann boundary data)
+ 
+via the conditions
+$$
+u(\xv, 0) = f(\xv), \qquad 
+u|_{B_d} = b_d, \sands 
+\smallfrac {\partial u}{\partial \nu}|_{B_n} = b_n. 
+$$
+
+<!--
+The *wave equation* is a linear second order PDE of the form
+$$
+\frac {\partial^2 u}{\partial t^2} = \Delta u.
+$$
+<Spacer size="5px"/>
+-->
+
+
+---
+
+### Fundamental solutions of the wave equation
+
+We can construct bases of solutions as products of functions of the spatial variable(s) and functions of time.
+
+We determine convergent linear combinations of these special solutions satisfying the initial and boundary conditions.
+(In practice, we typically approximate solutions using finite sums.)
+<Spacer size="1px"/>
+
+***Example. $R = S^1 \approx \R/\Z.\ {}$***
+
+Substituting
+$$
+u(x, t) = X(x)T(t)
+$$
+for as yet unknown functions $\ X: I_x \to \R \ {}$ and $\ T: I_t \to \R \ {}$ into the heat equation yields
+$$
+X(x) T'(t) = X''(x) T(t).
+$$
+
+If we assume for the moment that $u$ is everywhere nonzero, we can divide by $u$, obtaining
+$$
+\frac {T'(t)}{T(t)} = \frac {X''(x)}{X(x)}.
+$$
+
+---
+
+#### Second slide of fundamental solutions of the wave equation
+
+$x$ and $t$ are independent variables, so this equation is satisfied on $I_x \times I_t \ \Longleftrightarrow \ \exists \ \lambda \ {}$ satisfying
+$$
+\textstyle \frac {T'(t)}{T(t)} = \lambda = \frac {X''(x)}{X(x)}.
+$$
+
+$\Longrightarrow \ \ {}$ We need eigenvectors $T$ of $\smallfrac {d \ }{dt}$ and $X$ of $\smallfrac {d^2 \ }{dx^2}$, both with the same eigenvalue. 
+
+$$
+X_k(x) = \cos (2 \pi \, k \, x), \qquad \tilde X_k(x) = \sin (2 \pi \, k \, x),
+\sands
+T_k(t) = e^{- 4 \pi^2 k^2 \ t} \phantom{X_{\int_\int}}
+$$
+are eigenvectors of $\smallfrac {d^2 \ }{dx^2}\ {}$ or $\smallfrac {d \ }{dt}\ {}$ with common eigenvalue $\ - 4 \pi^2 k^2 \quad \ \forall \ k \in \Z$.
+<Spacer size="1px"/>
+
+Linearity of the heat equation $\Longrightarrow$
+$$
+u(x, t) = a_0 + \sum_{k = 1}^n T_k(t) \lp a_k X_k(x) + \tilde a_k \tilde X_k(x) \rp
+$$
+is a solution of the heat equation for any $a_k, \tilde a_k \in \R$. 
+
+---
+
+To determine coefficients $a_k$ and $\tilde a_k$ satisfying the initial condition 
+$$
+f(x) = u(x, 0) = a_0 + \sum_{k = 1}^n \lp a_k X_k(x) + \tilde a_k \tilde X_k(x) \rp,
+$$
+we exploit the fact that rescalings of $X_k$ and $\tilde X_k$ (keep the notation as is) form an orthonormal basis of the space of square integrable real-valued functions on $S^1$, 
+with the $L_2$ inner product 
+
+$$
+\langle f_1, f_2 \rangle_{S^1} = \int_0^1 f_1(x) f_2(x)dx.
+$$
+
+Ignoring any technical issues with convergence of the infinite sum,
+$$
+f = \langle f, 1 \rangle_{S^1} + \sum_{k = 1}^\infty \lp \langle f, X_k\rangle_{S^1} X_k +  \langle f, \tilde X_k\rangle_{S^1} \tilde X_k \rp.
+$$
+
+<!--
 ## Interlude: Fourier and harmonic analysis lighting tour/review
 
 The *heat equation* is a linear PDE of the form
@@ -496,6 +600,7 @@ Ignoring any technical issues with convergence of the infinite sum,
 $$
 f = \langle f, 1 \rangle_{S^1} + \sum_{k = 1}^\infty \lp \langle f, X_k\rangle_{S^1} X_k +  \langle f, \tilde X_k\rangle_{S^1} \tilde X_k \rp.
 $$
+-->
 
 ---
 

@@ -424,7 +424,7 @@ $$
 &\qquad{} - \text{d} \beta_\mu(g)(X_{\xi_1}(g), X_{\xi_2}(g)) \phantom{\sum}\\
 &= \lp \iota_{X_{\xi_1}}\beta_{\nu_2} - \iota_{X_{\xi_2}}\beta_{\nu_1}
  - \iota_{X_{\xi_2}}\iota_{X_{\xi_1}}\text{d} \beta_\mu\rp(g) \phantom{\sum} \\
-&= \nu_2(\xi_1) - \nu_1(\xi_2) -  \text{d} \beta(q)(v_1, v_2).
+&= \nu_2(\xi_1) - \nu_1(\xi_2) \mp \mu([\xi_1, \xi_2]).
 }
 $$ 
 
@@ -638,6 +638,38 @@ Even *defining* stability, much less verifying it, for nonconstant trajectories 
 The structures carved out by momentum maps have been shown to have lots of significant properties that constrain the dynamics of $G$-invariant Hamiltonian systems. 
 
 The structure of $G$, $\fg$, and the coadjoint orbits in $\fg^*$ doesn't fully dictate the dynamics on $M$ (unless $M$ is a homogeneous space), but in many contexts it determines a lot of the "really important" behavior, and there's a lot of geometric machinery available to help you get that behavior right.
+
+---
+
+### Long overdue definitions: equivariant and invariant maps
+
+If $G$ acts on manifolds $M$ and $N$, a map $\phi: M \to N$ is *equivariant* if
+$$
+\phi(g \cdot p) = g \cdot \phi(p) \qquad \forall g \in G, p \in M.
+$$
+
+$\phi: M \to N$ is *invariant* if it is equivariant w.r.t. the trivial action on $N$, i.e.
+$$
+\phi(g \cdot p) = \phi(p) \qquad \forall g \in G, p \in M.
+$$
+<!--
+
+***Heads up!*** Some authors use "invariant" as I've defined equivariant, and others use equivariant even when the action on the codomain is trivial.
+<Spacer size="5px"/>
+-->
+
+If $\phi$ is equivariant and easier to evaluate or analyze at certain convenient points along each orbits than at others, we can exploit equivariance by moving to a nice point, evaluating $\phi$, and then "undoing" the action:
+$$
+\phi(m) = g^{-1} \cdot \phi(g \cdot m).
+%\phi(m) = \rho_N(g^{-1}(\phi(\rho_M(g)(m)))).
+$$
+*Example:* Using change of basis to Jordan Normal Form to evaluate the matrix exponential.
+<Spacer size="1px"/>
+
+A manifold $M$ with a $G$ action is $G$ *invariant* if
+$$
+G \cdot M := \{ g \cdot m \, : \, g \in G, m \in \} \subseteq M.
+$$
 
 ---
 

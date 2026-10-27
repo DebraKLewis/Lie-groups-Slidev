@@ -24,7 +24,7 @@ $$\eqa{
 \langle \wv_m, \Phi(\vv_\ell) \rangle_W &= \int_G a_{i \ell }(g^{-1}) \tilde a_{mj}(g) dg\\
 &= \int_G \overline {a_{\ell i}(g)} \tilde a_{mj}(g) dg.}
 $$
-$~$
+
 We can construct a $G$-invariant $L_2$ Hermitian inner product on the space of smooth complex-valued functions on a compact Lie group $G$.
 $$
 \langle f_1, f_2 \rangle_{L_2} := \int_G f_1(g) \overline{f_2(g)} dg,
@@ -38,13 +38,13 @@ $$
 ---
 
 In particular, if $V$ and $W$ aren't isomorphic, then $a_{\ell i}$ and $\tilde a_{mj}$ are orthogonal. 
-$~$
+
 
 ***Claim:*** If $V$ is irreducible, then the matrix coefficients of $V$ w.r.t. ${\cal B}$ satisfy
 $$
 \langle a_{ij}, a_{k \ell} \rangle_{L_2} =  \frac {δ_{ik}δ_{j\ell}} {\dim V}.
 $$
-$~$
+
 *Verify.* Let $E_{ik} : V → V$ denote the $k$i-th matrix unit, i.e.
 $$
 E_{ik}(\vv_j) = \delta_{jk} \vv_i,
@@ -63,17 +63,13 @@ Let $\calP_m^\C(2)$ denote the vector space with basis $\ \{p_0, \ldots, p_m \},
 $$ 
 p_k \lp \begin{bmatrix}z_1\\ z_2\end{bmatrix} \rp := z_1^k z_2^{m−k} \qquad \forall \ z_1, z_2 \in \C.
 $$
-$~$
+
 Define a representation of $SU(2)$ on $\calP_m^\C(2)$ by
 $$
 (A \cdot f)\lp \begin{bmatrix}z_1\\ z_2\end{bmatrix} \rp = f \lp A^{-1}\begin{bmatrix}z_1\\ z_2\end{bmatrix} \rp.
 $$
-$~$
+
 We'll see that this is a family of irreducible representations, indexed by $m$. 
-$~$
-$~$
-$~$
-$~$
 
 ---
 
@@ -95,14 +91,8 @@ and so on.
 ---
 
 The restrictions of the elements of $V_m$ to the unit sphere $S^2$ are the spherical harmonics. 
-$~$
+
 Since $S^2$ is invariant under the usual action of $SO(3, \R)$ on $\R^3$, the spherical harmonics of order $m$ are also representations of $SO(3, \R)$.
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
 
 ---
 
@@ -118,7 +108,7 @@ The *wave equation* has the form
 $$
 \frac {\partial^2 u}{\partial t^2} = \Delta u.
 $$
-$~$
+
 We construct of a basis of solutions as products of functions of the spatial variable(s) and functions of time.
 
 ---
@@ -136,7 +126,7 @@ u(\xv, 0) = f(\xv), \qquad
 u|_{B_d} = b_d, \sands 
 \smallfrac {\partial u}{\partial \nu}|_{B_n} = b_n. 
 $$
-$~$
+
 We determine convergent linear combinations of the special solutions satisfying the initial and boundary conditions.
 
 In practice, we typically approximate solutions using finite sums.
@@ -166,15 +156,13 @@ $$
 ---
 
 We need eigenvectors $T$ of $\smallfrac {d \ }{dt}$ and $X$ of $\smallfrac {d^2 \ }{dx^2}$, both with the same eigenvalue. 
-$~$
+
 $$
 X_k(x) = \cos (2 \pi \, k \, x), \qquad \tilde X_k(x) = \sin (2 \pi \, k \, x),
 \sands
 T_k(t) = e^{- 4 \pi^2 k^2 \ t} \phantom{X_{\int_\int}}
 $$
 are eigenvectors of $\smallfrac {d^2 \ }{dx^2}\ {}$ or $\smallfrac {d \ }{dt}\ {}$ with common eigenvalue $\ - 4 \pi^2 k^2 \quad \ \forall \ k \in \Z$.
-
-$~$
 
 Linearity of the heat equation $\Longrightarrow$
 $$
@@ -208,9 +196,8 @@ $$
 u(x, t) = \langle f, 1 \rangle_{S^1} + \sum_{k = 1}^n T_k(t) \lp \langle f, X_k\rangle_{S^1} X_k(x) + \langle f, \tilde X_k\rangle_{S^1} \tilde X_k(x) \rp
 $$
 is the solution of the heat equation with initial condition $f$.
-$~$
+
 The wave equation is solved analogously, with appropriately modified $T_k$. 
-$~$
 
 If we work in the complex setting, with $S^1 = \{ z \in \C: |z| = 1 \}, \ {}$ we have
 $$
@@ -232,7 +219,7 @@ $$
 \sands \Delta u  = \Delta X(\xv) T(t),\phantom{X^\int_\int}
 $$
 so if $u$ satisfies the heat equation  and is everywhere nonzero, $X$ and $T$ must be eigenvectors of $\Delta$ and $\smallfrac {\partial \ }{\partial t}$ with a common eigenvalue.
-$~$
+
 Hence the eigenvectors and eigenvalues of the Laplacian have been intensively studied.
 
 The kernel of a linear transformation is of particular interest and practical value. 
@@ -248,10 +235,10 @@ $$
 \phi_\xi(\xv) := e^{2πi \langle \xi, \xv \rangle}.
 $$
 Any (complex) scalar multiple of $\phi_\xi$ is called a *plane wave*.
-$~$
+
 $$\Delta \phi_\xi = - 4π^2 |\xi|^2 \phi_\xi,$$
 so $\phi_\xi$ is an eigenvector of $\Delta$, with eigenvalue $- 4π^2 |\xi|^2$. 
-$~$
+
 For functions $f: \R^n \to \R$ that decay sufficiently rapidly, the following integrals are finite and we can define
 $$
 \hat f(\xi) := \langle f, \phi_\xi \rangle_{L_2} = \int_{\R^n} f(\xv) \phi_{-\xi}(\xv) d \xv.
@@ -262,30 +249,35 @@ $$
 $\hat f: \R^3 \to \C$ is the *Fourier transform* of $f$.
 
 $\hat f(ξ)$ captures the extent to which $f$ oscillates at frequency $ξ$.
-$~$
+
 On the circle, the eigenvectors were indexed by $\Z$, and a harmonic function could be expressed as a limit of linear combinations of the eigenvectors. 
 
 In the case at hand, the "indices" run over all elements of $\R^n$, and $f$ is expressed as an integral over those indices:
-$$\eqa{
+$$
+\eqa{
 f(\xv) &= \langle \hat f, \phi_{-\xv} \rangle_{L_2}\\
 &= \int_{\R^n} \hat f(\xi) \phi_{\xv}(\xi) d \xi \\
 &= \int_{\R^n} \hat f(\xi) \phi_{\xi}(\xv) d \xi ,
-}$$
+}
+$$
 
 ---
 
 since 
-$$\phi_{\xv}(\xi) = e^{2πi \langle \xi, \xv \rangle} = \phi_{\xi}(\xv).
 $$
-$~$
+\phi_{\xv}(\xi) = e^{2πi \langle \xi, \xv \rangle} = \phi_{\xi}(\xv).
+$$
+
 ***The Fourier transform of $∆f$***
 
 Sweeping a lot of analytical details under the rug, we have
-$$\eqa{
+$$
+\eqa{
 ∆f(\xv) &= ∆ \int_{\R^n} \hat f(\xi) \phi_{\xi}(\xv) d \xi \\
 &=  \int_{\R^n} \hat f(\xi) ∆ \! \phi_{\xi}(\xv) d \xi \\
 &=  \int_{\R^n} \lp - 4π^2 |\xi|^2\hat f(\xi) \rp \phi_{\xi}(\xv)  d \xi, 
-}$$
+}
+$$
 and hence
 
 ---
@@ -293,14 +285,13 @@ and hence
 $$
 \widehat{∆f}(\xi) = - 4π^2 |\xi|^2\hat f(\xi).
 $$
-$~$
+
 If we can efficiently compute and undo Fourier transforms, solving $∆f = w$ is "easy":
 $$
 ∆f = w  \quad \Longleftrightarrow \quad \widehat{∆f} = \widehat w 
 \quad \Longleftrightarrow \quad \hat{f}(\xi) = - \frac {\widehat w(\xi)}{4π^2 |\xi|^2} \qquad \qquad \forall \ \xi \in \R^3.
 $$ 
 
-$~$
 ***Side remark:*** A *fast Fourier transform (FFT)* is an algorithm that computes the discrete Fourier transform (DFT) of a sequence, or its inverse (IDFT). 
 
 A lot of data is discrete to start with, and continuous time (or other independent variable) dependent data is often discretized as part of the analysis process.
@@ -314,16 +305,12 @@ $$
 \int_{\R^n} |f(\xv)|^2 d \xv = 
 \int_{\R^n} |\hat f(\xi)|^2 d \xi.
 $$
-$~$
+
 ***Convolution formula*** 
 $$
 \int_{\R^n} f_1(\xv - \yv) f_2(\yv) d \yv = 
 \int_{\R^n} \hat f_1(\xi) \hat f_2(\xi) \phi_\xi(\xv) d \xi.
 $$
-$~$
-$~$
-$~$
-$~$
 
 ---
 
@@ -341,7 +328,7 @@ For $n = 3$ and $\ell \in \N,$ let $A_\ell$ denote the harmonic homogeneous poly
 $$
 \av_2(x, y, z) := \lp x y, x z, y z, x^2 - y^2, x^2 - z^2 \rp.
 $$
-$~$
+
 If we identify one of the coordinate planes in $\R^3$ with $\C$, then $\xv \mapsto (P \xv)^\ell$ is a harmonic homogeneous polynomial, where $P: \R^3 \to \C$ denotes projection onto the plane. 
 
 ---
@@ -350,7 +337,7 @@ For example,
 $$
 (x + i \, y)^2 = x^2 - y^2 + 2 x y \, i = \langle (2 i, 0, 0, 1, 0) , \av_2(\xv) \rangle.
 $$
-$~$
+
 ### Spherical harmonics
 
 The spherical harmonics can be defined as the restrictions of the harmonic homogeneous polynomials on $\R^3$ to $S^2$.
@@ -390,14 +377,14 @@ $$
 (g \cdot f)(h) = f(g^{-1} h) 
 $$
 is called the *regular representation*.
-$~$
+
 A *representative function* $f \in L_2(G)\ {}$ is a uniformly continuous function such that the
 subspace 
 $$
 \text{span} (G\cdot f) = \text{span} \{ g \cdot f : g \in G \}
 $$
 is finite-dimensional.
-$~$
+
 ***Claim*** *(without proof here)*: Any representative function is a linear combination of matrix elements of a finite dimensional representation.
 
 ---
@@ -410,42 +397,28 @@ If $G$ is a compact Lie group, then
 3. Every irreducible representation of $G$ is finite dimensional.
 4. Each irreducible representation of $G$ occurs in $L_2(G)$ with multiplicity equal to its dimension.
 5. Any unitary representation of $G$ on a separable Hilbert space decomposes into a Hilbert space direct sum of (finite dimensional} irreducible representations.
-$~$
 
 ---
 
 We won't cover the proof of the Peter-Weyl Theorem in this class. (See, e.g., Sternberg.)
-$~$
+
 The proof combines the representation theory that we’ve developed so far with functional analysis, particularly properties of compact operators on Hilbert spaces.
-$~$
+
 A *compact operator* on a Hilbert space $V$ is a bounded operator such that the image of a bounded set is *relatively compact*, i.e. has compact closure.
-$~$
 
 Compact operators form the closure with respect to the operator norm of the space of finite rank operators.
-$~$
-$~$
-$~$
-$~$
+
 
 ---
 
 Many results for linear transformations of finite dimensional vector spaces carry over 
 (with some technical finesse in the proofs) to compact operators on Hilbert spaces.
 
-$~$
 For example, the ***spectral theorem***: If $T$ is a compact, self-adjoint operator on a Hilbert space $V$, then $V$ has an orthogonal eigenbasis for $T$. 
 If the orthogonal complement to $\ \ker(T) \ {}$ is infinite dimensional, the eigenvalues $\lambda_n$ of $T$ can be ordered so as to satisfy 
-$$\ \lim_{n \to \infty} \lambda_n = 0.
 $$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-
----
+\lim_{n \to \infty} \lambda_n = 0.
+$$
 
 
 

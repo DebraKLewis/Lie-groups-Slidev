@@ -146,9 +146,6 @@ src: LieGroupsSlides/Lies3Theorems.md
 
 - Principal bundles
 
-*The symplectic manifolds, momentum maps, and principal bundles slides still need to be tidied up.*
-
-
 ---
 src: LieGroupsSlides/Haar_measure.md
 ---
@@ -161,11 +158,11 @@ src: LieGroupsSlides/PoissonManifolds.md
 src: LieGroupsSlides/symplecticManifolds.md
 ---
 
-<!--
-
 ---
 src: LieGroupsSlides/principal_bundles.md
 ---
+
+<!--
 
 ---
 src: LieGroupsSlides/symplecticPoisson2.md
@@ -190,6 +187,15 @@ src: LieGroupsSlides/momentumMapsCoadjointOrbits.md
 
 - (Ir)reducible representations
 
+- Matrix coefficients and the Peter-Weyl Theorem
+
+- Origins and applications of the Peter-Weyl Theorem in functional analysis
+
+*Slides currently being tidied up:*
+
+- Characters of SU(2) and irreducible representations of sl(3, C)
+
+
 - Solvable Lie algebras
 
 - Nilpotent Lie algebras
@@ -198,11 +204,14 @@ src: LieGroupsSlides/momentumMapsCoadjointOrbits.md
 
 - Lie's and Engel's Theorems
 
-Matrix coefficients and characters
-Characters of SU(2) and irreducible representations of sl(3, C)
-Matrix elements and the Peter-Weyl Theorem
 
-*Slides currently being tidied up.*
+---
+src: LieGroupsSlides/irreducible_representations.md
+---
+
+---
+src: LieGroupsSlides/irreducible_representations_contd.md
+---
 
 <!--
 
@@ -230,19 +239,8 @@ src: LieGroupsSlides/Lie_Engel_reducible_semisimple.md
 src: LieGroupsSlides/Borcherds_nilpotent_solvable_fragments.md
 ---
 
----
-src: LieGroupsSlides/(ir)reducible_representations.md
----
-
----
-src: LieGroupsSlides/(ir)reducible_representations_contd.md
----
-
----
-src: LieGroupsSlides/a_few_representations.md
----
-
 -->
+
 
 ---
 

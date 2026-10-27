@@ -429,6 +429,8 @@ $\ker f$ is the stabilizer of $1_{G_2}$ with respect to this action, and $\text{
 If $\text{im} \,  f$ is an embedded submanifold of $G_2$, the induced map from $G_1/\ker f$ to $\text{im} \,  f$ is a diffeomorphism.
 
 ---
+routeAlias: free-proper-actions
+---
 
 ## Free, effective, and proper actions
 
@@ -452,4 +454,4 @@ is proper, i.e. preimages of compact sets are compact.
 $𝜋:𝑀→𝑀/𝐺 \ {}$ is smooth, and
 for any manifold $N$ and map $𝑓:𝑀/𝐺→𝑁, \ f \circ \pi$ smooth $\ \Longrightarrow \ f$ smooth.
 
-See, e.g. *Foundations of Mechanics*, R. Abraham and J.E. Marsden, for the proof.
+See, e.g. Proposition 4.1.23 in *Foundations of Mechanics* [(excerpt)](https://canvas.ucsc.edu/courses/96054/files/13378112?module_item_id=2148947), R. Abraham and J.E. Marsden, for proof.

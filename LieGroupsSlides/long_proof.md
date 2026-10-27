@@ -1,8 +1,24 @@
-# Appendix B. Some proofs 
+# Appendix B. Some proofs and calculations 
 
-- Induced representations on vector fields and one forms
+- [Induced representations on vector fields and one forms](representation-via-pushforward)
 
 <!-- - Isotropy subgroups are closed Lie subgroups -->
+
+- [Closed "graph" condition for Hausdorff quotient $M/G$](Hausdoff-quotient-condition)
+- [Induced representations on vector fields and 1-forms](induced-representations)
+- [The coadjoint action on $\fg^*$ is a Poisson action](coadjoint-action-is-Poisson)
+
+- [Lie-Poisson flows preserve coadjoint orbits](Lie-Poisson-flows-preserve-coadjoint-orbits)
+
+- [An $\Ad$-invariant inner product on $\fg$ determines a Casimir of the Lie-Poisson bracket](Ad-invariant-inner-product-Casimir-Lie-Poisson-flows)
+
+- [A symplectic structure determines a Poisson bracket](symplectic-induces-Poisson)
+
+- [Local trivialization of the canonical symplectic structure on a cotangent bundle via a 1-form](canonical-symplectic-in-terms-of-1-form)
+
+- [Momentum map of $M = T^*Q$ with a lifted $G$ action](momentum-map-cotangent-bundle)
+
+- [A free and proper action of a compact group determines a principal bundle](quotient-free-proper-principal-bundle)
 
 ---
 routeAlias: representation-via-pushforward
@@ -147,12 +163,15 @@ since $g \in G_p$.
 routeAlias: Hausdoff-quotient-condition
 ---
 
-*Proof that if*
+### Closed "graph" condition for Hausdorff quotient $M/G$
+
+***Claim: If***
 $$
 \setdef R {(p, g \cdot p)} {M \times M} {p \in M, g \in G}
 $$
-*is closed, then the quotient topology on $M/G$ is Hausdorff.* 
+is closed, then the quotient topology on $M/G$ is Hausdorff.
 
+*Verify:*
 Given $p, \tilde p \in M$, if $\{ V_j\}$ and $\{ \tilde V_j \}$ are nested bases of nbhds of $p$ and $\tilde p$, then
 $$
 U_j := \pi(V_j) \sands \tilde U_j := \pi(\tilde V_j)
@@ -166,15 +185,15 @@ $$
 <Spacer size="5px"/>
 
 $U_j \cap \tilde U_j \neq \emptyset \quad \Longrightarrow \quad \exists \ m_j \in V_j, \tilde m_j \in \tilde V_j, \ \text{and} \ g_j, \tilde g_j \in G\ {}$ satisfying
-$$
-g_j \cdot m_j = \tilde g_j \cdot \tilde m_j,
-$$ 
 
 ---
 
 #### Second slide of proof of the sufficient condition for $M/G$ to be Hausdorff
 <Spacer size="5px"/>
 
+$$
+g_j \cdot m_j = \tilde g_j \cdot \tilde m_j,
+$$ 
 and hence
 $$
 (m_j, \tilde m_j) = (m_j, (\tilde g_j^{-1} g_j) \cdot p_j) \in R.
@@ -348,7 +367,7 @@ $$
 routeAlias: Ad-invariant-inner-product-Casimir-Lie-Poisson-flows
 ---
 
-### An $\Ad$-invariant inner product on $\fg$ determines a Casimir of the Lie-Poisson bracket.
+### An $\Ad$-invariant inner product on $\fg$ determines a Casimir of the Lie-Poisson bracket
 
 An inner product $\, \langle \ \, , \ \rangle_\fg\, {}$ on $\fg$ induces an isomorphism $\, I: \fg \to \fg^*$
 $$
@@ -370,6 +389,8 @@ $$\eqa{
 $$
 
 ---
+
+#### Second slide of proof that an $\Ad$-invariant inner product on $\fg$ determines a Casimir of the Lie-Poisson bracket
 
 $\Longrightarrow\qquad \Ad^*_g \, I \, \Ad_g = I$ 
 
@@ -396,6 +417,8 @@ $$
 for all $\ \xi \in \fg, \ \mu, \nu \in \fg^*.\ {}$ 
 
 ---
+
+#### Third slide of proof that an $\Ad$-invariant inner product on $\fg$ determines a Casimir of the Lie-Poisson bracket
 
 Taking $\ \nu = \mu\ {}$ gives
 $$\eqa{
@@ -490,7 +513,7 @@ so $\, \{·, ·\}\, {}$ is a Poisson bracket.
 routeAlias: canonical-symplectic-in-terms-of-1-form
 ---
 
-### Local trivialization of the canonical symplectic structure on a cotangent bundle 
+### Local trivialization of the canonical symplectic structure on a cotangent bundle via a 1-form 
 
 The map  $\hat \beta_q : T_q Q \times T_q^* Q \to T_{\beta(q)} T^* Q$ given by
 $$
@@ -520,7 +543,7 @@ $$
 
 ---
 
-#### Second slide: canonical symplectic structure on a cotangent bundle with respect to a 1-form $\beta$
+#### Second slide: Local trivialization of the canonical symplectic structure on a cotangent bundle
 
 and hence 
 $$
@@ -549,7 +572,7 @@ $$
 
 ---
 
-#### Third slide: canonical symplectic structure on a cotangent bundle with respect to a 1-form $\beta$
+#### Third slide: Local trivialization of the canonical symplectic structure on a cotangent bundle
 
 $$
 \eqa{
@@ -666,7 +689,7 @@ $\Longrightarrow \quad X_{j_\xi} = \xi_{T^*Q}$, so $J$ is a momentum map.
 
 ---
 
-#### Equivariance of the momentum map determined by a cotngent lifted action
+#### Equivariance of the momentum map determined by a cotangent lifted action
 
 $$
 J(g \cdot z_q) = \Ad_{g^{-1}}^* J(z_q) \qquad \qquad \forall \ g \in G, \ z_q \in T^*Q.
@@ -684,3 +707,43 @@ J(g \cdot z_q)(\xi) &= J_\xi(g \cdot z_q) \phantom{\sum}\\
 }
 $$
 $\Longrightarrow \ J$ is $G$-equivariant.
+
+---
+routeAlias: quotient-free-proper-principal-bundle
+---
+
+### A free and proper action of a compact group determines a principal bundle
+
+***Claim:*** If $E$ is a smooth manifold and $G$ is a compact Lie group acting [freely](free-proper-actions) and smoothly on $E$, then the projection $\, p : E → E/G\,{}$ is a principal $G$-bundle.
+
+*Sketch of proof:* The action of a compact group is proper, so [$p$ is smooth](free-proper-actions). 
+
+Free action $\ \ \Longrightarrow \ \ \Phi_z: G \to E$ is injective $\, \forall \ z \in E$ and the orbit $\mathcal{O}_z$ is an embedded submanifold of $E$.
+
+<!--
+$\Longrightarrow \ \ \exists \ {}$ a coordinate chart on a neighborhood of $z$ such that the first $\text{dim}\, G$ coordinates restrict to 
+-->
+
+Choose a submanifold $S$ of $E$ containing $z$ and satisfying
+$$
+T_z E=T_z \mathcal{O}_z⊕T_zS,
+$$
+and define $F:G×S \to E$ by $F(g,s) := g \cdot s$.
+
+$d_{(1, z)} F$ is an isomorphism, so the Inverse Function Theorem $\ \ \Longrightarrow \ \ F\,{}$ is a local diffeomorphism near $(1,z)$.
+
+Smoothness $\ \ \Longrightarrow \ \ d_{(g, z')} F$ is invertible for $(g, z')$ sufficiently near $(1, z)$. 
+
+---
+
+#### Second slide of the sketch of the proof that a free and proper action of a compact group determines a principal bundle
+
+Equivariance of $F$ with respect to left multiplication on the first factor $\ \ \Longrightarrow \ \ d_{(g, z')} F$ is invertible for any $g \in G$ and $z'$ sufficiently near $z$.
+
+"Shrink" $S$, i.e. restrict the $S$ dependence to a sufficiently small neighborhood of $z$ in $S$, and call that neighborhood $S$, so 
+- the linearization of $F$ is invertible everywhere, and
+- $gS∩S$ is nonempty only for $g$ near $1$. 
+
+$\Longrightarrow \ \ F$ is injective, and hence a diffeomorphism onto its image. 
+
+This construction determines the required equivariant local trivialization near $z$.

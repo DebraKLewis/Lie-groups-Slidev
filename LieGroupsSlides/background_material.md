@@ -285,3 +285,100 @@ $\qquad{}$is an integral submanifold of our first example of an involutive distr
 - Nested spheres centered at the origin in $\R^n \backslash \{ \mathbf{0} \}$ are integral submanifolds of 
 $$ \calD_\xv := \{ \vv \in \R^n : \langle \vv, \xv \rangle = 0 \}, $$
 our second example of an involutive distribution.
+
+---
+routeAlias: fiber-bundles
+---
+
+### Fiber bundles
+
+Fiber bundles generalize direct products.
+
+Given be a connected space  $B$ with basepoint $b_0$, a surjective, continuous map $p : E → B$ is a  *fiber bundle* with *fiber* $\,F \,{}$  if for every $x ∈ B$ there is an open neighborhood $U_x ⊂ B$ and a homeomorphism
+$$
+Ψ_{U_x} : p^{−1}(U_x) → U_x × F
+$$
+such that the following diagram commutes:
+$$
+\eqa{
+p^{-1}(U_x) & \xrightarrow{\Psi_{U_x}} \ U_x \times F \\
+%p^{-1}(U_x) & \xrightarrow[\quad \cong \quad]{\quad \Psi_{U_x} \quad} & U_x \times F \\
+\qquad {}_p \!\!\searrow & \qquad \swarrow_{\text{proj first factor}} \\
+& \ \ \ U_x 
+}
+$$
+
+$B$ is called the *base space* and $E$ is the *total space*. 
+<Spacer size="5px"/>
+
+A fiber bundle $(F, E, B)$ is *trivial* if it isomorphic to the fibration $\, B×F → B$. 
+
+---
+
+#### Sections and morphisms of fiber bundles
+
+A (local) *section* $\,s : U \subseteq B → E \, {}$ of a fiber bundle $\, p : E → B\,{}$ is a continuous map satisfying
+$$
+p \circ s = \text{id}_B|_U.
+$$
+<Spacer size="5px"/>
+
+A fiber bundle morphism $\, Φ : (F_1, E_1, B_1) → (F_2, E_2, B_2\,{}$) 
+is a pair of continuous maps 
+$$
+φ : B_1 → B_2  \sands \tilde φ : E_1 → E_2
+$$
+satisfying
+$$
+\eqa{
+E_1& \xrightarrow{\ \tilde φ\ } E_2 \\
+p_1 \big \downarrow\ & \qquad \big \downarrow \, p_2 \\ 
+B_1& \xrightarrow{\ φ\ } B_2
+}\ \ .
+$$
+
+---
+
+### Examples of fiber bundles
+
+- Vector bundles, with $F$ a vector space. Vector fields are sections of vector bundles.
+
+- Covering spaces, with $F$ the group of deck transformations. 
+Lifts are sections of covering spaces. 
+
+- The M&ouml;bius band, with $B = S^1$ and $F = [-1, 1]$.
+
+- Complex projective spaces are the base spaces of fiber bundles.   
+$E = {\mathbb C}^{n+1} - \{ 0 \}; B = {\mathbb C} P^n \,{}$ is the space of orbits of the diagonal action of $\, F = {\mathbb C} - \{0 \}\,{}$ by multiplication on $E$,
+ with local section
+$$
+\underbrace{[z_0, ..., z_n]}_{\in\, U_0 \,\subset \,\mathbb{C}P^n} \sim \left[ 1, \frac{z_1}{z_0}, ..., \frac{z_n}{z_0} \right] \mapsto \frac {(1, \frac{z_1}{z_0}, ..., \frac{z_n}{z_0})}{\left | (1, \frac{z_1}{z_0}, ..., \frac{z_n}{z_0}) \right |}.
+$$
+<Spacer size="9px"/>
+
+- $E = S^{2n + 1}, \ B = {\mathbb C} P^n, \,{}$ and $F = S^1 \simeq \{ z \in {\mathbb C} : |z| = 1 \}$. <br/>
+Since ${\mathbb C} P^1 \simeq S^2$, for $n = 1$ this is the Hopf fibration.
+
+# Appendix A': Background definitions and results for analysis
+
+- [Compact operators on Hilbers spaces](compact-operators)
+
+---
+routeAlias: compact-operators
+---
+
+### Compact operators on Hilbert spaces
+
+A *compact operator* on a Hilbert space $V$ is a bounded operator such that the image of a bounded set is *relatively compact*, i.e. has compact closure.
+
+Compact operators form the closure with respect to the operator norm of the space of finite rank operators.
+<Spacer size="5px"/>
+
+Many results for linear transformations of finite dimensional vector spaces carry over 
+(with some technical finesse in the proofs) to compact operators on Hilbert spaces.
+
+For example, the ***spectral theorem***: If $T$ is a compact, self-adjoint operator on a Hilbert space $V$, then $V$ has an orthogonal eigenbasis for $T$. 
+If the orthogonal complement to $\ \ker(T) \ {}$ is infinite dimensional, the eigenvalues $\lambda_n$ of $T$ can be ordered so as to satisfy 
+$$
+\lim_{n \to \infty} \lambda_n = 0.
+$$

@@ -22,6 +22,7 @@ export default defineKatexSetup(() => {
         "\\pv": "\\mathbf{p}",
         "\\uv": "\\mathbf{u}",
         "\\vv": "\\mathbf{v}",
+        "\\wv": "\\mathbf{w}",
         "\\xv": "\\mathbf{x}",
         "\\yv": "\\mathbf{y}",
         "\\gammav": "\\boldsymbol{\\gamma}",

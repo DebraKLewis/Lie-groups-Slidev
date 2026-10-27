@@ -1,36 +1,43 @@
-## Subrepresentations and (ir)reducible representations
+### Subrepresentations
 
 A subset $N \subseteq M$ of a manifold $M$ with a $G$ action is $G$-*invariant* if
 $$
-G \cdot N = \{ g \cdot p : g \in G, \ p \in N \} \subseteq N.
+G \cdot N := \{ g \cdot p : g \in G, \ p \in N \} \subseteq N.
 $$
-$~$
-If $V$ is a representation of $G$, a *subrepresentation of* $V$ is a $G$-invariant subspace $W \subseteq V$.
-$~$
+
+A *subrepresentation* $W$ of a representation $V$ of $G$ is a $G$-invariant subspace $W \subseteq V$.
+
+<!--
 $W$ is a *proper subrepresentation of* $V$ if $W$ is $G$-invariant and $\ \dim W < \dim V$.
-$~$
+-->
+
+<Spacer size="5px"/>
+
 ***Examples:*** 
 
-If $G = GL(n, \R)\ {}$ and $\ V = \fg = \R^{n \times n}, {}$ with the adjoint action, then the space of 
+<!--
+- If $G = GL(n, \R)\ {}$ and $\ V = \fg = \R^{n \times n}, {}$ with the adjoint action, then the space of 
 scalar multiples of the identity matrix is a subrepresentation of $V$.
+-->
+
+- If $V$ is a representation of $G$
+$$
+\setdef {V^G} v V {G_v = G} %= \{ v \in V : g \cdot v = v \quad \forall \ g \in G \} 
+$$
+$\quad{}$is a subrepresentation of $V$ with trivial $G$ action.
+
+- If $f:V\rightarrow W$ is a $G$-equivariant linear map, then $\ker f$ is a subrepresentation of $V$, and $\text{range}\, f$ is a subrepresentation of $W$.
 
 ---
 
-If $V$ is a representation of $G$, then
-$$
-\setdef {V^G} v V {G_v = G} = \{ v \in V : g \cdot v = v \quad \forall \ g \in G \} 
-$$
-is a subrepresentation of $V$ with trivial $G$ action.
-$~$
-If $f:V\rightarrow W$ is a $G$-equivariant linear map, then $\ker f$ is a subrepresentation of $V$, and $\text{range}\, f$ is a subrepresentation of $W$.
-$~$
+### (Ir)reducible representations
+
 A representation is *reducible* if it has a nontrivial proper subrepresentation. 
 
 A non-zero representation is *irreducible (simple)* if it isn't reducible.
 
 A representation is *completely reducible (semisimple)* if it is isomorphic to a direct sum of irreducible representations.
-
----
+<Spacer size="5px"/>
 
 ***Example: Reducible, but not completely reducible***
 
@@ -38,140 +45,171 @@ $G = (\R, +)$, acting on $\R^2$ by
 $$
 \rho(x) = \begin{bmatrix} 1 & x \\ 0 & 1 \end{bmatrix}.
 $$
-$~$
+
 $\text{span}\{\ev_1\}$ is a subrepresentation with no complementary subrepresentation, since $\ev_1$ is an eigenvector of $\rho(x)$, and $\rho(x)$ is not diagonalizable.
-$~$
-More generally, $G = (\R, +)$ and $V = \C^n$, $n > 1$. 
-$~$
-$\R$-modules with $V = \C^n$ correspond to elements of $\C^{n \times n}$, with
-$$
-t \mapsto t \, A.
-$$
-$~$
 
----
-
-Every $A \in \C^{n \times n}$ has an eigenvector $\vv$, so the above modules and representations have a one-dimensional subrepresentation 
-$$
-W = \text{span}(\vv).
-$$ 
-$~$
-The module and representation determined by a matrix $A$ are completely reducible $\ \Longleftrightarrow \ A$ is diagonalizable.
-$~$
-Multidimensional subrepresentations correspond to the generalized eigenspaces of eigenvalues of $A$ with algebraic multiplicity greater than their geometric multiplicity.
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$
-$~$
-$~$
-$~$
-$~$
+This example is related to a more general result for Lie algebra representations.
 
 ---
 
 ### $\fg$-modules, AKA representations of Lie algebras
 
-A $\fg$-*module*, or *representation of $\fg$*, is a vector space $V$ with an associated Lie algebra homomorphism $\ \rho: \fg \to \fg {\mathfrak l}(V), \ {}$ i.e.
+A $\fg$-*module*, or *representation of $\fg$*, is a vector space $V$ with an associated Lie algebra homomorphism <br/>
+$\ \rho: \fg \to \fg {\mathfrak l}(V), \ {}$ i.e.
 $$
-\rho([\xi, \eta]) = [\rho(\xi), \rho(\eta)] = \rho(\xi) \rho(\eta) - \rho(\eta)\rho(\xi) .\phantom{X^\int}
+\eqa{
+\rho([\xi, \eta]) &= [\rho(\xi), \rho(\eta)] \phantom{\sum}\\
+&= \rho(\xi) \rho(\eta) - \rho(\eta)\rho(\xi) .
+}
 $$
-$~$
+
 The adjectives reducible, irreducible, and completely irreducible apply to modules with subrepresentation replaced by submodule.
-$~$
+<Spacer size="5px"/>
+
 ***Example:*** $\fg$ is a $\fg$ module, with algebra homomorphism $\ \rho(\xi) = \text{ad}_\xi, \ {}$ i.e. 
-$$\ \rho(\xi)(\eta) = [\xi, \eta].$$
+$$\rho(\xi)(\eta) = [\xi, \eta].$$
 
 An ideal $\fh$ of $\fg$ is a submodule of $\fg$.
 
+---
+
+#### Example: Diagonalizability and complete reducibility
+
+A matrix $A \in \C^{n \times n}$ determines an $\R$-module with $V = \C^n$, with
+$$
+t \mapsto t \, A.
+$$
+
+Every $A \in \C^{n \times n}$ has an eigenvector $\vv$, so this module has a one-dimensional submodule
+$$
+W = \text{span}(\vv).
+$$ 
+<Spacer size="5px"/>
+
+The $\R$-module determined by $A$ is completely reducible $\ \ \Longleftrightarrow \ \ A$ is diagonalizable.
+<Spacer size="1px"/>
+
+Multidimensional subrepresentations correspond to the generalized eigenspaces of eigenvalues of $A$ with algebraic multiplicity greater than their geometric multiplicity.
 
 ---
 
-### $G$-morphisms, equivariance, and invariance
+### Two families of irreducible representations
 
-If $G$ acts on manifolds $M$ and $N$, a map $\phi: M \to N$ is *equivariant* if
+<Spacer size="5px"/>
+
+#### 1. Homogeneous polynomials of degree $n$ in two complex variables
+<Spacer size = "5px"/>
+
+Let $\mathcal{P}_m(2, \C)$ denote the vector space of homogeneous polynomials of degree $n$ in two complex variables, with basis $\ \{p_0, \ldots, p_m \}, \ {}$ where
+$$ 
+p_k \lp \begin{bmatrix}z_1\\ z_2\end{bmatrix} \rp := z_1^k z_2^{m−k} \qquad \forall \ z_1, z_2 \in \C.
 $$
-\phi(g \cdot p) = g \cdot \phi(p) \qquad \forall g \in G, p \in M.
+Define a representation of $SU(2)$ on $\mathcal{P}_m(2, \C)$ using the induced action
+$$
+(A \cdot f)\lp \begin{bmatrix}z_1\\ z_2\end{bmatrix} \rp = f \lp A^{-1}\begin{bmatrix}z_1\\ z_2\end{bmatrix} \rp.
 $$
 
-$\phi: M \to N$ is *invariant* if it is equivariant w.r.t. the trivial action on $N$, i.e.
+We'll show later that this is a family of irreducible representations, indexed by $m$.
+
+*Very rough idea:* Work with the associated $\mathfrak{su}(2)$-module, and show that the actions of appropriate basis vectors in $\mathfrak{su}(2)$ correspond to $z_1 \frac{\partial}{\partial z_2}$ and $z_2 \frac{\partial}{\partial z_1}$. <br/>
+Application of these two transformations shifts the indices in each monomial.
+
+---
+
+#### 2. Homogeneous harmonic polynomials of order $m$ on $\R^3$
+<Spacer size = "5px"/>
+
+The spaces $V_m$ of homogeneous harmonic polynomials of order $m$ on $\R^3$ are irreducible representations of $SO(3, \R).\ {}$ 
+<br/>
+*Reminder:* 
+$f$ is harmonic if 
 $$
-\phi(g \cdot p) = \phi(p) \qquad \forall g \in G, p \in M.
+0 = \Delta f = \smallfrac{\partial^2 f}{\partial x^2} + \smallfrac{\partial^2 f}{\partial y^2} + \smallfrac{\partial^2 f}{\partial z^2}.
 $$
-$~$
+
+<!--
+$$
+(A \cdot f)(\xv) = f(A^{-1}\xv) \qquad \qquad \forall \ A \in SO(3, \R), \xv \in \R^3.
+$$
+-->
+
+$V_1 = \{ f(\xv) = \sum_{j = 1}^3 c_j x_j : c_j \in \R \}$,
+
+$V_2 = \{ f(\xv) = c_1 x_2 x_3 + c_2 x_3 x_3 + c_3 x_1 x_2 + c_4 \lp x_1^2 - x_2^2 \rp + c_5  \lp x_2^2 - x_3^2 \rp  : c_j \in \R \}$,
+
+and so on. 
+
+The restrictions of the elements of $V_m$ to the unit sphere $S^2$ are the spherical harmonics. 
+
+Since $S^2$ is invariant under the usual action of $SO(3, \R)$ on $\R^3$, the spherical harmonics of order $m$ are also representations of $SO(3, \R)$.
+
+Verify later, using strategy analogous to that used in the previous example.
+
+---
+routeAlias: Schurs-lemma
+---
+
+### $G$-morphisms and Schur's Lemma
+
 If $V$ and $W$ are representations of $G$, then a $G$-equivariant homomorphism $\phi: V \to W$ is a $G$-*morphism (intertwining operator)*.
 
 Intertwining operators on $\fg$-modules are defined analogously.
-$~$
-$~$
-$~$
 
----
-
-## Schur's Lemma
+***Schur's Lemma***
 
 Let $V$ and $W$ be irreducible complex representations of $G$.
 - If $\phi: V \to W$ is a $G$-morphism, then $\phi$ is either trivial or an isomorphism.
 - If $\phi, \psi: V \to W$ are both $G$-morphisms and $\psi$ is nontrivial, then 
-$$
-\exists \ \lambda \in \C \quad \text{such that} \quad \phi = \lambda \, \psi.
-$$
-$~$
+$\ \exists \ \lambda \in \C \,{}$ such that $\, \phi = \lambda \, \psi$.
+
 *Verify:*  Equivariance of $\phi \quad \Longrightarrow$
 $$
 g \cdot \phi(v) = \phi(g \cdot v) \in \phi(V) \qquad \forall \ g \in G, v \in V,
 $$
 so $\phi(V)$ is $G$-invariant, and hence a subrepresentation of $W$.
-$~$
-$\ker \phi$ is $G$-invariant, so $\ \ker \phi\ {}$ is a subrepresentation of $V$. 
 
 ---
 
-Irreducibility of $V$ implies that 
-$$
-\ker \phi = \{0\} \quad \text{or} \ V. \phantom{X_\int}
-$$
+#### Second slide of proof of Schur's Lemma
 
-If $\phi$ is nontrivial, $\phi(V) \neq \{0\}, \ {}$ so irreducibility of $W \ \Longrightarrow \ \phi(V) = W$, 
-and hence $\phi$ is an isomorphism.
-$~$
-If $\psi$ is nontrivial, and hence $\psi$ is an isomorphism, we can define the $G$-morphism.
+$\ker \phi$ is $G$-invariant, so $\ \ker \phi\ {}$ is a subrepresentation of $V$. 
+
+Irreducibility of $V$ implies that $\, \ker \phi\,{}$ is either trivial or all of $V$.
+
+If $\phi$ is nontrivial, i.e. $\phi(V) \neq \{0\}, \, {}$ irreducibility of $W \ \ \Longrightarrow \ \ \phi(V) = W$ <br/>
+$\Longrightarrow \ \ \phi$ is an isomorphism.
+
+To prove the second bullet point, we define the $G$-morphism
 $$
-\Phi:= \psi^{-1} \circ \phi: V \to V.
+\Phi:= \psi^{-1} \circ \phi: V \to V,
 $$
-$~$
+using the invertibility of $\psi$ just established.
+
 $\Phi$ has an eigenvalue $\lambda$ and associated eigenvector $v$.
 $$
 V_\lambda := \ker (\Phi - \lambda \, \text{id}_V) \phantom{X_\int}
 $$
-is $G$-invariant and nontrivial, and hence must equal $V$, since $V$ is irreducible. 
+is $G$-invariant and $v \in V_\lambda$, so irreducibility of $V \ \ \Longrightarrow \ \ V_\lambda = V$. 
 
 ---
+routeAlias: cor-Schurs-lemma
+---
+
+#### Third slide of proof of Schur's Lemma
 
 Hence
 $$
-\phi - \lambda \, \psi = \psi \circ (\Phi - \lambda \, \text{id}_V) = 0.
+\eqa{
+\phi - \lambda \, \psi &= \psi \circ (\Phi - \lambda \, \text{id}_V) \\
+&= 0.
+}
 $$
-$~$
-*Corollary:* If $V$ is irreducible, then 
+<Spacer size="5px"/>
+
+***Corollary:*** If $V$ is irreducible, then 
 $$
 \text{Hom}_G(V, V) \approx \C.
 $$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
 
 ---
 
@@ -181,26 +219,30 @@ $V$ is a *unitary representation* of $G$ if
 - $V$ has an inner product $\ \langle \ , \ \rangle, \ {}$ and
 - $\rho(g)$ is a unitary map w.r.t. that inner product $\forall \ g \in G$.
 
-$~$
 **Claim:** If $V$ is unitary and $\ \text{Hom}_G(V, V) \approx \C, \ {}$ then $V$ is irreducible.
-$~$
-*Verify:* Let $W$ be a proper subrepresentation of $V$, and let $\ P: V \to W \ {}$ denote orthogonal projection onto $W$, and
+
+*Verify:* Assume $V$ has a nontrivial proper subrepresentation $W$. 
+
+Let $\ P: V \to W \ {}$ denote orthogonal projection onto $W$, with orthogonal complement $W^\perp = \ker \, P$.
+
+$w \in W, \ u \in W^\perp, \ {}$ and $\ g \in G \ \ \Longrightarrow$ 
 $$
-W^\perp = \ker \, P,
+\eqa{
+\langle w, g \cdot u \rangle &= \langle g^{-1} \cdot w, g^{-1} \cdot(g \cdot u) \rangle \\
+&= \langle g^{-1} \cdot w, u \rangle \\
+&= 0
+}
 $$
-the orthogonal complement of $W$. 
+$\Longrightarrow \ \ W^\perp$ is a subrepresentation. 
 
 ---
 
-If $w \in W, \ u \in W^\perp, \ {}$ and $\ g \in G, \ {}$ then 
-$$
-\langle w, g \cdot u \rangle = \langle g^{-1} \cdot w, g^{-1} \cdot(g \cdot u) \rangle = \langle g^{-1} \cdot w, u \rangle = 0.
-$$
-Hence $W^\perp$ is a subrepresentation. 
-$~$
+#### Second slide of proof that $V$ unitary and $\ \text{Hom}_G(V, V) \approx \C \ \ \Longrightarrow \ \  V$ is irreducible
+
 Given $v \in V, \ \exists! \ w \in W, u \in W^\perp\ {}$ such that $\ v = w + u$.
 
-$$\eqa{
+$$
+\eqa{
 P(g \cdot v) &= P(g \cdot w + g \cdot u )\\
 &= P(g \cdot w) + P(g \cdot u)\\
 &= g \cdot w \\
@@ -208,12 +250,11 @@ P(g \cdot v) &= P(g \cdot w + g \cdot u )\\
 } 
 $$
 $\Longrightarrow \ P$ is $G$-equivariant.
-$~$
-If $W \neq \{0\}, \ P \neq 0, \ {}$ so Schur's Lemma implies $\exists \ \lambda \in \C \ {}$ such that $\ P = \lambda \, \text{id}_V$.
 
----
+$W \neq \{0\} \ \ \Longrightarrow \ \ P \neq 0, \ {}$ so Schur's Lemma implies $\exists \ \lambda \in \C \ {}$ such that $\ P = \lambda \, \text{id}_V$.
 
-$$\eqa{
+$$
+\eqa{
 P \ \text{projection}\ &\Longrightarrow \ P^2 = P \\
 &\Longrightarrow \ \lambda^2 = \lambda \\
 &\Longrightarrow \ \lambda = 1\\ 
@@ -222,15 +263,9 @@ P \ \text{projection}\ &\Longrightarrow \ P^2 = P \\
 }
 $$
 
-Hence $V$ is irreducible.
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-
 ---
+
+### Elements in $Z(G)$ act by scalar multiplication on irreducible representations 
 
 **Claim:** If $V$ is irreducible and $\ h \in Z(G),\ {}$ $\ \exists \ \lambda \in \C \ {}$ such that
 $$
@@ -242,7 +277,8 @@ $$
 h \in \setdef {Z(G)} h G {L_h \circ R_{h^{-1}} = \text{id}_G}
 $$
 $\Longrightarrow$
-$$\eqa{
+$$
+\eqa{
 \rho(h) \circ \rho(g) &= \rho(h g)\\ 
 &= \rho(g h) \\
 &= \rho(g) \circ \rho(h)  
@@ -250,14 +286,14 @@ $$\eqa{
 $$
 for all $\ g \in G, \ {}$ so $\rho(h)$ is a $G$-morphism.
 
-Hence the corollary to Schur's Lemma, $\ \text{Hom}_G(V, V) \approx \C\ {}$ if $V$ is irreducible, 
-implies $\rho(h)$ is a rescaling.
-
+$V$ is irreducible $\ \ \Longrightarrow \ \ \text{Hom}_G(V, V) \approx \C\ \ {}$
+<!--
+([corollary to Schur's Lemma](cor-Schurs-lemma)), so $\rho(h)$ is a rescaling.
+-->
 
 ---
 
-**Corollary:** Any irreducible representation $V$ of an Abelian group $G$ is one-dimensional.
-$~$
+#### Corollary: Irreducible representations $V$ of Abelian groups are one-dimensional
 
 *Verify:* $G$ is Abelian $\ \Longleftrightarrow \ Z(G) = G$, so $\ \exists \ {}$ function $\ \lambda: G \to \C\ {}$ such that
 $$
@@ -266,37 +302,38 @@ $$
 for all $\ g \in G$.
 
 Hence every subspace of $V$ is a subrepresentation of $V$.
-$~$
+
 Irreducibility of $V \ \Longrightarrow \ V$ is one-dimensional.
-$~$
-$~$
-$~$
-$~$
-$~$
 
 ---
 
 ### Matrix elements
 
-***Reminder: matrix representations (in the naive sense) of linear transformations:***
+***Reminder:*** matrix representations (in the naive sense) of linear transformations:
 
 If $V$ and $W$ are finite dimensional complex vector spaces and $\phi: V \to W$ is linear, 
 then any choice of bases
 $$
-\{ \vv_1, \ldots, \vv_n\} \ \text{ of }\ V \sands \{ \wv_1, \ldots, \wv_k\} \ \text{ of }\ W
+\{ \vv_1, \ldots, \vv_n\} \ \ \text{of}\ \ V \sands \{ \wv_1, \ldots, \wv_k\} \ \ \text{of}\ \ W
 $$
 uniquely determines a matrix $\ A \in \C^{k \times n} \ {}$ such that
 $$
 \textstyle \yv = A \xv \quad \Longleftrightarrow \quad \phi\lp \sum_{j = 1}^n x_j \vv_j \rp = \sum_{j = 1}^k y_j \wv_j.\phantom{\int_\int}
 $$
 
-If $\ \{\beta_1, \ldots, \beta_k\}\ {}$ is the basis of $W^*$ dual to $\ \{ \wv_1, \ldots, \wv_k\} \ {}$, i.e. $\  \beta_i(\wv_j) = \delta_{ij}, \ {}$ 
+If $\ \{\beta_1, \ldots, \beta_k\}\ {}$ is the basis of $W^*$ dual to $\ \{ \wv_1, \ldots, \wv_k\} \ {}$, i.e. 
+$$
+\beta_i(\wv_j) = \delta_{ij},
+
+$$ 
 the entries of $A$ are
 $$
 a_{ij} = \beta_i(\phi(\vv_j)).
 $$
 
 ---
+
+### Matrix coefficients on $G$
 
 Given a finite dimensional representation $V$ of $G$, and a basis $\ \{ \vv_1, \ldots, \vv_n\} \ {}$ of $V$, the entries of the matrix representations of $\rho(g) \in GL(V)$ determine continuous functions 
 $$a_{ij}: G \to \C$$
@@ -306,7 +343,8 @@ g \cdot \vv_j = \sum_{i = 1}^n a_{ij}(g) \vv_i \qquad \quad j = 1, \ldots, n.
 $$ 
 
 More generally, if $V$ is a finite-dimensional representation of $G$, any choice of linear functional $f: V \to \C$ and vector $v \in V \ {}$ determine a function 
-$$\eqa{
+$$
+\eqa{
     φ&: G \to \C \\
 φ(g) &:= f(g \cdot v),
 }
@@ -315,31 +353,30 @@ called a *matrix coefficient on* $G$.
 
 ---
 
-*Recall:* We can average over the action of a compact group $G$ using the Haar measure.
-$~$
+### Averaging and representations of compact groups 
+
+*Recall:* We can average structures with respect to the action of a compact group $G$ using the Haar measure, obtaining $G$-invariant structures.
+
+These invariant structures provide substantial "control" over representations of compact groups and morphisms between such representations.
+<Spacer size="5px"/>
 
 ***Claim:*** Finite dimensional representations of compact groups are unitary.
-$~$
-*Verify:* $G$ compact $\ \Longrightarrow\ {}$there is a $G$-invariant inner product $\langle \ , \ \rangle$ on $V$.
+<Spacer size="1px"/>
 
-(Given some inner product $\langle \ , \rangle_V$ on $V$, the inner product
-$$
-\langle v, w \rangle := \int_G \langle g \cdot v, g \cdot w \rangle_V dg
-$$
-is $G$-invariant.)
-$~$
+*Verify:* $G$ compact $\ \Longrightarrow\ {}$ there is a $G$-invariant inner product $\langle \ , \ \rangle$ on $V$.
+
 Let $\ {\cal B} = \{ \ev_1, \ldots, \ev_n \} \ {}$ be an orthonormal basis of $V$ with respect to $\langle \ , \ \rangle$.
-$~$
-
----
 
 The $ij$-th entry $a_{ij}(g)$ of the matrix $\ A(g)\ {}$ of $\rho(g)$ with respect to ${\cal B}$ is
 $$
 a_{ij}(g) = \langle g \cdot \ev_i, \ev_j \rangle.
 $$
 
+---
+
 $G$-invariance of $\langle \ \, , \ \rangle \quad \Longrightarrow$
-$$\eqa{
+$$
+\eqa{
 a_{ij}\lp g^{-1} \rp &= \langle g^{-1} \cdot \ev_i, \ev_j \rangle \\
 &= \langle g \cdot (g^{-1} \cdot \ev_i) , g \cdot \ev_j \rangle \\
 &= \langle \ev_i, g \cdot \ev_j \rangle \\
@@ -353,9 +390,10 @@ $$
 A(g)^{-1} = A\lp g^{-1} \rp = \overline{A(g)} = A(g)^*,
 $$
 i.e. $A(g)$ is unitary.
-$~$
 
 ---
+
+### Homomorphisms between irreducible representations of compact groups
 
 ***Claim:*** If $V$ and $W$ are irreducible representations of a compact group $G$, and 
 $\phi:V \to W$ is a homomorphism, then the average
@@ -366,8 +404,10 @@ is trivial unless $V$ and $W$ are isomorphic, and $\ W = V \ \Longrightarrow$
 $$
 \Phi = \frac{ \text{trace}\ \phi}{\dim V} \text{id}_V.
 $$
+
 *Verify*: 
-$$\eqa{
+$$
+\eqa{
 \rho_W(h) \circ \Phi \circ \rho_V(h^{-1}) 
 &= \int_G \rho_W(h) \rho_W(g) \circ \phi \circ \rho_V(g^{-1}) \rho_V(h^{-1})  dg \\
 &= \int_G \rho_W(h g) \circ \phi \circ \rho_V((hg)^{-1}) dg \\
@@ -381,7 +421,7 @@ since the Haar measure $dg$ is left invariant and $L_h(G) = G$.
 
 Hence $\Phi$ is a $G$-morphism, and the first part of Schur's Lemma $\ \Longrightarrow \ \Phi\ {}$ is either trivial or 
 an isomorphism. 
-$~$
+
 If $W = V$, then the second part of Schur's Lemma $\ \Longrightarrow \ \exists \ \lambda \in \C$ such that 
 $$
 \Phi = \lambda \, \text{id}_V,
@@ -390,7 +430,7 @@ and hence
 $$
 \text{trace} \, \Phi = \text{trace} (\lambda  \, \text{id}_V) = \lambda \, \dim V .
 $$
-$~$
+
 Since Haar measure is normalized such that ${\displaystyle \int_G dg = 1}$, and 
 $$
 \text{trace} \lp \psi \circ \phi \circ \psi^{-1} \rp = \text{trace} \, \phi \qquad \quad \forall \ \ \text{isomorphisms} \ \ \psi,
@@ -398,7 +438,8 @@ $$
 
 ---
 
-$$\eqa{
+$$
+\eqa{
 \text{trace} \, \Phi 
 &= \int_G \text{trace} \lp \rho_V(g) \circ \phi \circ \rho_V(g^{-1}) \rp dg \\
 &= \int_G \text{trace} \,  \phi \, dg \\
@@ -411,7 +452,8 @@ $$
 \lambda = \frac {\text{trace} \, \phi}{\dim V},
 $$
 and thus
-$$\Phi = \frac {\text{trace} \, \phi}{\dim V} \, \text{id}_V.
+$$
+\Phi = \frac {\text{trace} \, \phi}{\dim V} \, \text{id}_V.
 $$
 
 ---
@@ -421,9 +463,10 @@ fix indices $i$ and $j$, and set
 $$
 \phi(\uv) :=  \langle \uv, \vv_i \rangle_V \wv_j. 
 $$
-$~$
+
 For any $\ 1 \leq \ell \leq n\ {}$ and $\ 1 \leq m \leq k$,
-$$\eqa{
+$$
+\eqa{
 \langle \wv_m, g \cdot (\phi(g^{-1} \cdot \vv_\ell)) \rangle_W 
 &= \langle \wv_m, \langle g^{-1} \cdot \vv_\ell, \vv_i \rangle_V g \cdot \wv_j \rangle_W \\
 &= \langle g^{-1} \cdot \vv_\ell, \vv_i \rangle_V  \ \langle g \cdot \wv_j, \wv_m \rangle_W \\
@@ -437,11 +480,12 @@ where
 --- 
 
 Hence, since $V$ is unitary,
-$$\eqa{
+$$
+\eqa{
 \langle \wv_m, \Phi(\vv_\ell) \rangle_W &= \int_G a_{i \ell }(g^{-1}) \tilde a_{mj}(g) dg\\
 &= \int_G \overline {a_{\ell i}(g)} \tilde a_{mj}(g) dg.}
 $$
-$~$
+
 We can construct a $G$-invariant $L_2$ Hermitian inner product on the space of smooth complex-valued functions on a compact Lie group $G$.
 $$
 \langle f_1, f_2 \rangle_{L_2} := \int_G f_1(g) \overline{f_2(g)} dg,
@@ -455,13 +499,12 @@ $$
 ---
 
 In particular, if $V$ and $W$ non-isomorphic, then $a_{\ell i}$ and $\tilde a_{mj}$ are orthogonal. 
-$~$
 
 ***Claim:*** If $V$ is irreducible, then the matrix coefficients of $V$ w.r.t. ${\cal B}$ satisfy
 $$
 \langle a_{ij}, a_{k \ell} \rangle_{L_2} =  \frac {δ_{ik}δ_{j\ell}} {\dim V}.
 $$
-$~$
+
 *Verify.* Let $E_{ik} : V → V$ denote the $k$i-th matrix unit, i.e.
 $$
 E_{ik}(\vv_j) = \delta_{jk} \vv_i,
@@ -481,18 +524,17 @@ $$
 (g \cdot f)(h) = f(g^{-1} h) 
 $$
 is called the *regular representation*.
-$~$
+
 A *representative function* $f \in L_2(G)\ {}$ is a uniformly continuous function such that the
 subspace 
 $$
 \text{span} (G\cdot f) = \text{span} \{ g \cdot f : g \in G \}
 $$
 is finite-dimensional.
-$~$
+
 ***Claim*** *(without proof here)*: Any representative function is a linear combination of matrix elements of a finite dimensional representation.
 
 ---
-
 
 ### The Peter-Weyl Theorem
 
@@ -502,39 +544,27 @@ If $G$ is a compact Lie group, then
 3. Every irreducible representation of $G$ is finite dimensional.
 4. Each irreducible representation of $G$ occurs in $L_2(G)$ with multiplicity equal to its dimension.
 5. Any unitary representation of $G$ on a separable Hilbert space decomposes into a Hilbert space direct sum of (finite dimensional} irreducible representations.
-$~$
+
 
 ---
 
 We won't cover the proof of the Peter-Weyl Theorem in this class. (See, e.g., Sternberg.)
-$~$
+
 The proof combines the representation theory that we’ve developed so far with functional analysis, particularly properties of compact operators on Hilbert spaces.
-$~$
+
 A *compact operator* on a Hilbert space $V$ is a bounded operator such that the image of a bounded set is *relatively compact*, i.e. has compact closure.
-$~$
+
 
 Compact operators form the closure with respect to the operator norm of the space of finite rank operators.
-$~$
-$~$
-$~$
-$~$
+
 
 ---
 
 Many results for linear transformations of finite dimensional vector spaces carry over 
 (with some technical finesse in the proofs) to compact operators on Hilbert spaces.
 
-$~$
 For example, the ***spectral theorem***: If $T$ is a compact, self-adjoint operator on a Hilbert space $V$, then $V$ has an orthogonal eigenbasis for $T$. 
 If the orthogonal complement to $\ \ker(T) \ {}$ is infinite dimensional, the eigenvalues $\lambda_n$ of $T$ can be ordered so as to satisfy 
-$$\ \lim_{n \to \infty} \lambda_n = 0.
 $$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
-
-
+\lim_{n \to \infty} \lambda_n = 0.
+$$
