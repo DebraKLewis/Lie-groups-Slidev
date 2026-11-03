@@ -1,3 +1,7 @@
+---
+routeAlias: Haar-measure
+---
+
 ## Haar measure
 
 Let $G$ be an $n$-dimensional Lie group with Lie algebra $\fg$. <br/>
@@ -299,6 +303,8 @@ with determinant $a$.
 
 Since $\, a$ can have any nonzero value, $G$ isn't unimodular.
 
+---
+routeAlias: invariant-structures
 ---
 
 ### Averaging $G$-dependent constructions over a compact group $G$

@@ -183,6 +183,9 @@ is a solution of the heat equation for any $a_k, \tilde a_k \in \R$.
 
 ---
 
+#### Heat equation continued: satisfying initial conditions
+<Spacer size = "5px"/>
+
 To determine coefficients $a_k$ and $\tilde a_k$ satisfying the initial condition 
 $$
 f(x) = u(x, 0) = a_0 + \sum_{k = 1}^n \lp a_k X_k(x) + \tilde a_k \tilde X_k(x) \rp,
@@ -199,27 +202,37 @@ $$
 f = \langle f, 1 \rangle_{S^1} + \sum_{k = 1}^\infty \lp \langle f, X_k\rangle_{S^1} X_k +  \langle f, \tilde X_k\rangle_{S^1} \tilde X_k \rp.
 $$
 
----
-
 $S^1$ has empty boundary, so there are no boundary conditions.
 
+---
+
+#### Second slide about initial conditions
+<Spacer size = "5px"/>
+
 $$
-u(x, t) = \langle f, 1 \rangle_{S^1} + \sum_{k = 1}^n T_k(t) \lp \langle f, X_k\rangle_{S^1} X_k(x) + \langle f, \tilde X_k\rangle_{S^1} \tilde X_k(x) \rp
+u(x, t) = \langle f, 1 \rangle_{S^1} + \textstyle{\sum_{k = 1}^n} T_k(t) \lp \langle f, X_k\rangle_{S^1} X_k(x) + \langle f, \tilde X_k\rangle_{S^1} \tilde X_k(x) \rp
 $$
 is the solution of the heat equation with initial condition $f$.
 
 The wave equation is solved analogously, with appropriately modified $T_k$. 
+<Spacer size = "5px"/>
 
 If we work in the complex setting, with $S^1 = \{ z \in \C: |z| = 1 \}, \ {}$ we have
 $$
-f(z) = \sum_{k = - \infty}^∞ \hat f(k) z^k, \qquad \quad \text{where} \quad
-\hat f(k) := 
+f(z) = \textstyle{\sum_{k = - \infty}^∞} \hat f(k) z^k,
+$$
+where
+$$
+% \qquad \quad \text{where} \quad
+\hat f(k) := \langle f, X_k \rangle_{S^1}
 %\langle f, \phi_n \rangle = 
-\smallfrac 1 {2π} \int_0^{2π}f(e^{iθ} )e^{−i k θ} dθ
+= \smallfrac 1 {2π} \int_0^{2π}f(e^{iθ} )e^{−i k θ} dθ
 $$
 is the *$k$-th Fourier coefficient of $f$*.
 
 ---
+
+### The heat equation in higher spatial dimensions
 
 Separation of variables works analogously in higher spatial dimensions. 
 $$u(\xv, t) = X(\xv) T(t)
@@ -230,8 +243,10 @@ $$
 \sands \Delta u  = \Delta X(\xv) T(t),\phantom{X^\int_\int}
 $$
 so if $u$ satisfies the heat equation  and is everywhere nonzero, $X$ and $T$ must be eigenvectors of $\Delta$ and $\smallfrac {\partial \ }{\partial t}$ with a common eigenvalue.
+<Spacer size = "5px"/>
 
-Hence the eigenvectors and eigenvalues of the Laplacian have been intensively studied.
+The eigenvectors and eigenvalues of the Laplacian have been intensively studied, in large part because of their role in the analysis of PDEs.
+<Spacer size = "5px"/>
 
 The kernel of a linear transformation is of particular interest and practical value. 
 
@@ -239,27 +254,30 @@ Functions in the kernel of the Laplacian are called *harmonic functions*.
 
 ---
 
-### Plane waves 
+### Plane waves and Fourier transforms 
 
 Given $\xi \in \R^n$, define $\phi_\xi : \R^n \to \C$ by
 $$
 \phi_\xi(\xv) := e^{2πi \langle \xi, \xv \rangle}.
 $$
-Any (complex) scalar multiple of $\phi_\xi$ is called a *plane wave*.
 
-$$\Delta \phi_\xi = - 4π^2 |\xi|^2 \phi_\xi,$$
-so $\phi_\xi$ is an eigenvector of $\Delta$, with eigenvalue $- 4π^2 |\xi|^2$. 
+$\phi_\xi$ is an eigenvector of $\Delta$, with eigenvalue $- 4π^2 |\xi|^2$. 
+
+Any (complex) scalar multiple of $\phi_\xi$ is called a *plane wave*.
+<Spacer size = "5px"/>
 
 For functions $f: \R^n \to \R$ that decay sufficiently rapidly, the following integrals are finite and we can define
 $$
-\hat f(\xi) := \langle f, \phi_\xi \rangle_{L_2} = \int_{\R^n} f(\xv) \phi_{-\xi}(\xv) d \xv.
+\hat f(\xi) := \langle f, \phi_\xi \rangle_{L_2(\R^n)} = \int_{\R^n} f(\xv) \phi_{-\xi}(\xv) d \xv.
 $$
-
----
-
 $\hat f: \R^3 \to \C$ is the *Fourier transform* of $f$.
 
 $\hat f(ξ)$ captures the extent to which $f$ oscillates at frequency $ξ$.
+
+
+---
+
+### "Indexing" families of eigenvectors of the Laplacian
 
 On the circle, the eigenvectors were indexed by $\Z$, and a harmonic function could be expressed as a limit of linear combinations of the eigenvectors. 
 
@@ -272,26 +290,24 @@ f(\xv) &= \langle \hat f, \phi_{-\xv} \rangle_{L_2}\\
 }
 $$
 
----
-
 since 
 $$
 \phi_{\xv}(\xi) = e^{2πi \langle \xi, \xv \rangle} = \phi_{\xi}(\xv).
 $$
 
-***The Fourier transform of $∆f$***
+---
+
+### The relationship between the Fourier transforms of $f$ and $∆f$
 
 Sweeping a lot of analytical details under the rug, we have
 $$
 \eqa{
 ∆f(\xv) &= ∆ \int_{\R^n} \hat f(\xi) \phi_{\xi}(\xv) d \xi \\
-&=  \int_{\R^n} \hat f(\xi) ∆ \! \phi_{\xi}(\xv) d \xi \\
+&=  \int_{\R^n} \hat f(\xi) ∆ \phi_{\xi}(\xv) d \xi \\
 &=  \int_{\R^n} \lp - 4π^2 |\xi|^2\hat f(\xi) \rp \phi_{\xi}(\xv)  d \xi, 
 }
 $$
 and hence
-
----
 
 $$
 \widehat{∆f}(\xi) = - 4π^2 |\xi|^2\hat f(\xi).
@@ -303,11 +319,25 @@ $$
 \quad \Longleftrightarrow \quad \hat{f}(\xi) = - \frac {\widehat w(\xi)}{4π^2 |\xi|^2} \qquad \qquad \forall \ \xi \in \R^3.
 $$ 
 
-***Side remark:*** A *fast Fourier transform (FFT)* is an algorithm that computes the discrete Fourier transform (DFT) of a sequence, or its inverse (IDFT). 
+---
+
+#### Fast Fourier transforms
+
+A [*fast Fourier transform (FFT)*](https://en.wikipedia.org/wiki/Fast_Fourier_transform) is an algorithm that efficiently computes the discrete Fourier transform (DFT)<br/>
+ of a sequence, or its inverse (IDFT). 
 
 A lot of data is discrete to start with, and continuous time (or other independent variable) dependent data is often discretized as part of the analysis process.
 
-FFT's are *very* useful, and *very* widely used. 
+The standard 'naive' Discrete Fourier Transform (DFT) requires $O(N²)$ operations. 
+<Spacer size = "5px"/>
+
+The FFT uses "butterflies" (small 2-point computational blocks) and other strategies to avoid unnecessary recalculations; terms $e^{-2\pi i \, k\,n/N}$ (re)appear in naive calculations for multiple frequencies and time indices.
+
+For real-valued data, Hermitian symmetry $\ \ \Longrightarrow \ \ {}$ only half of the spectrum needs to be computed.
+
+The Cooley-Tukey FFT and descendants split a dataset into even and odd index subsets, and leverage the even/odd symmetry of sine and cosine.
+
+Sophisticated variants of "vanilla" FFTs exploit additional structure (much of which can naturally be described in terms of equivariance and invariance) present in some situations.
 
 ---
 

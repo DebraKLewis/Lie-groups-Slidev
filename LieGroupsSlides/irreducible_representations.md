@@ -251,7 +251,11 @@ P(g \cdot v) &= P(g \cdot w + g \cdot u )\\
 $$
 $\Longrightarrow \ P$ is $G$-equivariant.
 
+<!--
 $W \neq \{0\} \ \ \Longrightarrow \ \ P \neq 0, \ {}$ so Schur's Lemma implies $\exists \ \lambda \in \C \ {}$ such that $\ P = \lambda \, \text{id}_V$.
+-->
+
+$P \in \text{Hom}_G(V, V) \approx \C \ \ \Longrightarrow \ \ P = \lambda \, \text{id}_V$ for some $\lambda \in \C$.
 
 $$
 \eqa{
@@ -355,7 +359,7 @@ called a *matrix coefficient on* $G$.
 
 ### Averaging and representations of compact groups 
 
-*Recall:* We can average structures with respect to the action of a compact group $G$ using the Haar measure, obtaining $G$-invariant structures.
+*Recall:* We can average structures with respect to the action of a compact group $G$ using the [Haar measure](Haar-measure), obtaining $G$-invariant structures.
 
 These invariant structures provide substantial "control" over representations of compact groups and morphisms between such representations.
 <Spacer size="5px"/>
@@ -402,9 +406,9 @@ $\phi:V \to W$ is a homomorphism, then the average
 $$
 \Phi := \int_G \rho_W(g) \circ \phi \circ \rho_V(g^{-1}) dg
 $$
-is trivial unless $V$ and $W$ are isomorphic, and $\ W = V \ \Longrightarrow$
+is trivial unless $V$ and $W$ are isomorphic, and  
 $$
-\Phi = \frac{ \text{trace}\ \phi}{\dim V} \text{id}_V.
+W = V \qquad  \Longrightarrow \qquad \Phi = \frac{ \text{trace}\ \phi}{\dim V} \text{id}_V.
 $$
 <Spacer size="1px"/>
 
@@ -421,7 +425,7 @@ $$
 
 ---
 
-#### Second slide about averages of homomorphisms of irreducible representations of compact groups
+#### Second slide: averages of homomorphisms of irreducible representations of compact groups
 <Spacer size="5px"/>
 
 Hence $\Phi$ is a $G$-morphism, and the first part of Schur's Lemma $\ \Longrightarrow \ \Phi\ {}$ is either trivial or 
@@ -445,7 +449,7 @@ $$
 
 ---
 
-#### Third slide about averages of homomorphisms of irreducible representations of compact groups
+#### Third slide: averages of homomorphisms of irreducible representations of compact groups
 <Spacer size="5px"/>
 
 $$
@@ -470,12 +474,12 @@ $$
 
 ### Matrix coefficients for actions of compact groups on irreducible representations
 
-Given orthonormal bases ${\cal B} = \{ \vv_1, \ldots, \vv_n \} \ {}$ of $V$ and $\widetilde {\cal B}= \{ \wv_1, \ldots, \wv_k \} \ {}$ of $W$, 
-fix indices $i$ and $j$, and set 
+Choose [$G$-invariant inner products](invariant-structures) $\langle \, \cdot \,, \, \cdot \, \rangle_V$ and $\langle \, \cdot \, , \, \cdot \, \rangle_W$, and orthonormal bases ${\cal B} = \{ \vv_1, \ldots, \vv_n \} \ {}$ of $V$ and $\widetilde {\cal B}= \{ \wv_1, \ldots, \wv_k \} \ {}$ of $W$, 
+fix indices $i$ and $j$, and define 
 $$
 \phi(\uv) :=  \langle \uv, \vv_i \rangle_V \wv_j. 
 $$
-<Spacer size="5px"/>
+<Spacer size="2px"/>
 
 For any $\ 1 \leq \ell \leq n\ {}$ and $\ 1 \leq m \leq k$,
 $$
@@ -493,7 +497,7 @@ where
 
 --- 
 
-#### Second slide of matrix coefficients for actions of compact groups on irreducible representations
+#### Second slide: matrix coefficients for actions of compact groups on irreducible representations
 
 $V$ unitary $\ \ \Longrightarrow$
 $$
@@ -503,7 +507,7 @@ $$
 $$
 <Spacer size="1px"/>
 
-We can construct a $G$-invariant $L_2$ Hermitian inner product on the space of smooth complex-valued functions on a compact Lie group $G$:
+We can construct a $G$-invariant [$L_2$](https://en.wikipedia.org/wiki/Square-integrable_function) Hermitian inner product on the space of smooth complex-valued functions on a compact Lie group $G$:
 $$
 \langle f_1, f_2 \rangle_{L_2} := \int_G f_1(g) \overline{f_2(g)} dg,
 $$
@@ -566,7 +570,7 @@ is finite-dimensional.
 If $G$ is a compact Lie group, then
 1. The representative functions are dense in $L_2(G)$.
 
-2. $L_2(G)$ decomposes into a Hilbert space direct sum of irreducible representations of $G$, each of which is finite dimensional.
+2. $L_2(G)$ decomposes into a [Hilbert space](https://www.math.ucdavis.edu/~hunter/book/ch6.pdf) direct sum of irreducible representations of $G$, each of which is finite dimensional.
 
 3. Every irreducible representation of $G$ is finite dimensional.
 
