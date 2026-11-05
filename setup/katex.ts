@@ -28,7 +28,7 @@ export default defineKatexSetup(() => {
         "\\gammav": "\\boldsymbol{\\gamma}",
         "\\muv": "\\boldsymbol{\\mu}",
         "\\sigmav": "\\boldsymbol{\\sigma}",
-        "\\xiv": "\\boldsymbol{\\xi}",
+        "\\xiv": "{\\boldsymbol{\\xi}}",
         "\\ed": "\\rm{d}",
         "\\idm": "\\mathbb{𝟙}",
         "\\calD": "\\mathcal{D}",

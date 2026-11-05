@@ -1,28 +1,37 @@
-## Recap: characters
+## Characters
 
 The *character* $χ_V: G \to \C$ of a finite dimensional representation $V$ of $G$ is given by
 $$
 χ_V(g) := \text{trace} \ ρ_V(g).
 $$
+<Spacer size = "5px"/>
 
 $χ_V$ is a class function, i.e. a continuous element of 
 $$
 (L_2(G))^G 
 =  \{ f \in L_2(G) : f \circ (L_g \circ R_{g^{-1}}) = f \quad \forall \ g \in G \}.
 $$
+<Spacer size = "5px"/>
 
-- $\ \ {}$The trivial representation $V = \C$ has $\ χ_V = 1$. 
+- $\ \ {}$The trivial representation $V = \C$ has $\ χ_V = 1$.
+
 - $\ \ χ_{V⊕W} =χ_V +χ_W$.
+
 - $\ \ χ_{V⊗W} = χ_V \, χ_W$.
+
 - $\ \ χ_{V^*} = \overline{χ_V}$.
 
 ---
 
+#### Properties of characters related to (ir)reducibility
+
 $V$ irreducible $\quad \Longrightarrow \quad \text{Hom}_G(V, V) \approx \C \quad \Longrightarrow   \quad |\chi_V|_{L_2(G)} = 1$.
+<Spacer size = "5px"/>
 
 $V$ and $W$ irreducible and non-isomorphic $\quad \Longrightarrow \quad 
 \text{Hom}_G(V, W) = \{0 \}$
 $\Longrightarrow \quad \chi_V$ and $\chi_W$ are orthogonal.
+<Spacer size = "5px"/>
 
 $V$ completely reducible, with
 $$
@@ -32,21 +41,22 @@ where
 - the $V_k$'s are irreducible and pairwise non-isomorphic, and
 - $n_k$ denotes the multiplicity of $V_k$
 
-$\Longrightarrow \quad \langle \chi_{V_k}, \chi_V \rangle_{L_2(G)} = n_k.$
+$\Longrightarrow \qquad \qquad \qquad\qquad \qquad\qquad \qquad   \langle \chi_{V_k}, \chi_V \rangle_{L_2(G)} = n_k.$
 
 ---
 
 ### Example: characters of $SU(2)$
 
 $$
-SU(2) = \left \{ A \in \C^{2 \times 2} : A^*A = \idm_{\!2}\ \ \text{and  det} \, A = 1 \right \} =  \phi(S^3),\phantom{X^{\int^\int}}
+SU(2) = \left \{ A \in \C^{2 \times 2} : A^*A = \idm_2\ \ \text{and  det} \, A = 1 \right \} =  \phi(S^3),\phantom{X^{\int^\int}}
 $$
 where $\phi: S^3 \subseteq \C^2 \to SU(2)$ is given by 
 $$
 \phi(z_1, z_2) := \begin{bmatrix} z_1 & z_2 \\ - \bar z_2 & \bar z_1 \end{bmatrix}. 
 $$
+<Spacer size = "5px"/>
 
-Using spherical coordinates on $S^3$,
+Using spherical coordinates on $S^3$, i.e.
 $$
 \Phi(\theta, \varphi, \psi) := \phi(\cos \theta + i \, \sin \theta \cos \varphi,
 \sin \theta  \sin \varphi (\cos \psi + i \, \sin \psi)),\phantom{X_{\int_\int}}
@@ -58,26 +68,34 @@ $$
 
 ---
 
-***Some representations of $SU(2)$***
+#### Some representations of $SU(2)$
 
 1. Trivial representation on $\C$
+
 2. Standard representation on $\C^2$, matrix-vector multiplication
+
 3. Left and right representations on continuous functions on $SU(2)$:
 $$
 (g \cdot f)(h) = f (g^{-1} h)
 \sands
 (g \cdot f)(h) = f (h g)
 $$
+
 4. Restriction of 3. to polynomials on $\C^2$
+
 5. $\quad{}$  " $\qquad{}$   "  $\qquad{}$  " $\qquad{}$   " $\qquad{}$ " $\quad{}$ of degree $\, \leq n, \ n \in \N$
+
 6. Restriction of 3. to the space  $V_n$ of homogeneous polynomials of degree $n$,
 $$ 
 V_n := \text{span} \left \{ m_0, \ldots, m_n \right \}, \qquad \text{where}\qquad m_k(z_1, z_2) := z_1^k z_2 ^{n - k}.
 $$
+<Spacer size = "5px"/>
 
 Representations 3. and 4. are infinite dimensional.
 
 ---
+
+#### The character of $V_n$
 
 We now compute the character of $V_n, n \in \N$, and see that $V_n$ is irreducible.
 

@@ -254,70 +254,168 @@ Functions in the kernel of the Laplacian are called *harmonic functions*.
 
 ---
 
+### Equivariance of the Laplacian with respect to the induced action of the Euclidean group
+
+$U\in O(n)$ acts on functions by
+$$
+(U \cdot f)(\xv)=f(U^{-1} \xv) = f(U^T \xv).
+$$
+Letting $D^2 f(\xv)$ denote the Hessian of $f$ at $\xv$, the Chain Rule $\ \ \Longrightarrow$
+$$
+D^2(U \cdot f)(\xv)=U\,D^2f(U^T \xv)\,U^T.
+$$
+Since the Laplacian is the trace of the Hessian, 
+$$
+\eqa{
+\Delta(U \cdot f)(x)
+&=\operatorname{tr}\!\lp U \, D^2f(U^T \xv) U^T\rp\\
+&=\operatorname{tr}\!\lp D^2f(U^T \xv)\rp\\
+&=(U \cdot \Delta f)(\xv).
+}
+$$
+<Spacer size = "5px"/>
+
+*Informal exercise:* The Laplacian is equivariant with respect to the induced actions of translations.
+
+---
+
 ### Plane waves and Fourier transforms 
 
-Given $\xi \in \R^n$, define $\phi_\xi : \R^n \to \C$ by
+Given $\xiv \in \R^n$, define $\phi_\xiv : \R^n \to \C$ by
 $$
-\phi_\xi(\xv) := e^{2πi \langle \xi, \xv \rangle}.
+\phi_\xiv(\xv) := e^{2πi \langle \xiv, \xv \rangle}.
 $$
 
-$\phi_\xi$ is an eigenvector of $\Delta$, with eigenvalue $- 4π^2 |\xi|^2$. 
+$\phi_\xiv$ is an eigenvector of $\Delta$, with eigenvalue $- 4π^2 |\xiv|^2$. 
 
-Any (complex) scalar multiple of $\phi_\xi$ is called a *plane wave*.
+Any (complex) scalar multiple of $\phi_\xiv$ is called a *plane wave*.
 <Spacer size = "5px"/>
 
 For functions $f: \R^n \to \R$ that decay sufficiently rapidly, the following integrals are finite and we can define
 $$
-\hat f(\xi) := \langle f, \phi_\xi \rangle_{L_2(\R^n)} = \int_{\R^n} f(\xv) \phi_{-\xi}(\xv) d \xv.
+\hat f(\xiv) := %\langle f, \phi_\xiv \rangle_{L_2(\R^n)} 
+\int_{\R^n} f(\xv) \phi_{-\xiv}(\xv) d \xv.
 $$
+<Spacer size = "1px"/>
+
 $\hat f: \R^3 \to \C$ is the *Fourier transform* of $f$.
 
-$\hat f(ξ)$ captures the extent to which $f$ oscillates at frequency $ξ$.
-
+$\hat f(\xiv)$ captures the extent to which $f$ oscillates at frequency $\xiv$.
 
 ---
 
-### "Indexing" families of eigenvectors of the Laplacian
+### A few identities for Fourier transforms 
 
-On the circle, the eigenvectors were indexed by $\Z$, and a harmonic function could be expressed as a limit of linear combinations of the eigenvectors. 
+***Plancherel identity*** 
+$$
+\int_{\R^n} |f(\xv)|^2 d \xv = 
+\int_{\R^n} |\hat f(\xiv)|^2 d \xiv.
+$$
 
-In the case at hand, the "indices" run over all elements of $\R^n$, and $f$ is expressed as an integral over those indices:
+$f \in L^2(\R^3) \quad \Longrightarrow \quad \hat f \in L^2(\R^3)$, with 
+$$
+||\hat f||_{L^2} = ||f||_{L^2}.
+$$
+
+Using "polarization", it follows that the Fourier transform is an isometry of $L^2(\R^n)$. 
+
+***Convolution formula*** 
+$$
+\int_{\R^n} f_1(\xv - \yv) f_2(\yv) d \yv = 
+\int_{\R^n} \hat f_1(\xiv) \hat f_2(\xiv) \phi_\xiv(\xv) d \xiv.
+$$
+<Spacer size = "5px"/>
+
+There are *many* relationships between differential, integral, and algebraic calculations involving functions and their Fourier transforms. 
+
+---
+
+### Properties of plane waves
+
+Plane waves aren't elements of $L^2(\R^3)$, since $|\phi_{\xiv}(\xv)|^2 = 1 \quad \forall \ \xv \in \R^3$.
+<Spacer size = "1px"/>
+
+Plane waves are eigenvectors of the induced action of $(\R^3, +)$ on $C^\infty(\R^3, \C)$:
 $$
 \eqa{
-f(\xv) &= \langle \hat f, \phi_{-\xv} \rangle_{L_2}\\
-&= \int_{\R^n} \hat f(\xi) \phi_{\xv}(\xi) d \xi \\
-&= \int_{\R^n} \hat f(\xi) \phi_{\xi}(\xv) d \xi ,
+(\yv \cdot \phi_{\xiv})(\xv) &= \phi_{\xiv}(\xv - \yv) \\
+&= e^{2πi \langle \xiv, \xv - \yv \rangle} \\
+&=  e^{2πi \langle \xiv, \xv  \rangle} e^{- 2πi \langle \xiv, \yv \rangle}\\
+&= \frac {\phi_{\xiv}(\xv)}{\phi_{\xiv}(\yv)}
+}
+$$
+
+$\Longrightarrow \ \ \ \phi_{\xiv}$ determines a one-dimensional representation of $(\R^3, +)$.
+<Spacer size = "1px"/>
+
+$(\R^3, +)$ isn't compact, so we can't invoke the results we've developed for representations of compact groups, but the Fourier transform is nonetheless extremely useful.
+
+---
+
+### "Indexing" eigenvectors of the Laplacian on $\R^3$
+
+On the circle, the eigenvectors were indexed by $\Z$, and a harmonic function could be expressed as a limit of linear combinations of the eigenvectors. 
+<Spacer size = "1px"/>
+On $\R^3$, the "indices" of the eigenvectors run over all elements of $\R^3$. 
+
+$f \in L^2(\R^3)$ is expressed as an integral&mdash;not a sum&mdash;over those "indices":
+$$
+\eqa{
+f(\xv) 
+&= \int_{\R^n} \hat f(\xiv) \phi_{\xv}(\xiv) d \xiv \\
+&= \int_{\R^n} \hat f(\xiv) \phi_{\xiv}(\xv) d \xiv ,
 }
 $$
 
 since 
 $$
-\phi_{\xv}(\xi) = e^{2πi \langle \xi, \xv \rangle} = \phi_{\xi}(\xv).
+\phi_{\xv}(\xiv) = e^{2πi \langle \xiv, \xv \rangle} = \phi_{\xiv}(\xv).
 $$
+
 
 ---
 
 ### The relationship between the Fourier transforms of $f$ and $∆f$
 
-Sweeping a lot of analytical details under the rug, we have
-$$
-\eqa{
-∆f(\xv) &= ∆ \int_{\R^n} \hat f(\xi) \phi_{\xi}(\xv) d \xi \\
-&=  \int_{\R^n} \hat f(\xi) ∆ \phi_{\xi}(\xv) d \xi \\
-&=  \int_{\R^n} \lp - 4π^2 |\xi|^2\hat f(\xi) \rp \phi_{\xi}(\xv)  d \xi, 
-}
-$$
-and hence
-
-$$
-\widehat{∆f}(\xi) = - 4π^2 |\xi|^2\hat f(\xi).
-$$
-
-If we can efficiently compute and undo Fourier transforms, solving $∆f = w$ is "easy":
+Sweeping a lot of analytical details under the rug, 
 $$
 ∆f = w  \quad \Longleftrightarrow \quad \widehat{∆f} = \widehat w 
-\quad \Longleftrightarrow \quad \hat{f}(\xi) = - \frac {\widehat w(\xi)}{4π^2 |\xi|^2} \qquad \qquad \forall \ \xi \in \R^3.
+$$
+and
+$$
+\eqa{
+∆f(\xv) &= ∆ \int_{\R^n} \hat f(\xiv) \phi_{\xiv}(\xv) d \xiv \\
+&=  \int_{\R^n} \hat f(\xiv) ∆ \phi_{\xiv}(\xv) d \xiv \\
+&=  \int_{\R^n} \lp - 4π^2 |\xiv|^2\hat f(\xiv) \rp \phi_{\xiv}(\xv)  d \xiv 
+}
+$$
+$\Longrightarrow$
+$$
+\widehat{∆f}(\xiv) = - 4π^2 |\xiv|^2\hat f(\xiv).
+$$
+
+---
+
+### Second slide on the relationship between the Fourier transforms of $f$ and $∆f$
+
+$$
+\widehat{∆f} = \widehat w 
+\quad \Longleftrightarrow \quad \hat{f}(\xiv) = - \frac {\widehat w(\xiv)}{4π^2 |\xiv|^2} \qquad \qquad \forall \ \xiv \in \R^3.
 $$ 
+
+Skipping over convergence arguments,
+$$
+f 
+:= -  \frac 1 {4π^2} \int_{\R^n} \frac {\widehat w(\xiv)}{|\xiv|^2} \phi_{\xiv} d \xiv
+$$
+satisfies $\Delta f = w$.
+
+Roughly speaking, the solution of $\Delta f = w$ can be expressed as a weighted average of plane waves, with weights determined by the ratios $\frac {\widehat w(\xiv)}{|\xiv|^2}$.
+
+***Heads up!*** The smaller the magnitude of $\xiv$, the more $\widehat w(\xiv)$ is amplified.
+<Spacer size = "5px"/>
+
+If we can efficiently compute and "undo" Fourier transforms, solving $∆f = w$ is "easy" algebra.
 
 ---
 
@@ -335,23 +433,10 @@ The FFT uses "butterflies" (small 2-point computational blocks) and other strate
 
 For real-valued data, Hermitian symmetry $\ \ \Longrightarrow \ \ {}$ only half of the spectrum needs to be computed.
 
-The Cooley-Tukey FFT and descendants split a dataset into even and odd index subsets, and leverage the even/odd symmetry of sine and cosine.
+The [Cooley-Tukey FFT](https://web.stanford.edu/class/cme324/classics/cooley-tukey.pdf) and descendants split a dataset into even and odd index subsets, and leverage the even/odd symmetry of sine and cosine.
 
 Sophisticated variants of "vanilla" FFTs exploit additional structure (much of which can naturally be described in terms of equivariance and invariance) present in some situations.
 
----
-
-***Plancherel identity*** 
-$$
-\int_{\R^n} |f(\xv)|^2 d \xv = 
-\int_{\R^n} |\hat f(\xi)|^2 d \xi.
-$$
-
-***Convolution formula*** 
-$$
-\int_{\R^n} f_1(\xv - \yv) f_2(\yv) d \yv = 
-\int_{\R^n} \hat f_1(\xi) \hat f_2(\xi) \phi_\xi(\xv) d \xi.
-$$
 
 ---
 
@@ -372,7 +457,7 @@ $$
 $$
 <Spacer size="2px"/>
 
-If we identify one of the coordinate planes in $\R^3$ with $\C$, then $\xv \mapsto (P \xv)^\ell$ is a harmonic homogeneous polynomial, where $P: \R^3 \to \C$ denotes projection onto the plane. 
+If we identify one of the coordinate planes in $\R^3$ with $\C$ and let $P: \R^3 \to \C$ denote projection onto the plane, then $\xv \mapsto (P \xv)^\ell$ is a harmonic homogeneous polynomial. 
 
 For example: $\qquad \qquad (x + i \, y)^2 = x^2 - y^2 + 2 x y \, i = \langle (2 i, 0, 0, 1, 0) , \av_2(\xv) \rangle.$
 
@@ -380,9 +465,12 @@ For example: $\qquad \qquad (x + i \, y)^2 = x^2 - y^2 + 2 x y \, i = \langle (2
 
 ### Spherical harmonics
 
-The spherical harmonics are the restrictions of the harmonic homogeneous polynomials on $\R^3$ to $S^2$.
+The equivariance of the Laplacian with respect to the orthogonal group $\ \ \Longrightarrow \ \ {}$ the kernel of the restriction of the Laplacian to an orbit of $O(n)$ equals the restrictions of elements of the kernel of the Laplacian to that orbit.
 
-E.g., if $\tilde p$ denotes the expression of $p(x, y, z) = (x + i \, y)^\ell$ in terms of spherical coordinates $\ (r,\theta ,\varphi ), \ {}$ with $r = 1, \ {}$ then
+The spherical harmonics are the restrictions of the harmonic homogeneous polynomials on $\R^3$ to $S^2$.
+<Spacer size="5px"/>
+
+If $\tilde p$ denotes the expression of $p(x, y, z) = (x + i \, y)^\ell$ in terms of spherical coordinates $\ (r,\theta ,\varphi ), \ {}$ with $r = 1, \ {}$ then
 $$
 \eqa{
 \tilde p(\theta ,\varphi) &= \lp \sin \theta \cos \varphi + i \, \sin\theta \sin \varphi  \rp^\ell \phantom{\sum}\\
@@ -390,14 +478,18 @@ $$
 $$
 <Spacer size="5px"/>
 
-A separation of variables approach can be used to find the harmonic functions on $\R^3$ directly in spherical coordinates: If
-$$u(r, \theta, \varphi) = \rho(r) \sigma(\theta, \varphi),$$ 
-then $\ \Delta u = 0 \ \Longleftrightarrow \ {}$
-$\rho$ and $\sigma$ are eigenvectors of appropriate linear operators, with eigenvalues $\lambda$ and $- \lambda$.
+A separation of variables approach can be used to find the harmonic functions on $\R^3$ directly in spherical coordinates. 
+
 
 ---
 
-#### Second slide on spherical harmonics
+#### Second slide on spherical harmonics: separation of variables
+
+If
+$$u(r, \theta, \varphi) = \rho(r) \sigma(\theta, \varphi),$$ 
+then $\ \Delta u = 0 \ \Longleftrightarrow \ {}$
+$\rho$ and $\sigma$ are eigenvectors of appropriate linear operators, with eigenvalues $\lambda$ and $- \lambda$.
+<Spacer size="5px"/>
 
 A second separation of variables 
 $$
@@ -411,3 +503,22 @@ for $\ m \in \Z\ {}$ and $\ \Theta_{\lambda, m}\ {}$ satisfying
 $$
 \textstyle{\sin \theta {\frac {d\ }{d\theta }}\left(\sin \theta {\frac {d\Theta }{d\theta }}\right)= \lp m^{2} - \lambda \sin ^{2}\theta \rp \Theta.}
 $$
+
+---
+
+#### Third slide on spherical harmonics
+
+$O(n)$ is compact, so the Peter-Weyl Theorem $\ \ \Longrightarrow \ \ L_2(O(n))$ decomposes into a Hilbert space direct sum of finite dimensional irreducible representations.
+
+Spheres (centered at the origin) are orbits of $O(n)$, so it's hopefully not surprising that there are decompositions of the space of spherical harmonics into irreducible representations of $O(n)$.
+
+The bookkeeping involved is more than seems beneficial to cover here. See Kirillov (or many, many other sources) for further information.
+<Spacer size="1px"/>
+
+The second order ODEs for both the spherical harmonics and the radial components of the expressions for the harmonic polynomials in spherical coordinates can be analysed using [Sturm-Liouville theory](https://math.okstate.edu/people/binegar/4233/4233-l15.pdf).
+
+Sturm-Liouville equations are second order ODEs of the form
+$$
+\lp p(x)y' \rp' + q(x)y + \lambda \, w(x) y = 0,
+$$
+where $x$ is the independent variable, $y$ is the dependent variable, $p$ and $w$ are strictly positive "weight functions", $q$ is some function, and $\lambda$ is a scalar playing the role of a Lagrange multiplier (more or less).

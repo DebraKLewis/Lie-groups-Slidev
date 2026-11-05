@@ -213,6 +213,10 @@ src: LieGroupsSlides/irreducible_representations.md
 src: LieGroupsSlides/irreducible_representations_contd.md
 ---
 
+---
+src: LieGroupsSlides/reps_sl3.md
+---
+
 <!--
 
 ---
@@ -281,10 +285,6 @@ src: LieGroupsSlides/root_systems_classification.md
 ---
 
 ---
-src: LieGroupsSlides/reps_sl3.md
----
-
----
 src: LieGroupsSlides/characters_lead-in_slides.md
 ---
 
@@ -305,6 +305,9 @@ src: LieGroupsSlides/background_material.md
 src: LieGroupsSlides/long_proof.md
 ---
 
+---
+src: LieGroupsSlides/trivia.md
+---
 <!--
 ---
 src: LieGroupsSlides/matrix_calculations.md

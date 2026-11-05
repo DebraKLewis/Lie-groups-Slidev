@@ -252,7 +252,7 @@ $\hat f(ξ)$ captures the extent to which $f$ oscillates at frequency $ξ$.
 
 On the circle, the eigenvectors were indexed by $\Z$, and a harmonic function could be expressed as a limit of linear combinations of the eigenvectors. 
 
-In the case at hand, the "indices" run over all elements of $\R^n$, and $f$ is expressed as an integral over those indices:
+In the case at hand, the "indices" run over all elements of $\R^n$, and $f$ is expressed as an integral&mdash;not a sum&mdash;over those "indices":
 $$
 \eqa{
 f(\xv) &= \langle \hat f, \phi_{-\xv} \rangle_{L_2}\\

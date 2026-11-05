@@ -393,7 +393,7 @@ $$
 
 Hence
 $$
-A(g)^{-1} = A\lp g^{-1} \rp = \overline{A(g)} = A(g)^*,
+A(g)^{-1} = A\lp g^{-1} \rp = \overline{A(g)}^T = A(g)^*,
 $$
 i.e. $A(g)$ is unitary.
 
@@ -576,7 +576,7 @@ If $G$ is a compact Lie group, then
 
 4. Each irreducible representation of $G$ occurs in $L_2(G)$ with multiplicity equal to its dimension.
 
-5. Any unitary representation of $G$ on a separable Hilbert space decomposes into a Hilbert space direct sum of (finite dimensional} irreducible representations.
+5. Any unitary representation of $G$ on a separable Hilbert space decomposes into a Hilbert space direct sum of (finite dimensional) irreducible representations.
 
 <Spacer size="5px"/>
 
