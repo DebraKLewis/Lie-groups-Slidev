@@ -1,4 +1,23 @@
-## Semisimple stuff
+## Semisimple Lie algebras (where to put?)
+
+$S$ is a *maximal solvable ideal* if $S$ is a solvable ideal in $\fg$ and is not a proper subset of another solvable ideal in $\fg$. 
+
+***Claim:*** There is *maximal solvable ideal* $\ \text{Rad} \, \fg \ {}$ in $\fg, \ {}$ called the *radical* of $\fg$. 
+
+*Verify:* If $S$ is a maximal solvable ideal, and $I$ is another ideal of $\fg$, then (3) $\ \Longrightarrow$
+$S + I \ {}$ is solvable. 
+Hence maximality of $S\ \Longrightarrow S + I = S$.
+$~$
+$\fg$ is *semisimple* if $\ \text{Rad} \, \fg\ {}$ is trivial.
+$~$
+Simple Lie algebras are semisimple.
+*Why?* The only ideals of a simple algebra $\fg$ are $\{ 0 \}$ and $\fg$, and $\fg$ simple $\ \Longrightarrow \ [\fg, \fg] = \fg, \ {}$ so $\fg$ is not solvable.
+
+$\fg/\text{Rad} \, \fg\ {}$ is always semisimple.
+
+---
+
+### Semisimple stuff
 
 A Lie algebra $\fg$ is *simple* if $\fg$ is non-abelian and has no non-trivial ideals.
 

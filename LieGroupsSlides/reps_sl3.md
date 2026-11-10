@@ -1,17 +1,16 @@
-## Characters
+### Characters
 
 The *character* $χ_V: G \to \C$ of a finite dimensional representation $V$ of $G$ is given by
 $$
 χ_V(g) := \text{trace} \ ρ_V(g).
 $$
-<Spacer size = "5px"/>
 
-$χ_V$ is a class function, i.e. a continuous element of 
+$χ_V$ is a *class function*, i.e. a continuous element of 
 $$
 (L_2(G))^G 
-=  \{ f \in L_2(G) : f \circ (L_g \circ R_{g^{-1}}) = f \quad \forall \ g \in G \}.
+=  \{ f \in L_2(G) : \underbrace{f \circ (L_g \circ R_{g^{-1}}) = f}_{\Longleftrightarrow \quad  f \circ L_g = f \circ R_g} \quad \forall \ g \in G \}.
 $$
-<Spacer size = "5px"/>
+<Spacer size = "1px"/>
 
 - $\ \ {}$The trivial representation $V = \C$ has $\ χ_V = 1$.
 
@@ -23,29 +22,127 @@ $$
 
 ---
 
-#### Properties of characters related to (ir)reducibility
+#### Properties of characters relevant to (ir)reducibility
 
-$V$ irreducible $\quad \Longrightarrow \quad \text{Hom}_G(V, V) \approx \C \quad \Longrightarrow   \quad |\chi_V|_{L_2(G)} = 1$.
+<Spacer size = "15px"/>
+
+- $V$ irreducible $\quad \Longrightarrow \quad \text{Hom}_G(V, V) \approx \C \quad \Longrightarrow   \quad |\chi_V|_{L_2(G)} = 1$.
 <Spacer size = "5px"/>
 
-$V$ and $W$ irreducible and non-isomorphic $\quad \Longrightarrow \quad 
-\text{Hom}_G(V, W) = \{0 \}$
-$\Longrightarrow \quad \chi_V$ and $\chi_W$ are orthogonal.
+- $V$ and $W$ irreducible and non-isomorphic 
+
+$\qquad \Longrightarrow \quad \text{Hom}_G(V, W) = \{0 \}$ 
+
+$\qquad \Longrightarrow \quad \chi_V$ and $\chi_W$ are orthogonal.
 <Spacer size = "5px"/>
 
-$V$ completely reducible, with
+- If there are irreducible and pairwise non-isomorphic $V_k$'s such that
 $$
 V \approx \oplus V_k^{\oplus n_k},
 $$
-where 
-- the $V_k$'s are irreducible and pairwise non-isomorphic, and
-- $n_k$ denotes the multiplicity of $V_k$
+$\quad {}$ then
+$$
+\langle \chi_{V_k}, \chi_V \rangle_{L_2(G)} = n_k.
+$$ 
 
-$\Longrightarrow \qquad \qquad \qquad\qquad \qquad\qquad \qquad   \langle \chi_{V_k}, \chi_V \rangle_{L_2(G)} = n_k.$
+$\quad n_k$ is the *multiplicity* of $V_k$.
+
+<!--
+---
+
+5.3 Lemma. Let $V=\bigoplus_k V_k, V^{\prime}=\bigoplus_k V_k^{\prime}$ be canonical decompositions of two representations $V$ and $V^{\prime}$. Then, any $G$-invariant homomorphism $\phi: V^{\prime} \rightarrow V$ maps $V_k^{\prime}$ to $V_k$.
+
+Note that, for any completely reducible $V$ and $V^{\prime}$, we can arrange the decompositions to be labelled by the same indexes, adding zero blocks if some $W_k$ is not present in the decomposition. Obviously, $\phi$ will be zero on those. We are not assuming uniqueness of the decompositions; rather, this will follow from the Lemma.
+
+Proof. We consider the "block decomposition" of $\phi$ with respect to the direct sum decompositions of $V$ and $V^{\prime}$. Specifically, restricting $\phi$ to the summand $V_l^{\prime}$ and projecting to $V_k$ leads to the "block" $\phi_{k l}: V_l^{\prime} \rightarrow V_k$, which is a linear $G$-map. Consider now an off-diagonal block $\phi_{k l}$, $k \neq l$. If we decompose $V_k$ and $V_l^{\prime}$ further into copies of irreducibles $W_k$ and $W_l$, the resulting blocks of $\phi_{k l}$ give $G$-linear maps between non-isomorphic irreducibles, and such maps are all null by Corollary 4.2. So $\phi_{k l}=0$ if $k \neq l$, as asserted.
+5.4 Theorem. Let $V=\bigoplus V_k$ be a canonical decomposition of $V$.
+(i) Every sub-representation of $V$ which is isomorphic to $W_k$ is contained in $V_k$.
+(ii) The canonical decomposition is unique, that is, it does not depend on the original decomposition of $V$ into irreducibles.
+(iii) The endomorphism algebra $\operatorname{End}^G\left(V_k\right)$ is isomorphic to a matrix algebra $M_{n_k}(\mathbb{C})$, a choice of isomorphism coming from a decomposition of $V_k$ into a direct sum of the irreducible $W_k$.
+(iv) $\operatorname{End}^G(V)$ is isomorphic to the direct sum of matrix algebras $\bigoplus_k M_{n_k}(\mathbb{C})$, block-diagonal with respect to the canonical decomposition of $V$.
+
+-->
 
 ---
 
-### Example: characters of $SU(2)$
+### Weights of $\fg$-modules
+
+Given a $\fg$-module $V$, let $\Lambda_V$ denote the set of eigenvalues of $\rho(h)$.
+
+***Some traditional jargon:*** $\ {}$ Elements of $\Lambda_V$ are called *weights* of $V$. 
+
+A *highest weight of* $V$ is a weight $\tilde λ$ satisfying
+$$
+\text{re} \, \tilde λ = \textstyle{\max_{λ \in \Lambda_V}} \ \text{re} \, λ. 
+$$ 
+
+Given a weight $λ$ of $V$, let $V[λ] ⊂ V$ denote the eigenspace of $λ$.
+
+A vector in $V[λ]$ is called a *vector of weight* $λ$. 
+If $\lambda$ is a highest weight, then vectors in $V[λ]$ are *highest weight vectors*.
+
+---
+
+#### Example: weights of the $\mathfrak{sl}_2(\mathbb C)$-module of homogeneous polynomials in two variables 
+
+Let $V_n$ denote the space of homogeneous polynomials of degree $n$ in two complex variables, $x$ and $y$, and use the monomial basis 
+$$
+\{ m_0, \ldots, m_n \}, \qquad \text{where} \qquad m_k(x, y) := x^{n-k}y^k.
+$$
+<Spacer size="5px"/>
+
+Complexify the action of $\mathfrak{sl}_2(\mathbb C)$ and use the basis
+$$
+\left \{
+\begin{bmatrix}0&1\\0&0\end{bmatrix},\quad
+\begin{bmatrix}0&0\\1&0\end{bmatrix},\quad \begin{bmatrix}1&0\\0&-1\end{bmatrix} \right \}.
+$$
+
+The associated infinitesimal (algebra) actions on polynomials are
+
+$$
+E=x\frac{\partial}{\partial y},\qquad
+F=y\frac{\partial}{\partial x},\qquad
+H=x\frac{\partial}{\partial x}-y\frac{\partial}{\partial y}.
+$$
+<Spacer size="5px"/>
+
+$m_k$ is an eigenvector of $H$ with weight $n - 2k$.
+<!--
+$$
+H(m_k)(x, y)
+=\lp (n-k)-k\rp x^{n-k}y^k
+=(n-2k)m_k(x, y)
+$$
+$\Longrightarrow \ \ 
+-->
+
+---
+
+#### Second slide of weights of the $\mathfrak{sl}_2(\mathbb C)$-module of homogeneous polynomials in two variables 
+
+Each weight $-n, 2 - n, \ldots, n - 2, n$ has multiplicity one. 
+
+$n$ is the highest weight, and $m_0$ is a highest weight vector.
+<Spacer size="5px"/>
+
+The actions 
+$$
+E(m_k) = k \, m_{k - 1} %x^{n-k}y^k) = x^{n-k+1}y^{k-1},\qquad
+\sands
+F(m_k) = (n - k) m_{k + 1} % (x^{n-k}y^k)=(n-k)x^{n-k-1}y^{k+1}.
+$$
+of $E$ and $F$ on $m_k$ "rachet" $m_k$ to the left or right in the ordered list $\{ m_0, \ldots, m_n \}$.
+
+That "racheting" is ***not*** cyclic! The image of $m_k$ eventually falls off the end of the list and equals $0$.
+<Spacer size="5px"/>
+
+$E$ "raises" the weight by $2$, while $F$ "lowers" it by $2$. 
+
+
+---
+
+### Characters of $SU(2)$
 
 $$
 SU(2) = \left \{ A \in \C^{2 \times 2} : A^*A = \idm_2\ \ \text{and  det} \, A = 1 \right \} =  \phi(S^3),\phantom{X^{\int^\int}}
@@ -61,14 +158,17 @@ $$
 \Phi(\theta, \varphi, \psi) := \phi(\cos \theta + i \, \sin \theta \cos \varphi,
 \sin \theta  \sin \varphi (\cos \psi + i \, \sin \psi)),\phantom{X_{\int_\int}}
 $$
-$0 \leq \theta, \varphi < \pi, \psi \in S^1,\ {}$ the Haar measure on $SU(2)$ takes the form
+$0 \leq \theta, \varphi < \pi, \psi \in S^1,\ {}$ the [Haar measure](Haar-measure) on $SU(2)$ takes the form
 $$
 dg = \smallfrac 1{2 \pi^2 } \sin^2 \!\theta \, \sin \varphi \, d \theta \, d \varphi \, d \psi.
 $$
 
+*Reminder:* $SU(2)$ is compact, so all representations of $SU(2)$ are completely reducible. 
+
+
 ---
 
-#### Some representations of $SU(2)$
+### Some representations of $SU(2)$
 
 1. Trivial representation on $\C$
 
@@ -95,7 +195,7 @@ Representations 3. and 4. are infinite dimensional.
 
 ---
 
-#### The character of $V_n$
+### The character of $V_n$
 
 We now compute the character of $V_n, n \in \N$, and see that $V_n$ is irreducible.
 
@@ -117,6 +217,8 @@ $$
 
 ---
 
+#### Second slide of the calculation of the character of $V_n$
+
 $\Longrightarrow \quad m_k$ is an eigenvector of $\rho(\gamma(\theta))$ with eigenvalue $e^{i (n - 2 k) \theta}$.
 
 Since $\{ m_0, \ldots, m_n \}$ is a basis of $V_n$, 
@@ -126,30 +228,29 @@ $$
 &= \frac {\sin ((n + 1) \theta)}{\sin \theta}.
 }
 $$
-
+<Spacer size="5px"/>
 
 The representations $V_j$ and $V_n$ are non-isomorphic if $j \neq n$. 
 
-Let's check directly that their characters are orthonormal.
+The orthogonality relations for matrix coefficients imply that a complex representation $V$ 
+of a compact group is irreducible $\quad \Longleftrightarrow$
 $$
-\eqa{
-\int_{SU(2)} \langle \chi_{V_j}, \chi_{V_n} \rangle d g &= 
-\smallfrac 1{2 \pi^2} \int_0^{2 \pi} \int_0^\pi \int_0^\pi \sin ((j + 1) \theta)}{\sin ((n + 1) \theta) \, \sin \varphi \, d \theta \, d \varphi \, d \psi.
-}
+\int_G \langle \chi_{V}, \chi_{V} \rangle d g = 1.
 $$
 
 ---
 
-Regrouping the integrals yields
+#### Direct calculation that $\ j \neq n \ \ \ \Longrightarrow \ \ {}$ the characters of $V_j$ and $V_n$ are orthonormal
+
 $$
-\smallfrac 1 {2 \pi^2} \lp \int_0^{2 \pi} d \psi \rp \lp \int_0^\pi \sin \varphi \, d \varphi \rp 
+\eqa{
+\int_{SU(2)} \langle \chi_{V_j}, &\chi_{V_n} \rangle d g = 
+\smallfrac 1{2 \pi^2} \int_0^{2 \pi} \! \int_0^\pi \! \int_0^\pi \sin ((j + 1) \theta)\sin ((n + 1) \theta) \, \sin \varphi \, d \theta \, d \varphi \, d \psi \\
+&= \smallfrac 1 {2 \pi^2} \lp \int_0^{2 \pi} d \psi \rp \lp \int_0^\pi \sin \varphi \, d \varphi \rp 
 \lp \int_0^\pi \sin ((j + 1) \theta)\sin ((n + 1) \theta) \, d \theta \rp. 
+}
 $$
-The identities 
-$$
-\int_0^\pi \sin \varphi \, d \varphi = 2 
-$$
-and
+The identities $\displaystyle \int_0^\pi \sin \varphi \, d \varphi = 2 \ \ {}$ and 
 $$
 \int_0^\pi \sin ((j + 1) \theta) \sin ((n + 1) \theta) \, d \theta  = 
 \left \{ \begin{align} \smallfrac \pi 2 & \qquad j = n \\
@@ -158,26 +259,21 @@ $$
 
 $\displaystyle \Longrightarrow \qquad \qquad \qquad \qquad 
 \int_{SU(2)} \langle \chi_{V_j}, \chi_{V_n} \rangle d g = \delta_{jn}.$
+<Spacer size="1px"/>
+
+In particular, $V_n$ is irreducible for all $n \in \N$.
 
 ---
 
-$SU(2)$ is compact, so all representations of $SU(2)$ are completely reducible. 
+### Irreducible representations of $\mathfrak{sl}(2, \C)$
 
-The orthogonality relations for matrix coefficients imply that a complex representation $V$ 
-of a compact group is irreducible $\quad \Longleftrightarrow$
+To reduce the notation burden, for the next eight slides, let 
 $$
-\int_G \langle \chi_{V}, \chi_{V} \rangle d g = 1,
+\fg = \mathfrak{sl}(2, \C)= \{ A \in \C^{2 \times 2} : \text{trace}\ A = 0 \}.
 $$
-so $V_n$ is irreducible for all $n \in \N$.
+<Spacer size="1px"/>
 
----
-
-## Irreducible representations of $\mathfrak{sl}(2, \C)$
-
-***Claim:*** Complex representations of 
-$$
-\mathfrak{sl}(2, \C) = \{ A \in \C^{2 \times 2} : \text{trace}\ A = 0 \}
-$$ 
+***Claim:*** Complex representations of $\fg$
 correspond to complex representations of $\mathfrak{su}(2)$.
 
 *Verify:* $\mathfrak{sl}(2, \C)$ is the complexification of the real Lie algebra 
@@ -198,13 +294,15 @@ $$
 
 ---
 
+#### Second slide of correspondence between complex representations of $\fg$ and $\mathfrak{su}(2)$
+
 $SU(2)$ connected $\quad \Longrightarrow \quad \mathfrak{su}(2)$-modules correspond to $SU(2)$-representations.
 
 $SU(2)$ compact $\quad \Longrightarrow \quad {}$ $SU(2)$-representations are completely reducible.
 
 Thus every $\mathfrak{sl}(2, \C)$-module is completely reducible, and can be expressed as a direct sum of irreducible representations.
 
-We'll use the basis $\{e, f, h \}$ of $\fg = \ \mathfrak{sl}(2, \C)$, where
+We'll (again) use the basis $\{e, f, h \}$ of $\fg = \ \mathfrak{sl}(2, \C)$, where
 $$
 e = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}, \qquad 
 f = \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix}, \qquad
@@ -214,8 +312,9 @@ with
 $$
 [e,f] = h, \qquad [h,e] = 2e, \sands [h,f] = −2f.
 $$
+<Spacer size="1px"/>
 
-*Side remark:* The usual basis for $\ \mathfrak{su}(2)\ {}$ is
+*Side remark:* Another widely used basis for $\ \mathfrak{su}(2)\ {}$ is
 $$
 \{i \, \sigma_1, i \, \sigma_2, i \, \sigma_3 \}
 \qquad \text{for} \qquad \sigma_1 = e + f, \quad \sigma_2 = i (f - e), \quad \sigma_3 = h. \phantom{X_{\int_\int}}
@@ -223,25 +322,7 @@ $$
 
 ---
 
-## Weights of $\fg$-modules
-
-Given a $\fg$-module $V$, let $\Lambda_V$ denote the set of eigenvalues of $\rho(h)$.
-
-***Some traditional jargon:*** $\ {}$ Elements of $\Lambda_V$ are called *weights* of $V$. 
-
-A *highest weight of* $V$ is a weight $\tilde λ$ satisfying
-$$
-\text{re} \, \tilde λ = \textstyle{\max_{λ \in \Lambda_V}} \ \text{re} \, λ. 
-$$ 
-
-Given a weight $λ$ of $V$, let $V[λ] ⊂ V$ denote the eigenspace of $λ$.
-
-A vector in $V[λ]$ is called a *vector of weight* $λ$. 
-If $\lambda$ is a highest weight, then vectors in $V[λ]$ are *highest weight vectors*.
-
----
-
-***Very important example:*** $\ V = (\fg, \ad)$ 
+### Example of calculation of weights of a $\fg$-module: $\ V = (\fg, \ad)$ 
 
 $\ad_h$ has eigenvalues $-2, 0, 2$, with associated eigenspaces
 $$
@@ -257,48 +338,52 @@ $\Lambda_{(\fg, \ad)} = \{-2, 0, 2 \}, \ {}$ the highest weight is $2$, and the 
 If $v$ is a vector of weight $λ \ {}$ of a $\fg$-module $V, \ {}$ then
 $$
 \eqa{
-(he) \cdot v &= ([h, e] + e h) \cdot v \\
+(h\,e) \cdot v &= ([h, e] + e h) \cdot v \\
 &= 2e \cdot v + e \cdot (λv)\\
 &= (λ + 2)e \cdot v
 }
 $$
+$\Longrightarrow\quad e \cdot V[λ] ⊂ V [λ + 2]$.
 
 ---
 
-and
+#### Second slide of calculation of weights of a $\fg$-module: $\ V = (\fg, \ad)$ 
+<Spacer size="5px"/>
+
+Analogously,
 $$
 \eqa{
 (hf) \cdot v &= ([h, f] + f h) \cdot v \\
 &= - 2f \cdot v + f \cdot (λv)\\
-&= (λ - 2)f  \cdot v
+&= (λ - 2)f  \cdot v.
 }$$
-$\Longrightarrow$
-$$
-e \cdot V[λ] ⊂ V [λ + 2] 
-\sands
-f \cdot V [λ] ⊂ V [λ − 2].
-$$
+$\Longrightarrow \quad f \cdot V [λ] ⊂ V [λ − 2]$.
 
 Let $v ∈ V[λ]$ be a highest weight vector, and define
 $$
-v^k : = \frac {f^k}{k!} \cdot v \qquad \quad k≥0.
+v^k : = \smallfrac {f^k}{k!} \cdot v \qquad \quad k≥0.
 $$
+
+***Claim:*** $e \cdot v = 0, \ {}$ 
+$$
+k >0 \quad \Longrightarrow \quad e \cdot v^k =(λ−k+1)v^{k−1} \qquad \quad \forall \ k >0,$$
+$$
+f \cdot v^k = (k + 1)v^{k+1}, \sands h \cdot v^k =(λ−2k)v^k.
+$$
+
+<!--
+- $e \cdot v = 0, \ {}$ and $e \cdot v^k =(λ−k+1)v^{k−1} \qquad \quad \forall \ k >0$,
+- $f \cdot v^k = (k + 1)v^{k+1}$
+- $h \cdot v^k =(λ−2k)v^k$
+-->
 
 ---
 
-### Give this slide a name
+#### Verification of the action of $h$ on $v^k$
 
-***Claim:***
-- $f \cdot v^k = (k + 1)v^{k+1}$
-- $h \cdot v^k =(λ−2k)v^k$
-- $e \cdot v = 0, \ {}$ and 
-$$
-e \cdot v^k =(λ−k+1)v^{k−1} \qquad \quad \forall \ k >0.
-$$
+The assertion for the action of $f$ follows immediately from the definition of $v^k$.
 
-*Verify:*  The first assertion follows immediately from the definition of $v^k$.
-
-The second and third assertions follow from the calculations on the previous slide by induction:
+The assertion for the action of $h$ follows by induction from the calculations on the previous slide:
 $$
 f \cdot V [λ] ⊂ V [λ − 2] \quad \Longrightarrow \quad h \cdot v^1 = (λ − 2) v^1.
 $$ 
@@ -311,60 +396,77 @@ $$
 then
 $$
 \eqa{
-h \cdot v^{k + 1} &= \smallfrac 1 {k + 1} (hf) \cdot v^k \\
-&= \frac {(λ - 2 k) - 2}{k + 1} f\cdot v^k \\
+h \cdot v^{k + 1} &= \smallfrac 1 {k + 1} (hf) \cdot v^k \phantom{\int_X}\\
+&= \frac {(λ - 2 k) - 2}{k + 1} f\cdot v^k \phantom{\int_X}\\
 &= (λ - 2 (k + 1)) v^{k + 1}.
 }
 $$
 
-$e \cdot v = 0$, and hence 
-$$ 
-e \cdot v^1 = (ef) \cdot v = ([e,f]+fe) \cdot v = h \cdot v=λv.
-$$
-
 ---
 
-In-class exercise: 
-$$e \cdot v^j =(λ−j+1)v^{j−1} \qquad j = 1, \ldots, k \qquad \Longrightarrow$$
+#### Verification of the action of $e$ on $v^k$
+
+$e \cdot v = 0 \quad \Longrightarrow$
+$$
+\eqa{
+e \cdot v^1 &= (ef) \cdot v \\
+& = ([e,f]+fe) \cdot v \\
+&= h \cdot v \\ 
+& =λ \, v.
+} 
+$$
+<Spacer size="5px"/>
+
+*In-class group calculation:*
+
+$$
+e \cdot v^{k+1} = \underline{\phantom{blahblah}}
+$$
+<!--
+e \cdot v^j =λ−j+1)v^{j−1} \qquad j = 1, \ldots, k 
+$\Longrightarrow$
 $$
 e \cdot v^{k+1} = \cdots = (λ−k)v^k
 %1 efvk = 1 (hvk +fevk)= 1 􏰞(λ−2k)vk +(λ−k+1)fvk−1􏰟 k+1 k+1 k+1
 %= 1 (λ−2k+(λ−k+1)k)vk =(λ−k)vk. k+1
 $$
+-->
+
 
 ---
 
-### Constructing irreducible $\fg$-modules with highest weight $n \in \N$
+### Constructing irreducible $\fg$-modules
 
-We can use these relationships to construct a family of irreducible $\fg$-modules. 
-
-Given $n \in \N$, let $V_n$ denote the vector space with basis $\{ v^0, v^1, \ldots, v^n \}$, and define an action of $\fg$ on $V$ by
+Let $V_n$ denote a vector space with basis $\{ v^0, v^1, \ldots, v^n \}$, and define an action of $\fg$ on $V$ by
 $$
 \eqa{
-h \cdot v^k &= (n − 2k) v^k \\
-f \cdot v^k &= (k + 1)v^{k + 1} \qquad 0 \leq k < n \\ 
-f \cdot v^n &= 0 = e \cdot v^0 \\
-e \cdot v^k &= (n + 1 − k)v^{k − 1} \qquad 0 < k \leq n.
+h \cdot v^k &= (n − 2k) v^k \qquad\qquad\, 0 \leq k \leq n \\
+e \cdot v^k &= (n + 1 − k)v^{k − 1} \qquad 0 < k \leq n \\
+f \cdot v^k &= (k + 1)v^{k + 1} \qquad \qquad \! 0 \leq k < n \\ 
+f \cdot v^n &= 0 = e \cdot v^0.
 }
 $$
 
 This action makes $V_n$ an irreducible $\fg$-module with highest weight $n$.
 
-We can construct an infinite-dimensional $\fg$-module with basis $\{ v^0, v^1, \ldots \}$.
-
-See, e.g., Kirillov Theorem 4.59 for the details of the proof.
-
 $V_k$ and $V_n$ are non-isomorphic if $k \neq n$.
+<Spacer size="5px"/>
 
 Every finite-dimensional irreducible $\fg$-module is isomorphic to $V_n$ for some $n$.
+<Spacer size="5px"/>
+
+We can construct an infinite-dimensional $\fg$-module with basis $\{ v^0, v^1, \ldots \}. \ \ {}$ (Theorem 4.59 in Kirillov.)
 
 ---
 
-***Claim:*** If $V$ is a finite-dimensional $\fg$-module, then
+### Weight decompositions of $\fg$-modules
+
+***Claim:*** If $V$ is a nontrivial finite-dimensional $\fg$-module, then
 $$
 V= \oplus_{λ \in \Lambda_V} V[λ] .
 $$
 This decomposition is called the *weight decomposition of* $V$.
+<Spacer size="5px"/>
 
 *Verify:* $\fg$-modules are completely reducible, so we only need to consider the irreducible submodules.
 
@@ -376,8 +478,6 @@ so the sum of all of the eigenspaces is a direct sum.
 
 The actions of $e, f,$ and $h$ all map eigenvectors to eigenvectors, so $\,\oplus_{λ \in \Lambda_V} V[λ]\ {}$ is a submodule of $V$. 
 
----
-
-Irreducibility of $V \ \Longrightarrow$
-$$ V = \oplus_{λ \in \Lambda_V} V[λ],$$
-since at least one $V[\lambda]$ is nontrivial if $V$ is nontrivial. 
+At least one $V[\lambda]$ is nontrivial if $V$ is nontrivial, so 
+irreducibility of $\,V \ \Longrightarrow \ \ 
+V = \oplus_{λ \in \Lambda_V} V[λ]$.

@@ -217,19 +217,21 @@ src: LieGroupsSlides/irreducible_representations_contd.md
 src: LieGroupsSlides/reps_sl3.md
 ---
 
-<!--
-
 ---
 src: LieGroupsSlides/solvable_nilpotent.md
 ---
 
+<!--
 ---
 src: LieGroupsSlides/nilpotent_solvable_revised.md
 ---
+--> 
 
 ---
 src: LieGroupsSlides/nilpotent_solvable_contd.md
 ---
+
+<!--
 
 ---
 src: LieGroupsSlides/semi-simple.md
@@ -256,9 +258,11 @@ src: LieGroupsSlides/Borcherds_nilpotent_solvable_fragments.md
 
 - Maximal toral subalgebras, root systems, and the Weyl group
 
+<!--
 - Representations of $\mathfrak{sl}(3)$
 
 - Characters
+-->
 
 *Slides currently being tidied up.*
 
