@@ -85,34 +85,34 @@ If $\lambda$ is a highest weight, then vectors in $V[λ]$ are *highest weight ve
 
 #### Example: weights of the $\mathfrak{sl}_2(\mathbb C)$-module of homogeneous polynomials in two variables 
 
-Let $V_n$ denote the space of homogeneous polynomials of degree $n$ in two complex variables, $x$ and $y$, and use the monomial basis 
+Let $V_n$ denote the space of homogeneous polynomials of degree $n$ in two complex variables, $z_1$ and $z_2$, and use the monomial basis 
 $$
-\{ m_0, \ldots, m_n \}, \qquad \text{where} \qquad m_k(x, y) := x^{n-k}y^k.
+\{ m_0, \ldots, m_n \}, \qquad \text{where} \qquad m_k(z_1, z_2) := z_1^{n-k} z_2^k.
 $$
 <Spacer size="5px"/>
 
-Complexify the action of $\mathfrak{sl}_2(\mathbb C)$ and use the basis
+Complexify the action of $\mathfrak{sl}_2(\mathbb C)$ and use the basis $\{\hsl, \esl, \fsl \}$, where
 $$
-\left \{
-\begin{bmatrix}0&1\\0&0\end{bmatrix},\quad
-\begin{bmatrix}0&0\\1&0\end{bmatrix},\quad \begin{bmatrix}1&0\\0&-1\end{bmatrix} \right \}.
+\hsl := \begin{bmatrix}1&0\\0&-1\end{bmatrix}, \qquad 
+\esl := \begin{bmatrix}0&1\\0&0\end{bmatrix},\sands
+\fsl := \begin{bmatrix}0&0\\1&0\end{bmatrix}.
 $$
 
 The associated infinitesimal (algebra) actions on polynomials are
 
 $$
-E=x\frac{\partial}{\partial y},\qquad
-F=y\frac{\partial}{\partial x},\qquad
-H=x\frac{\partial}{\partial x}-y\frac{\partial}{\partial y}.
+\rho(\hsl) = z_1 \frac{\partial}{\partial z_1} - z_2 \frac{\partial}{\partial z_2}, \qquad
+\rho(\esl) = z_1 \frac{\partial}{\partial z_2}, \sands
+\rho(\fsl) = z_2 \frac{\partial}{\partial z_1}.
 $$
 <Spacer size="5px"/>
 
-$m_k$ is an eigenvector of $H$ with weight $n - 2k$.
+$m_k$ is an eigenvector of $\hsl$ with weight $n - 2k$.
 <!--
 $$
-H(m_k)(x, y)
-=\lp (n-k)-k\rp x^{n-k}y^k
-=(n-2k)m_k(x, y)
+\hsl(m_k)(z_1, z_2)
+=\lp (n-k)-k\rp z_1^{n-k} z_2^k
+=(n-2k)m_k(z_1, z_2)
 $$
 $\Longrightarrow \ \ 
 -->
@@ -128,16 +128,16 @@ $n$ is the highest weight, and $m_0$ is a highest weight vector.
 
 The actions 
 $$
-E(m_k) = k \, m_{k - 1} %x^{n-k}y^k) = x^{n-k+1}y^{k-1},\qquad
+\rho(\esl)(m_k) = k \, m_{k - 1} %x^{n-k}y^k) = x^{n-k+1}y^{k-1},\qquad
 \sands
-F(m_k) = (n - k) m_{k + 1} % (x^{n-k}y^k)=(n-k)x^{n-k-1}y^{k+1}.
+\rho(\fsl)(m_k) = (n - k) m_{k + 1} % (x^{n-k}y^k)=(n-k)x^{n-k-1}y^{k+1}.
 $$
-of $E$ and $F$ on $m_k$ "rachet" $m_k$ to the left or right in the ordered list $\{ m_0, \ldots, m_n \}$.
+of $\esl$ and $\fsl$ on $m_k$ "rachet" $m_k$ to the left or right in the ordered list $\{ m_0, \ldots, m_n \}$.
 
 That "racheting" is ***not*** cyclic! The image of $m_k$ eventually falls off the end of the list and equals $0$.
 <Spacer size="5px"/>
 
-$E$ "raises" the weight by $2$, while $F$ "lowers" it by $2$. 
+$\esl$ "raises" the weight by $2$, while $\fsl$ "lowers" it by $2$. 
 
 
 ---
@@ -302,48 +302,48 @@ $SU(2)$ compact $\quad \Longrightarrow \quad {}$ $SU(2)$-representations are com
 
 Thus every $\mathfrak{sl}(2, \C)$-module is completely reducible, and can be expressed as a direct sum of irreducible representations.
 
-We'll (again) use the basis $\{e, f, h \}$ of $\fg = \ \mathfrak{sl}(2, \C)$, where
+We'll (again) use the basis $\{ \hsl, \esl, \fsl\}$ of $\fg = \ \mathfrak{sl}(2, \C)$, where
 $$
-e = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}, \qquad 
-f = \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix}, \qquad
-h = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}, 
+\hsl = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}, \qquad
+\esl = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}, \sands
+\fsl = \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix}, 
 $$
 with
 $$
-[e,f] = h, \qquad [h,e] = 2e, \sands [h,f] = −2f.
+[\esl, \fsl] = \hsl, \qquad [\hsl,\esl] = 2\, \esl, \sands [\hsl,\fsl] = −2 \, \fsl.
 $$
 <Spacer size="1px"/>
 
 *Side remark:* Another widely used basis for $\ \mathfrak{su}(2)\ {}$ is
 $$
 \{i \, \sigma_1, i \, \sigma_2, i \, \sigma_3 \}
-\qquad \text{for} \qquad \sigma_1 = e + f, \quad \sigma_2 = i (f - e), \quad \sigma_3 = h. \phantom{X_{\int_\int}}
+\qquad \text{for} \qquad \sigma_1 = \esl + \fsl, \quad \sigma_2 = i (\fsl - \esl), \quad \sigma_3 = \hsl. \phantom{X_{\int_\int}}
 $$
 
 ---
 
 ### Example of calculation of weights of a $\fg$-module: $\ V = (\fg, \ad)$ 
 
-$\ad_h$ has eigenvalues $-2, 0, 2$, with associated eigenspaces
+$\ad_{\hsl}$ has eigenvalues $-2, 0, 2$, with associated eigenspaces
 $$
 \eqa{
-\fg[-2] &= \span f, \phantom{X_{\int_\int}} \\
-\fg[0] &= \span h, \phantom{X_{\int_\int}} \\
-\fg[2] &= \span e. \phantom{X_{\int_\int}}
+\fg[-2] &= \span \fsl, \phantom{X_{\int_\int}} \\
+\fg[0] &= \span \hsl, \phantom{X_{\int_\int}} \\
+\fg[2] &= \span \esl. \phantom{X_{\int_\int}}
 }
 $$
 
-$\Lambda_{(\fg, \ad)} = \{-2, 0, 2 \}, \ {}$ the highest weight is $2$, and the highest weight vectors are rescalings of $e$. 
+$\Lambda_{(\fg, \ad)} = \{-2, 0, 2 \}, \ {}$ the highest weight is $2$, and the highest weight vectors are rescalings of $\esl$. 
 
 If $v$ is a vector of weight $λ \ {}$ of a $\fg$-module $V, \ {}$ then
 $$
 \eqa{
-(h\,e) \cdot v &= ([h, e] + e h) \cdot v \\
-&= 2e \cdot v + e \cdot (λv)\\
-&= (λ + 2)e \cdot v
+(\hsl \,\esl) \cdot v &= ([\hsl, \esl] + \esl \hsl) \cdot v \\
+&= 2\esl \cdot v + \esl \cdot (λv)\\
+&= (λ + 2)\esl \cdot v
 }
 $$
-$\Longrightarrow\quad e \cdot V[λ] ⊂ V [λ + 2]$.
+$\Longrightarrow\quad \esl \cdot V[λ] ⊂ V [λ + 2]$.
 
 ---
 
@@ -353,22 +353,22 @@ $\Longrightarrow\quad e \cdot V[λ] ⊂ V [λ + 2]$.
 Analogously,
 $$
 \eqa{
-(hf) \cdot v &= ([h, f] + f h) \cdot v \\
-&= - 2f \cdot v + f \cdot (λv)\\
-&= (λ - 2)f  \cdot v.
+(\hsl\fsl) \cdot v &= ([\hsl, \fsl] + \fsl \hsl) \cdot v \\
+&= - 2\fsl \cdot v + \fsl \cdot (λv)\\
+&= (λ - 2)\fsl  \cdot v.
 }$$
-$\Longrightarrow \quad f \cdot V [λ] ⊂ V [λ − 2]$.
+$\Longrightarrow \quad \fsl \cdot V [λ] ⊂ V [λ − 2]$.
 
 Let $v ∈ V[λ]$ be a highest weight vector, and define
 $$
-v^k : = \smallfrac {f^k}{k!} \cdot v \qquad \quad k≥0.
+v^k : = \smallfrac {\fsl^k}{k!} \cdot v \qquad \quad k≥0.
 $$
 
 ***Claim:*** $e \cdot v = 0, \ {}$ 
 $$
-k >0 \quad \Longrightarrow \quad e \cdot v^k =(λ−k+1)v^{k−1} \qquad \quad \forall \ k >0,$$
+k >0 \quad \Longrightarrow \quad \esl \cdot v^k =(λ−k+1)v^{k−1} \qquad \quad \forall \ k >0,$$
 $$
-f \cdot v^k = (k + 1)v^{k+1}, \sands h \cdot v^k =(λ−2k)v^k.
+\fsl \cdot v^k = (k + 1)v^{k+1}, \sands \hsl \cdot v^k =(λ−2k)v^k.
 $$
 
 <!--
@@ -379,39 +379,39 @@ $$
 
 ---
 
-#### Verification of the action of $h$ on $v^k$
+#### Verification of the action of $\hsl$ on $v^k$
 
-The assertion for the action of $f$ follows immediately from the definition of $v^k$.
+The assertion for the action of $\fsl$ follows immediately from the definition of $v^k$.
 
-The assertion for the action of $h$ follows by induction from the calculations on the previous slide:
+The assertion for the action of $\hsl$ follows by induction from the calculations on the previous slide:
 $$
-f \cdot V [λ] ⊂ V [λ − 2] \quad \Longrightarrow \quad h \cdot v^1 = (λ − 2) v^1.
+\fsl \cdot V [λ] ⊂ V [λ − 2] \quad \Longrightarrow \quad \hsl \cdot v^1 = (λ − 2) v^1.
 $$ 
 
 If 
 $$
-h \cdot v^j =(λ−2j)v^j, j = 1, \ldots, k, \ {}
+\hsl \cdot v^j =(λ−2j)v^j, j = 1, \ldots, k, \ {}
 $$
 
 then
 $$
 \eqa{
-h \cdot v^{k + 1} &= \smallfrac 1 {k + 1} (hf) \cdot v^k \phantom{\int_X}\\
-&= \frac {(λ - 2 k) - 2}{k + 1} f\cdot v^k \phantom{\int_X}\\
+\hsl \cdot v^{k + 1} &= \smallfrac 1 {k + 1} (\hsl \fsl) \cdot v^k \phantom{\int_X}\\
+&= \frac {(λ - 2 k) - 2}{k + 1} \fsl\cdot v^k \phantom{\int_X}\\
 &= (λ - 2 (k + 1)) v^{k + 1}.
 }
 $$
 
 ---
 
-#### Verification of the action of $e$ on $v^k$
+#### Verification of the action of $\esl$ on $v^k$
 
 $e \cdot v = 0 \quad \Longrightarrow$
 $$
 \eqa{
-e \cdot v^1 &= (ef) \cdot v \\
-& = ([e,f]+fe) \cdot v \\
-&= h \cdot v \\ 
+\esl \cdot v^1 &= (\esl \fsl) \cdot v \\
+& = ([\esl,\fsl]+\fsl\esl) \cdot v \\
+&= \hsl \cdot v \\ 
 & =λ \, v.
 } 
 $$
@@ -420,7 +420,7 @@ $$
 *In-class group calculation:*
 
 $$
-e \cdot v^{k+1} = \underline{\phantom{blahblah}}
+\esl \cdot v^{k+1} = \underline{\phantom{blahblah}}
 $$
 <!--
 e \cdot v^j =λ−j+1)v^{j−1} \qquad j = 1, \ldots, k 
@@ -440,10 +440,10 @@ $$
 Let $V_n$ denote a vector space with basis $\{ v^0, v^1, \ldots, v^n \}$, and define an action of $\fg$ on $V$ by
 $$
 \eqa{
-h \cdot v^k &= (n − 2k) v^k \qquad\qquad\, 0 \leq k \leq n \\
-e \cdot v^k &= (n + 1 − k)v^{k − 1} \qquad 0 < k \leq n \\
-f \cdot v^k &= (k + 1)v^{k + 1} \qquad \qquad \! 0 \leq k < n \\ 
-f \cdot v^n &= 0 = e \cdot v^0.
+\hsl \cdot v^k &= (n − 2k) v^k \qquad\qquad\, 0 \leq k \leq n \\
+\esl \cdot v^k &= (n + 1 − k)v^{k − 1} \qquad 0 < k \leq n \\
+\fsl \cdot v^k &= (k + 1)v^{k + 1} \qquad \qquad \! 0 \leq k < n \\ 
+\fsl \cdot v^n &= 0 = \esl \cdot v^0.
 }
 $$
 
@@ -476,7 +476,7 @@ $$
 $$
 so the sum of all of the eigenspaces is a direct sum. 
 
-The actions of $e, f,$ and $h$ all map eigenvectors to eigenvectors, so $\,\oplus_{λ \in \Lambda_V} V[λ]\ {}$ is a submodule of $V$. 
+The actions of $\hsl, \esl,$ and $\fsl$ all map eigenvectors to eigenvectors, so $\,\oplus_{λ \in \Lambda_V} V[λ]\ {}$ is a submodule of $V$. 
 
 At least one $V[\lambda]$ is nontrivial if $V$ is nontrivial, so 
 irreducibility of $\,V \ \Longrightarrow \ \ 
