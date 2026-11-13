@@ -184,7 +184,7 @@ $$
 
 ###  Example: upper triangular and strictly upper triangular matrices 
 
-Let $\mathfrak{b}$ denote the Lie algebra of $n \times n$ [upper triangular matrices](https://en.wikipedia.org/wiki/Triangular_matrix#:~:text=Algebras%20of%20triangular%20matrices), and 
+Let [$\mathfrak{b}$](https://en.wikipedia.org/wiki/Triangular_matrix#:~:text=Borel%20subgroups%20and%20Borel%20subalgebras) denote the Lie algebra of $n \times n$ [upper triangular matrices](https://en.wikipedia.org/wiki/Triangular_matrix#:~:text=Algebras%20of%20triangular%20matrices), and 
 $\mathfrak{n}$ denote the subalgebra of strictly upper triangular matrices. 
 
 ***Claim:*** $\mathfrak{b}$ is solvable and $\mathfrak{n}$ is nilpotent.

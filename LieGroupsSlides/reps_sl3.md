@@ -82,10 +82,13 @@ A vector in $V[λ]$ is called a *vector of weight* $λ$.
 If $\lambda$ is a highest weight, then vectors in $V[λ]$ are *highest weight vectors*.
 
 ---
+routeAlias: sl2-homogeneous-polynomials
+---
 
 #### Example: weights of the $\mathfrak{sl}_2(\mathbb C)$-module of homogeneous polynomials in two variables 
 
-Let $V_n$ denote the space of homogeneous polynomials of degree $n$ in two complex variables, $z_1$ and $z_2$, and use the monomial basis 
+Let $V_n$ denote the space of homogeneous polynomials of degree $
+n$ in two complex variables, $z_1$ and $z_2$, and use the monomial basis 
 $$
 \{ m_0, \ldots, m_n \}, \qquad \text{where} \qquad m_k(z_1, z_2) := z_1^{n-k} z_2^k.
 $$
