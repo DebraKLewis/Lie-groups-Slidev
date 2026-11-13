@@ -64,7 +64,7 @@ $\Longrightarrow \ [\fh, \fh] \supseteq \fh \quad \Longrightarrow \quad [\fg, \f
 
 $\fg  =  \mathfrak{gl}(n, F) \ {}$ and $\ [\fg, \fg] = \mathfrak{sl}(n, F) \quad \Longrightarrow$ 
 $$
-\fg/[\fg, \fg] \approx \R \, \idm \approx \R.
+\fg/[\fg, \fg] \approx F \, \idm \approx F.
 $$
 
 Specifically, the trace map drops to the quotient $\fg/\fh$, which can be identified with the Abelian subalgebra of scalar multiples of the identity matrix. 
@@ -79,13 +79,13 @@ $\fg$ simple $\ \Longrightarrow \ [\fg, \fg] = \fg \ {}$ and $\ Z(\fg) = \{ 0 \}
 
 #### Example: $\mathfrak{sl}(2, F)$. (More generally, any $F$ such that $\text{char}\, F \neq 2$.)
 
-$0 \neq \xi = x \, e + y \, f + z \, h \in I \quad \Longrightarrow$ 
+$0 \neq \eta = x \, \esl + y \, \fsl + z \, \hsl \in I \quad \Longrightarrow$ 
 $$
-[e, [e, \xi]] = [e, y \, h \pm 2 e] = - 2 \, y \, e
+[\esl, [\esl, \eta]] = [\esl, y \, \hsl \pm 2 \esl] = - 2 \, y \, \esl
 $$
 and
 $$ 
-[f, [f, \xi]] = [f, - x \, h \pm 2 f] = - 2 \, x \, f, 
+[\fsl, [\fsl, \eta]] = [\fsl, - x \, \hsl \pm 2 \fsl] = - 2 \, x \, \fsl, 
 $$
 so $\ I = \mathfrak{sl}(2, F) \ {}$ if either $x$ or $y$ is nonzero.
 <Spacer size = "1px"/>
@@ -184,7 +184,7 @@ $$
 
 ###  Example: upper triangular and strictly upper triangular matrices 
 
-Let $\mathfrak{b}$ denote the Lie algebra of $n \times n$ upper triangular matrices, and 
+Let $\mathfrak{b}$ denote the Lie algebra of $n \times n$ [upper triangular matrices](https://en.wikipedia.org/wiki/Triangular_matrix#:~:text=Algebras%20of%20triangular%20matrices), and 
 $\mathfrak{n}$ denote the subalgebra of strictly upper triangular matrices. 
 
 ***Claim:*** $\mathfrak{b}$ is solvable and $\mathfrak{n}$ is nilpotent.
@@ -304,7 +304,7 @@ $$
 <Spacer size = "5px"/>
 
 $$
-(\fg^{i})^{(j)} = \fg^{i + j} \qquad \forall \ i, j \in \N
+(\fg^{i})^{j} = \fg^{i + j} \qquad \forall \ i, j \in \N
 $$
 $\Longrightarrow$
 $$
