@@ -61,8 +61,8 @@ and
 $$
 [e,f] = h, \qquad [h,e] = 2e, \sands [h,f] = −2f.
 $$
-$~$
 
+<!--
 
 ---
 
@@ -187,11 +187,13 @@ This action makes $V_n$ an irreducible $\fg$-module with highest weight $n$.
 $~$
 $~$
 
+-->
+
 ---
 
-## Back to the general setting: $\fg$-modules of semisimple complex Lie algebras
+### $\fg$-modules of semisimple complex Lie algebras
 
-We can apply these constructions and results to the subalgebras $\mathfrak{sl}(2, \C)_α$.
+We can apply the constructions and results for [irreducible $\mathfrak{sl}(2, \mathbb{C})$-modules](irreducible-sl2C-modules) to the subalgebras $\mathfrak{sl}(2, \C)_α$.
 
 $$
 V = \C \, h_\alpha ⊕ \bigoplus_{k \in \Z, k \neq 0} \!\!\fg_{k\, \alpha} \phantom{|^{\int^\int}_{\int_\int}}

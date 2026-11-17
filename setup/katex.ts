@@ -14,6 +14,7 @@ export default defineKatexSetup(() => {
         "\\fk": "\\mathfrak{k}",
         "\\Ad": "\\text{Ad}",
         "\\ad": "\\text{ad}",
+        "\\radg": "\\text{rad}(\\mathfrak{g})",
         "\\sands": "\\qquad \\text{and} \\qquad",
         "\\av": "\\mathbf{a}",
         "\\bv": "\\mathbf{b}",

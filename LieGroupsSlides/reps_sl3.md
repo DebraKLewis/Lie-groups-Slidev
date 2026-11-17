@@ -267,6 +267,8 @@ $\displaystyle \Longrightarrow \qquad \qquad \qquad \qquad
 In particular, $V_n$ is irreducible for all $n \in \N$.
 
 ---
+routeAlias: irreducible-sl2C-modules
+---
 
 ### Irreducible representations of $\mathfrak{sl}(2, \C)$
 
@@ -305,7 +307,7 @@ $SU(2)$ compact $\quad \Longrightarrow \quad {}$ $SU(2)$-representations are com
 
 Thus every $\mathfrak{sl}(2, \C)$-module is completely reducible, and can be expressed as a direct sum of irreducible representations.
 
-We'll (again) use the basis $\{ \hsl, \esl, \fsl\}$ of $\fg = \ \mathfrak{sl}(2, \C)$, where
+We'll ([again](sl2-homogeneous-polynomials)) use the basis $\{ \hsl, \esl, \fsl\}$ of $\fg = \ \mathfrak{sl}(2, \C)$, where
 $$
 \hsl = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}, \qquad
 \esl = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}, \sands

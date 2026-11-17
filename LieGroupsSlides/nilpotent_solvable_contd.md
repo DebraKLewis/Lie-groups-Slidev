@@ -65,10 +65,12 @@ $$
 $$
 
 ---
+routeAlias: solvability-1D-submodule
+---
 
 ### Solvability and the existence of a 1D submodule
 
-***Claim:*** If $V$ is complex $\fg$-module of a solvable Lie algebra of $\fg$  nontrivial space $V$, then $\ \exists \ v \in V$ such that $\ \text{span}\{v\}\ {}$ is invariant under the action of $\fg, \,{}$
+***Claim:*** If $V$ is a complex $\fg$-module of a solvable Lie algebra of $\fg$  nontrivial space $V$, then $\ \exists \ v \in V$ such that $\ \text{span}\{v\}\ {}$ is invariant under the action of $\fg, \,{}$
 i.e., $v$ is an eigenvector of $\, \xi \quad \forall \ \xi \in \fg$.
 <Spacer size="5px"/>
 

@@ -195,12 +195,9 @@ src: LieGroupsSlides/momentumMapsCoadjointOrbits.md
 
 - Characters of SU(2) and irreducible representations of sl(3, C)
 
-
 - Solvable Lie algebras
 
 - Nilpotent Lie algebras
-
-- Semi-simple Lie algebras
 
 - Lie's and Engel's Theorems
 
@@ -233,13 +230,6 @@ src: LieGroupsSlides/nilpotent_solvable_contd.md
 
 <!--
 
----
-src: LieGroupsSlides/semi-simple.md
----
-
----
-src: LieGroupsSlides/Lie_Engel_reducible_semisimple.md
----
 
 ---
 src: LieGroupsSlides/Borcherds_nilpotent_solvable_fragments.md
@@ -256,7 +246,11 @@ src: LieGroupsSlides/Borcherds_nilpotent_solvable_fragments.md
 
 - Toral and Cartan subalgebras
 
-- Maximal toral subalgebras, root systems, and the Weyl group
+- Maximal toral subalgebras 
+
+- Root systems
+
+- The Weyl group
 
 <!--
 - Representations of $\mathfrak{sl}(3)$
@@ -266,16 +260,23 @@ src: LieGroupsSlides/Borcherds_nilpotent_solvable_fragments.md
 
 *Slides currently being tidied up.*
 
+---
+src: LieGroupsSlides/Killing_form_structure_algebras_compact_groups.md
+---
+
 <!--
 
 ---
-src: LieGroupsSlides/Killing_form_structure_algebras_compact_groups.md
+src: LieGroupsSlides/semi-simple.md
+---
+
+---
+src: LieGroupsSlides/Lie_Engel_reducible_semisimple.md
 ---
 
 ---
 src: LieGroupsSlides/structure_algebras_compact_groups.md
 ---
-
 ---
 src: LieGroupsSlides/matrix_elements.md
 ---

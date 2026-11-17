@@ -2,69 +2,309 @@
 
 The *Killing form* $\ \kappa: \fg \times \fg \to F,\ F = \R\ {}$ or $\ \C, \ {}$ is given by
 $$
-\kappa(\xi, \eta) = \text{trace}(\ad_\xi \, \ad_\eta).
+\kappa(\xi, \eta) := \text{trace}(\ad_\xi \, \ad_\eta).
 $$
-$~$
+
 The Killing form is symmetric, bilinear, and $\ad$-invariant. 
-$~$
-*Verify $\ad$-invariance of the Killing form:* $\quad{}$ For any $\xi, \eta, \zeta \in \fg$,
+<Spacer size="1px"/>
+
+*Verify $\ad$-invariance:*  For any ${\color{red}\xi}, {\color{blue}\eta}, {\color{green}\zeta} \in \fg$,
 $$
 \eqa{
-\kappa(\ad_\xi(\eta), \zeta) &= \text{trace}(\ad_{[\xi, \eta]} \, \ad_\zeta) \\
-&= \text{trace}((\ad_\xi \ad_\eta - \ad_\eta \ad_\xi) \ad_\zeta) \\
-&= \text{trace}(\ad_\eta (\ad_\zeta \ad_\xi - \ad_\xi \ad_\zeta)) \\
-&= \text{trace}(\ad_\eta \ad_{[\zeta, \xi]} )  \\
-&= - \kappa(\eta, \ad_\xi(\zeta)).
+\kappa(\ad_{\color{red}\xi}({\color{blue}\eta}),{\color{green}\zeta}) 
+&= \text{trace}(\underbrace{\ad_{[{\color{red} \xi},{\color{blue}\eta}]}} \ad_{\color{green}\zeta}). \\
+& \qquad \qquad \ \, = [\ad_{\color{red}\xi}, \ad_{\color{blue}\eta}] = {\ad_{\color{red}\xi} \ad_{\color{blue}\eta} - \, \ad_{\color{blue}\eta} \ad_{\color{red}\xi}} \\
+%&= \text{trace}(\underbrace{\ad_{[{\color{red} \xi},{\color{blue}\eta}]}}_{\ad_{\color{red}\xi} \ad_{\color{blue}\eta} - \, \ad_{\color{blue}\eta} \ad_{\color{red}\xi}} \, \ad_{\color{green}\zeta}) \\
+%&= \text{trace}((\ad_{\color{red}\xi} \ad_{\color{blue}\eta} - \ad_{\color{blue}\eta} \ad_{\color{red}\xi}) \ad_{\color{green}\zeta})
+}
+$$
+Cyclic permutation of $\, \ad_{\color{red}\xi} \ad_{\color{blue}\eta}\ad_{\color{green}\zeta} \,{}$ yields
+$$
+\eqa{
+\kappa(\ad_{\color{red}\xi}({\color{blue}\eta}),{\color{green}\zeta}) 
+&= \text{trace}(\ad_{\color{blue}\eta} (\ad_{\color{green}\zeta} \ad_{\color{red}\xi} - \ad_{\color{red}\xi} \ad_{\color{green}\zeta})) \\
+&= - \text{trace}(\ad_{\color{blue}\eta} \ad_{[{\color{red}\xi}, {\color{green}\zeta} ]} )  \\
+&= - \kappa({\color{blue}\eta}, \ad_{\color{red}\xi}({\color{green}\zeta})).
 }
 $$
 
 ---
 
-***Example:*** $sl(2, \C)$
+### Example: The Killing form of $\mathfrak{so}(3, \R) \approx (\R^3, \times)$
 
-The basis vectors $\quad
-e = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}, \quad
-f = \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix}, \quad
-h = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
-$
-$~$
-satisfy $\quad [e, f] = h, \quad [h, e] = 2 \, e, \quad [h, f] = -2\, f,\ {}$ so w.r.t. basis $\{e, f, h\}$,
-$~$
+If we identify $\ \mathfrak{so}(3, \R)\ {}$ with $(\R^3, \times),\ {}$ then
 $$
-\ad_e = \begin{bmatrix} 0 & 0 & −2 \\ 0 & 0 & 0 \\0 & 1 & 0 
-\end{bmatrix}, \qquad
-\ad_f = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 2 \\  -1 & 0  & 0
-\end{bmatrix}, \qquad
-\ad_h = \begin{bmatrix} 2 & 0 & 0 \\ 0 & -2 & 0 \\ 0  & 0 & 0
-\end{bmatrix}.
-$$
-$~$
-The nonzero basis vector pairings are $\ 
-\kappa(e, f) = 4\ {}$ and $\ \kappa(h, h) = 8. \ {}$ Hence
-$$
-\kappa(\xi, \eta) = 4 \, \text{trace}(\xi \, \eta) \qquad \forall \ \xi, \eta \in sl(2, \C).\phantom{X^\int}
-$$
-
----
-
-***Example:*** $so(3, \R)$
-
-If we identify $\ so(3, \R)\ {}$ with $(\R^3, \times),\ {}$ then
-$$\eqa{
+\eqa{
 \ad_\xi(\ad_\eta(\zeta))& = \xi \times (\eta \times \zeta) \\
-&= \langle \xi, \zeta \rangle \eta - \langle \xi, \eta \rangle \zeta   \\
-&= \lp \eta \xi^T - \langle \xi, \eta \rangle \idm \rp \zeta
+&= (\xi^T \zeta ) \eta - (\xi^T\eta) \zeta   \\
+&= \lp \eta \, \xi^T - (\xi^T\eta) \,  \idm \rp \zeta
 }
 $$
 $\Longrightarrow$
-$$\eqa{
-  \kappa(\xi, \eta) &= \text{trace} (\ad_\xi \circ \ad_\eta) \\
-  &= \text{trace} \lp \eta \xi^T - \langle \xi, \eta \rangle \idm \rp \\
-  &= - 2 \langle \xi, \eta \rangle.
+$$
+\eqa{
+  \kappa(\xi, \eta) &= \text{trace} (\ad_\xi \, \ad_\eta) \\
+  &= \text{trace} \lp \eta \, \xi^T - (\xi^T\eta) \, \idm \rp \\
+  &= - 2 \, \xi^T\eta.
 }
 $$
-$~$
-The Killing form of $so(3, \R)$ is negative-definite. 
+<Spacer size="5px"/>
+
+The Killing form of $(\R^3, \times)$ is the rescaling by $-2$ of the Euclidean inner product.
+
+$\Longrightarrow \ \ {}$ the Killing form of $\mathfrak{so}(3, \R) \approx (\R^3, \times)$ is negative-definite. 
+
+---
+
+### Example: the Killing form of $\mathfrak{sl}(2, \C)$
+
+[Recall](sl2-homogeneous-polynomials) that 
+<!--
+$\quad
+\fsl = \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix}, \quad
+\hsl = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}, \quad
+\esl = \begin{bmatrix} 0 & 1\\ 0 & 0 \end{bmatrix}
+$
+
+satisfy 
+-->
+$$
+[\esl, \fsl] = \hsl, \sands [\hsl, \xi_\pm] = \pm 2 \, \xi_\pm, 
+$$ 
+so the matrices with respect to the basis $\{\fsl, \hsl, \esl\}$ for the infinitesimal adjoint actions are
+
+$$
+\eqa{
+\ad_\fsl &= 2 \, \ev_1 \ev_2^T - \ev_2 \ev_3^T \\ 
+\ad_\hsl \, &= 2 \lp \ev_3 \ev_3^T - \ev_1 \ev_1^T \rp \\
+\ad_\esl &= \ev_2 \ev_1^T - 2 \, \ev_3 \ev_2^T,
+}
+$$
+where $\{ \ev_1, \ev_2, \ev_3\}$ is the standard Euclidean basis of $\R^3$. $\quad \ev_j^T \ev_k = \delta_{jk} \quad \Longrightarrow$
+
+$$
+\eqa{
+\ad_\fsl \ad_\esl &= \lp 2 \, \ev_1 \ev_2^T - \ev_2 \ev_3^T \rp 
+\lp \ev_2 \ev_1^T - 2 \, \ev_3 \ev_2^T \rp \\
+&= 2 \, \ev_1 \ev_1^T + 2 \, \ev_2 \ev_2^T 
+} 
+$$
+$\text{trace} \lp\ev_j \ev_k^T \rp = \delta_{jk} \quad \Longrightarrow \quad
+\kappa(\fsl, \esl) = \text{trace}(\ad_\fsl \, \ad_\esl)
+= 4.\phantom{\sum^X}
+$
+
+---
+
+#### Second slide of the calculation of the Killing form of $\mathfrak{sl}(2, \C)$
+
+Analogously,
+$$
+\eqa{
+\ad_\hsl \ad_\esl &= 2 \lp \ev_3 \ev_3^T - \ev_1 \ev_1^T \rp 
+\lp \ev_2 \ev_1^T - 2 \, \ev_3 \ev_2^T \rp \\
+&= 4 \, \ev_1 \ev_2^T
+} 
+$$
+$\Longrightarrow$
+$$
+\kappa(\hsl, \esl) = \text{trace}(\ad_\hsl \, \ad_\esl) = 0.
+$$
+<Spacer size="5px"/>
+
+Continuing in this fashion shows that the only nonzero Killing form pairings of the basis vectors are
+$$
+\kappa(\fsl, \esl)= \kappa(\esl, \fsl)  = 4  \sands \kappa(\hsl, \hsl) = 8.
+$$
+  
+
+<!--
+$$
+\ad_\fsl = \begin{bmatrix} 0 & 2 & 0 \\ 0 & 0 & -1 \\0 & 0 & 0 
+\end{bmatrix}, \qquad
+\ad_\hsl = \begin{bmatrix} -2 & 0 & 0 \\ 0 & 0 & 0 \\ 0  & 0 & 2
+\end{bmatrix}, \qquad
+\ad_\esl = \begin{bmatrix} 0 & 0 & 0 \\ 1 & 0 & 0 \\  0 & -2  & 0
+\end{bmatrix}.
+$$
+
+---
+
+The nonzero basis vector pairings are $\ 
+\kappa(\esl, \fsl) = 4\ {}$ and $\ \kappa(\hsl, \hsl) = 8. \ {}$ 
+
+Hence
+$$
+\kappa(\eta, \zeta) = 4 \, \text{trace}(\eta \, \zeta) \qquad \forall \ \eta, \zeta \in \mathfrak{sl}(2, \C).\phantom{X^\int}
+$$
+
+-->
+---
+routeAlias: Jordan–Chevalley-decomposition
+---
+
+### Semisimple elements and the Jordan–Chevalley decomposition
+
+An element $\xi$ of a Lie algebra $\fg$ is *semisimple* if $\ad_\xi$ is *potentially diagonalizable*, i.e. can be diagonalized over the algebraic closure of the field in question.
+
+Under appropriate conditions, $\exists \ {}$ semisimple $\xi_{s} \in \fg$ and nilpotent $\xi_n \in \fg$ satisfying
+$$
+\xi = \xi_{s} + \xi_n \sands [\xi_{s}, \xi_n] = 0.
+$$
+This is called the (additive) [Jordan–Chevalley decomposition](https://en.wikipedia.org/wiki/Jordan%E2%80%93Chevalley_decomposition) (AKA abstract Jordan decomposition) of $\xi$.
+<Spacer size="5px"/>
+
+***Relationship to the Jordan normal form:*** Given $A \in GL(n, \C)$ and invertible matrix $U$ such that <br/>
+$U A U^{-1}$ is in Jordan normal form, if $D$ is the diagonal matrix with diagonal entries equalling those of $U A U^{-1}$, then
+
+- $A_{s} := U^{-1}D U \, {}$ is diagonalizable, and 
+
+- $A_n := A - A_{s}$ is nilpotent.
+$$
+
+---
+
+#### Some properties of the Jordan–Chevalley decomposition
+
+- $\ad_{\xi_s} \ad_{\xi_n}$ is nilpotent
+
+- $\xi_s$ and $\xi_n$ are $\kappa$-orthogonal, i.e. $\kappa(\xi_s, \xi_n) = 0.$
+
+- If $V$ is a finite dimensional vector field over $\C$, every element of $\mathfrak{gl}(V)$ has a Jordan–Chevalley decomposition
+
+*In-class group exercise: Verify the first two claims.* $\phantom{\sum^X}$
+<Spacer size="5px"/>
+
+
+A Lie algebra $\fg$ is *semisimple* if it can be expressed as a direct sum of simple Lie algebras, i.e. it contains no nonzero solvable ideals.
+
+Any simple Lie algebra is semisimple.
+<Spacer size="1px"/>
+
+- If $\fg$ is semisimple, every element of $\fg$ has a Jordan–Chevalley decomposition.
+<Spacer size="1px"/>
+
+
+*Verification later (time permitting)*.
+
+---
+
+### Radicals and solvable ideals
+
+The *radical* $\radg$ of a Lie algebra $\fg$ is the unique maximal solvable ideal of $\fg$.
+
+***Claim:*** 
+
+1. $\fg$ is semisimple $\ \ \Longleftrightarrow \ \ \radg$ is trivial.
+
+2. $\fg/\radg$ is semisimple.
+
+3. If $\mathfrak{b}$ is a solvable ideal in $\fg,\ \ 
+\fg/\mathfrak{b} \ \ \text{semisimple} \ \ \Longrightarrow \ \ \mathfrak{b} = \radg.$
+
+4. (Levi Theorem) For any Lie algebra $\fg, \ \exists \ {}$ a semisimple subalgebra $\fg_s$ of $\fg$ such that
+$$
+\fg = \radg \oplus \fg_{s}
+$$
+*Verify (sketch):*
+
+---
+
+#### Second slide of verfication of features of radicals 
+
+<Spacer size="15px"/>
+
+2. Let $I$ be a solvable ideal in $\ \fg/\radg$.
+
+$\quad{}$ If $\pi: \fg \to \fg/\radg\ {}$ denotes projection onto the quotient,
+$\ I \ {}$ and $\ \radg\ {}$ solvable $\ \ \Longrightarrow$
+$$
+\tilde I := \pi^{-1}(I)
+$$
+$\quad{}$ is solvable.
+
+$$
+\eqa{
+\tilde I \supseteq \radg \supseteq \tilde I \quad &\Longrightarrow \quad \tilde I = \radg  \\
+\quad &\Longrightarrow \quad I = \tilde I/\radg = \{0\}.
+}
+$$
+<Spacer size="5px"/>
+
+3. NTS any solvable ideal in $\fg$ is contained in $\mathfrak{b}$.
+
+$\quad \ \fg/\mathfrak{b}\ {}$ semisimple $\quad \Longrightarrow \quad \text{rad}(\fg/\mathfrak{b}) = \{0\}$
+
+$\qquad \qquad \qquad \qquad \ \ \ \Longrightarrow\ \radg \subseteq \mathfrak{b}$.
+
+$\quad {}$ Maximality of $\radg \quad \Longrightarrow \quad \mathfrak{b} = \radg$.
+
+---
+
+### Eigenvalues and the radical
+
+***Claim:*** If $(V, \rho)\ {}$ is an irreducible complex $\fg$-module, then $\ \exists \ \lambda: \radg \to \C\ {}$ satisfying
+
+1. $\rho(\xi) = \lambda(\xi) \idm_V \qquad \quad \forall \ \xi \in \radg$
+
+2. $\lambda([\fg, \radg]) = \{0\}$.
+<Spacer size="5px"/>
+
+*Verify:* $\ \ 1.\ {}$ $\radg\,{}$ [solvable $\quad {}$$\Longrightarrow$](solvable-1d-submodule) $\quad \exists \ \lambda: \radg \to \C\ {}$ and $0 \neq v_0 \in V\ {}$ such that
+$$
+\rho(\eta)(v_0) = \lambda(\eta) v_0 \qquad \quad \forall \ \eta \in \radg.
+$$
+
+The subspace
+$$
+V_\lambda := \cap_{\eta \in \radg} \text{ker} (\rho(\eta) - \lambda(\eta) \idm_{\!V})
+$$
+is nontrivial, since it contains $v_0$. 
+
+---
+
+#### Second slide of verification of the relationship between eigenvalues and the radical
+
+Let $v, \xi, \eta$ denote arbitrary elements of $V_\lambda, \fg, \ {}$ and $\radg$.
+$$
+\rho(\eta) \circ \rho(\xi) = \rho(\!\!\underbrace{[\eta, \xi]}_{\in \ \radg}\!\!) + \rho(\xi) \circ \rho(\eta) 
+$$
+$\Longrightarrow$
+$$
+\eqa{
+(\rho(\eta) - \lambda(\eta) \idm_{\!V})(\rho(\xi)(v))&=   
+\underbrace{\rho([\eta, \xi])(v)}_{= \,\lambda([\eta, \xi]) v} 
++ \rho(\xi)(\underbrace{\rho(\eta)(v)}_{= \, \lambda(\eta) v}) - \lambda(\eta)\rho(\xi)(v) \\
+&= \lambda([\eta, \xi]) v \in V_\lambda,\phantom{\sum^x} 
+} 
+$$
+so $\ V_\lambda\ {}$ is a $\fg$-submodule.
+
+Irreducibility of $V\quad \Longrightarrow \quad V_\lambda = V$.
+
+---
+
+#### Third slide of verification of the relationship between eigenvalues and the radical
+
+*Verify 2.:* $\ \ {}$ Let $v, \xi, \eta$ denote arbitrary elements of $V_\lambda, \fg, \ {}$ and $\radg$.
+
+$\radg$ solvable $\quad \Longrightarrow \quad [\fg, \radg]\ {}$ is either trivial or $\radg$.
+<Spacer size="1px"/>
+
+If $[\fg, \radg] = \{0\}, \ {}$  nothing to show. 
+<Spacer size="1px"/>
+
+$[\fg, \radg] = \radg\quad \Longrightarrow \quad \ {}$ for any $v \in V, \xi \in \fg, \eta \in \radg, \ {}$
+$$
+\eqa{
+\lambda([\xi, \eta]) v &= \rho([\xi, \eta])(v) \phantom{\sum} \\
+&= \rho(\xi)(\rho(\eta)(v)) - \rho(\eta)(\rho(\xi)(v)) \phantom{\sum}\\
+&= \rho(\xi)(\lambda(\eta)v) - \lambda(\eta)\rho(\xi)(v) \phantom{\sum}\\
+&= 0.
+}
+$$
+
+
 
 ---
 
@@ -74,111 +314,115 @@ The Killing form of $so(3, \R)$ is negative-definite.
 
 - $\fg$ is semisimple $\quad \Longleftrightarrow \quad \kappa\ {}$ is nondegenerate.
 
-$~$
-
-*Verify solvabililty criterion*  "$\Longleftarrow$":
-
-Suppose that $\kappa([\xi, \eta], \zeta) = 0 \quad \forall \ \xi, \eta, \zeta \in \fg$.
-
-$\text{ker} \, \ad = \fz(\fg)\ {}$ is solvable.
-
-Hence it suffices to show that 
-
-$$\text{range}\ \ad \approx \fg/\fz(\fg)$$ 
-is solvable, which follows from a more general result, taking $V = (\fg, \ad)$.
-
----
-
-***Lemma***
-If $\fg ⊆ \text{End}(V)$, then  
-$$
-\tr([\xi, \eta] \zeta) = 0 \qquad \forall \ \ \xi, \eta, \zeta \in \fg \qquad \Longrightarrow \qquad \fg \ \text{solvable}.
-$$
-$~$
-*Verify:* Let 
-$$
-\xi = \xi_{ss} + \xi_n
-$$
-be the Jordan decomposition of $\xi \in [\fg, \fg]$, and let $\bar \xi_{ss}$ denote the element of $\fg$ with the same eigenspaces as those of $\xi_{ss},\ {}$ but with eigenvalues that are the complex conjugates of the corresponding eigenvalues $λ_1, \ldots ,λ_n$ of $\xi_{ss}$.
-
-$\tr (\xi_n \bar \xi_{ss}) = 0 \quad \Longrightarrow$
-$$
-\tr (\xi \bar \xi_{ss}) = \tr (\xi_{ss} \bar \xi_{ss}) = \textstyle {\sum_j} |λ_j|^2.
-$$
-
----
-
-Jordan Decomposition consequences include 
-$$\ad_{\bar \xi_{ss}} = Q(\ad_\xi)$$
-for some polynomial $Q$ with no constant term.
-$~$
-$\xi ∈ [\fg,\fg] \quad \Longrightarrow \quad \xi = \sum_k[\eta_k, \zeta_k],\ {}$ for some $\eta_k, \zeta_k \in \fg$, so
-$$
-\tr (\xi \bar \xi_{ss}) = \sum_k \tr \lp [\eta_k, \zeta_k] \bar \xi_{ss} \rp 
-= - \sum_k \tr \lp [\bar \xi_{ss}, \zeta_k]  \eta_k \rp .
-$$
-
-Since
-$$
-\ad_{\bar \xi_{ss}} \zeta_k = Q(\xi_{ss}) \zeta_k 
-= Q(\xi_{ss}) \zeta_k  \in [\fg, \fg]
-$$
-$\Longrightarrow \quad \tr \lp [\bar \xi_{ss}, \zeta_k]  \eta_k \rp = 0, \ {}$
-
----
-
-we have 
-$$
-\textstyle {\sum_j} |λ_j|^2 = \tr (\xi \bar \xi_{ss}) = 0.
-$$
-Hence $λ_1 = \cdots = λ_n = 0$, so $\xi$ is nilpotent.
-$~$
-Engel’s theorem ($\fg$ is nilpotent $\ \ \Longleftrightarrow \ \ \ad_\xi$ is nilpotent for all $\xi \in \fg$)
-$\Longrightarrow \quad [\fg, \fg]\ {}$ is nilpotent
-$\Longrightarrow \quad \fg$ is solvable.
-$~$
-This completes the proof of the lemma, and of the "$\Longleftarrow$" of Cartan's solvabililty criterion.
-$~$
-$~$
-$~$
-
----
-
+<Spacer size="1px"/>
 *Verify solvabililty criterion:* “$\Longrightarrow$”: &nbsp; 
 
-Suppose that $\fg$ is solvable.
+If $\fg$ is solvable, Lie’s theorem $\quad \Longrightarrow \quad \exists\,{}$ basis of $\fg$ with respect to which the matrix representation $A(\xi)$ of $\ad_\xi$ is upper triangular for any $\xi \in \fg$.
 
-Lie’s theorem $\Longrightarrow \quad \exists$ basis of $\fg$ with respect to which the matrix representation $A(\xi)$ of $\ad_\xi$ is upper triangular for any $\xi \in \fg$.
-
-For any $\xi, \eta, \zeta \in \fg$, 
-
-$\Longrightarrow\quad A([\xi, \eta]) = [A(\xi), A(\eta)]\ {}$ is strictly upper triangular
+$\Longrightarrow \ \ {}$ for any $\xi, \eta, \zeta \in \fg$, 
+$\ \  A([\xi, \eta]) = [A(\xi), A(\eta)]\ {}$ is strictly upper triangular
 
 $\Longrightarrow\quad A([\xi, \eta]) A(\zeta) \ {}$ is strictly upper triangular
 
-$\Longrightarrow$
-$$\eqa{
- \kappa([\xi, \eta], \zeta) &= \tr(\ad_{[\xi, \eta]} \ad_\zeta)  \\
-&= \tr (A([\xi, \eta]) A(\zeta))\\
+$$
+\eqa{
+\Longrightarrow \qquad\qquad\qquad\qquad\qquad \kappa([\xi, \eta], \zeta) &= \text{trace}(\ad_{[\xi, \eta]} \ad_\zeta)  \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\\
+&= \text{trace} (A([\xi, \eta]) A(\zeta))\\
 &= 0.
 }
 $$
 
 ---
 
-*Verify semisimplicity criterion*  "$\Longrightarrow$":
+#### Lemma: a solvability condition for $\fg ⊆ \text{End}(V)$
 
-Nondegeneracy of $\kappa \quad \Longrightarrow \quad \fg\ {}$ is reductive.
+The proof of the  "$\Longleftarrow$" direction of the solvability criterion uses the following lemma:
+<Spacer size="1px"/>
 
-$\xi \in \fz(\fg) \quad \Longrightarrow \quad \ad_\xi = 0 \quad \Longrightarrow \quad \kappa(\xi, \eta) = \tr(\ad_\xi \ad_\eta) = 0 \qquad \forall \eta \in \fg$.
+***Lemma***
+If $\fg ⊆ \text{End}(V)$, then $\fg$ is solvable $\ \ \Longleftrightarrow \ \ {}$ 
+$$
+\text{trace}([\xi, \eta] \zeta) = 0 \qquad \forall \ \ \xi, \eta, \zeta \in \fg .
+$$
+
+*Verify:* Let 
+$
+\xi = \xi_{s} + \xi_n
+$
+be the [Jordan–Chevalley (JC) decomposition](Jordan-Chevalley-decomposition) of $\xi \in [\fg, \fg]$, and let $\bar \xi_{s}$ denote the element of $\fg$ with the same eigenspaces as those of $\xi_{s},\ {}$ but with eigenvalues that are the complex conjugates of the corresponding eigenvalues $λ_1, \ldots ,λ_n$ of $\xi_{s}$.
+
+$\kappa$-orthogonality of the factors of the JC decomposition $\ \ \Longrightarrow \ \ \text{trace} (\xi_n \bar \xi_{s}) = 0 \quad \Longrightarrow$
+$$
+\text{trace} (\xi \bar \xi_{s}) = \text{trace} (\xi_{s} \bar \xi_{s}) = \textstyle {\sum_j} |λ_j|^2.
+$$
+
+Another feature of the JC decomposition is the existence of a polynomial $Q$ such that
+$$
+\ad_{\bar \xi_{s}} = Q(\ad_\xi) \sands Q(0) = 0.
+$$
+
+---
+
+#### Second slide of proof of lemma
+
+$\xi ∈ [\fg,\fg] \quad \Longrightarrow \quad \xi = \sum_k[\eta_k, \zeta_k],\ {}$ for some $\eta_k, \zeta_k \in \fg\quad \Longrightarrow$
+$$
+\eqa{
+\text{trace} (\xi \bar \xi_{s}) &= \sum_k \text{trace} \lp [\eta_k, \zeta_k] \bar \xi_{ss} \rp \\
+&= - \sum_k \text{trace} \lp [\bar \xi_{s}, \zeta_k]  \eta_k \rp .
+}
+$$
+
+$
+[\bar \xi_{s}, \zeta_k] = [Q(\xi_{s}), \zeta_k ] \in [\fg, \fg]
+\quad \Longrightarrow \quad \text{trace} \lp [\bar \xi_{s}, \zeta_k]  \eta_k \rp = 0 \ {}$
+
+we have 
+$$
+\textstyle {\sum_j} |λ_j|^2 = \text{trace} (\xi \bar \xi_{s}) = 0.
+$$
+Hence $λ_1 = \cdots = λ_n = 0$, so $\xi$ is nilpotent.
+$~$
+Engel’s theorem ($\fg$ is nilpotent $\ \ \Longleftrightarrow \ \ \ad_\xi$ is nilpotent for all $\xi \in \fg$)
+$\Longrightarrow \quad [\fg, \fg]\ {}$ is nilpotent
+$\Longrightarrow \quad \fg$ is solvable.
+<Spacer size="1px"/>
+
+This completes the proof of the lemma.
+
+---
+
+#### Back to the proof of Cartan's solvability criterion
+
+*Verification of the solvability criterion*  "$\Longleftarrow$":
+
+Suppose that $\kappa([\xi, \eta], \zeta) = 0 \quad \forall \ \ \xi, \eta, \zeta \in \fg$.
+
+$\text{ker} \, \ad = Z(\fg)\ {}$ solvable $\ \ \Longrightarrow \ \ {}$
+it suffices to show that 
+$$\text{range}\ \ad \approx \fg/Z(\fg)$$ 
+is solvable, which follows from the lemma on the next slide, taking $V = (\fg, \ad)$.
+
+
+---
+
+#### Proof of Cartan's semisimplicity criterion
+
+ "$\Longrightarrow$": $\quad{}$ Nondegeneracy of $\kappa \quad \Longrightarrow \quad \fg\ {}$ is reductive.
+
+$$
+\eqa{
+\xi \in Z(\fg) \quad &\Longrightarrow \quad \ad_\xi = 0 \phantom{\sum} \\
+&\Longrightarrow \quad \kappa(\xi, \eta) = \text{trace}(\ad_\xi \ad_\eta) = 0 \qquad \forall \ \eta \in \fg.
+}
+$$
 
 Nondegeneracy of $\kappa \quad \Longrightarrow \quad\xi = 0$.
 
-$\fg$ reductive and $\fz(\fg) = \{ 0 \} \quad \Longrightarrow \quad \fg\ {}$ is semisimple.
+$\fg$ reductive and $\, Z(\fg) = \{ 0 \} \quad \Longrightarrow \quad \fg\ {}$ is semisimple.
+<Spacer size="5px"/>
 
-"$\Longleftarrow$":
-
-$I := \text{ker} \, \kappa \ {}$ is an ideal.
+"$\Longleftarrow$":$\quad \ I := \text{ker} \, \kappa \ {}$ is an ideal.
 
 The Killing form $\kappa_I$ of $I$ is the restriction of $\kappa$ to $I$, and hence is zero.
 
@@ -186,6 +430,9 @@ Cartan’s criterion for solvability $\quad \Longrightarrow \quad I\ {}$ is solv
 
 Semisimplicity of $\fg \quad \Longrightarrow \quad I = \text{ker} \, \kappa \ {}$ is trivial.
 
+<!--
+
+JUST TEMPORARY UNTIL CLEANED UP!
 -------
 
 ## Properties of Lie algebras of compact Lie groups
@@ -466,3 +713,4 @@ A choice of orthonormal basis for $\fg$ determines an isomorphism of $\ O(\fg)\ 
 $~$
 Since $\ \text{Aut}(\fg)\ {}$ is closed in $\ GL(\fg), \ {}$ and $\ \Ad(G) \, {}$ is a  connected component of $\, \text{Aut}(\fg),$ compactness of $\ \Ad(G)\ {}$ follows from that of $\ O(\fg) \ {}$. 
 
+-->
