@@ -176,7 +176,7 @@ $$
 <Spacer size="5px"/>
 
 
-A Lie algebra $\fg$ is *semisimple* if it can be expressed as a direct sum of simple Lie algebras, i.e. it contains no nonzero solvable ideals.
+A Lie algebra $\fg$ is *semisimple* if it can be expressed as a direct sum of simple Lie algebras, i.e. it contains no onzero nontrivial solvable ideals.
 
 Any simple Lie algebra is semisimple.
 <Spacer size="1px"/>
@@ -208,9 +208,13 @@ $$
 $$
 *Verify (sketch):*
 
+$\ \ 1.\ \ ``\Longrightarrow" \ \ \ \fg$ semisimple $\ \ \Longrightarrow \ \ \fg$ has has no nontrivial solvable ideals. 
+
+$\ \ \ \ \ \ ``\Longleftarrow" \ \ \ {}$ triviality of the maximal solvable ideal $\ \ \Longrightarrow \ \ \fg$ has no nontrivial solvable ideals. 
+
 ---
 
-#### Second slide of verfication of features of radicals 
+#### Second slide of verification of features of radicals 
 
 <Spacer size="15px"/>
 
