@@ -273,7 +273,7 @@ $$
 
 ---
 
-#### Synopsis of the [proof of the diagonalizability of the action of the radical on an irreducible complex $\fg$-module](proof-relationship-eigenvalues-radical)
+#### Synopsis of the [proof of the diagonalizability claim](proof-relationship-eigenvalues-radical)
 <Spacer size = "15px"/>
 
 1. $V_\lambda$ is $\fg$-invariant, and hence is a $\fg$-submodule. Since $V$ is irreducible and $V_\lambda \supseteq \text{span}\{v_0\}$ is nontrivial, $V_\lambda = V$. 
