@@ -246,7 +246,7 @@ $\quad {}$ Maximality of $\radg \quad \Longrightarrow \quad \mathfrak{b} = \radg
 routeAlias: relationship-eigenvalues-radical
 ---
 
-### Eigenvalues and the radical
+### Diagonalizability of the action of the radical on an irreducible complex $\fg$-module
 
 ***Claim:*** If $(V, \rho)\ {}$ is a finite dimensional irreducible complex $\fg$-module, then $\ \exists \ \lambda: \radg \to \C\ {}$ satisfying
 
@@ -271,7 +271,7 @@ $$
 
 ---
 
-#### Synopsis of the [proof of the relationship between eigenvalues and the radical](proof-relationship-eigenvalues-radical)
+#### Synopsis of the [proof of the diagonalizability of the action of the radical on an irreducible complex $\fg$-module](proof-relationship-eigenvalues-radical)
 <Spacer size = "15px"/>
 
 1. $V_\lambda$ is $\fg$-invariant, and hence is a $\fg$-submodule. Since $V$ is irreducible and $V_\lambda \supseteq \text{span}\{v_0\}$ is nontrivial, $V_\lambda = V$. 
