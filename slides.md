@@ -257,7 +257,6 @@ src: LieGroupsSlides/Borcherds_nilpotent_solvable_fragments.md
 -->
 
 
-
 ---
 src: LieGroupsSlides/Killing_form_structure_algebras_compact_groups.md
 ---
