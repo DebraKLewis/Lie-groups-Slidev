@@ -246,6 +246,8 @@ $\quad {}$ Maximality of $\radg \quad \Longrightarrow \quad \mathfrak{b} = \radg
 routeAlias: relationship-eigenvalues-radical
 ---
 
+<!-- What the heck is going on? -->
+
 ### Diagonalizability of the action of the radical on an irreducible complex $\fg$-module
 
 ***Claim:*** If $(V, \rho)\ {}$ is a finite dimensional irreducible complex $\fg$-module, then $\ \exists \ \lambda: \radg \to \C\ {}$ satisfying
