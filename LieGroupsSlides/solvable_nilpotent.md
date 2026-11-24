@@ -93,6 +93,8 @@ so $\ I = \mathfrak{sl}(2, F) \ {}$ if either $x$ or $y$ is nonzero.
 $x = y = 0\quad \Longrightarrow \quad h \in I \quad \Longrightarrow \quad I =\mathfrak{sl}(2, F)$.
 
 ---
+routeAlias: solvable-nilpotent-algebras
+---
 
 ### Solvable and nilpotent Lie algebras
 

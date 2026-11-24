@@ -15,10 +15,19 @@
 - [A symplectic structure determines a Poisson bracket](symplectic-induces-Poisson)
 
 - [Local trivialization of the canonical symplectic structure on a cotangent bundle via a 1-form](canonical-symplectic-in-terms-of-1-form)
+<Spacer size = "15px"/>
+
+##### (continues on the next slide)
+
+---
+
+### Appendix B. Table of Contents continued
 
 - [Momentum map of $M = T^*Q$ with a lifted $G$ action](momentum-map-cotangent-bundle)
 
 - [A free and proper action of a compact group determines a principal bundle](quotient-free-proper-principal-bundle)
+
+- [Generalized Jordan decomposition](generalized-Jordan-decomposition) (slides need tidying up)
 
 ---
 routeAlias: representation-via-pushforward
@@ -747,3 +756,201 @@ Equivariance of $F$ with respect to left multiplication on the first factor $\ \
 $\Longrightarrow \ \ F$ is injective, and hence a diffeomorphism onto its image. 
 
 This construction determines the required equivariant local trivialization near $z$.
+
+---
+routeAlias: generalized-Jordan-decomposition
+---
+
+### Generalized Jordan decomposition
+
+Let $\fg$ be a complex semisimple Lie algebra, and $\, \xi \in \fg$.
+
+The generalized eigenspace decomposition of $\fg$ w.r.t. $\ad_\xi$ is
+$$
+\fg = \oplus_{λ ∈ \Lambda(\xi)} \fg_λ,
+$$
+where $\ \Lambda(\xi)\ {}$ is the set of eigenvalues of $\ \ad_\xi, \ {}$ and
+$$
+\setdef {\fg_λ} \eta \fg {(\ad_\xi − λ \, \text{id}_\fg)^n(\eta) = 0} \quad \text{for some}\ n \in \N.
+$$
+
+***Claim***: $\lambda, \mu \in \Lambda(\xi) \ \Longrightarrow$ 
+$$
+[\fg_λ, \fg_µ] ⊆ \fg_{λ+µ}.
+$$
+
+*Verify:*  $\, \ad_\xi \in \derg \quad \Longrightarrow$
+$$
+(\ad_\xi − (λ + µ) \text{id}_\fg)[\eta, \zeta] = [\ad_\xi(\eta) − λ \, \eta, \zeta] + [\eta,\ad_\xi(\zeta) − µ \, \zeta].
+$$
+
+---
+
+Repeated application of $\ \ad_\xi − (λ + µ) \text{id}_\fg\ {}$ yields
+$$
+(\ad_\xi − (λ + µ) \text{id}_\fg)^n[\eta, \zeta] 
+= \sum_{k = 0}^n \begin{pmatrix}n \\ k \end{pmatrix} 
+[(\ad_\xi − λ \, \text{id}_\fg)^k \eta, (\ad_\xi − µ\,\text{id}_\fg)^{n - k}\zeta].
+$$
+
+$\eta ∈ \fg_λ \ {}$ and $\ \zeta ∈ \fg_µ \ \Longrightarrow$ 
+$$
+(\ad_\xi − λ − µ)^n[\eta, \zeta] = 0 
+\qquad \text{if} \qquad n > \text{dim} \, \fg_λ + \text{dim} \, \fg_µ,
+$$
+so $\ [\eta, \zeta] \in\fg_{λ+µ}$.
+
+***Claim***: $\exists \ \xi_s, \xi_n \in \fg\ {}$ such that the semisimple and nilpotent components of the Jordan decomposition of $\,\ad_\xi \, {}$ satisfy
+$$
+ (\ad_\xi)_s = \ad_{\xi_s} \sands (\ad_\xi)_n = \ad_{\xi_n}.
+ $$
+
+*Verify:* Since $\ (\ad_\xi)_s \ {}$ is the diagonalizable component of $\ \ad_\xi$,
+$$
+(\ad_\xi)_s|_{\fg_λ}= λ \, \text{id}_{\fg_λ} \qquad \forall \ \lambda \in \Lambda(\xi). 
+$$
+
+---
+
+Consider $\ \eta ∈ \fg_λ\ {}$ and $\ \zeta ∈ \fg_µ$.
+
+$[\eta, \zeta] ∈ \fg_{λ+µ} \quad \Longrightarrow$
+$$
+\eqa{
+(\ad_\xi)_s([\eta, \zeta]) &= (λ + µ) [\eta, \zeta] \\
+&= [λ\,\eta, \zeta] + [\eta, µ\,\zeta] \\
+&= [(\ad_\xi)_s(\eta), \zeta] + [\eta, (\ad_\xi)_s(\zeta)]
+}
+$$
+Linearity of $\ (\ad_\xi)_s \ \Longrightarrow$ 
+$$
+(\ad_\xi)_s ∈ \derg = \ad(\fg).
+$$
+
+Semisimplicity of $\fg \ \Longrightarrow \ \derg = \ad(\fg).\ {}$ 
+
+Let $\xi_s$ be such that $\ ((\ad_\xi)_s = \ad_{\xi_s}$ and set 
+$$
+\xi_n = \xi - \xi_s.
+$$
+
+---
+
+Uniqueness of $\xi_s$ and $\xi_n$ follows from uniqueness of the Jordan decomposition, since
+$$
+%\xi_s + \xi_n = \xi_s′ + \xi_n′
+\ad_{\xi_s} = (\ad_\xi)_s = \ad_{\xi_s'}
+\quad \Longrightarrow \quad
+\xi_s - \xi_s' \in \ker{\ad} = \fz(\fg),
+$$
+and semisimplicity of $\ \fg \Longrightarrow \fz(\fg) = \triv.$
+$~$
+Note that
+$$
+\eqa{
+  \ad_\xi(\eta) = 0 \ &\Longrightarrow \ \eta \in \fg_0 \\
+ &\Longrightarrow \  (\ad_\xi)_s (\eta) = 0,
+}
+$$
+and hence
+$$
+(\ad_\xi)_n (\eta) = \ad_{\xi - \xi_s}(\eta) = \ad_\xi(\eta) - (\ad_\xi)_s (\eta) = 0.
+$$
+$~$
+The block structure of $\ad_\xi \ \Longrightarrow \ {}$
+$$
+\ad_{[\xi_s, \xi_n]} = [\ad_{\xi_s}, \ad_{\xi_n}] = 0, \qquad
+\text{and hence} \qquad  [\xi_s, \xi_n] = 0.
+$$
+
+---
+routeAlias: proof-relationship-eigenvalues-radical
+---
+
+### Verification of the [relationship between eigenvalues and the radical](relationship-eigenvalues-radical)
+
+$\radg$ an ideal $\ \ \Longrightarrow$
+$$
+\rho(\eta) \circ \rho(\xi) = \rho(\!\!\underbrace{[\eta, \xi]}_{\in \ \radg}\!\!) + \rho(\xi) \circ \rho(\eta)
+$$
+for any $\eta \in \radg$ and $\xi \in \fg$. 
+<Spacer size = "2px"/>
+
+$V_\lambda$ is nontrivial, since $v_0 \in V_\lambda$. &nbsp; Define a sequence of nested subspaces $W_0 \subseteq W_1 \subseteq W_2 \cdots \ {}$ by
+$$
+W_0 := V_\lambda \sands W_{j + 1} := W_j + \rho(\fg)(W_j).
+$$
+
+Show by induction that for any $\eta \in \radg$,
+$$
+\sigma_\lambda(\eta)(W_j) \subseteq W_j \qquad \forall \ j = 0, 1, 2, \ldots
+$$
+<Spacer size = "2px"/>
+
+$j = 0: W_0 = V_\lambda \ \ \Longrightarrow \ \ \sigma_\lambda(\eta)(W_0) = \{0\}$.
+
+
+---
+
+#### Second slide of the proof of the [relationship between eigenvalues and the radical](relationship-eigenvalues-radical)
+<Spacer size = "2px"/>
+
+Induction step: 
+By the induction hypothesis, $v \in W_j \ \ \Longrightarrow \ \ \sigma_\lambda(\eta)(v) \in W_j$.
+
+$v \in W_j\ \ \Longrightarrow$ 
+$$
+\sigma_\lambda(\eta)(\rho(\xi)(v))
+= \underbrace{\rho([\eta, \xi])(v)}_{\in \ W_j}  
++ \rho(\xi)(\underbrace{\sigma_\lambda(\eta)v}_{\in \ W_j}) 
+\ \ \in \ W_{j + 1}.
+$$
+
+Side calculation: $v \in W_j$ and $\zeta = [\eta, \xi] \in \radg \ \ \Longrightarrow$ 
+
+$\qquad \qquad\qquad\quad  
+\rho(\zeta)(v) = \sigma_\lambda(\zeta)(v) + \lambda(\zeta) v \ \in \ W_j$.
+
+Hence 
+$$
+\sigma_\lambda(\eta)(W_{j + 1}) \subseteq W_{j + 1}.
+$$
+<Spacer size = "2px"/>
+
+$V$ is irreducible and $\, W := \cup_{j \geq 0} W_j$ is $\fg$-invariant and nontrivial, so $W = V$.
+
+---
+
+#### Third slide of the proof of the [relationship between eigenvalues and the radical](relationship-eigenvalues-radical)
+<Spacer size = "2px"/>
+
+We can choose a basis of $V$ that simultaneously block upper triangularizes $\rho(\eta)$ for all $\eta \in \radg$, with the $(j + 1)$-th diagonal block encoding the induced actions on $W_{j + 1}/W_j$. &nbsp; (Take $W_{-1} := \{0\}$.)
+
+$v \in W_j, \eta \in \radg, \xi \in\fg \ \ \Longrightarrow$ 
+$$
+[\sigma_\lambda(\eta), \rho(\xi)](v) = \rho([\eta, \xi])(v) \ \in \ W_j
+$$
+$\Longrightarrow \ \ [\sigma_\lambda(\eta), \rho(\xi)](v) = 0 \ \ \text{mod} \ W_j$.
+<Spacer size = "2px"/>
+
+In particular, we can use an induction argument to show that if $s_j: \radg \to \text{End}(W_j/W_{j - 1})$ is the map determined by restricting $\sigma_\lambda(\eta)$ to $W_j$ and then dropping to the quotient, then $s_j(\eta)$ is nilpotent for all $\eta \in \radg$ and all pertinent $j$. 
+<Spacer size = "2px"/>
+
+Further Jordan Normal Form-adjacent reasoning shows that for each $\eta \in \radg$, $\lambda(\eta)$ is the unique eigenvalue of $\rho(\eta)$, and that $\exists$ a basis of $V$ with respect to which $\rho(\eta)$ is upper triangular for all $\eta \in \radg$. 
+
+---
+
+#### Fourth slide of the proof of the [relationship between eigenvalues and the radical](relationship-eigenvalues-radical)
+<Spacer size = "2px"/>
+
+Since $\radg$ is an ideal, $[\eta, \xi] \in \radg$ for any $\eta \in\radg, \xi \in \fg$. 
+
+$\Longrightarrow \ \ \rho([\eta, \xi])$ has the unique eigenvalue $\lambda([\eta, \xi])$. 
+<Spacer size = "2px"/>
+
+$$
+\text{trace} \, \rho([\eta, \xi]) = \text{trace} \, [\rho(\eta), \rho(\xi)] = 0
+$$
+
+$\Longrightarrow \ \  \lambda([\eta, \xi]) = 0$.
+

@@ -1,3 +1,4 @@
+<!--
 ## $\mathfrak{g}$ semisimple $\ \ \Longrightarrow \ \ \exists \ {}$ compact group with Lie algebra $\mathfrak{g}$
 
 We've showed that 
@@ -71,7 +72,6 @@ $$\eqa{|A|^2 &= \textstyle{\sum_{j, k = 1}^\ell } a_{jk}^2 \\
 $$
 where $|A|$ is the usual norm on $\ gl(n, \R) \approx \R^{n \times n}$, so $\ O(n, \R)\ {}$ is bounded, 
 $\Longrightarrow \ O(n, \R)\ {}$ is  compact. 
-
 
 ---
 
@@ -175,49 +175,61 @@ $$
 \text{and hence} \qquad  [\xi_s, \xi_n] = 0.
 $$
 
----
+-->
 
 ### Toral subalgebras
 
-A subalgebra $\ft$ of $\fg$ is *toral* if $\ft$ is abelian and all elements of $\ft$ are semisimple. 
-$~$
-***Example:*** $\fg = sl(n, \C). \ {}$  The subalgebra  $\ \ft\ {}$ of diagonal traceless matrices is toral.
-$~$
+A subalgebra $\ft$ of $\fg$ is *toral* if $\ft$ is Abelian and all elements of $\ft$ are semisimple. 
+<Spacer size="1px"/>
 
-***Claim***: If $\fg$ is a Lie algebra over an algebraically closed field, any subalgebra $\ft$ of $\fg$ consisting of semisimple elements is abelian.
+***Example:*** $\fg = \mathfrak{sl}(n, \C). \ {}$  The subalgebra of diagonal traceless matrices is toral.
+<Spacer size="1px"/>
+
+***Claim***: If $\fg$ is a Lie algebra over an algebraically closed field, any subalgebra $\ft$ of $\fg$ consisting of semisimple elements is Abelian, and hence toral.
 
 *Verify:* Let $\widetilde \ad \in \text{Der}(\ft)$ denote the restriction of $\ad$ to $\ft$.
 
-$\xi \in \ft \quad \Longrightarrow \quad \widetilde \ad_\xi$ is diagonalizable.  
+$\xi \in \ft \ \ \Longrightarrow \ \ \widetilde \ad_\xi$ is diagonalizable. We now show that $0$ is the only eigenvalue of $\widetilde \ad_\xi$. 
 
-Need to show that $\widetilde \ad_\xi$ has no nonzero eigenvalues. 
+If $\eta$ is an eigenvector of $\widetilde \ad_\xi$ with eigenvalue $\lambda$, 
+$$
+\eqa{
+\widetilde \ad_\eta^2(\xi) &= - \widetilde \ad_\eta(\widetilde \ad_\xi(\eta))\\
+&= - \lambda \, \widetilde \ad_\eta(\eta)  = 0.
+}
+$$
 
 ---
 
-If $\eta$ is an eigenvector of $\widetilde \ad_\xi$, with eigenvalue $\lambda$, 
-$$
-\widetilde \ad_\eta(\xi) = -  \widetilde \ad_\xi(\eta) = - \lambda \eta \qquad \Longrightarrow \qquad \widetilde \ad_\eta^2(\xi) = 0.
-$$
-$~$
+#### Second slide of proof that a subalgebra of semisimple elements is toral <br/>(for algebras over algebraically closed fields)
+<Spacer size="5px"/>
+
 $\eta$ semisimple $\quad \Longrightarrow \quad \widetilde \ad_\eta$ diagonalizable 
+
 $\Longrightarrow \quad \exists\ {}$ eigenbasis $\{\zeta_1, \cdots, \zeta_k\}$ of $\ft$, with associated eigenvalues $\lambda_1, \ldots, \lambda_k$.
 
 $$
-\xi = \sum_j c_j \zeta_j \quad \Longrightarrow \quad 0 = \widetilde \ad_\eta^2(\xi) = \sum_j c_j \lambda_j^2 \zeta_j,
+\xi = \textstyle{\sum_j} c_j \, \zeta_j \qquad \Longrightarrow \qquad 0 = \widetilde \ad_\eta^2(\xi) = \textstyle{\sum_j} c_j \, \lambda_j^2 \,\zeta_j,
 $$
-so 
-$$c_j \neq 0 \quad \Longrightarrow \quad \lambda_j = 0, \qquad j = 1, \ldots, k,
-$$
-i.e. $\xi \in \ker \widetilde \ad_\eta$, and hence $\lambda = 0$.
+$\Longrightarrow \quad c_j \, \lambda_j^2 = 0,  \quad j = 1, \ldots, k$
+
+$\Longrightarrow \quad \xi \in \ker \widetilde \ad_\eta$
+
+$\Longrightarrow \quad \eta \in \ker \widetilde \ad_\xi$.
+
+Since $\eta$ was an arbitrary eigenvector of the diagonalizable operator $\widetilde \ad_\xi$, $\widetilde \ad_\xi = 0$.
+
+$\Longrightarrow \ \ \ft$ is toral.
 
 
 ---
 
 ### Eigenspace decompositions relative to toral subalgebras $\fh$
 
-Commuting semisimple elements can be diagonalized simultaneously. 
-$~$
-Given a common eigenvector $\ \xi ∈ \fg\ {}$ for all $\ad_\eta, \ \eta ∈ \ft,\ \exists \ α \in \ft^*\ {}$ such that
+Commuting semisimple elements can be simultaneously diagonalized. 
+<Spacer size="1px"/>
+
+Given a common eigenvector $\,\xi ∈ \fg\ {}$ for all elements of $\ad(\ft),\ \exists \ α \in \ft^*\ {}$ such that
 $$
 \ad_\eta(\xi) = α(\eta) \xi \qquad \forall \ \eta \in \ft,
 $$
@@ -225,8 +237,9 @@ and associated subspace
 $$
 \fg_α := \cap_{\eta \in \ft} \text{ker}(\ad_\eta - α(\eta) \text{id}_\fg).
 $$
-$~$
-Eigenspace decomposition of $\fg$ w.r.t. a toral subalgebra $\ft$:
+<Spacer size="2px"/>
+
+The eigenspace decomposition of $\fg$ with respect to a toral subalgebra $\ft$ is
 $$
 \fg = \oplus_{α∈\ft^*} \fg_α.
 $$
@@ -234,35 +247,41 @@ $$
 
 ---
 
+### Properties of toral decompositions
+
 ***Claim***: If $\, \ft ⊆ \fg\ {}$ is a toral subalgebra, the decomposition
-$$
-\fg = \oplus_{α∈\ft^*} \fg_α \qquad \qquad \text{satisfies}
-$$ 
+$\, \fg = \oplus_{α∈\ft^*} \fg_α\ {}$ 
 satisfies
 1. $[\fg_α, \fg_β] ⊆ \fg_{α+β}$.
-2. $\ α + β \neq 0\ \Longrightarrow \  \fg_α\ {}$ and $\ \fg_β\ {}$ are orthogonal w.r.t. the Killing form $\kappa$ of $\fg$.
-3. $\kappa\ {}$ induces nondegenerate pairings $\ \fg_α ⊗ \fg_{−α} → \C$.
-4. The restriction $\ \kappa|_{\fg_0}\ {}$ is nondegenerate, and hence $\fg_0 = \fz(\ft) \, {}$ is reductive.
 
-$~$
+2. $\ α + β \neq 0\ \Longrightarrow \  \fg_α\ {}$ and $\ \fg_β\ {}$ are orthogonal w.r.t. the Killing form $\kappa$ of $\fg$.
+
+3. $\kappa\ {}$ induces nondegenerate pairings $\ \fg_α ⊗ \fg_{−α} → \C$.
+
+4. The restriction $\ \kappa|_{\fg_0}\ {}$ is nondegenerate, and hence $\fg_0 = Z(\ft) \, {}$ is reductive.
+
 *Verify: 1.*  Let $\xi ∈ \fg_α, \eta ∈ \fg_β, \zeta ∈ \ft. \ {}$  
 
-$$\eqa{
+$$
+\eqa{
 \ad_\zeta([\xi, \eta])
-&= [\ad_\zeta(\xi), \eta] + [\xi, \ad_\zeta(\eta)] \\
-&= [α(\zeta) \xi, \eta] + [\xi, β(\zeta) \eta]\\
+&= [\ad_\zeta(\xi), \eta] + [\xi, \ad_\zeta(\eta)] \phantom{\sum}\\
+&= [α(\zeta) \xi, \eta] + [\xi, β(\zeta) \eta]\phantom{\sum}\\
 &= (α + β)(\zeta)[\xi, \eta].
 }
 $$
 
 ---
 
+#### Second slide of proof of properties of toral decompositions
+
 *2.* $\quad α + β \neq 0 \ \Longrightarrow \ \kappa(\fg_α, \fg_β) = 0$.
 Invariance of $\kappa \ \Longrightarrow$
 
-$$\eqa{
-0 &= \kappa([\zeta, \xi], \eta) + \kappa(\xi, [\zeta, \eta])\\
-&= \kappa(α(\zeta)\xi, \eta) + \kappa(\xi, β(\zeta)\eta)\\
+$$
+\eqa{
+0 &= \kappa([\zeta, \xi], \eta) + \kappa(\xi, [\zeta, \eta])\phantom{\sum}\\
+&= \kappa(α(\zeta)\xi, \eta) + \kappa(\xi, β(\zeta)\eta)\phantom{\sum}\\
 &= (α + β)(\zeta) \, \kappa(\xi, \eta).
 }
 $$
@@ -272,26 +291,65 @@ $\ α + β \neq 0 \ \Longrightarrow \ \kappa(\xi, \eta) = 0$.
 
 *4.*  &nbsp; 3. $\Longrightarrow \ \ \kappa|_{\fg_0}\ {}$ is nondegenerate, and nondegeneracy of a symmetric invariant bilinear form implies reductivity.
 
-$~$
-The 'bigger' the toral subalgebra, the finer-grained the decomposition, so...
+<Spacer size="5px"/>
+
+The 'bigger' the toral subalgebra, the finer-grained the decomposition, so let's look for big toral subalgebras.
 
 -----
 
 ### Existence of maximal toral subalgebras
 
-***Claim***: $\ \fg$ semisimple and complex $\ \Longrightarrow\ \fg\ {}$ contains nonzero semisimple elements.
+***Claim***: $\ \fg$ semisimple, finite dimensional, and complex (SSFDC) $\ \Longrightarrow\ \fg\ {}$ has a maximal toral subalgebra (no uniqueness implied). 
 
-*Verify:*  If $\fg$ contains no nonzero semisimple elements, then the Jordan decomposition $\ \Longrightarrow\ {}$ every element of $\fg$ is nilpotent, i.e. $\ \ad_\xi \ {}$ is nilpotent$\quad \forall \ \xi ∈ \fg$.
+***Heads up!*** &nbsp; Under the SSFDC hypotheses, $\ft$ is a maximal toral subalgebra $\ \ \Longleftrightarrow \ \ \ft$ is a *Cartan subalgebra* of $\fg$, i.e. a nilpotent self-normalizing subalgebra of $\fg$. 
 
-Engel’s theorem $\ \Longrightarrow\ \fg\ {}$ is nilpotent, and hence solvable, so $\fg$ is not semisimple.
-$~$
+Time permitting, we'll loop back to the proof of that equivalence, but we won't work with Cartan subalgebras outside the SSFDC context, so we can stick with maximal toral subalgebra jargon.
+<!--
+$$
+\fh = N_\fg(\fh) =  \{ \xi \in \fg : \ad_\xi(\fh) \subseteq \fh \}.
+$$
+-->
+<Spacer size="1px"/>
+
+*Verify:* We first show that $\fg$  contains nonzero semisimple elements. <br/> If not,
+the Jordan decomposition $\ \Longrightarrow\ {}$ every element of $\fg$ is nilpotent, i.e. $\ \ad_\xi \ {}$ is nilpotent$\quad \forall \ \xi ∈ \fg$.
+
+[Engel’s theorem](solvable-nilpotent-algebras) $\ \ \Longrightarrow\ \ \fg\ {}$ is nilpotent, and hence solvable, so $\fg$ is not semisimple. &#9889;
+
 Existence of nonzero semisimple elements implies that semisimple Lie algebras have nontrivial toral subalgebras.
-$~$
-A toral subalgebra is *maximal* if it isn't a proper subalgebra of another toral subalgebra.
+$\fg$ finite dimensional $\ \ \Longrightarrow\ \ \exists \ {}$ of a maximal toral subalgebra.
 
-Every semisimple Lie algebra $\fg$ contains a maximal toral subalgebra.
+<!-- A toral subalgebra is *maximal* if it isn't a proper subalgebra of another toral subalgebra. -->
+
+<!--
+---
+
+### Cartan subalgebras and rank of finite-dimensional semisimple Lie algebras over $\C$
+
+A *Cartan subalgebra* is a nilpotent subalgebra $\fh$ of $\fg$ that is self-normalizing, i.e. 
+
+$$
+\fh = N_\fg(\fh) =  \{ \xi \in \fg : \ad_\xi(\fh) \subseteq \fh \}.
+$$
+
+If $\fg$ is a finite-dimensional semisimple Lie algebras over $\C$, 
+$\fh$ is a  Cartan subalgebra of $\fg \ \ \Longleftrightarrow \ \ \fh \,{}$ is a maximal toral subalgebras.
+-->
 
 ---
+
+### Properties of maximal toral subalgebras of a SSFDC Lie algebra $\fg$
+
+*This slide needs to be filled in!*
+
+
+All maximal toral subalgebras of $\fg$ are conjugate w.r.t. $\ \Ad(\fg), \ {}$ the adjoint group of $\fg$.
+
+Hence all maximal toral subalgebras of $\fg$ have the same dimension, called the *rank* of $\fg$.
+
+---
+
+<!--
 
 ***Claim***: If $\ \ft ⊆ \fg\ {}$ is a maximal toral subalgebra, then $\ft$ is self-centralizing, i.e.
 $$\fg_0 = \fz(\ft) = \ft.$$
@@ -337,161 +395,166 @@ Since $\fg_0 = \fz(\ft)$ is toral, maximality of $\, \ft \ \Longrightarrow \ \fg
 $~$
 
 ---
+routeAlias: Cartan-subalgebras
+---
 
-## Cartan subalgebras
+### Cartan subalgebras of finite-dimensional semisimple Lie algebras over $\C$
 
 A *Cartan subalgebra* is a nilpotent subalgebra $\fh$ of $\fg$ that is self-normalizing, i.e. 
 
 $$
 \fh = N_\fg(\fh) =  \{ \xi \in \fg : \ad_\xi(\fh) \subseteq \fh \}.
 $$
-$~$
-We'll restrict our attention to finite-dimensional semisimple Lie algebras over $\C$.
 
-In this context, Cartan subalgebras are the same thing as maximal toral subalgebras.
-(I won't prove that here.)
-$~$
-***Examples***: 
-- $\fg = \mathfrak{sl}(n, \C), \ \ft = {}$ traceless diagonal matrices.
-- $\fz(\text{span} \{\zeta\}) \subseteq \fg,\ {}$ where $\zeta$ is a semisimple element of $\fg$  with distinct eigenvalues
-$~$
+We'll restrict our attention to finite-dimensional semisimple Lie algebras over $\C$; 
+in this context, Cartan subalgebras are the same thing as maximal toral subalgebras.
 
----
-
-***Claim*** *without proof here*: All maximal toral subalgebras of a semisimple Lie algebra $\fg$ are conjugate w.r.t. $\ \Ad(\fg), \ {}$ the adjoint group of $\fg$.
+Since all maximal toral subalgebras of a semisimple Lie algebra $\fg$ are conjugate w.r.t. $\ \Ad(\fg), \ {}$ the adjoint group of $\fg$.
 $~$
 
 Hence all Cartan subalgebras of $\fg$ have the same dimension, called the *rank* of $\fg$.
-$~$
+
+<Spacer size="5px"/>
+
+***Examples***: 
+- $\fg = \mathfrak{sl}(n, \C), \ \ft = {}$ traceless diagonal matrices.
+
+- $Z(\text{span} \{\zeta\}) \subseteq \fg,\ {}$ where $\zeta$ is a semisimple element of $\fg$  with distinct eigenvalues
+
 ***Example***: $\quad \mathfrak{sl}(n, \C)\ {}$ has rank $n - 1, \ {}$ since the subalgebra of traceless diagonal matrices is a Cartan subalgebra of $\ \mathfrak{sl}(n, \C)$.
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
 
+-->
 
----
+### Roots and root spaces of a SSFDC Lie algebra $\fg$
 
-## Roots and root spaces
-
-A *root* $\alpha$ of a Cartan subalgebra $\fh$ of $\fg$ is a nonzero element of $\, \fh^*\, {}$ with nontrivial *root space* 
+A *root* $\alpha$ of a maximal toral subalgebra $\ft$ of $\fg$ is a nonzero element of $\, \ft^*\, {}$ with nontrivial *root space* 
 $$
 \fg_\alpha := \cap_{\zeta \in \fh} \ker \, S_\alpha(\zeta), \qquad \text{where} \qquad S_\alpha(\zeta) := \ad_\zeta -  \alpha(\zeta) \idm_{\!\fg}.
-%\setdef{\fg_\alpha} \xi \fg {\ad_\zeta(\xi) = \alpha(\zeta) \, \xi \ \ \forall \ \zeta \in \fh}.
+%\setdef{\fg_\alpha} \xi \fg {\ad_\zeta(\xi) = \alpha(\zeta) \, \xi \ \ \forall \ \zeta \in \ft}.
 $$
-$~$
-If $\Phi$ denotes the set of roots of $\fg$ w.r.t. $\fh$, the *root space decomposition of $\fg$ w.r.t. $\fh$* is 
-$$
-\fg = \fh \oplus \bigoplus_{\alpha \in \Phi} \fg_\alpha.
-$$
-$~$
-The set $\Phi$ of all roots forms the *root system*.
-$~$
-$~$
-$~$
-$~$
-$~$
+<Spacer size="5px"/>
 
----
+If $\Phi$ denotes the set of roots of $\fg$ w.r.t. $\ft$, the *root space decomposition of $\fg$ w.r.t. $\ft$* is 
+$$
+\fg = \ft \oplus \bigoplus_{\alpha \in \Phi} \fg_\alpha.
+$$
+
+The set $\Phi$ of all roots forms the *root system*.
 
 ***Claim:***  
-- $\text{span}\, \Phi = \fh^*$ 
-- $\alpha \in \Phi \quad \Longrightarrow \quad - \alpha \in \Phi$,
+- $\text{span}\, \Phi = \ft^*$ 
 
-$~$
-*Verify:* $\ \ \alpha(\zeta) = 0  \quad \Longrightarrow \quad S_\alpha(\zeta) = \ad_\zeta \quad \Longrightarrow \quad \ad_\zeta(\fg_\alpha) = \{0 \}$.
+- $\alpha \in \Phi \quad \Longrightarrow \quad - \alpha \in \Phi$.
 
-Since $\fg = \fh \oplus \bigoplus_{\alpha \in \Phi} \fg_\alpha \ {}$ and $\fh$ is abelian, 
+---
+
+#### Proof of root system properties
+
+$\ \ \alpha(\zeta) = 0  \quad \Longrightarrow \quad S_\alpha(\zeta) = \ad_\zeta \quad \Longrightarrow \quad \ad_\zeta(\fg_\alpha) = \{0 \}$.
+
+Since $\fg = \ft \oplus \bigoplus_{\alpha \in \Phi} \fg_\alpha \ {}$ and $\ft$ is Abelian, 
 
 $\alpha(\zeta) = 0 \quad \forall \ \alpha \in \Phi \quad \Longrightarrow \quad \ad_\zeta = 0 \quad \Longrightarrow \quad \zeta = 0$.
-$~$
+
 Nondegeneracy of $\kappa$ and orthogonality w.r.t. $\kappa$ of $\fg_\alpha$ and $\fg_\beta$ for $\alpha + \beta \neq 0$ imply 
 $- \alpha \in \Phi$ if $\alpha \in \Phi$.
-$~$
+<Spacer size="5px"/>
+
 The root space decomposition reveals subalgebras of $\fg$ isomorphic to $\mathfrak{sl}(2, \C)$.
 
----
-
-Non-degeneracy of $\kappa|_\fh \ \ \Longrightarrow \ \ {}$ we can define $\phantom{|}^\sharp: \Phi \to \fh\ {}$ by
+Non-degeneracy of $\kappa|_\ft \ \ \Longrightarrow \ \ {}$ we can define $\phantom{|}^\sharp: \Phi \to \ft\ {}$ by
 $$
-\kappa(\alpha^\sharp, \zeta) = \alpha(\zeta) \qquad \qquad \forall \ \zeta \in \fh,
+\kappa(\alpha^\sharp, \zeta) = \alpha(\zeta) \qquad \qquad \forall \ \zeta \in \ft,
 $$
 analogous to our previous use of $\phantom{|}^\sharp$ in the context of symplectic structures.
-$~$
+
+---
+
+### Existence of subalgebras isomorphic to $\mathfrak{sl}(2, \C)$
+
 ***Claim:***
 
-- $\alpha \in \Phi$, $\xi\in \fg_\alpha$, $\eta \in \fg_{-\alpha} \ \ \Longrightarrow$
+1. $\alpha \in \Phi$, $\eta \in \fg_\alpha$, $\zeta \in \fg_{-\alpha} \ \ \Longrightarrow$
 $$
-[\xi, \eta] = \kappa(\xi, \eta) \alpha^\sharp. \phantom{X_{\int_\int}}
+[\eta, \zeta] = \kappa(\eta, \zeta) \alpha^\sharp. \phantom{X_{\int_\int}}
 $$
 
-- $\ \ \alpha(\alpha^\sharp) \neq 0 \qquad \forall \ \alpha \in \Phi$
+2. $\alpha(\alpha^\sharp) \neq 0 \qquad \forall \ \alpha \in \Phi$
 
-- Given $\alpha \in \Phi$ and $\xi \in \fg_\alpha, \ \ \exists \ \ \eta \in \fg_{-\alpha}\ {}$ such that 
-$$h_\alpha := [\xi, \eta] = \kappa(\xi, \eta) \alpha^\sharp = \frac 2 {\alpha(\alpha^\sharp)} \alpha^\sharp.
+3. Given $\alpha \in \Phi$ and $\eta \in \fg_\alpha, \ \ \exists \ \ \zeta \in \fg_{-\alpha}\ {}$ such that 
+$$
+[\eta, \zeta] = \kappa(\eta, \zeta) \alpha^\sharp = \frac 2 {\alpha(\alpha^\sharp)} \alpha^\sharp.
 $$ 
 
----
-
-- $\xi, \eta, \zeta$ determine a three-dimensional simple subalgebra of $\fg$ isomorphic to $\mathfrak{sl}(2, \C)$, with
+4. $\eta, \zeta$ as above and $[\eta, \zeta]$ determine a three-dimensional simple subalgebra of $\fg$ isomorphic to $\mathfrak{sl}(2, \C)$:
 $$
-\xi \mapsto e, \qquad \eta \mapsto f, \sands \zeta \mapsto h.
+\eta \mapsto \esl, \qquad \zeta \mapsto \fsl, \sands [\eta, \zeta] \mapsto \hsl.
 $$
-$~$
-*Verify:* Given $\zeta \in \fh$ and $\xi \in \fg_\alpha$, 
-$$
-\kappa(\zeta, [\xi, \eta] - \kappa(\xi, \eta) \alpha^\sharp) =
-\kappa(\underbrace{[\zeta, \xi]}_{\alpha(\zeta)\xi}, \eta) - \kappa(\xi, \eta) \underbrace{\kappa(\zeta,  \alpha^\sharp)}_{\alpha(\zeta)} 
-= 0,
-$$
-so $\fh$ is orthogonal to $[\xi, \eta] - \kappa(\xi, \eta) \alpha^\sharp$.
-
-$$ \eta \in \fg_{-\alpha} \quad \Longrightarrow \quad [\xi, \eta] \in \fg_0 = \fh,\phantom{X^\int_\int}$$ 
-
-so nondegeneracy of $\kappa|_\fh \quad \Longrightarrow \quad [\xi, \eta] - \kappa(\xi, \eta) \alpha^\sharp = 0$.
 
 ---
+
+#### Proof of 1. in the existence of subalgebras isomorphic to $\mathfrak{sl}(2, \C)$
+<Spacer size="5px"/>
+
+Given $\xi \in \ft$, $\eta \in \fg_\alpha$, and $\zeta \in \fg_{-\alpha}$, 
+$$
+\kappa(\xi, [\eta, \zeta] - \kappa(\eta, \zeta) \alpha^\sharp) =
+\kappa(\underbrace{[\xi, \eta]}_{\alpha(\xi)\eta}, \zeta) - \kappa(\eta, \zeta) \underbrace{\kappa(\xi,  \alpha^\sharp)}_{\alpha(\xi)} 
+= 0
+$$
+$\Longrightarrow \ \ \ft$ is orthogonal to $[\eta, \zeta] - \kappa(\eta, \zeta) \alpha^\sharp$.
+<Spacer size="5px"/>
+
+$$ \zeta \in \fg_{-\alpha} \quad \Longrightarrow \quad [\eta, \zeta] \in \fg_0 = \fh,\phantom{X^\int_\int}$$ 
+
+so nondegeneracy of $\kappa|_\ft \quad \Longrightarrow \quad [\eta, \zeta] - \kappa(\eta, \zeta) \alpha^\sharp = 0$.
+<Spacer size="5px"/>
 
 Nondegeneracy of $\kappa$ and orthogonality of root spaces other than $\fg_{-\alpha}$ to $\fg_\alpha$
-$\Longrightarrow \quad \exists \ \eta \in \fg_\alpha$ satisfying
+$\ \ \Longrightarrow \ \ \exists \ \zeta \in \fg_\alpha$ satisfying
 $$
-\kappa(\xi, \eta) = 1, \qquad \text{and hence} \qquad [\xi, \eta] = \alpha^\sharp.
+\kappa(\eta, \zeta) = 1, \qquad \text{and hence} \qquad [\eta, \zeta] = \alpha^\sharp.
 $$
 
-Assume that $\alpha(\alpha^\sharp) = 0$.
+---
 
-$\xi \in \fg_\alpha$ and $\eta \in \fg_{-\alpha} \quad \Longrightarrow$
+#### Proof of 2. in the existence of subalgebras isomorphic to $\mathfrak{sl}(2, \C)$
+<Spacer size="5px"/>
+
+Assume that $\alpha \neq 0$ and $\alpha(\alpha^\sharp) = 0$.
+
+$\eta \in \fg_\alpha$ and $\zeta \in \fg_{-\alpha} \quad \Longrightarrow$
 $$
-\ad_{\alpha^\sharp}(\xi) = 0 = \ad_{\alpha^\sharp}(\eta),
+\ad_{\alpha^\sharp}(\eta) = 0 = \ad_{\alpha^\sharp}(\zeta),
 $$
-so $\xi, \eta, \alpha^\sharp$ form a solvable Lie algebra. 
+so $\eta, \zeta, \alpha^\sharp$ form a solvable Lie algebra. 
 
 Lie's Theorem $\ \ \Longrightarrow \ \ \exists \ {}$ basis of this algebra w.r.t. infinitesimal adjoint actions are all upper triangular.
 
 $$
-\ad_{\alpha^\sharp} = \ad_{[\xi, \eta]} = [\ad_\xi, \ad_\eta]
+\ad_{\alpha^\sharp} = \ad_{[\eta, \zeta]} = [\ad_\eta, \ad_\zeta]
 $$
 has a strictly upper triangular matrix representation w.r.t. this basis, so $\ad_{\alpha^\sharp}$ is nilpotent. 
 
+$\alpha^\sharp \in \ft \ \ \Longrightarrow \ \ \alpha^\sharp$ is both semisimple and nilpotent, and hence equals 0, which contradicts $\alpha \neq 0$.
+
 ---
 
-$\alpha^\sharp \in \fh \ \ \Longrightarrow \ \ \alpha^\sharp$ is both semisimple and nilpotent, and hence equals 0, which contradicts $\alpha \neq 0$.
-$~$
-Rescaling the $\eta \in \fg_{-\alpha}$ used above, and retaining the name, we can have
+#### Proof of 3. and 4. in the existence of subalgebras isomorphic to $\mathfrak{sl}(2, \C)$
+<Spacer size="5px"/>
+
+Rescaling the $\zeta \in \fg_{-\alpha}$ used above, and retaining the name, we have
 $$
-h_\alpha := [\xi, \eta] = \frac 2 {\alpha(\alpha^\sharp)} \alpha^\sharp, \qquad \text{with} \qquad \alpha(\zeta)  = 2.
+\chi := [\eta, \zeta] = \frac 2 {\alpha(\alpha^\sharp)} \alpha^\sharp, \qquad \text{with} \qquad \alpha(\zeta)  = 2.
 $$ 
 
-Hence $\ad_{h_\alpha}$ has eigenvectors $\xi, \eta, h_\alpha$, with eigenvalues $2, -2, 0$.
+Hence $\ad_{\chi}$ has eigenvectors $\eta, \zeta, \chi$, with eigenvalues $2, -2, 0$.
 
-These eigenvectors determine a subalgebra of $\fg$ isomorphic to $\mathfrak{sl}(2, \C)$.
-$~$
-$~$
-Let $\mathfrak{sl}(2, \C)_α$ denote the Lie subalgebra constructed above.
-$~$
-$~$
+These eigenvectors determine a subalgebra $\mathfrak{sl}(2, \C)_α$ of $\fg$ isomorphic to $\mathfrak{sl}(2, \C)$.
+
+<!--
+
+FIX UP THE REST OF THIS!
 
 ---
 
@@ -614,3 +677,5 @@ E R- is an irreducible under successive applications of root spaces 9/1 for P
 subrepresentation;
 - an irreducible representation possesses a unique highest weight vector up to rescaling.
 a
+
+-->

@@ -356,6 +356,8 @@ $$
 called a *matrix coefficient on* $G$. 
 
 ---
+route-Alias: compact-implies-unitary-representations
+---
 
 ### Averaging and representations of compact groups 
 

@@ -177,6 +177,8 @@ $$
  An irreducible complex finite dimensional representation of a solvable Lie algebra is 1-dimensional.
 
 ---
+routeAlias: Lie-solvable-upper-triangular
+---
 
 ### Lie's Theorem
 

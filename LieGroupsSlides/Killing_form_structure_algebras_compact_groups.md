@@ -175,7 +175,6 @@ $$
 *In-class group exercise: Verify the first two claims.* $\phantom{\sum^X}$
 <Spacer size="5px"/>
 
-
 A Lie algebra $\fg$ is *semisimple* if it can be expressed as a direct sum of simple Lie algebras, i.e. it contains no onzero nontrivial solvable ideals.
 
 Any simple Lie algebra is semisimple.
@@ -239,15 +238,17 @@ $$
 
 $\quad \ \fg/\mathfrak{b}\ {}$ semisimple $\quad \Longrightarrow \quad \text{rad}(\fg/\mathfrak{b}) = \{0\}$
 
-$\qquad \qquad \qquad \qquad \ \ \ \Longrightarrow\ \radg \subseteq \mathfrak{b}$.
+$\qquad \qquad \qquad \qquad \ \ \ \Longrightarrow\quad \radg \subseteq \mathfrak{b}$.
 
 $\quad {}$ Maximality of $\radg \quad \Longrightarrow \quad \mathfrak{b} = \radg$.
 
 ---
+routeAlias: relationship-eigenvalues-radical
+---
 
 ### Eigenvalues and the radical
 
-***Claim:*** If $(V, \rho)\ {}$ is an irreducible complex $\fg$-module, then $\ \exists \ \lambda: \radg \to \C\ {}$ satisfying
+***Claim:*** If $(V, \rho)\ {}$ is a finite dimensional irreducible complex $\fg$-module, then $\ \exists \ \lambda: \radg \to \C\ {}$ satisfying
 
 1. $\rho(\xi) = \lambda(\xi) \idm_V \qquad \quad \forall \ \xi \in \radg$
 
@@ -259,57 +260,41 @@ $$
 \rho(\eta)(v_0) = \lambda(\eta) v_0 \qquad \quad \forall \ \eta \in \radg.
 $$
 
-The subspace
+For notational concision, define $\sigma_\lambda: \radg \to \text{End}(V)$ by 
 $$
-V_\lambda := \cap_{\eta \in \radg} \text{ker} (\rho(\eta) - \lambda(\eta) \idm_{\!V})
+\sigma_\lambda(\eta) := \rho(\eta) - \lambda(\eta) \idm_{V}
 $$
-is nontrivial, since it contains $v_0$. 
+and
+$$
+V_\lambda := \cap_{\eta \in \radg} \text{ker} \, \sigma_\lambda(\eta).
+$$
 
 ---
 
-#### Second slide of verification of the relationship between eigenvalues and the radical
+#### Synopsis of the [proof of the relationship between eigenvalues and the radical](proof-relationship-eigenvalues-radical)
+<Spacer size = "15px"/>
 
-Let $v, \xi, \eta$ denote arbitrary elements of $V_\lambda, \fg, \ {}$ and $\radg$.
-$$
-\rho(\eta) \circ \rho(\xi) = \rho(\!\!\underbrace{[\eta, \xi]}_{\in \ \radg}\!\!) + \rho(\xi) \circ \rho(\eta) 
-$$
-$\Longrightarrow$
-$$
-\eqa{
-(\rho(\eta) - \lambda(\eta) \idm_{\!V})(\rho(\xi)(v))&=   
-\underbrace{\rho([\eta, \xi])(v)}_{= \,\lambda([\eta, \xi]) v} 
-+ \rho(\xi)(\underbrace{\rho(\eta)(v)}_{= \, \lambda(\eta) v}) - \lambda(\eta)\rho(\xi)(v) \\
-&= \lambda([\eta, \xi]) v \in V_\lambda,\phantom{\sum^x} 
-} 
-$$
-so $\ V_\lambda\ {}$ is a $\fg$-submodule.
+1. $V_\lambda$ is $\fg$-invariant, and hence is a $\fg$-submodule. Since $V$ is irreducible and $V_\lambda \supseteq \text{span}\{v_0\}$ is nontrivial, $V_\lambda = V$. 
 
-Irreducibility of $V\quad \Longrightarrow \quad V_\lambda = V$.
+The $\fg$-invariance of $V_\lambda$ can be shown using a [Rube Goldbergian](https://www.rubegoldberg.org/all-about-rube/cartoon-gallery/) (to my eye) upper triangular matrix construction involving a sequence of nested subspaces $W_0 \subseteq W_1 \subseteq W_2 \cdots \ {}$ given by
+$$
+W_0 := V_\lambda \sands W_{j + 1} := W_j + \rho(\fg)(W_j),
+$$
+analysis of the induced actions on the quotients $W_{j + 1}/W_j$, and Jordan Normal Form-style choices of bases.
+<Spacer size = "5px"/>
+
+2. is proved, and then used, near the end of the proof of 1.:
+
+$[\eta, \xi] \in \radg$ for any $\eta \in\radg, \xi \in \fg$, so $\rho([\eta, \xi])$ has the unique eigenvalue $\lambda([\eta, \xi])$. 
+
+$$
+\text{trace} \, \rho([\eta, \xi]) = \text{trace} \, [\rho(\eta), \rho(\xi)] = 0
+$$
+
+$\Longrightarrow \ \  \lambda([\eta, \xi]) = 0$, which shows that the off-diagonal terms in the upper triangular matrices equal $0$.
 
 ---
-
-#### Third slide of verification of the relationship between eigenvalues and the radical
-
-*Verify 2.:* $\ \ {}$ Let $v, \xi, \eta$ denote arbitrary elements of $V_\lambda, \fg, \ {}$ and $\radg$.
-
-$\radg$ solvable $\quad \Longrightarrow \quad [\fg, \radg]\ {}$ is either trivial or $\radg$.
-<Spacer size="1px"/>
-
-If $[\fg, \radg] = \{0\}, \ {}$  nothing to show. 
-<Spacer size="1px"/>
-
-$[\fg, \radg] = \radg\quad \Longrightarrow \quad \ {}$ for any $v \in V, \xi \in \fg, \eta \in \radg, \ {}$
-$$
-\eqa{
-\lambda([\xi, \eta]) v &= \rho([\xi, \eta])(v) \phantom{\sum} \\
-&= \rho(\xi)(\rho(\eta)(v)) - \rho(\eta)(\rho(\xi)(v)) \phantom{\sum}\\
-&= \rho(\xi)(\lambda(\eta)v) - \lambda(\eta)\rho(\xi)(v) \phantom{\sum}\\
-&= 0.
-}
-$$
-
-
-
+routeAlias: Cartan-solvability-semisimplicity-criteria
 ---
 
 ### Cartan’s criteria for solvability and semisimplicity 
@@ -319,9 +304,9 @@ $$
 - $\fg$ is semisimple $\quad \Longleftrightarrow \quad \kappa\ {}$ is nondegenerate.
 
 <Spacer size="1px"/>
-*Verify solvabililty criterion:* “$\Longrightarrow$”: &nbsp; 
+*Verify solvabilility criterion:* “$\Longrightarrow$”: &nbsp; 
 
-If $\fg$ is solvable, Lie’s theorem $\quad \Longrightarrow \quad \exists\,{}$ basis of $\fg$ with respect to which the matrix representation $A(\xi)$ of $\ad_\xi$ is upper triangular for any $\xi \in \fg$.
+If $\fg$ is solvable, [Lie’s theorem](Lie-solvable-upper-triangular) $\quad \Longrightarrow \quad \exists\,{}$ basis of $\fg$ with respect to which the matrix representation $A(\xi)$ of $\ad_\xi$ is upper triangular for any $\xi \in \fg$.
 
 $\Longrightarrow \ \ {}$ for any $\xi, \eta, \zeta \in \fg$, 
 $\ \  A([\xi, \eta]) = [A(\xi), A(\eta)]\ {}$ is strictly upper triangular
@@ -412,7 +397,19 @@ is solvable, which follows from the lemma on the next slide, taking $V = (\fg, \
 
 #### Proof of Cartan's semisimplicity criterion
 
- "$\Longrightarrow$": $\quad{}$ Nondegeneracy of $\kappa \quad \Longrightarrow \quad \fg\ {}$ is reductive.
+ "$\Longrightarrow$": $\quad{}$ Assume $\fg$ has an Abelian ideal $\mathfrak{a}$. 
+ 
+For any $\zeta \in \mathfrak{a}$ and $\xi \in \fg$, $\ad_\zeta \ad_\xi: \fg \to \mathfrak{a}$. 
+
+$\mathfrak{a}$ Abelian $\ \ \Longrightarrow \ \ (\ad_\zeta \ad_\xi)^2 = 0$, so $\ad_\zeta \ad_\xi$ is nilpotent
+
+$\Longrightarrow \ \ \kappa(\zeta, \xi) = \text{trace}(\ad_\zeta \ad_\xi) = 0$.
+
+Nondegeneracy of $\kappa \ \ \Longrightarrow \ \ \mathfrak{a} = \{0\} \ \ \Longrightarrow \ \ 
+\fg$ has no nontrivial Abelian ideals $\ \ \Longrightarrow \ \ \fg$ is semisimple.
+
+<!--
+ "$\Longrightarrow$": $\quad{}$ Nondegeneracy of $\kappa \quad \Longrightarrow \quad \fg\ {}$ is *reductive*, i.e. $\fg = [\fg, \fg] \oplus Z(\fg)$.
 
 $$
 \eqa{
@@ -423,7 +420,9 @@ $$
 
 Nondegeneracy of $\kappa \quad \Longrightarrow \quad\xi = 0$.
 
-$\fg$ reductive and $\, Z(\fg) = \{ 0 \} \quad \Longrightarrow \quad \fg\ {}$ is semisimple.
+$\fg$ reductive and $\, Z(\fg) = \{ 0 \} \quad \Longrightarrow \quad \fg = [\fg, \fg]\ {}$ is semisimple.
+-->
+
 <Spacer size="5px"/>
 
 "$\Longleftarrow$":$\quad \ I := \text{ker} \, \kappa \ {}$ is an ideal.
@@ -434,224 +433,292 @@ Cartan’s criterion for solvability $\quad \Longrightarrow \quad I\ {}$ is solv
 
 Semisimplicity of $\fg \quad \Longrightarrow \quad I = \text{ker} \, \kappa \ {}$ is trivial.
 
-<!--
-
-JUST TEMPORARY UNTIL CLEANED UP!
--------
-
-## Properties of Lie algebras of compact Lie groups
-
-If $G$ is a compact real Lie group, with Lie algebra $\fg,  \ {}$ then 
-1. $\fg$ is reductive,
-2. the Killing form $\kappa$ of $\fg$ is negative semi-definite, 
-3. $\ker \kappa = \fz(\fg)$,
-4. $\fg/\fz(\fg)\ {}$ is semisimple, with negative definite Killing form.
-$~$
-
-*Verify:* Let $(V, {\rm P})\ {}$ be a complex $n$-dimensional $G$-representation, and $(V, ρ)\ {}$ the associated $\fg$-module. 
-
-Compactness of $G \quad \Longrightarrow \quad {\rm P}\ {}$ is unitary, so
-$$
-ρ(\fg) ⊆ u(V) \approx \setdef {u(n)} \xi {\C^{n \times n}} {\xi + \xi^* = 0}.
-$$
 
 ---
-
-The bilinear form 
-$$
-B(\xi, \eta) = \tr (\xi \, \eta)
-$$ 
-on $u(n)$ is negative definite, since 
-$$\eqa{
-B(\xi, \xi) &= \tr (\xi \, \xi) \\
-&= \tr (\xi (- \xi^*)) \\
-&= - \tr (\xi^* \xi) \\
-&= - \sum_{j, k = 1}^n |\xi|^2_{jk}.
-}
-$$
-
-Hence $\ ρ(\fg) ⊆ u(V) \quad \Longrightarrow$
-$$
-B_V(\xi, \eta) = \tr (ρ(\xi)ρ(\eta))
-$$
-is negative semi-definite, with 
-
+routeAlias: Aut-closed-subgroup
 ---
-
-$$
-\ker B_V = \ker ρ.
-$$
-$~$
-Application to the complexified adjoint representation $\Ad: G → GL(\fg, \C)\ {}$ and the complexification of the $\fg$-module $(\fg, \ad)\ {}$ gives
-- $\kappa\ {}$ is negative semi-definite, 
-- $\ker \kappa = \ker \ad = \fz(\fg)$,
-- $\fg/\fz(\fg)\ {}$ is semisimple, and hence $\ \fg\ {}$ is reductive.
-
-$~$
-$~$
-$~$
-$~$
-$~$
-
----
-
 
 ### $\text{Aut}(\fg)\ {}$ and derivations of Lie algebras
+
+$δ ∈ \text{End}(\fg) \ {}$ is a *derivation* of $\fg$ if
+$$
+δ([\xi, \eta])=[δ (\xi),\eta]+[\xi ,δ (\eta)] \qquad \qquad \forall\ \xi, \eta ∈ \fg. 
+$$
+<Spacer size="1px"/>
 
 ***Claim:*** If $\fg$ is a finite dimensional Lie algebra, then
 $$
 \setdef{\text{Aut}(\fg)} \phi {GL(\fg)} {\phi([\xi, \eta]) = [\phi(\xi), \phi(\eta)]}
 \qquad \forall \ \xi, \eta ∈ \fg
 $$
-is a closed Lie subgroup of $\ GL(\fg)$.
-$~$
-*Verify:* $\text{Aut}(\fg)\ {}$ is a subgroup of $\ GL(\fg)$.
+is a closed Lie subgroup of $\,GL(\fg)\,{}$ with Lie algebra $\,\text{Der}(\fg)$, the space of derivations of $\fg$.
+
+*Verify:* First show that $\text{Aut}(\fg)\ {}$ is a closed subgroup of $\ GL(\fg)$.
 
 Given a basis $\ \{\xi_1, \ldots, \xi_n \}\ {}$ of $\fg, \ {}$ define $\ f: GL(\fg) \to \fg^{n \times n}\ {}$ by
 $$
 f(\phi)_{ij} := \phi([\xi_i, \xi_j]) - [\phi(\xi_i), \phi(\xi_j)]. \phantom{X^{|int^\int}}
 $$
-$~$
-$f$ is continuous, so $\text{Aut}(\fg) = f^{-1}(0) \ {}$ is closed.
-$~$
+
+$f$ continuous $\ \ \Longrightarrow \ \ \text{Aut}(\fg) = f^{-1}(0) \ {}$ is closed $\ \ \Longrightarrow \ \ \text{Aut}(\fg)$ is a closed Lie subgroup of $\,GL(\fg)$.
 
 ---
 
-$δ ∈ \text{End}(\fg) \ {}$ is a *derivation* of $\fg$ if
+#### Verification that $\text{Der}(\fg)$ is the Lie algebra of $\, \text{Aut}(\fg)$
+<Spacer size="1px"/>
+
+Let $\text{aut}(\fg)$ denote for now the Lie algebra of $\, \text{Aut}(\fg)$, and 
+$\exp_{\!\text{Aut}}: \text{aut}(\fg) \to \text{Aut}(\fg)$ denote the exponential map of $\, \text{Aut}(\fg)$.
+
+Given $\psi \in \text{aut}(\fg)$ and $\xi, \eta \in \fg$, the Product Rule $\ \ \Longrightarrow$
 $$
-δ([\xi, \eta])=[δ (\xi),\eta]+[\xi ,δ (\eta)] \qquad \forall\ \xi, \eta ∈ \fg. \phantom{X^\int_\int}
-$$
-The space $\ \derg\ {}$ of all derivations of $\fg$ is the Lie algebra of $\ \text{Aut}(\fg)\ {}$.
-$~$
-***Example:*** $\ \ad_\zeta \ {}$ is a derivation $\ \forall \zeta ∈ \fg, \ {}$ since 
-$$\eqa{
-\ad_\zeta([\xi, \eta]) - [\ad_\zeta(\xi), \eta] - [\xi, \ad_\zeta(\eta)]
-&= [\zeta, [\xi, \eta]] - [[\zeta, \xi], \eta] - [\xi, [\zeta, \eta]] \\
-&= [\zeta, [\xi, \eta]] + [\eta, [\zeta, \xi]] + [\xi, [\eta, \zeta]] \\
-&= 0.
+\eqa{
+\psi([\xi, \eta]) &= \dep {\exp_{\!\text{Aut}}(\epsilon \, \psi)([\xi, \eta])}\phantom{\sum}\\
+&= \dep {[\exp_{\!\text{Aut}}(\epsilon \, \psi)(\xi), \exp_{\!\text{Aut}}(\epsilon \, \psi)(\eta)]} \phantom{\sum}\\
+&= [\psi(\xi), \eta] + [\xi, \psi(\eta)]
 }
 $$
-follows from the Jacobi identity. 
-$~$
-$\ \ad_\zeta \ {}$ is called an *inner derivation*.
-$~$
+$\Longrightarrow \ \ \psi \in \text{Der}(\fg)$.
+<Spacer size="1px"/>
 
----
-
-***Claim:*** $\ \ad(\fg)\ {}$ is an ideal of $\ \derg$. 
-
-*Verify:* For any derivation $δ$ of $\fg$ and $\xi, \zeta \in \fg$,
-$$\eqa{
-[δ,\ad_\zeta](\xi) &= \color{blue}{δ([\zeta, \xi])} \color{black}{− [\zeta, δ(\xi)]} \\
-&= \color{blue}{[δ(\zeta), \xi] + [\zeta, δ(\xi)]} \color{black}{− [\zeta, δ(\xi)]} \\
-&= \ad_{δ(\zeta)}(\xi).
-}
+Given $\delta \in \text{Der}(\fg)$ and $\xi, \eta \in \fg$,  
 $$
-$~$
-***Example:*** $\ \text{Der}(sl(2, \C))$ 
-
-$$
-δ(e) = x \, e + y\, f + z \, h \sands δ(f) = u \, e  + v\, f + w \, h \phantom{X_{\int_\int}}
-$$
-$$\eqa{
- \Longrightarrow \qquad \qquad \qquad \qquad \qquad δ(h) &= δ([e, f])\\
-&=[ δ(e), f ] + [e, δ(f) ] \\
-&= −2\,w\,e − 2\,z\,f + (x + v)h .\qquad \qquad \qquad \qquad \qquad \qquad
-}
+\exp_{\!\text{Aut}}(t\, \delta) = \sum_{n = 0}^\infty \frac {t^n} {n!} \delta^n([\xi, \eta]).
 $$
 
 ---
 
-Analogously,
+#### Verification that $\text{Der}(\fg) \subseteq \text{aut}(\fg)$
+<Spacer size="1px"/>
+
 $$
-2e = [h, e] \qquad \Longrightarrow \qquad 2\, δ(e) = [δ(h), e] + [h, δ(e)]% \qquad \Longrightarrow \qquad 
-$$
-and hence
-$$\eqa{
-2(x \, e + y \, f + z \, h)
-&= [−2 \, w \, e  − 2 \, z \, f + (x + v) h, e] + [h, x \, e + y \,f  + z \, h ]\\
-&= 2(x + v)e + 2 \, x \, e − 2 \, y \, f + 2 \, y \, h.
+\eqa{
+\smallfrac {t^n} {n!} \delta^n([\xi, \eta]) 
+&= \sum_{k=0}^n\binom{n}{k}\left[\frac {t^k} {k!} \delta^k(\xi), \frac {t^{n - k}} {(n - k)!} \delta^{n-k}(\eta)\right].
 }
 $$
-$\Longrightarrow \quad y = 0 = x + v.$
+Hence, re-indexing the following double sum as a Cauchy product,
+$$
+\eqa{
+\exp_{\!\text{Aut}}(t\, \delta)([\xi, \eta]) &= \sum_{n = 0}^\infty \sum_{k=0}^n\binom{n}{k}\left[\frac {t^k} {k!} \delta^k(\xi), \frac {t^{n - k}} {(n - k)!} \delta^{n-k}(\eta)\right] \\
+&= \sum_{n = 0}^\infty \sum_{j = 0}^\infty\left [ \frac {t^k} {k!} \delta^k(\xi), \frac {t^j} {j!} \delta^{j}(\eta)\right] \\
+&= [\exp_{\!\text{Aut}}(t\, \delta)(\xi), \exp_{\!\text{Aut}}(t\, \delta)(\eta)]
+}
+$$
 
-$~$
-Finally, 
+$\Longrightarrow\ \ {}$ the one parameter subgroup of $GL(\fg)$ determined by $\delta$ is a subgroup of $\text{Aut}(\fg)$
+
+$\Longrightarrow\ \ \delta \in \text{aut}(\fg)$.
+
+---
+
+### $\ \ad(\fg)\ {}$ is an ideal of $\ \text{Der}(\fg)\ {}$ 
+
+*Verify:* For any ${\color{red}\xi}, {\color{blue}\eta}, {\color{green}\zeta} \in \fg$, the Jacobi identity $\ \ \Longrightarrow$
 $$
--2 \, f = [h, f] \qquad \Longrightarrow \qquad \ u = 0.
+\eqa{
+\ad_{\color{green}\zeta}([{\color{red}\xi}, {\color{blue}\eta}]) - ([\ad_{\color{green}\zeta}({\color{red}\xi}),{\color{blue}\eta}] + [{\color{red}\xi}, \ad_{\color{green}\zeta}({\color{blue}\eta})])
+&= [{\color{green}\zeta}, [{\color{red}\xi}, {\color{blue}\eta}]] - [[{\color{green}\zeta}, {\color{red}\xi}], {\color{blue}\eta}] - [{\color{red}\xi}, [{\color{green}\zeta}, {\color{blue}\eta}]] \\
+&= [{\color{green}\zeta}, [{\color{red}\xi}, {\color{blue}\eta}]] + [{\color{blue}\eta}, [{\color{green}\zeta}, {\color{red}\xi}]] + [{\color{red}\xi}, [{\color{blue}\eta}, {\color{green}\zeta}]] \\
+&= 0,
+}
 $$
-$~$
+so $\ad(\fg)$ is a subalgebra of $\ \text{Der}(\fg)$. 
+
+<Spacer size="5px"/>
+
+For any derivation ${\color{green}\delta}$ of $\fg$ and ${\color{red}\xi}, {\color{blue}\eta} \in \fg$,
+$$
+\eqa{
+[{\color{green}\delta},\ad_{\color{blue}\eta}]({\color{red}\xi}) &= {\color{green}\delta}([{\color{blue}\eta}, {\color{red}\xi}]) − [{\color{blue}\eta}, {\color{green}\delta}({\color{red}\xi})] \\
+&= ([{\color{green}\delta}({\color{blue}\eta}), {\color{red}\xi}] + [{\color{blue}\eta}, {\color{green}\delta}({\color{red}\xi})]) − [{\color{blue}\eta}, {\color{green}\delta}({\color{red}\xi})] \\
+&= \ad_{{\color{green}\delta}({\color{blue}\eta})}({\color{red}\xi}),
+}
+$$
+so $\ad(\fg)$ is an ideal. Elements of $\ad(\fg)$ are called *inner derivations*.
+
+
+---
+
+### Example: $\ \text{Der}(\mathfrak{sl}(2, \C))$ 
+
+The bracket relationships between the basis vectors $\fsl,\hsl, \esl \ \ \Longrightarrow \ \ \delta \in \text{Der}(\mathfrak{sl}(2, \C))$ satisfies
+$$
+\eqa{
+- 2\, δ(\fsl) &= δ([\hsl, \fsl]) \\
+&= [δ(\hsl), \esl] + [\hsl, δ(\esl)] \phantom{\sum_x} \\
+δ(\hsl) &= δ([\esl, \fsl]) \\
+&=[ δ(\esl), \fsl ] + [\esl, δ(\fsl) ]\phantom{\sum_x} \\
+2\, δ(\esl) &= δ([\hsl, \esl]) \\
+&= [δ(\hsl), \esl] + [\hsl, δ(\esl)].
+}
+$$
+
+If
+$$
+δ(\esl) = x \, \esl + y\, \fsl + z \, \hsl \sands δ(\fsl) = u \, \esl  + v\, \fsl + w \, \hsl, \phantom{X_{\int_\int}}
+$$
+then...
+
+---
+
+#### Second slide of calculation of $\ \text{Der}(\mathfrak{sl}(2, \C))$ 
+<Spacer size="5px"/>
+
+$$
+\eqa{
+δ(\hsl) 
+&=[ δ(\esl), \fsl ] + [\esl, δ(\fsl) ] \\
+&= −2\,w\,\esl − 2\,z\,\fsl + (x + v)\hsl
+}
+$$
+$\Longrightarrow$
+$$
+\eqa{
+- 2 \, δ(\fsl) &= [δ(\hsl), \fsl] + [\hsl, δ(\fsl)] \\
+&= [−2 \, w \, \esl  − 2 \, z \, \fsl + (x + v) \hsl, \fsl] + [\hsl, u \, \esl + v \,\fsl  + w \, \hsl ]\\
+&= - 2 \lp (x + 2 \, v)\esl  − 2 \, u \, \fsl + w \, \hsl \rp
+}
+$$
+$\Longrightarrow \quad u = 0 = x + v,$ and 
+$$
+\eqa{
+2 \, δ(\esl) &= [δ(\hsl), \esl] + [\hsl, δ(\esl)] \\
+&= [−2 \, w \, \esl  − 2 \, z \, \fsl + (x + v) \hsl, \esl] + [\hsl, x \, \esl + y \,\fsl  + z \, \hsl ]\\
+&= 2 \lp (2 \, x + v)\esl − y \, \fsl + z \, \hsl \rp
+}
+$$
+$\Longrightarrow \quad y = 0 = x + v$.
+
+
+---
+
+#### Third slide of calculation of $\ \text{Der}(\mathfrak{sl}(2, \C))$ 
+<Spacer size="5px"/>
+
 Combining these calculations yields
 
----
-
-$$\eqa{
-δ(e) &= x \, e + z \, h\\
-&= \smallfrac x 2 \, [h, e] - z \, [f, e] \\ \\
-δ(f) &=w \, h − x\, f \\
-&= w \, [e, f] + \smallfrac x 2 \, [h, f]  \\ \\
-δ(h) &= −2\,w\, e − 2\,z\,f \\
-&= w \, [e, h] - z\, [f, h].
+$$
+\eqa{
+δ(\fsl) &=w \, \hsl − x\, \fsl \\
+&= w \, [\esl, \fsl] + \smallfrac x 2 \, [\hsl, \fsl]  \\ 
+&= [\underline{\quad} \ \fsl + \smallfrac x 2 \, \hsl + w \, \esl, \fsl] ,\\ 
+\\
+δ(\hsl) &= −2\,w\, \esl − 2\,z\,\fsl \\
+&= w \, [\esl, \hsl] - z\, [\fsl, \hsl] \\
+&= [− z \, \fsl + \underline{\quad} \  \hsl + w \,  \esl, \hsl],
 }
 $$
-$~$
+and
 $$
-\Longrightarrow \qquad \qquad \qquad \qquad \qquad δ = w \, \ad_e − z \, \ad_f +  \smallfrac x 2 \, \ad_h.\qquad \qquad \qquad \qquad \qquad
+\eqa{
+δ(\esl) &= x \, \esl + z \, \hsl\\
+&= \smallfrac x 2 \, [\hsl, \esl] - z \, [\fsl, \esl] \\ 
+&= [− z \, \fsl + \smallfrac x 2 \, \hsl + \underline{\quad} \ \esl, \esl].
+}
 $$
-$~$
-Hence $\ \text{Der}(sl(2, \C)) \approx sl(2, \C)$.
 
 ---
 
-***Claim:*** $\fg$ semisimple $\quad \Longrightarrow \quad \derg \approx \fg$.
-$~$
-*Verify:* Cartan semisimplicity criterion $\quad \Longrightarrow \quad {}$ the Killing form of $\fg$ is non-degenerate.
-$~$
+#### Fourth slide of calculation of $\ \text{Der}(\mathfrak{sl}(2, \C))$ 
+<Spacer size="5px"/>
+
+$
+\Longrightarrow \ \ δ = \ad_\eta\ {}$ for
+$$
+\eta := − z \, \fsl +  \smallfrac x 2 \, \hsl + w \, \esl.
+$$
+
+$\Longrightarrow \ \ \text{Der}(\mathfrak{sl}(2, \C)) \subseteq \ad(\mathfrak{sl}(2, \C))$
+
+$\Longrightarrow \ \ \text{Der}(\mathfrak{sl}(2, \C)) = \ad(\mathfrak{sl}(2, \C))$.
+<Spacer size="5px"/>
+
+$\ker \, \ad_{\mathfrak{sl}(2, \C)} = \{ 0 \}\,{}$ and $\mathfrak{sl}(2, \C)$ finite dimensional $\ \ \Longrightarrow \ \ \text{Der}(\mathfrak{sl}(2, \C)) \approx \mathfrak{sl}(2, \C))$.
+<Spacer size="5px"/>
+
+Is that relationship between the algebra and derivations of the algebra rare, common, or something in between?
+
+
+---
+
+### $\fg$ semisimple and finite dimensional $\quad \Longrightarrow \quad \text{Der}(\fg) \approx \fg$
+
+*Verify:* 
 $\ \kappa\ {}$ equals the restriction to $\ \ad(\fg)\ {}$ of the invariant bilinear form
 $$
-B(δ_1,δ_2) = \tr(δ_1δ_2)
+B(δ_1,δ_2) = \text{trace}(δ_1δ_2)
 $$
-on $\derg$.
-$~$
-Define 
+on $\text{Der}(\fg)$. Let $I$ denote the $B$-orthogonal complement of $\ad(\fg)$, i.e.
 $$
-\setdef {I} δ \derg {B(δ, \ad_\xi) = 0 \quad \forall \ \xi ∈ \fg}.
+\setdef {I} δ {\text{Der}(\fg)} {B(δ, \ad_\xi) = 0 \quad \forall \ \xi ∈ \fg}.
 $$
 
-Non-degeneracy of $\ \kappa \quad \Longrightarrow$
+$I$ is an ideal:
+Given $\delta_1 \in I, \delta_2 \in \text{Der}(\fg), \xi \in \fg$,
 $$
-I ∩ \ad(\fg) = \triv.
+\eqa{
+B([\delta_1, \delta_2], \ad_\xi) &= \text{trace}((\delta_1 \delta_2 - \delta_2 \delta_1) \ad_\xi) \\
+&= - \text{trace}(\delta_1 (\ad_\xi \delta_2 -  \delta_2 \ad_\xi ) ) \\
+&= - B(\delta_1, \underbrace{[\ad_\xi, \delta_2]}_{\in \, \ad(\fg)})\\
+&= 0
+}
 $$
+since $\ad(\fg)$ is an ideal. Hence $I$ is an ideal.
 
 ---
 
-We showed that $\ \ad(\fg) \ {}$ is an ideal of $\ \derg\ {}$; hence $\ I \ {}$ is an ideal, and
+#### Second slide of proof that $\fg$ semisimple and finite dimensional $\quad \Longrightarrow \quad \text{Der}(\fg) \approx \fg$
+<Spacer size="5px"/>
+
+$\,\ad(\fg) \,{}$ and $I$ ideals of $\,\text{Der}(\fg) \ \ \Longrightarrow$
 $$
-[I, \ad(\fg)] \subseteq I ∩ \ad(\fg) = \triv.
+[I, \ad(\fg)] \subseteq I ∩ \ad(\fg).
+$$
+<Spacer size="2px"/>
+
+The [Cartan semisimplicity criterion](Cartan-solvability-semisimplicity-criteria) $\ \ \Longrightarrow \ \ {}$ the Killing form of $\fg$ is non-degenerate 
+$\ \ \Longrightarrow$
+$$
+I ∩ \ad(\fg) = \{ 0 \}.
 $$
 
 $δ \in I \quad \Longrightarrow$
 $$
 0 = [δ, \ad_\xi] = \ad_{δ(\xi)} \qquad \forall \ \xi \in \fg.
 $$
-$~$
-Semisimplicity of $\fg \quad \Longrightarrow \quad \fz(\fg) = \triv \quad \Longrightarrow \quad  \ad: \fg \to \text{Der}(\fg) \ {}$ is injective, so
+
+Semisimplicity of $\fg \quad \Longrightarrow \quad Z(\fg) = \{0\} \quad \Longrightarrow \quad  \ad: \fg \to \text{Der}(\fg) \ {}$ is injective, so
 $$
 \ad_{δ(\xi)} = 0  \quad \forall \ \xi \in \fg \qquad \Longrightarrow \qquad δ = 0.
 $$
 
-Hence $I = \triv$.
-.
-We don’t know that $B$ is nondegenerate on $\derg$, so we can't immediately  conclude that $\derg = \ad(\fg)$. We need to use the nondegeneracy of $\kappa$.
+Hence $I = \{0\}$.
 
 ---
 
-Given $\ δ ∈ \derg, \quad \exists! \ \xi \in \fg$ satisfying
+#### Third slide of proof that $\fg$ semisimple and finite dimensional $\quad \Longrightarrow \quad \text{Der}(\fg) \approx \fg$
+<Spacer size="5px"/>
+
+Semisimplicity of $\fg \ \ \Longrightarrow \ \ {}$ the Killing form is nondegenerate 
+
+$\Longrightarrow \ \ {}$ the restriction of $B$ to $\ad(\fg)$ is non-degenerate.
+<Spacer size="2px"/>
+
+$\text{Der}(\fg)$ finite dimensional and $I = \{0\} \ \ \Longrightarrow \ \ \text{Der}(\fg) = \ad(\fg)$.
+
+Injectivity of $\ad \ \ \Longrightarrow \ \ \ad: \fg \to \text{Der}(\fg)$ is an isomorphism.
+
+<!--
+We don’t know that $B$ is nondegenerate on $\text{Der}(\fg)$, so we can't immediately  conclude that $\text{Der}(\fg) = \ad(\fg)$. We need to use the nondegeneracy of $\kappa$.
+
+Given $\ δ ∈ \text{Der}(\fg), \quad \exists! \ \xi \in \fg$ satisfying
 $$
 B(δ, \ad_\eta) = \kappa(\xi, \eta) \qquad \forall \eta \in \fg.
 $$
 Hence
-$$\eqa{
+$$
+\eqa{
 B(δ− \ad_\xi, \ad_\eta)&= B(δ, \ad_\eta) - B(\ad_\xi, \ad_\eta) \\
 &= B(δ, \ad_\eta) - \kappa(\xi, \eta) \\
 &= 0.
@@ -659,62 +726,139 @@ B(δ− \ad_\xi, \ad_\eta)&= B(δ, \ad_\eta) - B(\ad_\xi, \ad_\eta) \\
 $$
 Hence
 $$
-δ− \ad_\xi \in I = \triv, \qquad \text{so} \qquad δ = \ad_\xi,
+δ− \ad_\xi \in I = \{0\}, \qquad \text{so} \qquad δ = \ad_\xi,
 $$
-and $\ \ad: \fg → \derg\ {}$ is an isomorphism.
-$~$
-***Consequence:*** $\fg$ semisimple $\quad \Longrightarrow \quad \fg\ {}$ is the Lie algebra of $\ \text{Aut}(\fg)$.
+and $\ \ad: \fg → \text{Der}(\fg)\ {}$ is an isomorphism.
+-->
+<Spacer size="5px"/>
+
+***Consequence:*** $\fg$ semisimple and finite dimensional $\ \ \Longrightarrow \ \ {}$ the Lie algebra of $\ \text{Aut}(\fg)$ is isomorphic to  $\fg$.
+<Spacer size="5px"/>
+
+***Consequence:*** $G$ a connected Lie group with semisimple Lie algebra $\fg\ \ \Longrightarrow \ \ \text{Aut}(\fg)/\Ad(G)$ is discrete.
+
+
+-------
+
+### Properties of Lie algebras of compact Lie groups
+
+If $G$ is a compact real Lie group, with Lie algebra $\fg,  \ {}$ then 
+1. $\fg$ is *reductive*, i.e. $\text{rad}(\fg) = Z(\fg)$. <br/> Equivalently, $\fg$ is isomorphic to a dirct sum of a semisimple Lie algebra and an Abelian Lie algebra.
+
+2. The Killing form $\kappa$ of $\fg$ is negative semi-definite, with $\ker \kappa = Z(\fg)$.
+
+3. $\fg/Z(\fg)\ {}$ is semisimple, with negative definite Killing form.
+<Spacer size="5px"/>
+
+*Verify:* Let $(V, {\rm P})\ {}$ be a complex $n$-dimensional $G$-representation, and $(V, ρ)\ {}$ the associated $\fg$-module, with
+$$
+\rho(\xi)(v) = \dep {P(\exp(\epsilon \, \xi))(v)}.
+$$ 
+
+[Compactness of $G \ \ \Longrightarrow \ \ {\rm P}\ {}$ is unitary.](compact-implies-unitary-representations)
 
 ---
 
-### $\ \exists \ {}$ compact group with Lie algebra $\fg$
+#### Second slide of proof of properties of Lie algebras of compact Lie groups
+<Spacer size="5px"/>
 
-We showed earlier today that $\ \text{Aut}(\fg)\ {}$ is a closed Lie subgroup of $\ GL(\fg)$. 
-$~$
+${\rm P}\ {}$ unitary $\ \ \Longrightarrow$
+$$
+ρ(\fg) ⊆ \mathfrak{u}(V) 
+\approx \mathfrak{u}(n),
+% & = \{ \xi \in \C^{n \times n} \ : \ \xi + \xi^* = 0\}.
+$$
 
-Lie's Theorems guarantee there is a connected Lie group $G$ with algebra $\fg$. 
-$~$
-$\ \Ad(G)\ {}$ is the connected component of $\ \text{Aut}(\fg)\ {}$ containing the identity.
+the Lie algebra of skew-Hermitian $n \times n$ matrices. The bilinear form 
+$$
+B(\xi, \eta) := \text{trace} (\xi \, \eta)
+$$ 
+on $\mathfrak{u}(n)$ is negative definite, since 
+$$
+\eqa{
+B(\xi, \xi) &= \text{trace} (\xi \, \xi) \phantom{\sum} \\
+&= \text{trace} (\xi (- \xi^*)) \phantom{\sum}\\
+&= - \text{trace} (\xi^* \xi) \phantom{\sum}\\
+&= - \textstyle{\sum_{j, k = 1}^n} |\xi_{jk}|^2.
+}
+$$
 
-$$\eqa{
+---
+
+#### Third slide of proof of properties of Lie algebras of compact Lie groups
+<Spacer size="5px"/>
+
+$\ ρ(\fg) ⊆  \mathfrak{u}(V) \quad \Longrightarrow\quad{}$ the bilinear form
+$$
+B_V(\xi, \eta) := B(ρ(\xi)ρ(\eta))
+$$
+on $\fg$ is negative semi-definite, with 
+$$
+\ker B_V = \ker ρ.
+$$
+<Spacer size="5px"/>
+
+Application to the complexified adjoint representation $\Ad: G → GL(\fg, \C)\ {}$ and the complexification of the $\fg$-module $(\fg, \ad) \ \ \Longrightarrow \ \ \kappa\ {}$ is negative semi-definite, with
+$$
+\ker \kappa = \ker \ad = Z(\fg),
+$$ 
+and $\fg/Z(\fg)\ {}$ is semisimple 
+
+$\Longrightarrow \ \ \fg \approx (\fg/Z(\fg)) \oplus {Z(\fg)}$ is reductive.
+
+---
+
+### $\fg$ real and semisimple, with negative definite Killing form  $\ \ \Longrightarrow \ \ \exists \ {}$ compact group with Lie algebra isomorphic to $\fg$
+
+Since [$\text{Aut}(\fg)\ {}$ is a closed Lie subgroup](Aut-closed-subgroup) of $\ GL(\fg)$, [Lie's Theorems](Lies-three-theorems) $\ \ \Longrightarrow \ \ {}$ there is a connected Lie group $G$ with algebra $\fg$. 
+<Spacer size="1px"/>
+
+$\Ad(G)\ {}$ is the connected component of $\ \text{Aut}(\fg)\ {}$ containing the identity.
+
+We'll now show that $\Ad(G)$ is compact.
+
+$$
+\eqa{
 \Ad_g(\ad_\xi(\eta)) &= \Ad_g([\xi, \eta]) \\
 &= [\Ad_g(\xi), \Ad_g(\eta)]) \\
 &= \ad_{\Ad_g(\xi)}(\Ad_g(\eta))
 }
 $$
-$\forall \ \xi, \eta \in \fg$, i.e. 
+$\forall \ \xi, \eta \in \fg \ \ \Longrightarrow$
 $$
-\ad_{\Ad_g(\xi)}\, \Ad_g  = \Ad_g \,\ad_\xi. 
+%\ad_{\Ad_g(\xi)}\, \Ad_g  = \Ad_g \,\ad_\xi \quad  \Longrightarrow \quad 
+\ad_{\Ad_g(\xi)}  = \Ad_g \, \ad_\xi \, \Ad_{g^{-1}}.
 $$
 
 ---
+
+#### Second slide of proof of $\ \exists \ {}$ compact group with Lie algebra isomorphic to $\fg$
+<Spacer size="5px"/>
 
 Hence
 $$
-\ad_{\Ad_g(\xi)}  = \Ad_g \, \ad_\xi \, \Ad_{g^{-1}}
-$$ 
-and
-$$\eqa{
-\kappa(\Ad_g(\xi), \Ad_g(\eta)) &= \tr(\ad_{\Ad_g(\xi)}\, \ad_{\Ad_g(\eta)}) \\
-&= \tr(\Ad_g \,\ad_\xi \,\Ad_{g^{-1}} \,\Ad_g \,\ad_\eta\, \Ad_{g^{-1}}) \\
-&= \tr (\ad_\xi \,\ad_\eta) \\
+\eqa{
+\kappa(\Ad_g(\xi), \Ad_g(\eta)) &= \text{trace}(\ad_{\Ad_g(\xi)}\, \ad_{\Ad_g(\eta)}) \phantom{\sum} \\
+&= \text{trace}(\Ad_g \,\ad_\xi \,\Ad_{g^{-1}} \,\Ad_g \,\ad_\eta\, \Ad_{g^{-1}}) \phantom{\sum} \\
+&= \text{trace}(\ad_\xi \,\ad_\eta)\phantom{\sum}  \\
 &= \kappa(\xi, \eta),
 }
 $$
-so $\kappa$ is invariant w.r.t. inner automorphisms $\ \Ad_g, \ g \in G. \ {}$
-$~$
-Negative-definiteness of $\ \kappa_\fg \ \Longrightarrow \ - \kappa\ {}$ is an $\Ad(G)$-invariant inner product on $\fg,\ {}$ so 
+so $\kappa$ is invariant w.r.t. the adjoint action of $G$ on $\fg$.
+<Spacer size="5px"/>
+
+Negative-definiteness of $\ \kappa \ \Longrightarrow \ - \kappa\ {}$ is an $\Ad(G)$-invariant inner product on $\fg,\ {}$ so 
 $$
 \Ad(G) \subseteq O(\fg),
 $$
-the group of orthogonal transformations of $\fg$. 
+the group of orthogonal transformations of $(\fg, - \kappa)$. 
 
 ---
 
-$O(n, \R)\ {}$ is compact.
-$~$
-A choice of orthonormal basis for $\fg$ determines an isomorphism of $\ O(\fg)\ {}$ with $\ O(n, \R), \ {}$ where $n = \text{dim} \, \fg$.
-$~$
-Since $\ \text{Aut}(\fg)\ {}$ is closed in $\ GL(\fg), \ {}$ and $\ \Ad(G) \, {}$ is a  connected component of $\, \text{Aut}(\fg),$ compactness of $\ \Ad(G)\ {}$ follows from that of $\ O(\fg) \ {}$. 
+#### Third slide of proof of $\ \exists \ {}$ compact group with Lie algebra isomorphic to $\fg$
+<Spacer size="5px"/>
 
--->
+$O(\fg)$ is compact, since a choice of orthonormal basis for $\fg$ determines a continuous isomorphism of $\ O(\fg)\ {}$ with $\ O(n, \R)$, where
+$n = \text{dim} \, \fg$, and $O(n, \R)\ {}$ is compact.
+
+Since $\ \text{Aut}(\fg)\ {}$ is a closed subgroup of $\ GL(\fg), \ {}$ and $\ \Ad(G) \, {}$ is a  connected component of $\, \text{Aut}(\fg),$ compactness of $\ \Ad(G)\ {}$ follows from that of $\ O(\fg) \ {}$. 

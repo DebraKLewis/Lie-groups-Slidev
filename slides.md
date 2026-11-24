@@ -191,8 +191,6 @@ src: LieGroupsSlides/momentumMapsCoadjointOrbits.md
 
 - Origins and applications of the Peter-Weyl Theorem in functional analysis
 
-*Slides currently being tidied up:*
-
 - Characters of SU(2) and irreducible representations of sl(3, C)
 
 - Solvable Lie algebras
@@ -244,13 +242,13 @@ src: LieGroupsSlides/Borcherds_nilpotent_solvable_fragments.md
 
 - Semisimple Lie algebras and the Killing form
 
-- Toral and Cartan subalgebras
+- The structure of the Lie algebras of compact groups
 
-- Maximal toral subalgebras 
+- Toral, maximal toral, and Cartan subalgebras
 
 - Root systems
 
-- The Weyl group
+- The Weyl group (*Slides  still being tidied up.*)
 
 <!--
 - Representations of $\mathfrak{sl}(3)$
@@ -258,10 +256,14 @@ src: LieGroupsSlides/Borcherds_nilpotent_solvable_fragments.md
 - Characters
 -->
 
-*Slides currently being tidied up.*
+
 
 ---
 src: LieGroupsSlides/Killing_form_structure_algebras_compact_groups.md
+---
+
+---
+src: LieGroupsSlides/max_toral_subalgebras_root_spaces.md
 ---
 
 <!--
@@ -279,10 +281,6 @@ src: LieGroupsSlides/structure_algebras_compact_groups.md
 ---
 ---
 src: LieGroupsSlides/matrix_elements.md
----
-
----
-src: LieGroupsSlides/max_toral_subalgebras_root_spaces.md
 ---
 
 ---
