@@ -246,7 +246,7 @@ $\quad {}$ Maximality of $\radg \quad \Longrightarrow \quad \mathfrak{b} = \radg
 routeAlias: relationship-eigenvalues-radical
 ---
 
-<!-- What the heck is going on? Why won't this update to GitHub?-->
+<!-- What the heck is going on? Why won't this update to GitHub? I am so confused -->
 
 ### Diagonalizability of the action of the radical on an irreducible $\fg$-module
 
