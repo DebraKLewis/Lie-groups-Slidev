@@ -1,6 +1,7 @@
 ---
 # try also 'default' to start simple
 theme: default
+download: true
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://cover.sli.dev
