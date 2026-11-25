@@ -885,7 +885,7 @@ $$
 routeAlias: proof-relationship-eigenvalues-radical
 ---
 
-### Verification of the [relationship between eigenvalues and the radical](relationship-eigenvalues-radical)
+### Proof that $\fg$ [semisimple $\ \ \Longrightarrow \ \ {}$ diagonalizability of the action of $\text{rad}(\fg)$](relationship-eigenvalues-radical)
 
 $\radg$ an ideal $\ \ \Longrightarrow$
 $$
@@ -910,7 +910,7 @@ $j = 0: W_0 = V_\lambda \ \ \Longrightarrow \ \ \sigma_\lambda(\eta)(W_0) = \{0\
 
 ---
 
-#### Second slide of the proof of the [relationship between eigenvalues and the radical](relationship-eigenvalues-radical)
+#### Second slide of the proof of the [diagonalizability of the action of the radical of a semisimple Lie algebra](relationship-eigenvalues-radical)
 <Spacer size = "2px"/>
 
 Induction step: 
@@ -939,7 +939,7 @@ $V$ is irreducible and $\, W := \cup_{j \geq 0} W_j$ is $\fg$-invariant and nont
 
 ---
 
-#### Third slide of the proof of the [relationship between eigenvalues and the radical](relationship-eigenvalues-radical)
+#### Third slide of the proof of the [diagonalizability of the action of the radical of a semisimple Lie algebra](relationship-eigenvalues-radical)
 <Spacer size = "2px"/>
 
 We can choose a basis of $V$ that simultaneously block upper triangularizes $\rho(\eta)$ for all $\eta \in \radg$, with the $(j + 1)$-th diagonal block encoding the induced actions on $W_{j + 1}/W_j$. &nbsp; (Take $W_{-1} := \{0\}$.)
@@ -958,7 +958,7 @@ Further Jordan Normal Form-adjacent reasoning shows that for each $\eta \in \rad
 
 ---
 
-#### Fourth slide of the proof of the [relationship between eigenvalues and the radical](relationship-eigenvalues-radical)
+#### Fourth slide of the proof of the [diagonalizability of the action of the radical of a semisimple Lie algebra](relationship-eigenvalues-radical)
 <Spacer size = "2px"/>
 
 Since $\radg$ is an ideal, $[\eta, \xi] \in \radg$ for any $\eta \in\radg, \xi \in \fg$. 
@@ -971,4 +971,3 @@ $$
 $$
 
 $\Longrightarrow \ \  \lambda([\eta, \xi]) = 0$.
-
