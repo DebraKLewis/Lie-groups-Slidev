@@ -907,7 +907,6 @@ $$
 
 $j = 0: W_0 = V_\lambda \ \ \Longrightarrow \ \ \sigma_\lambda(\eta)(W_0) = \{0\}$.
 
-
 ---
 
 #### Second slide of the proof of the [diagonalizability of the action of the radical of a semisimple Lie algebra](relationship-eigenvalues-radical)
