@@ -306,7 +306,7 @@ routeAlias: Cartan-solvability-semisimplicity-criteria
 - $\fg$ is semisimple $\quad \Longleftrightarrow \quad \kappa\ {}$ is nondegenerate.
 
 <Spacer size="1px"/>
-*Verify solvabilility criterion:* “$\Longrightarrow$”: &nbsp; 
+*Verify solvability criterion:* “$\Longrightarrow$”: &nbsp; 
 
 If $\fg$ is solvable, [Lie’s theorem](Lie-solvable-upper-triangular) $\quad \Longrightarrow \quad \exists\,{}$ basis of $\fg$ with respect to which the matrix representation $A(\xi)$ of $\ad_\xi$ is upper triangular for any $\xi \in \fg$.
 

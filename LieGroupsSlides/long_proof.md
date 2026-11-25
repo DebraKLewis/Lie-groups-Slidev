@@ -779,12 +779,15 @@ $$
 [\fg_λ, \fg_µ] ⊆ \fg_{λ+µ}.
 $$
 
-*Verify:*  $\, \ad_\xi \in \derg \quad \Longrightarrow$
+*Verify:*  $\, \ad_\xi \in \text{Der}(\fg) \quad \Longrightarrow$
 $$
 (\ad_\xi − (λ + µ) \text{id}_\fg)[\eta, \zeta] = [\ad_\xi(\eta) − λ \, \eta, \zeta] + [\eta,\ad_\xi(\zeta) − µ \, \zeta].
 $$
 
 ---
+
+#### Second slide of generalized Jordan decomposition
+<Spacer size = "5px"/>
 
 Repeated application of $\ \ad_\xi − (λ + µ) \text{id}_\fg\ {}$ yields
 $$
@@ -799,6 +802,13 @@ $$
 \qquad \text{if} \qquad n > \text{dim} \, \fg_λ + \text{dim} \, \fg_µ,
 $$
 so $\ [\eta, \zeta] \in\fg_{λ+µ}$.
+<Spacer size = "15px"/>
+Continues on next three slides.
+
+---
+
+#### Third slide of generalized Jordan decomposition
+<Spacer size = "5px"/>
 
 ***Claim***: $\exists \ \xi_s, \xi_n \in \fg\ {}$ such that the semisimple and nilpotent components of the Jordan decomposition of $\,\ad_\xi \, {}$ satisfy
 $$
@@ -810,8 +820,6 @@ $$
 (\ad_\xi)_s|_{\fg_λ}= λ \, \text{id}_{\fg_λ} \qquad \forall \ \lambda \in \Lambda(\xi). 
 $$
 
----
-
 Consider $\ \eta ∈ \fg_λ\ {}$ and $\ \zeta ∈ \fg_µ$.
 
 $[\eta, \zeta] ∈ \fg_{λ+µ} \quad \Longrightarrow$
@@ -822,29 +830,38 @@ $$
 &= [(\ad_\xi)_s(\eta), \zeta] + [\eta, (\ad_\xi)_s(\zeta)]
 }
 $$
+
+---
+
+#### Fourth slide of generalized Jordan decomposition
+
 Linearity of $\ (\ad_\xi)_s \ \Longrightarrow$ 
 $$
-(\ad_\xi)_s ∈ \derg = \ad(\fg).
+(\ad_\xi)_s ∈\text{Der}(\fg) = \ad(\fg).
 $$
 
-Semisimplicity of $\fg \ \Longrightarrow \ \derg = \ad(\fg).\ {}$ 
+Semisimplicity of $\fg \ \Longrightarrow \ \text{Der}(\fg) = \ad(\fg).\ {}$ 
 
 Let $\xi_s$ be such that $\ ((\ad_\xi)_s = \ad_{\xi_s}$ and set 
 $$
 \xi_n = \xi - \xi_s.
 $$
 
----
-
 Uniqueness of $\xi_s$ and $\xi_n$ follows from uniqueness of the Jordan decomposition, since
 $$
-%\xi_s + \xi_n = \xi_s′ + \xi_n′
 \ad_{\xi_s} = (\ad_\xi)_s = \ad_{\xi_s'}
 \quad \Longrightarrow \quad
-\xi_s - \xi_s' \in \ker{\ad} = \fz(\fg),
+\xi_s - \xi_s' \in \ker{\ad} = Z(\fg),
 $$
-and semisimplicity of $\ \fg \Longrightarrow \fz(\fg) = \triv.$
-$~$
+and semisimplicity of $\ \fg \Longrightarrow Z(\fg) = \{0\}.$
+<Spacer size = "15px"/>
+Continues on next slide.
+
+---
+
+#### Fifth slide of generalized Jordan decomposition
+<Spacer size = "5px"/>
+
 Note that
 $$
 \eqa{
