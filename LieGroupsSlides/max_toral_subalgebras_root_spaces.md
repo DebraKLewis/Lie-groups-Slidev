@@ -6,13 +6,11 @@ We've showed that
 
 - $\ \ \text{Aut}(\fg)\ {}$ is a closed Lie subgroup of $\ GL(\fg)$. 
 
-$~$
 Lie's Theorems guarantee existence of a connected Lie group $G$ with algebra $\fg$.
 
 $\Ad(G)\ {}$ is the connected component of $\ \text{Aut}(\fg)\ {}$ containing the identity so it suffices to show that $\Ad(G)$ is compact.
-$~$
+
 ***Claim:*** $\kappa_\fg$ is invariant w.r.t. inner automorphisms $\ \Ad_g, \ g \in G. \ {}$
-$~$
 
 ---
 
@@ -45,15 +43,9 @@ $$
 \Ad(G) \subseteq O(\fg),
 $$
 the group of orthogonal transformations of $\fg$. 
-$~$
 
 Since $\ \text{Aut}(\fg)\ {}$ is closed in $\ GL(\fg), \ {}$ and $\ \Ad(G) \, {}$ is a  connected component of $\, \text{Aut}(\fg),$ compactness of $\ \Ad(G)\ {}$ follows from that of $\ O(\fg). \ {}$ 
-$~$
-$~$
-$~$
-$~$
-$~$
-$~$
+
 
 ---
 
@@ -342,7 +334,6 @@ $\fh$ is a  Cartan subalgebra of $\fg \ \ \Longleftrightarrow \ \ \fh \,{}$ is a
 
 *This slide needs to be filled in!*
 
-
 All maximal toral subalgebras of $\fg$ are conjugate w.r.t. $\ \Ad(\fg), \ {}$ the adjoint group of $\fg$.
 
 Hence all maximal toral subalgebras of $\fg$ have the same dimension, called the *rank* of $\fg$.
@@ -370,7 +361,6 @@ Engel's theorem $\ \Longrightarrow \ \fg_0\, {}$ is nilpotent.
 
 If we consider $\fg$ as a representation of $\fg_0$, the Killing form of $\fg_0$ is the restriction of the Killing form of $\fg$ to $\fg_0$, and is non-degenerate, so $\fg_0$ is reductive.
 
-
 ---
 
 $\fg_0$ nilpotent and reductive $\ \Longrightarrow \ {}$ $\fg_0$ is abelian.
@@ -388,11 +378,11 @@ Hence
 $$
 \kappa(\xi_n, \eta) = \tr(\ad_{\xi_n} \, \ad_\eta) = 0.
 $$
-$~$
+
 $\kappa|_{\fg_0}\, {}$ nondegenerate implies $\xi_n = 0, \ {}$ so $\, \xi = \xi_s$ is semisimple.
 $~$
 Since $\fg_0 = \fz(\ft)$ is toral, maximality of $\, \ft \ \Longrightarrow \ \fg_0 = \ft. \ {}$ 
-$~$
+
 
 ---
 routeAlias: Cartan-subalgebras
@@ -410,7 +400,6 @@ We'll restrict our attention to finite-dimensional semisimple Lie algebras over 
 in this context, Cartan subalgebras are the same thing as maximal toral subalgebras.
 
 Since all maximal toral subalgebras of a semisimple Lie algebra $\fg$ are conjugate w.r.t. $\ \Ad(\fg), \ {}$ the adjoint group of $\fg$.
-$~$
 
 Hence all Cartan subalgebras of $\fg$ have the same dimension, called the *rank* of $\fg$.
 
