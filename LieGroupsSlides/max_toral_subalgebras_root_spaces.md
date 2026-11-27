@@ -540,27 +540,27 @@ Hence $\ad_{\chi}$ has eigenvectors $\eta, \zeta, \chi$, with eigenvalues $2, -2
 
 These eigenvectors determine a subalgebra $\mathfrak{sl}(2, \C)_α$ of $\fg$ isomorphic to $\mathfrak{sl}(2, \C)$.
 
-<!--
-
 FIX UP THE REST OF THIS!
 
 ---
 
+### Irreducibility of the root space representation of $\mathfrak{sl}(2, \C)_α$
+
 $$
-V = \C \, h_\alpha ⊕ \bigoplus_{k \in \Z, k \neq 0} \!\!\fg_{k\, \alpha}
+V = \C \, \chi_\alpha ⊕ \bigoplus_{k \in \Z, k \neq 0} \!\!\fg_{k\, \alpha}
 $$
 is an irreducible representation of $\mathfrak{sl}(2, \C)_α$, with weight decomposition
 $$
 V[k] = \left \{ \begin{align} 0 \ \ & \quad k \ \text{odd} \\
 \fg_{k \, \alpha} & \quad k \ \text{even} \end{align} \right.
 $$
-$~$
-$V[0] = \text{span}\{ h_\alpha \}$ is 1D, which implies $V$ is irreducible.
+
+$V[0] = \text{span}\{ \chi_\alpha \}$ is 1D, which implies $V$ is irreducible.
 
 (See Kirillov for proof.)
-$~$
-$~$
+dd
 
+<!--
 
 ---
 
@@ -575,7 +575,7 @@ $\qquad{}$ is a reflection, and takes roots to roots.
 
 In particular, $\alpha \in \Phi \quad \Longrightarrow \quad - \alpha = W_\alpha(\alpha) \in \Phi$.
 
-$~$
+
 *Verify:* $\fg$ is a representation of $\mathfrak{sl}(2, \C)_α$.
 
 $$\xi \in \fg_\beta \quad \Longrightarrow \quad \ad_{h_\alpha}(\xi) = \beta({h_\alpha}) \xi,$$
@@ -584,7 +584,7 @@ so $\beta({h_\alpha})$ is a weight (AKA eigenvalue) of $\ad_{h_\alpha}$.
 ---
 
 The weights of finite dimensional $\mathfrak{sl}(2, \C)$-modules are integers.
-$~$
+
 Elements of $\fg_β$ have weight $\beta({h_\alpha}) = n$. 
 
 Reminder: In $\mathfrak{sl}(2, \C), \ {}$  
