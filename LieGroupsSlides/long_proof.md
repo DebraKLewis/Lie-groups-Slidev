@@ -29,6 +29,8 @@
 
 - [Generalized Jordan decomposition](generalized-Jordan-decomposition) (slides need tidying up)
 
+- [Maximal toral subalgebras of semisimple finite dimensional complex Lie algebras are self-centralizing: $Z(\ft) = \ft$](maximal-toral-subalgebras-self-centralizing)
+
 ---
 routeAlias: representation-via-pushforward
 ---
@@ -970,3 +972,44 @@ $$
 $$
 
 $\Longrightarrow \ \  \lambda([\eta, \xi]) = 0$.
+
+---
+routeAlias: maximal-toral-subalgebras-self-centralizing
+---
+
+### Maximal toral subalgebras of SSFDC Lie algebras are self-centralizing: $\fg_0 = Z(\ft) = \ft$
+
+If $\xi ∈ \fg_0\ {}$ has Jordan decomposition 
+
+$$
+\xi = \xi_s + \xi_n, \qquad \text{then} \qquad \xi_s, \xi_n \in \fg_0.
+$$
+$\xi_s \, {}$ semisimple $\ \Longrightarrow \ \ft ⊕ \text{span}\{\xi_s \}\ {}$ is toral.
+
+Maximality of $\, \ft \ \Longrightarrow \ \xi_s ∈ \ft$.
+
+$\xi_s \in \ft \quad \Longrightarrow \quad \ad_\xi|_{\fg_0} = \ad_{\xi_n}|_{\fg_0}$ is nilpotent. 
+
+Engel's theorem $\ \Longrightarrow \ \fg_0\, {}$ is nilpotent. 
+
+If we consider $\fg$ as a representation of $\fg_0$, the Killing form of $\fg_0$ is the restriction of the Killing form of $\fg$ to $\fg_0$, and is non-degenerate, so $\fg_0$ is reductive.
+
+$\fg_0$ nilpotent and reductive $\ \Longrightarrow \ {}$ $\fg_0$ is Abelian.
+
+NTS that all elements of $\, \fg_0\, {}$ are semisimple.
+
+Consider $\xi, \eta \in \fg_0. \ {}$ 
+
+$\ad_{\xi_n} \, {}$ and $\, \fg_0\, {}$ abelian $\ \Longrightarrow\  \ad_{\xi_n} \, \ad_\eta\, {}$ is nilpotent:
+$$
+( \ad_{\xi_n})^k = 0 \quad\Longrightarrow \quad (\ad_{\xi_n} \, \ad_\eta)^k
+= (\ad_\eta)^k (\ad_{\xi_n} )^k = 0.
+$$
+Hence
+$$
+\kappa(\xi_n, \eta) = \tr(\ad_{\xi_n} \, \ad_\eta) = 0.
+$$
+
+$\kappa|_{\fg_0}\, {}$ nondegenerate implies $\xi_n = 0, \ {}$ so $\, \xi = \xi_s$ is semisimple.
+
+Since $\fg_0 = \fz(\ft)$ is toral, maximality of $\, \ft \ \Longrightarrow \ \fg_0 = \ft. \ {}$ 

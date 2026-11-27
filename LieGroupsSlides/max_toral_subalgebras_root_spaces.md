@@ -380,9 +380,8 @@ $$
 $$
 
 $\kappa|_{\fg_0}\, {}$ nondegenerate implies $\xi_n = 0, \ {}$ so $\, \xi = \xi_s$ is semisimple.
-$~$
-Since $\fg_0 = \fz(\ft)$ is toral, maximality of $\, \ft \ \Longrightarrow \ \fg_0 = \ft. \ {}$ 
 
+Since $\fg_0 = \fz(\ft)$ is toral, maximality of $\, \ft \ \Longrightarrow \ \fg_0 = \ft. \ {}$ 
 
 ---
 routeAlias: Cartan-subalgebras
